@@ -38,3 +38,36 @@
 //         return 'F';   
 //     }
 //    }
+
+
+// --- #2 --- Fake Binary ---
+// If num < 5 return 0, else return 1. Return the fake binary
+// function fakeBin(x){
+//     let result = '';
+//     for(let i = 0; i < x.length; i++){
+//       x[i] < 5 ? result += 0 : result += 1;
+//     }
+//     return result;
+//   }
+
+// --- Splitting the argument and checking every n, return value and joining ---
+// function fakeBin(x) {
+//     return x.split('').map(n => n < 5 ? 0 : 1).join('');
+// }
+
+
+// --- #3 --- Return Vowel --- 
+// If array consists of vowel return the vowels, else return arr
+// function isVow(a){
+//     for (var i=0; l=a.length; i<l; ++i)
+//     {
+//       var char = String.fromCharCode(a[i])
+//       if ('aeiou'.indexOf(char) !== -1)
+//       a[i] = char;
+//     }
+    
+//     return a;
+//   }
+
+
+// const isVow = a => a.map(x=>'aeiou'.includes(y=String.fromCharCode(x)) ? y : x)
