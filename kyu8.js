@@ -131,7 +131,7 @@
 //   return str.split(' ').reverse().join(' '); // reverse those words
 // }
 
-// --- 11 --- Turn binary into decimals
+// --- 11 --- Turn binary into decimals ---
 // function binToDec(bin){
 //     let arr = bin.split('').reverse();
 //      let num = 0;    
@@ -149,6 +149,33 @@
 // --- Using parseInt ---
 // function binToDec(bin){
 //     return parseInt(bin,2);
+//   }
+
+// --- 12 --- Turn decimals to binary ---
+// toBinary = (n) => parseInt(n.toString(2));
+// let toBinary = n => +n.toString(2)
+// const toBinary = n => Number(n.toString(2)) ;
+
+// --- vanilla js ---
+// function toBinary(n){
+//     var binary = ""
+//     var i = 2
+    
+//     if (n==0){
+//     binary = 0
+//     }
+    
+//     while(n > 0){
+//       if(n % i == 0){
+//         binary = "0" + binary 
+//       }
+//       else{
+//         binary = "1" + binary 
+//         n = n - (i/2)
+//       }
+//       i = i * 2
+//     }
+//     return parseInt(binary);
 //   }
 
 
