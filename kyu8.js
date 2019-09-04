@@ -69,5 +69,37 @@
 //     return a;
 //   }
 
-
+// Using .map to go thru each iteration
 // const isVow = a => a.map(x=>'aeiou'.includes(y=String.fromCharCode(x)) ? y : x)
+
+
+// --- #4 --- Invert the array ---
+// Given a set of numbers, return the additive inverse of each. 
+// function invert(array) {
+//     let arr = []
+//     for (var i =0;i <array.length;i++) {
+//     arr.push(array[i]*-1)
+//     }
+//     return arr
+//  }
+
+// Using .map to loop and use ternary operator to return inverted numbers
+//  function invert(array) {
+//     return array.map( n => (n===0) ? n : -n);
+//  };
+
+// function invert(array) {
+//     return array.map(i => 0 - i);
+//  }
+
+
+
+// --- #5 --- Check for Factor ---
+// function checkForFactor (base, factor) {
+//     // code here
+//     // divide base to factor see if return 0 is true
+//     return (base%factor === 0) 
+//   }
+// const checkForFactor = (base, factor) => !(base % factor);
+
+// ---
