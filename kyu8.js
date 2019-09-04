@@ -110,3 +110,23 @@
 
 //     return n * 2 - 2
 //   }
+
+// --- #7 --- return personalized message ---
+// function greet (name, owner) {
+//     // Add code here
+//     return (name === owner) ? "Hello boss" : "Hello guest"; 
+//   }
+
+// --- #8 --- return a string to number ---
+// function numberToString(num) {
+//     // Return a string of the number here!
+//     return String(num)
+//   }
+
+// --- #9 --- return odd number
+// const oddCount = n => Math.floor(n/2) ;
+
+// --- #10 --- 
+// function reverseWords(str){
+//   return str.split(' ').reverse().join(' '); // reverse those words
+// }
