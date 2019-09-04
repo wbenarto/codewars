@@ -102,4 +102,11 @@
 //   }
 // const checkForFactor = (base, factor) => !(base % factor);
 
-// ---
+// --- #6 --- Find nTh even number ---
+// function nthEven(n){
+//     your code here
+//     given n, find the nth even number
+//     n = 4
+
+//     return n * 2 - 2
+//   }
