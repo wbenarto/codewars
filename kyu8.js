@@ -130,3 +130,31 @@
 // function reverseWords(str){
 //   return str.split(' ').reverse().join(' '); // reverse those words
 // }
+
+// --- 11 --- Turn binary into decimals
+// function binToDec(bin){
+//     let arr = bin.split('').reverse();
+//      let num = 0;    
+ 
+//      for (let i = 0; i<arr.length; i++){
+//          if(arr[i]==='1' || arr[i]==='0'){
+//              num+=arr[i]*Math.pow(2,i);
+//          }else{
+//              throw 'Not bin num'
+//          }
+//      }
+//      return num;
+//  }
+
+// --- Using parseInt ---
+// function binToDec(bin){
+//     return parseInt(bin,2);
+//   }
+
+
+
+
+
+
+// parseInt() function parses a string argument and returns an integer of the specified 
+// Math.floor() function returns the largest integer less than or equal to a given number.
