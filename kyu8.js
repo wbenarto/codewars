@@ -201,7 +201,11 @@
 //     return arr.split(",").slice(1, -1).join(' ') || null;
 //     }
     
-
+// --- 15 --- Find point per actual 48 minutes ---
+// function pointsPer48(ppg, mpg) {
+//     // point per minute
+//     return (Math.round(ppg/mpg * 48 *10)/10) || 0
+//     }
 
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
