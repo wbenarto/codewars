@@ -186,8 +186,21 @@
 // }
 
 // return (a == b ) ? true : false
+// function add(a, b){
+//     return a == b 
+//   }
 
 
+// -- 14 --- take out first and last element from an array ---
+// function array(arr){
+//     //Good luck
+//     // separate by commas
+//     // take out first and last of array
+//     // if arr is empty || arr.length <= 2 return null
+    
+//     return arr.split(",").slice(1, -1).join(' ') || null;
+//     }
+    
 
 
 // parseInt() function parses a string argument and returns an integer of the specified 
