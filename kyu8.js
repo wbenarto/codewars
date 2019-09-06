@@ -207,5 +207,16 @@
 //     return (Math.round(ppg/mpg * 48 *10)/10) || 0
 //     }
 
+// --- 16 --- filter out "good" and return based on the quantity
+// function well(x){
+        // Filter the array x and take only 'good' find out how many of them
+//     const good = x.filter( x => x == 'good').length;
+//     return good < 1 ? "Fail!" : good < 3 ? "Publish!" : "I smell a series!"
+//    }
+   
+
+
+
+
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
