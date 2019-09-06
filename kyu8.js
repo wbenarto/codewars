@@ -223,6 +223,16 @@
 //     return "found the needle at position " + haystack.indexOf(word)
 //   }
 
+// --- 18 --- Check for Palindrome ---
+// function isPalindrome(line) {
+//     var re = /[\W_]/g; // or var re = /[^A-Za-z0-9]/g;
+      
+//       var arr = line.toString().toLowerCase().replace(re, '')
+//       const enil = arr.split('').reverse().join('')
+      
+//       return (enil === arr);
+//     }
+
 
 
 
