@@ -156,6 +156,8 @@
 // let toBinary = n => +n.toString(2)
 // const toBinary = n => Number(n.toString(2)) ;
 
+  // 1001001 split int oeach and reverse 
+  // loop thru bin and find 1 & 0, add all values of each iteration and sum it up in num
 // --- vanilla js ---
 // function toBinary(n){
 //     var binary = ""
@@ -207,13 +209,20 @@
 //     return (Math.round(ppg/mpg * 48 *10)/10) || 0
 //     }
 
-// --- 16 --- filter out "good" and return based on the quantity
+// --- 16 --- filter out "good" and return based on the quantity ---
 // function well(x){
         // Filter the array x and take only 'good' find out how many of them
 //     const good = x.filter( x => x == 'good').length;
 //     return good < 1 ? "Fail!" : good < 3 ? "Publish!" : "I smell a series!"
 //    }
-   
+
+// --- 17 --- find the index of something from an array
+// function findNeedle(haystack) {
+//     // your code here
+//     const word ='needle'
+//     return "found the needle at position " + haystack.indexOf(word)
+//   }
+
 
 
 
