@@ -242,7 +242,7 @@
 //     return Math.ceil(year/100);
 //   }
 
-// --- 20 --- Find the maximum number
+// --- 20 --- Find the maximum number ---
 // function expressionMatter(a, b, c) {
 //     // all possible calculation
 //     // find the maximum number
@@ -255,8 +255,15 @@
 //     return parseInt(Math.max(one, two, three, four, five))// highest achievable result
 //   }
 
+// --- 21 --- remove 1st and last character ---
+// function removeChar(str){
+//     //You got this!
+//     return str.split('').slice(1,-1).join('')
+//    };
+   
 
 
 
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
+// Math.max() returns the highest number in the group. 
