@@ -233,6 +233,15 @@
 //       return (enil === arr);
 //     }
 
+// --- 19 --- Century ---
+// function century(year) {
+//     // Finish this :)
+//     // 1 century = 100
+//     // year/century 1000/100=10
+//     // round to the nearest top number
+//     return Math.ceil(year/100);
+//   }
+
 
 
 
