@@ -242,6 +242,18 @@
 //     return Math.ceil(year/100);
 //   }
 
+// --- 20 --- Find the maximum number
+// function expressionMatter(a, b, c) {
+//     // all possible calculation
+//     // find the maximum number
+//     const one = a * (b + c)
+//     const two = a * b * c
+//     const three = a + b * c
+//     const four = (a + b) * c
+//     const five = a + b + c 
+  
+//     return parseInt(Math.max(one, two, three, four, five))// highest achievable result
+//   }
 
 
 
