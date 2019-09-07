@@ -327,6 +327,12 @@
 //     return  [positive, negative]
 // }
 
+// --- 29 --- Splitting interger and reversing it into array of numbers ---
+// function digitize(n) {
+//     //code here
+//     return String(n).split('').map(Number).reverse();
+//   }
+
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
