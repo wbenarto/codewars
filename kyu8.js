@@ -279,9 +279,32 @@
 // function countSheeps(arrayOfSheep) {
 //     // TODO May the force be with you
 //     return arrayOfSheep.filter(Boolean).length;
-  
 //   }
 
+// --- 25 --- Basic operations ---
+// function basicOp(operation, value1, value2)
+// {
+//   // Code
+//   switch (operation) {
+//     case "+":
+//     return value1 + value2;
+//     break;
+//     case "-":
+//     return value1 - value2;
+//     break;
+//     case "*":
+//     return value1 * value2;
+//     break;
+//     case "/":
+//     return value1 / value2;
+//     break;
+//     }
+
+// --- 26 --- Turn boolean into a string ---
+// function boolToWord( bool ){
+//     //...
+//     return (bool) ? "Yes" : "No"
+//   }
 
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
