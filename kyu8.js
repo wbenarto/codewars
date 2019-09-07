@@ -313,6 +313,20 @@
 //     return [positive, negative];
 // }
 
+// --- 28 --- Count positives ---
+// function countPositivesSumNegatives(input) {
+//     let result=[]
+//     if (input == null || input.length == null) 
+//     return result;
+    
+//     let positive = 0;
+//     let negative = 0;
+//     positive=input.filter(i=>i>0).length;
+//     negative=input.filter(i=>i<0).reduce((a,b)=> a + b,0)
+  
+//     return  [positive, negative]
+// }
+
 // parseInt() function parses a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
