@@ -260,7 +260,13 @@
 //     //You got this!
 //     return str.split('').slice(1,-1).join('')
 //    };
-   
+
+// --- 22 --- Make negative ---
+// function makeNegative(num) {
+//     // Code?
+//     return (num > 0) ? (-1 * num) : num
+//   }
+
 
 
 
