@@ -267,7 +267,20 @@
 //     return (num > 0) ? (-1 * num) : num
 //   }
 
+// --- 23 --- Find smallest value in an array ---
+// class SmallestIntegerFinder {
+//     findSmallestInt(args) {
+    
+//       return Math.min( ...args)
+//     }
+//   }
 
+// --- 24 --- Find the amount of true from an array ---
+// function countSheeps(arrayOfSheep) {
+//     // TODO May the force be with you
+//     return arrayOfSheep.filter(Boolean).length;
+  
+//   }
 
 
 // parseInt() function parses a string argument and returns an integer of the specified 
