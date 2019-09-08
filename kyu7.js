@@ -18,4 +18,17 @@
 //     p0 = p0 * (1 + percent/100) + aug
 //     return y
 // }
-  
+
+// --- 4 --- Find the minimum sum of an array --- .sort()
+// function minSum(arr) {
+//     // your code here
+//     // add sums of i & -i index
+//     // sort array, loop through it, and multiply it to -1 ,stop when arr.length/2
+//     // last index is arr.length - 1
+//     let sortedArr = arr.sort( (a, b) =>  a - b )
+//     let sum = 0;
+//     for (var i = 0; i < sortedArr.length/2; i++) {
+//       sum += sortedArr[i] * sortedArr[sortedArr.length - (i+1)]
+//     }
+//     return sum
+//   }
