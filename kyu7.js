@@ -32,3 +32,19 @@
 //     }
 //     return sum
 //   }
+
+// --- 5 --- find last 2 digits divisible by 7 and find how many steps it took ---
+// function seven(m) {
+//     // your code
+//     // m = 10x + y is divisible by 7 
+//     // m = x - 2y is divisible by 7 use %7 = 0
+//     // subtract 2 times the last digit
+//     // for loop the steps that you take out a number
+//     var steps = 0;
+//       while(m.toString().length>2){
+//         m=Math.floor(m/10)-(m%10)*2;
+//         steps++;
+//       }  
+//     return [m, steps];
+//     // 160 -6 = 154 => while loop 15 - 8 = 7 
+// }
