@@ -48,3 +48,30 @@
 //     return [m, steps];
 //     // 160 -6 = 154 => while loop 15 - 8 = 7 
 // }
+
+// --- 6 --- Find Max Multiple --- 
+// --- first attempt ---
+// function maxMultiple(divisor, bound){
+//     //your code here
+//     // return the largest interger N that are divisible by divisor 
+//     // N is less than equal to bound and greater than 0
+//     // loop thru bound, find that are divisible to divisor, stop and return N
+//     // N % divisor is 0
+//     let result = [];
+//     for (var i = 0; i < bound; i++) {
+//       result.push(i%divisor == 0)
+//     }
+//     return result[result.length-1];
+    
+//   }
+
+// --- similar solution ---
+// function maxMultiple(divisor, bound){
+//     for(let N=bound; N>0; N--)
+//       if( (N%divisor) == 0 && N<=bound && N > 0)
+//         return N;
+//     return 0;
+//   }
+
+// --- Best solution ---
+// return bound - bound%divisor
