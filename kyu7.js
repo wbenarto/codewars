@@ -75,3 +75,14 @@
 
 // --- Best solution ---
 // return bound - bound%divisor
+
+// --- 7 --- Make class ---
+// function makeClass(...properties) {
+//     return class {
+//       constructor(...props) {
+//         properties.forEach((prop, index) => {
+//           this[prop] = props[index]
+//         })
+//       }
+//     }
+//   }
