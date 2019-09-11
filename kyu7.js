@@ -86,3 +86,28 @@
 //       }
 //     }
 //   }
+// function makeClass(...properties) {
+//     return class {
+//         constructor(...props){
+//             properties.forEach(prop, index){
+//                 this[prop] = props[index]
+//             }
+//         }
+//     }
+// }
+
+// --- 8 --- sum up alphabeth in array ---
+// var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+// function addLetters(...letters) {
+//   var sum = 25;
+//   for (var letter of letters)
+//     sum += alphabet.indexOf(letter) + 1;
+//   return alphabet[sum % 26];  
+// }
+
+// function addLetters(...letters) {
+//     return String.fromCharCode((x)%26+97)
+//     return String.fromCharCode(letters.reduce(x)%26+97)
+//     return String.fromCharCode(letters.reduce()%26+97)
+//     return String.fromCharCode((letters.reduce( (a,b) => a+b.charCodeAt(0)-96, 0)+25)%26+97);
+// }
