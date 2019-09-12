@@ -111,3 +111,23 @@
 //     return String.fromCharCode(letters.reduce()%26+97)
 //     return String.fromCharCode((letters.reduce( (a,b) => a+b.charCodeAt(0)-96, 0)+25)%26+97);
 // }
+
+--- 9 --- 
+function solve(s){
+    //split, loop thru s and look for consecutive vowels
+   return Math.max(s.split(/'aeiou'/).length)
+   
+  }
+
+
+//   --- 10 --- Sum of Cubes ---
+//   --- first Attempt ---
+//   function sumCubes(n){
+//     // ...
+//     // loop one thru n, cubed, and sum
+//     let sum = 0;
+//     for (var i = 1; i < n+1; i++) {
+//       sum+=(i*i*i)
+//     }
+//     return sum
+//   }
