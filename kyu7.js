@@ -131,3 +131,59 @@ function solve(s){
 //     }
 //     return sum
 //   }
+
+// --- Math.pow(number, pow) ---
+// const sumCubes = (n, total = 0, i = 1) => i > n ? total : sumCubes(n, total += Math.pow(i, 3), ++i)
+
+// sumCubes=n=>n<2?1:n**3+sumCubes(n-1)
+
+// --- 11 --- Password Validation ---
+// --- Needs to be > 8 ChannelSplitterNode, min 1 low case, min 1 up case, 1 num ---
+// function password(str) {
+//     return str.length >= 8 &&
+//            /[a-z]/.test(str) &&
+//            /[A-Z]/.test(str) &&
+//            /\d/.test(str);
+// }
+
+// --- 12 --- Find Max Gap in sorted array ---
+// --- First attempt ---
+// function maxGap (numbers){
+//     //your code here
+//     return Math.max(numbers.sort((a, b) => b - a).reduce((a,b) => b - a))
+//   }
+
+// --- Solution ---
+//   function maxGap(numbers) {
+//     return numbers
+//       .sort((a, b) => a - b)
+//       .reduce((max, n, i) => {
+//         let gap = numbers[i + 1] - n
+//         if (max < gap) {
+//           max = gap
+//         }
+//         return max
+//       }, 0);
+//   }
+
+//   function maxGap (numbers){
+//     const sorted = numbers.sort((a, b) => a - b)
+//     return sorted.reduce((t, x, i) => sorted[i + 1] - x > t ? sorted[i + 1] - x : t, 0)
+//   }
+
+// --- 13 --- Find largest common divisor from 2 nums ---
+//   function mygcd(x,y){
+//     //your code here
+//     // find divisor x and y put in array, test them return largest from result
+//     let arrX = [];
+//     let arrY = [];
+//     for (var i=1; i<x; i++){
+//         arrX.push(x%i==0)
+//     }
+    
+//     for (var i=1;y=1; i<y; i++){
+//         arrY.push(y%i==0)
+//     }
+    
+//     return Math.max(arrX === arrY)
+//   }
