@@ -187,3 +187,26 @@ function solve(s){
     
 //     return Math.max(arrX === arrY)
 //   }
+// function mygcd(x,y){
+//     //your code here
+//     // find divisor x and y put in array, test them return largest from result
+//     return (y==0)? x : mygcd(y, x%y)
+//     // (9, 15)
+//     // mygcd(15, 9)1
+//     // mygcd(9, 6)2
+//     // mygcd(6, 3)3
+//     // mygcd(3,0)
+//     // return x = 3
+//   }
+
+//   function mygcd(x,y){
+//     const min = Math.min(x,y);
+//     const max = Math.max(x,y);
+//     let num = min;
+//     while(num<=min){
+//       if(max%num===0&&min%num===0){
+//         return num;
+//       }
+//       num--;
+//     }
+//   }
