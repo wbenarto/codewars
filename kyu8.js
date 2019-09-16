@@ -342,6 +342,18 @@
 // --- 31 --- using dot replace to correct 3 numbers to letters ---
 // correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 
-// parseInt() function parses a string argument and returns an integer of the specified 
+// const corrections = {
+//   '5': 'S',
+//   '0': 'O',
+//   '1': 'I',
+// };
+
+// const correct = string => (
+//   string.replace(/[501]/g, character => corrections[character])
+// );
+
+// // --- 32 --- 
+// const move = (position, roll) => position + roll * 2
+// parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
