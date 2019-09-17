@@ -370,6 +370,16 @@
 //   (w * h + w * d + h * d) * 2,
 //   w * h * d
 // ];
+
+// --- 34 --- volume differences a and b ---
+// function findDifference(a, b) {
+//   //loading...
+//   // volume = a * b * c 
+//   let volA = a[0] * a[1] * a[2];
+//   let volB = b[0] * b[1] * b[2];
+  
+//   return Math.abs(volA-volB)
+// }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
