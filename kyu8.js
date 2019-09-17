@@ -394,6 +394,11 @@
 //   return laLigaGoals + copaDelReyGoals + championsLeagueGoals
 // }
 
+// --- 36 --- 
+// function move (position, roll) {
+//   // return the new position
+//   return position + 2*roll
+// }
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
