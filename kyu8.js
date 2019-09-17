@@ -386,6 +386,14 @@
 //   return Math.abs(a.reduce((previous, current) => previous * current) - b.reduce((previous, current) => previous * current));
 // }
 
+// --- 35 --- sum
+// function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+//   // code goes here
+// //   return laLigaGoals.reduce((a, b) => a + b) + copaDelReyGoals.reduce((a, b) => a + b) + championsLeagueGoals.reduce((a, b) => a + b);
+// // 
+//   return laLigaGoals + copaDelReyGoals + championsLeagueGoals
+// }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
