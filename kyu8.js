@@ -380,6 +380,13 @@
   
 //   return Math.abs(volA-volB)
 // }
+// --- es6 --- 
+// --- .reduce loop through the number 
+// function find_difference(a, b) {
+//   return Math.abs(a.reduce((previous, current) => previous * current) - b.reduce((previous, current) => previous * current));
+// }
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
