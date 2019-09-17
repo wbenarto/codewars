@@ -354,6 +354,17 @@
 
 // // --- 32 --- 
 // const move = (position, roll) => position + roll * 2
+
+// --- 33 --- find area and volume of box ---
+// function getSize(width, height, depth) {
+ 
+//   let area = 2*(width*height)+2*(width*depth)+2*(height*depth);
+//   let volume = width * height * depth;
+//    let arr = [area , volume]
+  
+//   return arr;
+
+// }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
