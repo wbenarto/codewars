@@ -442,6 +442,12 @@
 //   return String.fromCharCode(c)
 // }
 
+// --- 43 --- Get Average ---
+// function getAverage(marks){
+//   //TODO : calculate the downwar rounded average of the marks array
+//   return Math.floor(marks.reduce((a,b) => a+b)/marks.length)
+// }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
