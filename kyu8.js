@@ -436,6 +436,12 @@
 // the ASCII code for uppercase M is 77. Most computers use ASCII codes to represent text,
 // which makes it possible to transfer data from one computer to another.
 
+// --- 42 --- Get Char from ASCII code --- 
+// function getChar(c){
+//   // ...
+//   return String.fromCharCode(c)
+// }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
