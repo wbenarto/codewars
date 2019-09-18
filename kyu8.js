@@ -405,6 +405,22 @@
 //   return (name == 'Zach') ? 18 : 0;
 // }
 
+// --- 38 ---
+// function sumOfDifferences(arr) {
+//   return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
+// }
+
+// --- 39 --- theater count ---
+// function seatsInTheater(nCols, nRows, col, row) {
+//   //coding and coding..
+//   let length = Math.abs(nCols-(col-1))
+//   let width = Math.abs(nRows-row)
+  
+//   return length*width
+  
+// }
+
+// return Math.abs((nRows-row)*(nCols-(col-1)))
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
