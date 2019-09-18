@@ -417,10 +417,18 @@
 //   let width = Math.abs(nRows-row)
   
 //   return length*width
-  
+// }
+// return Math.abs((nRows-row)*(nCols-(col-1)))
+
+// --- 40 --- combat health ---
+// function combat(health, damage) {
+//   // Write your code here
+//   return (health < 0) ? "Health cannot go below 0": (health - damage < 0) ? 0 : health-damage ;
 // }
 
-// return Math.abs((nRows-row)*(nCols-(col-1)))
+
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
