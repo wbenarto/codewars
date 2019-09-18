@@ -424,10 +424,17 @@
 // function combat(health, damage) {
 //   // Write your code here
 //   return (health < 0) ? "Health cannot go below 0": (health - damage < 0) ? 0 : health-damage ;
-// }
+// // }
 
-
-
+// --- 41 --- Get ASCII code from a character ---
+// function getASCII(c){
+//   // ...
+//   return c.charCodeAt(0)
+// // }
+// It is a code for representing 128 English characters as numbers, 
+// with each letter assigned a number from 0 to 127. For example,
+// the ASCII code for uppercase M is 77. Most computers use ASCII codes to represent text,
+// which makes it possible to transfer data from one computer to another.
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
