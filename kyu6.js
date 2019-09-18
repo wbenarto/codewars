@@ -27,3 +27,26 @@
 //   return arr.reduce((a,b) => a * b)
 // // return n.map(e => e.reduce((a,b)=> a*b)))
 // }
+
+
+
+function numericals(input) {
+    let obj = {};
+    let result = "";
+    for (let i = 0; i < input.length; i += 1) {
+        let current = input[i];
+        if (obj[current]) {
+            obj[current] += 1;
+        } else {
+            obj[current] = 1;
+        }
+
+        result += obj[current];
+    }
+
+    return result;
+}
+
+const numericals = (str, seen = {}) =>
+  str.replace(/./g, char => 
+    seen[char] = (seen[char] || 0) + 1)
