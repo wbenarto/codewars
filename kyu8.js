@@ -460,6 +460,16 @@
 //   return x.map(e => e * 2 )
 // }
 
+// --- 46 --- return nums in n ---
+// function monkeyCount(n) {
+//   // your code here
+//   let arr = []
+//   for (var i=1; i<n+1;i++){
+//     arr.push(i)
+//   }
+//   return arr
+//   }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
