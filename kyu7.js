@@ -112,12 +112,12 @@
 //     return String.fromCharCode((letters.reduce( (a,b) => a+b.charCodeAt(0)-96, 0)+25)%26+97);
 // }
 
---- 9 --- 
-function solve(s){
-    //split, loop thru s and look for consecutive vowels
-   return Math.max(s.split(/'aeiou'/).length)
+// --- 9 --- 
+// function solve(s){
+//     //split, loop thru s and look for consecutive vowels
+//    return Math.max(s.split(/'aeiou'/).length)
    
-  }
+//   }
 
 
 //   --- 10 --- Sum of Cubes ---
@@ -249,4 +249,19 @@ function solve(s){
 // function spacify(str) {
 //   // return 
 //   return str.split('').join(' ')
+// }
+
+// --- 17 --- take out nums repeated odd amount of times ---
+// function oddOnesOut(nums) {
+
+//   const results = {};
+//   nums.forEach(num => {
+//     if (results[num]) {
+//       results[num]++
+//     } else {
+//       results[num] = 1
+//     }
+//   });
+
+//   return nums.filter(el => results[el] % 2 === 0)
 // }
