@@ -217,3 +217,22 @@ function solve(s){
 //   // TODO: complete
 //   return (str.endsWith(ending))
 // }
+
+// --- 15 --- find 2 nums from sum and diff ---
+// function getAges(sum,difference){
+//   // sum = a + b
+//   // diff = a - b
+//   // (24, 4) [14, 10]
+//   // a = 24 - b
+//   // 4 = (24 - b) - b
+//   // 4 = 24 - 2b
+//   // 2b = 20
+//   // b = 10
+//   // a = 24 - 10 
+  
+//   let b = (sum - difference)/2
+//   let a = sum - b
+  
+//   return ((sum||difference<0) && (a&&b<0))?null :[a, b];
+  
+// };
