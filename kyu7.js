@@ -233,6 +233,20 @@ function solve(s){
 //   let b = (sum - difference)/2
 //   let a = sum - b
   
-//   return ((sum||difference<0) && (a&&b<0))?null :[a, b];
-  
+//   return ((sum<0||difference<0||a&&b<0))?null :[a, b];  
 // };
+
+// function getAges(sum,difference){
+
+//   let average = 0;
+//   if (sum < 0 || difference < 0 || sum - difference < 0) return null;
+//   else average = (sum - difference) /2;
+  
+//   return [average+difference, average];
+// };
+
+// --- 16 --- 
+// function spacify(str) {
+//   // return 
+//   return str.split('').join(' ')
+// }
