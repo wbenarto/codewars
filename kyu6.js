@@ -28,7 +28,10 @@
 // // return n.map(e => e.reduce((a,b)=> a*b)))
 // }
 
-
+// --- 2 --- 
+// function choose(n,k){
+//     return (k === 0)? 1 : choose(n - 1,k - 1) * n/k ; 
+// }    
 
 function numericals(input) {
     let obj = {};
