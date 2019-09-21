@@ -265,3 +265,106 @@
 
 //   return nums.filter(el => results[el] % 2 === 0)
 // }
+
+// --- 18 --- Fix the parentheses ---
+// const fixParentheses = (str) => {
+//     let opening = 0;
+//     let closing = 0;
+    
+//     str.split('').forEach(x=>{
+//     if(x === "(") {closing++} 
+//     if(x === ")")
+//       if (closing>0) {
+//       closing = closing === 0 ? 0 : closing - 1 }
+//       else {opening++}
+      
+//     })
+//     return `${'('.repeat(opening)}${str}${')'.repeat(closing)}`;
+//   };
+// // Add the needed left parentheses
+// function addLeftParentheses(str) {
+//     let addLeft = '';
+//     let openingReserve = 0;
+//     let index = 0;
+//     while (index < str.length) {
+//       let thisChar = str[index];
+//       if (thisChar === '(') {
+//         openingReserve += 1;
+//       } else {
+//         if (openingReserve > 0) {
+//           openingReserve -= 1;
+//         } else {
+//           addLeft += '(';
+//         }
+//       }
+//       index += 1;
+//     }
+//     return addLeft;
+//   }
+  
+//   // Add the needed right parentheses
+//   function addRightParentheses(str) {
+//     let addRight = '';
+//     let closingReserve = 0;
+//     let index = str.length - 1;
+//     while (index >= 0) {
+//       let thisChar = str[index];
+//       if (thisChar === ')') {
+//         closingReserve += 1;
+//       } else {
+//         if (closingReserve > 0) {
+//           closingReserve -= 1;
+//         } else {
+//           addRight += ')';
+//         }
+//       }
+//       index -= 1;
+//     }
+//     return addRight;
+//   }
+  
+//   /*
+//     Append parentheses to the beginning and/or end of the string
+//     to create matching pairs of opening and closing parentheses.
+//   */
+//   const fixParentheses = (str) => {
+//     let addLeft = addLeftParentheses(str);
+//     let addRight = addRightParentheses(str);
+//     return addLeft + str + addRight;
+//   };
+
+
+// function fixParentheses(s){
+//     let [pref,suff] = [0,0];
+//     [...s].forEach(e => {
+//       if (e === ')'){suff < 1 ? pref++ : suff--} else {suff++}});
+//     return '('.repeat(pref) + s + ')'.repeat(suff);
+//   }
+
+//   const fixParentheses = str => {
+//     let openingNeeded = 0
+//     let openingLeft = 0
+    
+//     str.split('').forEach(x => {
+//       if (x === '(') openingLeft++
+//       if (x === ')') {
+//         if(openingLeft > 0) {
+//           openingLeft = openingLeft === 0 ? 0 : openingLeft - 1
+//         } else {
+//           openingNeeded++
+//         }
+//       }
+//     })
+  
+//     return `${'('.repeat(openingNeeded)}${str}${')'.repeat(openingLeft)}`;
+//   };
+
+//   const reg = /(?:\(\))/;
+
+// const fixParentheses = (str, original = str) => {
+//   const res = str.split(reg).join('');
+//   return res.match(reg) ?
+//     fixParentheses(res, original) :
+//     res.split('').reduce((final, char) =>
+//         `${char === ')' ? '(' : ''}${final}${char === '(' ? ')' : ''}`, original)
+// };
