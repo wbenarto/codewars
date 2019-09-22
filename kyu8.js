@@ -475,3 +475,6 @@
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
 // return numbers.reduce((total,b) => total + Math.pow(b, 2) , 0) <-------- the ', 0' is saying 'else, give me 0' 
+
+// Arrays:
+// .slice(index to start, and ending index excluding itself) = Takes in 2 parameters 
