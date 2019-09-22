@@ -368,3 +368,9 @@
 //     res.split('').reduce((final, char) =>
 //         `${char === ')' ? '(' : ''}${final}${char === '(' ? ')' : ''}`, original)
 // };
+
+// --- 19 --- Given 12 days of Christmas return the days sorted --- 
+// var comparator = function(a,b) {
+//     const pos = ['On', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'a'];
+//     return pos.indexOf(a.split(' ')[0]) - pos.indexOf(b.split(' ')[0]);
+//   }
