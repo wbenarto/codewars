@@ -478,3 +478,4 @@
 
 // Arrays:
 // .slice(index to start, and ending index excluding itself) = Takes in 2 parameters 
+// arr.includes(valueToFind[fromindex]) = returns true or false

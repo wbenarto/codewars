@@ -370,7 +370,21 @@
 // };
 
 // --- 19 --- Given 12 days of Christmas return the days sorted --- 
+// --- sort the array or compare the two object using indexOf 
 // var comparator = function(a,b) {
 //     const pos = ['On', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', 'a'];
 //     return pos.indexOf(a.split(' ')[0]) - pos.indexOf(b.split(' ')[0]);
 //   }
+
+// --- 20 ---
+// function aaPercentage (protein,input) {
+//     // Have fun!
+//     // set AILMNFWYV
+//     // amount match divided by input.length *100
+//     let test = ['A', 'I', 'L', 'M', 'F', 'W', 'Y', 'V']
+//     return Math.floor((input.split('').filter(e => e == test).length)/input.length)*100
+//   }
+
+//   function aaPercentage (seq , arr = ["A", "I", "L", "M", "F", "W", "Y", "V"] ) {
+//     return arr ?  Math.round(seq.split('').filter(a=>arr.includes(a)).length / seq.length * 100 )  : 0;
+//  }
