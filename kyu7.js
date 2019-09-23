@@ -386,5 +386,43 @@
 //   }
 
 //   function aaPercentage (seq , arr = ["A", "I", "L", "M", "F", "W", "Y", "V"] ) {
+    // if arr exists return percentage taken from seq that has protein divide by whole seq otherwise returns 0
 //     return arr ?  Math.round(seq.split('').filter(a=>arr.includes(a)).length / seq.length * 100 )  : 0;
 //  }
+
+// --- 21 --- Recreate poem --- 
+// function tenGreenBottles(n) {
+//     // Your code here
+//   //   n green bottle hanging on the wall,
+//   //   n green bottle hanging on the wall,
+//   //   If that n green bottle should accidentally fall,
+//   //   There'll be n - 1 green bottles hanging on the wall.
+//   let line=''
+//   var arr = ["no", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]; 
+//   if (n>0) {
+//   for (var i=n; i>0; i--){
+//     line += 
+//     `${arr[i]} green bottle${i === 1? '':'s'} hanging on the wall,
+//     ${arr[i]} green bottle${i === 1? '':'s'} hanging on the wall,
+//     ${i === 1 ? 'If that' : 'And if'} one green bottle should accidentally fall,
+//     There'll be ${arr[i - 1].toLowerCase()} green bottle${i - 1 === 1? '':'s'} hanging on the wall.${i === 1 ? '' : '\n'}`
+    
+//   }} 
+// //   else {line += "There'll be no green bottles hanging on the wall"}
+  
+  
+//     return line;
+//   }  
+
+  function tenGreenBottles(n) {
+    let result = '';
+    const numWords = ['no', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+      for (let i = n; i > 0; i--) {
+        result += `${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
+    ${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
+    ${i === 1 ? 'If that' : 'And if'} one green bottle should accidentally fall,
+    There'll be ${numWords[i - 1].toLowerCase()} green bottle${i - 1 === 1 ? '' : 's'} hanging on the wall.${i === 1 ? '' : '\n'}
+    `
+      }
+      return result;
+    }  
