@@ -470,6 +470,12 @@
 //   return arr
 //   }
 
+// --- 47 --- Find differences of volumes ---
+// function findDifference(a, b) {
+//   //   //loading...
+//     return Math.abs(a.reduce((a,b)=>a*b) - b.reduce((a,b)=>a*b))
+//   }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
@@ -479,3 +485,7 @@
 // Arrays:
 // .slice(index to start, and ending index excluding itself) = Takes in 2 parameters 
 // arr.includes(valueToFind[fromindex]) = returns true or false
+// array.filter(function(currentValue, index, arr), thisValue)
+// arr.indexOf(searchElement[, fromIndex]) --- 
+// ---The indexOf() method returns the first index at which a given element 
+// ---can be found in the array, or -1 if it is not present.

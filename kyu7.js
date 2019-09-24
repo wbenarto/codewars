@@ -414,15 +414,30 @@
 //     return line;
 //   }  
 
-  function tenGreenBottles(n) {
-    let result = '';
-    const numWords = ['no', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
-      for (let i = n; i > 0; i--) {
-        result += `${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
-    ${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
-    ${i === 1 ? 'If that' : 'And if'} one green bottle should accidentally fall,
-    There'll be ${numWords[i - 1].toLowerCase()} green bottle${i - 1 === 1 ? '' : 's'} hanging on the wall.${i === 1 ? '' : '\n'}
-    `
-      }
-      return result;
-    }  
+//   function tenGreenBottles(n) {
+//     let result = '';
+//     const numWords = ['no', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+//       for (let i = n; i > 0; i--) {
+//         result += `${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
+//     ${numWords[i]} green bottle${i === 1 ? '' : 's'} hanging on the wall,
+//     ${i === 1 ? 'If that' : 'And if'} one green bottle should accidentally fall,
+//     There'll be ${numWords[i - 1].toLowerCase()} green bottle${i - 1 === 1 ? '' : 's'} hanging on the wall.${i === 1 ? '' : '\n'}
+//     `
+//       }
+//       return result;
+//     }  
+
+--- 22 --- return sorted nums from array without duplicates ---
+function minValue(values){
+    const n = values
+    // e = current value 
+      .filter((e, i, arr) => arr.indexOf(e) === i)
+      .sort()
+      .join('');
+    return Number(n);
+  }
+
+  function minValue(values){
+    let arr = Array.from(new Set(values))
+    return parseInt(arr.sort().join(''))
+  }
