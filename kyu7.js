@@ -441,3 +441,25 @@ function minValue(values){
     let arr = Array.from(new Set(values))
     return parseInt(arr.sort().join(''))
   }
+
+
+
+// --- 23 --- Find next distinct digits --- 
+// function nextHappyYear(year){
+//     //your code here
+//   //   return year.split('').map(e=> (year.includes(e)) ? e + 1 : e)
+//     let result = []
+//     for (var i=0; i<year;i++){
+//      if (year.includes(i)) {
+//        i++;
+//        result.push(i)
+//      } else result.push(i)
+//     }
+//     return Number(result)
+// //     }
+// --- While Loop ---
+// function nextHappyYear(year){
+//     do year+=1
+//     while ((/([0-9]).*?\1/).test(year));
+//     return year
+//     }
