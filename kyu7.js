@@ -478,3 +478,29 @@ function minValue(values){
 
 // --- 25 --- Jar and friends ---
 // const friends = n => n < 2 ? 0 : Math.max(0, Math.floor(Math.log(n - 1) / Math.log(2)));
+
+// --- 26 --- Max of 3 numbers ---
+// --- How I'd do it --- 
+// function maxTriSum(numbers){
+//   //your code here
+//   // loop thru nums filter no duplicates then take sum
+//   return numbers.filter((e,i,arr)=> arr.indexOf(e) === i)
+//     .sort((a,b) => a < b)
+//     .slice(0,3)
+//     .reduce((a,b) => a + b)
+// }
+
+// --- solution ---
+// const maxTriSum = numbers => {
+//   const [a,b,c,...rest] = [...new Set([...numbers])].sort((a,b)=>b-a)
+//   return a+b+c
+  
+// }
+
+// --- solution ---
+// const maxTriSum (numbers) {
+//   return numbers.sort((a,b)=> a-b)
+//     .filter((e,i,arr)=> arr.indexOf(e)===i)
+//     .slice(-3)
+//     .reduce((a,b)=>a+b)
+// }
