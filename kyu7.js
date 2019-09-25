@@ -475,3 +475,6 @@ function minValue(values){
 // //may the code be with you
 //   return parseInt(num.toString().split('').map(e => e**2).join('')    
 //   }
+
+// --- 25 --- Jar and friends ---
+// const friends = n => n < 2 ? 0 : Math.max(0, Math.floor(Math.log(n - 1) / Math.log(2)));
