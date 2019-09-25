@@ -463,3 +463,15 @@ function minValue(values){
 //     while ((/([0-9]).*?\1/).test(year));
 //     return year
 //     }
+
+// --- 24 --- 
+// --- How I'd do it.... ---
+// function squareDigits(num){
+//     //may the code be with you
+//     return num.split('').forEach(e => e**2).join('')
+//   }
+// --- Solution ---
+// function squareDigits(num){
+// //may the code be with you
+//   return parseInt(num.toString().split('').map(e => e**2).join('')    
+//   }

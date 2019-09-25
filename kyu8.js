@@ -476,6 +476,11 @@
 //     return Math.abs(a.reduce((a,b)=>a*b) - b.reduce((a,b)=>a*b))
 //   }
 
+// --- 48 --- set alarm ---
+// function setAlarm(employed, vacation){
+//   return (employed == true && vacation == false) ? true : false
+//   }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
