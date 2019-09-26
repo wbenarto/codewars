@@ -504,3 +504,10 @@ function minValue(values){
 //     .slice(-3)
 //     .reduce((a,b)=>a+b)
 // }
+
+// --- 27 ---
+// function inviteMoreWomen(L) {
+//   //coding and coding..
+//   return L.reduce((a,b)=>a+b) > 0 ? true : false
+  
+// }

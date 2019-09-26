@@ -487,7 +487,9 @@
 //   // Your code should be here ;)
 // //   return (3.14*radius**2*bottleLength) - (3.14*radius**2*rimLength)
 //   return Math.round(((2*radius)/(Math.sqrt(2)))**2 * (bottleLength-rimLength))
-// }
+// // }
+// const iceBrickVolume = (r, x, y) => 2 * r * r * (x - y);
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
