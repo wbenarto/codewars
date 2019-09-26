@@ -482,9 +482,18 @@
 //   }
 // const setAlarm = (employed, vacation) => employed && !vacation;
 
+// --- 49 --- find volume of cube in bottle ---
+// function iceBrickVolume(radius, bottleLength, rimLength) {
+//   // Your code should be here ;)
+// //   return (3.14*radius**2*bottleLength) - (3.14*radius**2*rimLength)
+//   return Math.round(((2*radius)/(Math.sqrt(2)))**2 * (bottleLength-rimLength))
+// }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
+// Math.round() returns to nearest integer
+// Math.ceil() returns to highest integer
 // return numbers.reduce((total,b) => total + Math.pow(b, 2) , 0) <-------- the ', 0' is saying 'else, give me 0' 
 
 // Arrays:
