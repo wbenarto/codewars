@@ -505,9 +505,20 @@ function minValue(values){
 //     .reduce((a,b)=>a+b)
 // }
 
-// --- 27 ---
+// --- 27 --- Check if women more than men ---
 // function inviteMoreWomen(L) {
 //   //coding and coding..
 //   return L.reduce((a,b)=>a+b) > 0 ? true : false
+// }
+
+// --- 28 --- pendulum nums --- 
+// function pendulum(values) {
+
+//   let sort = values.slice().sort((a, b) => a - b)
+//   ,  parts = { left: [], right: [] };
   
+//   for (let i = 0; i < sort.length; i++) 
+//     parts[i % 2 ? 'right' : 'left'].push(sort[i]);
+
+//   return parts.left.reverse().concat(parts.right)
 // }
