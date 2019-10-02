@@ -514,6 +514,7 @@ function minValue(values){
 // --- 28 --- pendulum nums --- 
 // function pendulum(values) {
 
+// ascending sort [1,2,3,4,5]
 //   let sort = values.slice().sort((a, b) => a - b)
 //   ,  parts = { left: [], right: [] };
   

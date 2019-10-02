@@ -490,6 +490,23 @@
 // // }
 // const iceBrickVolume = (r, x, y) => 2 * r * r * (x - y);
 
+// --- 50 --- Find sum of differences ---
+// function sumOfDifferences(arr) {
+//   arr.sort((a,b) => b-a)
+//   let result = 0
+//   for(var i=1;i<arr.length;i++){
+    
+//     if (arr.length == 0) return 0
+//     else {
+//       result += (arr[i-1] - arr[i])
+//     }
+//   }    
+//     return result
+// }
+
+// --- es6 ---
+// return (arr.length > 1) ? Math.max(...arr) - Math.min(...arr) : 0
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
@@ -505,3 +522,10 @@
 // arr.indexOf(searchElement[, fromIndex]) --- 
 // ---The indexOf() method returns the first index at which a given element 
 // ---can be found in the array, or -1 if it is not present.
+
+// Ascending order sort
+// ---1,5,10,25,40,100
+// ---arr.sort(function(a, b){return a-b})
+// Descending order sort
+// ---100,40,25,10,5,1
+// ---arr.sort(function(a, b){return b-a})
