@@ -523,3 +523,12 @@ function minValue(values){
 
 //   return parts.left.reverse().concat(parts.right)
 // }
+
+
+// --- 29 --- Chess board color --- Broken kata ---
+// function mineColor(line, number) {
+//   // insert code
+//   return line[0]%2 === line[1]%2 ? "black" : "white"; 
+// }
+
+// return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];
