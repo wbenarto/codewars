@@ -522,6 +522,10 @@
 // arr.indexOf(searchElement[, fromIndex]) --- 
 // ---The indexOf() method returns the first index at which a given element 
 // ---can be found in the array, or -1 if it is not present.
+// Array.push() --- Place data onto the stack
+// Array.pop() --- removing last element 
+// Array.shift() --- takes out first element in array
+
 
 // Ascending order sort
 // ---1,5,10,25,40,100

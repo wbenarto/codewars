@@ -531,4 +531,18 @@ function minValue(values){
 //   return line[0]%2 === line[1]%2 ? "black" : "white"; 
 // }
 
+// --- 30 --- find index of odd num or -1 ---
+// --- first attempt ---
+// function oddOne(arr) {
+//   // Code here
+//   // find odd numbers = arr[i]%2===1
+//   let result = 0;
+//   for (var i=0;i<arr.length;i++){
+    
+//     (Math.abs(arr[i]%2)===1) ? result = arr[i] : -1
+//   }
+  
+//   return arr.indexOf(result) 
+// }
+
 // return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];
