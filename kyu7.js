@@ -545,4 +545,16 @@ function minValue(values){
 //   return arr.indexOf(result) 
 // }
 
+// const oddOne = arr => arr.findIndex(x => x & 1)
+
+// --- 31 --- find length of owning pets ---
+// var ownedCatAndDog = function(catYears, dogYears) {
+//   // Your code here!
+//   return [
+//     (catYears<24)?catYears/15:(catYears-16)/4,
+//     (dogYears<24)?dogYears/15:(dogYears-14)/5
+//   ].map(Math.floor)
+// }
+
+
 // return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];
