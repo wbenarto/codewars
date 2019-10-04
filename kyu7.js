@@ -578,5 +578,44 @@ function minValue(values){
     
 //  } 
 
+//  function balancedNum(number) {
+//   let numstr = number.toString();
+//   let leftside = "";
+//   let rightside = "";
+//   if (numstr.length/2 < 1 || numstr.length === 2) { 
+//     return "Balanced";
+//   }
+//   if (numstr.length % 2 === 0) {
+//     leftside = numstr.slice(0,numstr.length/2-1);
+//   } else {
+//     leftside = numstr.slice(0,numstr.length/2);
+//   }
+//   rightside = numstr.slice(numstr.length/2+1);
+  
+//   let lefttotal = leftside.split("").reduce((a,b)=>parseInt(a)+parseInt(b));
+//   let righttotal = rightside.split("").reduce((a,b)=>parseInt(a)+parseInt(b));
+//   return (lefttotal === righttotal) ? "Balanced" : "Not Balanced";
+// }
 
+// function balancedNum(number) {
+
+//   let str = `${number}`
+//   ,   len = (str.length - (str.length % 2 ? -1 : -2)) / 2
+//   ,   sum = digits => [ ...digits ].reduce((a, b) => a + +b, 0);
+
+//   return sum(str.slice(0, len)) === sum(str.slice(-len)) 
+//   ? 'Balanced' 
+//   : 'Not Balanced';
+
+// }
+
+// --- 33 --- find sqrt num ---
+// var isSquare = function(n){
+  
+//   return (Math.sqrt(n)%2 - Math.floor(Math.sqrt(n)%2) === 0) ? true : false; // fix me
+// }
+
+// function isSquare(n) {
+//   return Math.sqrt(n) % 1 === 0;
+// }
 // return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];
