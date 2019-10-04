@@ -556,5 +556,27 @@ function minValue(values){
 //   ].map(Math.floor)
 // }
 
+// --- 32 --- Find balanced array ---
+// function balancedNum(number) {
+//   //split the nums
+//   // find middle num
+//  for(var i = 0; i<number.length;i++){
+//     let leftArr = 0
+//     let rightArr = 0
+    
+//     if (number.length%2===1) {
+//      let midNum = number.length/2
+//      for (var i = 0; i<midNum;i++){
+//        leftArr+=i;
+//        }
+//       for(var i=midNum; i<number.length;i++){
+//         rightArr+=i
+//       }
+      
+//     }
+//     return (leftArr === rightArr) ? "Balanced" : "Not Balanced";
+    
+//  } 
+
 
 // return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];

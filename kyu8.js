@@ -524,7 +524,8 @@
 // ---can be found in the array, or -1 if it is not present.
 // Array.push() --- Place data onto the stack
 // Array.pop() --- removing last element 
-// Array.shift() --- takes out first element in array
+// // Array.shift() --- takes out first element in array
+// array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
 
 
 // Ascending order sort
@@ -533,3 +534,6 @@
 // Descending order sort
 // ---100,40,25,10,5,1
 // ---arr.sort(function(a, b){return b-a})
+
+// First recipe app
+// https://obscure-brushlands-62038.herokuapp.com/showrecipe
