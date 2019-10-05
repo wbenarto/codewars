@@ -512,6 +512,16 @@
 //   return "You're a(n) " + (age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly")
 // }
 
+// --- 52 --- Pyramid balls find height ---
+// function stackHeight3d(layers) {
+//   // Your code here!
+  
+//   return (Math.sqrt((3*layers)**2 - (1.5*layers)**2)).toFixed(2)
+// }
+
+// function stackHeight3d(layers) {
+//   return layers ? 1 + (layers - 1) * Math.sqrt(6) / 3 : 0
+// }
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
