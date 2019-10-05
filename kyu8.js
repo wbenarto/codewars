@@ -507,6 +507,11 @@
 // --- es6 ---
 // return (arr.length > 1) ? Math.max(...arr) - Math.min(...arr) : 0
 
+// --- 51 --- Shortest code line ---
+// function describeAge(age) {
+//   return "You're a(n) " + (age < 13 ? "kid" : age < 18 ? "teenager" : age < 65 ? "adult" : "elderly")
+// }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
