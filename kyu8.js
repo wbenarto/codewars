@@ -558,6 +558,40 @@
 // //         beer(count - 1);
 // //   }
 // // }
+
+// --- 54 --- EZ ---
+// function orderOperations () {
+//   return (2 + 2) * (2 + 2) * 2
+// }
+
+// --- 55 --- Dates ---
+// function periodIsLate(last, today, cycleLength)
+// {
+//   // today plus cycleLength > last returns true
+// //   var result = new Date();
+// //   result.setDate(today.getDate() + cycleLength );
+// //   return (result/ (1000*3600*24) > last) ? true : false ;
+
+//   return (today-last)/(1000*3600*24) > cycleLength
+// }
+
+
+// --- 56 --- operator Switch Case ---
+// function calculator(a,b,sign){
+//   switch (sign) {
+//     case '+' : return a + b;
+//       break;
+//     case '-' : return a - b;
+//       break;
+//     case '*' : return a * b;
+//       break;
+//     case '/' : return a / b;
+//       break;
+//     default: return "unknown value"
+//   }
+//   }
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
