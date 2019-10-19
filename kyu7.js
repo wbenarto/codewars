@@ -619,3 +619,29 @@ function minValue(values){
 //   return Math.sqrt(n) % 1 === 0;
 // }
 // return ['white','black'][('abcdefgh'.indexOf(line) + number) % 2];
+
+// --- 34 --- Sum of triangular numbers ---
+// --- failed attempt --- 
+// function sumTriangularNumbers(n) {
+//   // set triangular numbers in array
+//   // starts with 1 + 2 ; 3 + 3; 6 + 4 
+//   // n = 2 => 1 + (3) = 4
+//   // use n to find value in index
+//   let triangularNums = [1,3,6,10,15]
+// //   for (var i = 1; i > 0; i++) {
+    
+// //   }
+  
+//   return (n>0) ? triangularNums.reduce((a,b)=> a+b);
+// }
+// function sumTriangularNumbers(n) {
+//   var sum = 0;  
+//   for(var i = 1; i <= n; i++)
+//   {
+//   sum += (i*(i+1))/2;
+//   }
+//   return sum;
+//   }
+// function sumTriangularNumbers(n) {
+//   return n < 0 ? 0 : n * (n + 1) * (n + 2) / 6;
+// }
