@@ -591,6 +591,12 @@
 //   }
 //   }
 
+// --- 57 --- Alternate case ---
+// String.prototype.toAlternatingCase = function () {
+//   // Define your method here :)
+//   return this.split('').map(e=> e === e.toUpperCase() ? e.toLowerCase(): e.toUpperCase()).join('')
+// }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
