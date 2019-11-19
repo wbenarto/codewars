@@ -597,6 +597,20 @@
 //   return this.split('').map(e=> e === e.toUpperCase() ? e.toLowerCase(): e.toUpperCase()).join('')
 // }
 
+// --- 58 --- Sort and Star ---
+// function sortStar(s) {
+//   return s.sort()[0].split('').join('***')
+// }
+
+// --- 59 --- draw stairs ---
+// function drawStairs(n) {
+//   let step = 'I';
+//   for (let i=i;i<n;i++){
+//     step += '\n'+ ''.repeat(i) + 'I'
+//   }
+//   return step;
+// }
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
