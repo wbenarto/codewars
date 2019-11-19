@@ -645,3 +645,38 @@ function minValue(values){
 // function sumTriangularNumbers(n) {
 //   return n < 0 ? 0 : n * (n + 1) * (n + 2) / 6;
 // }
+
+
+--- 34 --- Find all non-consecutive nums ---
+--- failed attempt ---
+function allNonConsecutive (arr) {
+  // loop thru arr
+  // check if each iteration +1 matches with number
+  // if not, return the index and the num
+  // keep the loop running till end of arr
+  // if arr is consecutive then return empty arr
+ //  for (var i=0; i<arr.length;i++){
+    
+ //  }
+ 
+   return arr.reduce((a,b)=> a-b) === 1 ? [] : return 
+ }
+ function allNonConsecutive (arr){
+  var res = [];
+  for(let i=1; i<arr.length; i++) {
+    if(arr[i]-arr[i-1]!==1) res.push({i:i, n:arr[i]});
+  }
+  return res;
+}
+function allNonConsecutive (arr) {
+  let result = [];
+  arr.forEach((val, index) => {
+      if (val !== arr[index - 1] + 1 && index) {
+          result.push({i: index, n: val});
+      }
+  });
+  return result;
+}
+function allNonConsecutive(arr) {
+  return arr.reduce((xs, n, i) => i > 0 && n - 1 !== arr[i - 1] ? [...xs, {i, n}] : xs, [])
+}
