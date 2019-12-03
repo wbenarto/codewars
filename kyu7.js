@@ -647,9 +647,9 @@ function minValue(values){
 // }
 
 
---- 34 --- Find all non-consecutive nums ---
---- failed attempt ---
-function allNonConsecutive (arr) {
+// --- 34 --- Find all non-consecutive nums ---
+// --- failed attempt ---
+// function allNonConsecutive (arr) {
   // loop thru arr
   // check if each iteration +1 matches with number
   // if not, return the index and the num
@@ -659,24 +659,44 @@ function allNonConsecutive (arr) {
     
  //  }
  
-   return arr.reduce((a,b)=> a-b) === 1 ? [] : return 
- }
- function allNonConsecutive (arr){
-  var res = [];
-  for(let i=1; i<arr.length; i++) {
-    if(arr[i]-arr[i-1]!==1) res.push({i:i, n:arr[i]});
-  }
-  return res;
-}
-function allNonConsecutive (arr) {
-  let result = [];
-  arr.forEach((val, index) => {
-      if (val !== arr[index - 1] + 1 && index) {
-          result.push({i: index, n: val});
-      }
-  });
-  return result;
-}
-function allNonConsecutive(arr) {
-  return arr.reduce((xs, n, i) => i > 0 && n - 1 !== arr[i - 1] ? [...xs, {i, n}] : xs, [])
-}
+//    return arr.reduce((a,b)=> a-b) === 1 ? [] : return 
+//  }
+//  function allNonConsecutive (arr){
+//   var res = [];
+//   for(let i=1; i<arr.length; i++) {
+//     if(arr[i]-arr[i-1]!==1) res.push({i:i, n:arr[i]});
+//   }
+//   return res;
+// }
+// function allNonConsecutive (arr) {
+//   let result = [];
+//   arr.forEach((val, index) => {
+//       if (val !== arr[index - 1] + 1 && index) {
+//           result.push({i: index, n: val});
+//       }
+//   });
+//   return result;
+// }
+// function allNonConsecutive(arr) {
+//   return arr.reduce((xs, n, i) => i > 0 && n - 1 !== arr[i - 1] ? [...xs, {i, n}] : xs, [])
+// }
+
+
+// --- 35 --- Removing duplicates in array, concating arrays, sorting it ---
+// function testit(a,b){
+//   return [...new Set(a.concat(b).sort())];
+// }
+
+// function testit(a,b){
+//   //   return [...new Set(a.concat(b).sort())];
+//     return a.length<b.length ?  (a.concat(b).sort()) : (a.concat(b).sort()).filter((item, index)=> (a.concat(b).sort()).indexOf(item)===index) 
+//   }
+
+// ---solution---
+//   function testit(a,b){
+//     //   return [...new Set(a.concat(b).sort())];
+//       let arr1 = [...new Set(a)]
+//       let arr2 = [...new Set(b)]
+//       return arr1.concat(arr2).sort((c,d)=> c-d)
+//     //   return a.length>=b.length ?  (a.concat(b).sort()) : (a.concat(b).sort()).filter((item, index)=> (a.concat(b).sort()).indexOf(item)===index) 
+//     }
