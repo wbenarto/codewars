@@ -629,6 +629,10 @@
 
 // Math.pow(x,2) > 1000
 
+// --- 62 --- return five ---
+// function unusualFive() {
+//   return 'DaniQ'.length
+// }
 
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
