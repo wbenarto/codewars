@@ -611,6 +611,18 @@
 //   return step;
 // }
 
+// const drawStairs = n => [...Array(n)].map((_, i) => ' '.repeat(i) + 'I').join('\n');
+
+// --- 60 --- for loop --- 
+// function generateRange(min, max, step){
+//   let arr = [];
+//   for (let i=min; i<=max; i += step) {
+//     arr.push(i);
+//   }
+//   return arr;
+// }
+
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
@@ -641,3 +653,8 @@
 
 // First recipe app
 // https://obscure-brushlands-62038.herokuapp.com/showrecipe
+
+
+var sentence = 'The quick brown fox jumps over the lazy dog.';
+var index = 4;
+sentence.charCodeAt(index)
