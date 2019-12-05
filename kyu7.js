@@ -700,3 +700,15 @@ function minValue(values){
 //       return arr1.concat(arr2).sort((c,d)=> c-d)
 //     //   return a.length>=b.length ?  (a.concat(b).sort()) : (a.concat(b).sort()).filter((item, index)=> (a.concat(b).sort()).indexOf(item)===index) 
 //     }
+
+
+// --- 36 --- alphabet to numbers then sum it up ---
+function wordsToMarks(string){
+  //your code here
+  
+//   var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  
+//   return string.split('').map(e=>e.indexOf(alphabet)).reduce((a,b)=> a+b)
+
+  return string.split('').map(e=>e.charCodeAt(0)-96).reduce((a,b)=>a+b)
+}
