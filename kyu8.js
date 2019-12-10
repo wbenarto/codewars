@@ -655,6 +655,38 @@
 // function solution(str){
 //   return str.split('').reverse().join('')
 // }
+
+--- 67 --- Multiple if statements ---
+function bmi(weight, height) {
+  let bmiC = weight/Math.pow(height,2);
+ //  return bmiC <= 18.5 ? "Underweight" : 
+ //    bmiC >18.5 && bmiC <= 25 ? "Normal" :
+ //    bmiC >25 && bmiC <= 30 ? "Overweight" :
+ //     "Obese"
+ 
+ if(bmiC <= 18.5) {return "Underweight"}
+ else if (bmiC >18.5 && bmiC <= 25) {return "Normal"}
+ else if (bmiC >25 && bmiC <=30) {return "Overweight"}
+ else return "Obese"
+ }
+ function bmi(weight, height) {
+  var result = weight/Math.pow(height,2) 
+  
+  if (result <= 18.5) {
+    return "Underweight";
+  } else if (result <= 25) {
+    return "Normal";
+  } else if (result <= 30) {
+    return "Overweight";
+  } else {
+    return "Obese";
+  }
+  
+}
+
+
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
