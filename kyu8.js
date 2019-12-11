@@ -695,7 +695,11 @@
 //   return Math.round(area*100)/100
 //   }
 
-
+// --- 63 --- REgex ---
+// function validateUsr(username) {
+//   res =  /^[a-z0-9_]{4,16}$/.test(username) 
+//   return res
+// }
 
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
