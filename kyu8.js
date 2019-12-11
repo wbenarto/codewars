@@ -656,33 +656,44 @@
 //   return str.split('').reverse().join('')
 // }
 
---- 67 --- Multiple if statements ---
-function bmi(weight, height) {
-  let bmiC = weight/Math.pow(height,2);
- //  return bmiC <= 18.5 ? "Underweight" : 
- //    bmiC >18.5 && bmiC <= 25 ? "Normal" :
- //    bmiC >25 && bmiC <= 30 ? "Overweight" :
- //     "Obese"
+// --- 67 --- Multiple if statements ---
+// function bmi(weight, height) {
+//   let bmiC = weight/Math.pow(height,2);
+//  //  return bmiC <= 18.5 ? "Underweight" : 
+//  //    bmiC >18.5 && bmiC <= 25 ? "Normal" :
+//  //    bmiC >25 && bmiC <= 30 ? "Overweight" :
+//  //     "Obese"
  
- if(bmiC <= 18.5) {return "Underweight"}
- else if (bmiC >18.5 && bmiC <= 25) {return "Normal"}
- else if (bmiC >25 && bmiC <=30) {return "Overweight"}
- else return "Obese"
- }
- function bmi(weight, height) {
-  var result = weight/Math.pow(height,2) 
+//  if(bmiC <= 18.5) {return "Underweight"}
+//  else if (bmiC >18.5 && bmiC <= 25) {return "Normal"}
+//  else if (bmiC >25 && bmiC <=30) {return "Overweight"}
+//  else return "Obese"
+//  }
+//  function bmi(weight, height) {
+//   var result = weight/Math.pow(height,2) 
   
-  if (result <= 18.5) {
-    return "Underweight";
-  } else if (result <= 25) {
-    return "Normal";
-  } else if (result <= 30) {
-    return "Overweight";
-  } else {
-    return "Obese";
-  }
+//   if (result <= 18.5) {
+//     return "Underweight";
+//   } else if (result <= 25) {
+//     return "Normal";
+//   } else if (result <= 30) {
+//     return "Overweight";
+//   } else {
+//     return "Obese";
+//   }
   
-}
+// }
+
+// --- 62 --- Square area from arc ---
+// function squareArea(A){
+//   // A = 1/4 of circumference of a circle
+//   // circumference = 4*A
+//   // c = 2 Pi r
+//   // r = c/6.28
+//   // square area = (4*a/2*3.14)^2
+//   let area = Math.pow((4*A)/(Math.PI*2),2)
+//   return Math.round(area*100)/100
+//   }
 
 
 
