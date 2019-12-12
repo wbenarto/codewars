@@ -701,6 +701,10 @@
 //   return res
 // }
 
+// --- 64 --- indexOf --- 
+// function warnTheSheep(queue) {
+//   return queue.indexOf("wolf")+1 == queue.length ? "Pls go away and stop eating my sheep" : `Oi! Sheep number ${queue.length - (queue.indexOf("wolf")+1)}! You are about to be eaten by a wolf!`;
+//   }
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
