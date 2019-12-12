@@ -706,6 +706,50 @@
 //   return queue.indexOf("wolf")+1 == queue.length ? "Pls go away and stop eating my sheep" : `Oi! Sheep number ${queue.length - (queue.indexOf("wolf")+1)}! You are about to be eaten by a wolf!`;
 //   }
 
+// --- 65 --- numbers --- 
+// function sum (numbers) {
+//   "use strict";
+//   return numbers[0] == null ? 0 : numbers.reduce((a,b)=>a+b) 
+// };
+
+// --- 66 --- average ---
+// function betterThanAverage(classPoints, yourPoints) {
+//   // Your code here
+// let avg = classPoints.reduce((a,b)=>a+b)/classPoints.length
+// return (yourPoints>avg)
+// }
+
+// --- 67 --- and or xor ---
+// --- solution ---
+// var ops = {
+//   'AND': (a, b) => a && b,
+//   'OR': (a, b) =>  a || b,
+//   'XOR': (a, b) => a !== b
+// }
+
+
+// function logicalCalc(array, op){
+//   return array.reduce(ops[op]);
+// }
+// function logicalCalc(array, op){
+//   //your code here
+  
+//   switch(op){
+//     case "AND":
+//     return (array[array.length-1] && array[array.length]) ? true : false 
+//     break;
+//     case "OR":
+//     return (array[array.length-1] || array[array.length]) === 1 ? true : 
+//      (array[array.length-1] || array[array.length]) === -1 ? true : false
+//     break;
+//     case "XOR":
+//     return (array[array.length-1] && array[array.length]) === 1 ? false :
+//      (array[array.length-1] && array[array.length]) === -1 ? false : true
+//     break;
+//   }
+// }
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
