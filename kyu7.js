@@ -712,3 +712,9 @@ function wordsToMarks(string){
 
   return string.split('').map(e=>e.charCodeAt(0)-96).reduce((a,b)=>a+b)
 }
+
+// --- 37 --- Ternary ---
+// function breakChocolate(n,m) {
+//   return (n&&m)== 0 ? 0 : (n*m)-1;
+// }
+
