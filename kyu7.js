@@ -718,3 +718,8 @@ function wordsToMarks(string){
 //   return (n&&m)== 0 ? 0 : (n*m)-1;
 // }
 
+// --- 38 --- typeof : to check with type of object 'number' ---
+// function divCon(x){
+//   return x.reduce((a,b)=> typeof b === 'number'? a + b : a - Number(b),0)
+// }
+
