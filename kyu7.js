@@ -722,4 +722,13 @@ function wordsToMarks(string){
 // function divCon(x){
 //   return x.reduce((a,b)=> typeof b === 'number'? a + b : a - Number(b),0)
 // }
+// function divCon(x) {
+//   return x.reduce((a,b) => typeof b === 'string' ? a - Number(b) : a + b,0)
+// }
 
+
+// --- 39 --- 
+// function sumDigits(number) {
+//   return Number(Math.abs(number).toString().split('').reduce((a,b) => Math.abs(Number(a)) + Math.abs(Number(b))))
+//   }
+  
