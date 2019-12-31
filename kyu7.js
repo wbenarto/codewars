@@ -732,3 +732,55 @@ function wordsToMarks(string){
 //   return Number(Math.abs(number).toString().split('').reduce((a,b) => Math.abs(Number(a)) + Math.abs(Number(b))))
 //   }
   
+// --- 40 --- reverse alphabet ---
+// function switcher(x){
+//   const alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
+//   return x.map( e=>alpha[e]).join('')
+// }
+
+--- 41 --- Factorial function ---
+function factorial(n){
+  //your code here
+  // n = 3
+  // 3! = 3 x (3-1) x (3-2) x (3-3) 
+  // loop thru n, every i 
+  var total = 0
+  for (let i=1; i<=n ; i++) {
+    total += total * i
+  }
+  return total
+}
+
+--- solution ---
+function factorial(n){
+  let answer = 1;
+  
+  while (n > 0) {
+    answer *= n;
+    n--;
+  }
+  
+  return answer;
+}
+
+function factorial(n){
+  return n ? n * factorial(n-1) : 1;
+}
+
+function factorial(n) {
+  for (var acc = 1; n > 0; acc *= n, n--);
+  return acc
+}
+
+--- correction ---
+function factorial(n){
+  //your code here
+  // n = 3
+  // 3! = 3 x (3-1) x (3-2) x (3-3) 
+  // loop thru n, every i 
+let total = 1
+  for (let i=1; n>0 ; n--) {
+    total *= n
+  }
+  return total
+}
