@@ -738,49 +738,77 @@ function wordsToMarks(string){
 //   return x.map( e=>alpha[e]).join('')
 // }
 
---- 41 --- Factorial function ---
-function factorial(n){
-  //your code here
-  // n = 3
-  // 3! = 3 x (3-1) x (3-2) x (3-3) 
-  // loop thru n, every i 
-  var total = 0
-  for (let i=1; i<=n ; i++) {
-    total += total * i
-  }
-  return total
-}
+// --- 41 --- Factorial function ---
+// function factorial(n){
+//   //your code here
+//   // n = 3
+//   // 3! = 3 x (3-1) x (3-2) x (3-3) 
+//   // loop thru n, every i 
+//   var total = 0
+//   for (let i=1; i<=n ; i++) {
+//     total += total * i
+//   }
+//   return total
+// }
 
---- solution ---
-function factorial(n){
-  let answer = 1;
+// --- solution ---
+// function factorial(n){
+//   let answer = 1;
   
-  while (n > 0) {
-    answer *= n;
-    n--;
-  }
+//   while (n > 0) {
+//     answer *= n;
+//     n--;
+//   }
   
-  return answer;
-}
+//   return answer;
+// }
 
-function factorial(n){
-  return n ? n * factorial(n-1) : 1;
-}
+// function factorial(n){
+//   return n ? n * factorial(n-1) : 1;
+// }
 
-function factorial(n) {
-  for (var acc = 1; n > 0; acc *= n, n--);
-  return acc
-}
+// function factorial(n) {
+//   for (var acc = 1; n > 0; acc *= n, n--);
+//   return acc
+// }
 
---- correction ---
-function factorial(n){
-  //your code here
-  // n = 3
-  // 3! = 3 x (3-1) x (3-2) x (3-3) 
-  // loop thru n, every i 
-let total = 1
-  for (let i=1; n>0 ; n--) {
-    total *= n
-  }
-  return total
-}
+// --- correction ---
+// function factorial(n){
+//   //your code here
+//   // n = 3
+//   // 3! = 3 x (3-1) x (3-2) x (3-3) 
+//   // loop thru n, every i 
+// let total = 1
+//   for (let i=1; n>0 ; n--) {
+//     total *= n
+//   }
+//   return total
+// }
+
+// --- 42 --- slice ---
+// function houseNumbersSum(inputArray) {
+//   //coding and coding..
+//   // loop thru until find 0
+//   // sum all before that
+//   let total = []
+//   for (var i=0;i<inputArray.length;i++){
+//   if(inputArray[i] == 0){return 0}
+//   else if (inputArray[i] !== 0) {inputArray[i].push(total)}
+// //   (inputArray[i] !== 0) ? total += inputArray[i] : total
+// //     return inputArray.reduce((a,b)=>a+b)
+//   } 
+//   return total.reduce((a,b)=>a+b)
+// }
+
+// --- solution --- 
+// function houseNumbersSum(inputArray) {
+//   //coding and coding..
+//   // loop thru until find 0
+// //   return inputArray.slice(0, inputArray[i] === 0).reduce((a,b)=>a+b,0)
+//   for (let sum=0, i=0;; i++){
+//   if (inputArray[i]===0) {return sum}
+//   else sum += inputArray[i]
+//   }
+// }
+
+// return inputArray.slice(0, inputArray.indexOf(0)).reduce((a,b)=>a+b,0)
