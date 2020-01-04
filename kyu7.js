@@ -812,3 +812,16 @@ function wordsToMarks(string){
 // }
 
 // return inputArray.slice(0, inputArray.indexOf(0)).reduce((a,b)=>a+b,0)
+
+// --- 43 --- 
+// const absentVowel = x => {
+//   for(var v in 'aeiou')
+//     if(x.indexOf('aeiou'[v])==-1)
+//       return +v
+// }
+
+// --- 44 ---
+// function descendingOrder(n){
+//   //...
+//   return Number(n.toString().split('').sort((a,b)=>b-a).join(''))
+// }
