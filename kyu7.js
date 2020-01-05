@@ -835,3 +835,19 @@ function wordsToMarks(string){
   
 //    return (max - min + 1) * (max + min)/2
 // }
+
+// function getSum( a,b )
+// {
+//    //Good luck!
+//    let smaller = (a < b) ? a : b,
+//    bigger = (a < b) ? b : a;
+//    let result = 0;
+//    for (let i=smaller; i<=bigger; i++) {result += i}
+   
+//    return result
+// }
+
+// function getSum(a,b) {
+//   return (Math.abs(a-b) + 1) * (a+b)/2
+
+// }
