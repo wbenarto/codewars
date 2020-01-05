@@ -825,3 +825,13 @@ function wordsToMarks(string){
 //   //...
 //   return Number(n.toString().split('').sort((a,b)=>b-a).join(''))
 // }
+
+// --- 45 --- Arithmatic Progression --- find sum of the numbers in between a & b ===
+// function getSum( a,b )
+// {
+//    //Good luck!
+//    let max = Math.max(a,b)
+//    let min = Math.min(a,b)
+  
+//    return (max - min + 1) * (max + min)/2
+// }
