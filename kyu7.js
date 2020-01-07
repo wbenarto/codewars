@@ -1,3 +1,5 @@
+import { gzip } from "zlib";
+
 // --- 1 --- Return accum("abcd") -> "A-Bb-Ccc-Dddd" ---
 // function accum(s) {
 //     return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
@@ -849,5 +851,14 @@ function wordsToMarks(string){
 
 // function getSum(a,b) {
 //   return (Math.abs(a-b) + 1) * (a+b)/2
-
 // }
+
+// --- 46 --- count the string ---
+// example: "4minus2plus1"
+// result = '3'
+
+// function sumStr(str) {
+//   return eval(str.replace(/plus/gi, '+').replace(/minus/gi, '-')).toString()
+// }
+
+// eval() perform arithmatic calculation inside of a string object
