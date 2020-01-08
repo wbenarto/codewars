@@ -877,5 +877,20 @@ function wordsToMarks(string){
 //   const sum = letters.reduce((sum, letter)=>sum + alp.indexOf(letter), 0)%26
 
 //   return alp[sum]
+// }
 
+
+// --- 48 --- tail swap array ---
+// function tailSwap(arr) {
+//   // ["abc:123", "cde:456"]  -->  ["abc:456", "cde:123"]
+//   // [arr[0],arr[1]]
+//   // split arr[0](':')
+//   // [[arr[0][0], arr[0][1]] [arr[1][0],arr[1][1]]
+//   // [[newArr[0][0],newArr[1][1]], [newArr[1][0],newArr[0][1]]
+  
+//   const newArr = arr.map(e=>e.split(':'))
+//   console.log(newArr)
+//   console.log([([newArr[0][0],newArr[1][1]]), ([newArr[1][0],newArr[0][1])])
+
+//   return [] ;
 // }
