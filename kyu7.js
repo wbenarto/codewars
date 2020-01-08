@@ -862,3 +862,20 @@ function wordsToMarks(string){
 // }
 
 // eval() perform arithmatic calculation inside of a string object
+
+
+// --- 47 --- sum the letters and return the letter result ---
+// function addLetters(...letters) {
+//   // your code here
+//   let alp = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//   return ...letters.map(e=> e.replace(...letters, alp.indexOf(e))).reduce((a,b)=>a+b)
+//   }
+
+// function addLetters(...letters) {
+//   const alp = ('zabcdefghijklmnopqrstuvwxy')
+
+//   const sum = letters.reduce((sum, letter)=>sum + alp.indexOf(letter), 0)%26
+
+//   return alp[sum]
+
+// }
