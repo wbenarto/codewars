@@ -759,11 +759,14 @@
 
 // Arrays:
 // .slice(index to start, and ending index excluding itself) = Takes in 2 parameters 
+// str.replace(what, waht)
 // arr.includes(valueToFind[fromindex]) = returns true or false
 // array.filter(function(currentValue, index, arr), thisValue)
+// array.match(/[a-z]/)
 // arr.indexOf(searchElement[, fromIndex]) --- 
 // ---The indexOf() method returns the first index at which a given element 
 // ---can be found in the array, or -1 if it is not present.
+//
 // Array.push() --- Place data onto the stack
 // Array.pop() --- removing last element 
 // // Array.shift() --- takes out first element in array

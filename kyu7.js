@@ -916,3 +916,25 @@ function wordsToMarks(string){
 //    return str.replace(/[aeiou]/gi, '')
   
 //   }
+
+// --- 51 --- Filter out numbers and put them together as string --- 
+// function lottery(str){
+//   res = str.replace(/[a-zA-Z]/g,'')
+//     .split('')
+//     .filter((x,n,s) => s.indexOf(x) == n)
+//     .join('');
+//   return res ? res : 'One more run!'
+// }
+
+// function lottery(str) {
+//   // res = take out strings and leave out integer
+//   // 
+//   res = str.replace(/[a-zA-Z]/g, '')
+//     .split('')
+//     .filter((cur,i,arr) => arr.indexOf(cur) == i)
+//     .join('')
+//     return res ? res : "One more run!"
+// }
+
+// Using collection 
+// const lottery = str => [...new Set(str.match(/\d/g)).values()].join('') || 'One more run!';
