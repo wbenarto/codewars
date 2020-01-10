@@ -894,3 +894,25 @@ function wordsToMarks(string){
 
 //   return [] ;
 // }
+
+// --- 49 --- Multiple ternary conditions 
+// function getMiddle(s)
+// {
+//   //Code goes here!
+// //  return (s.length%2==0) ? s.slice((s.length/2-1),s.length/2+1) : s.slice(Math.abs(s.length%2),Math.abs(s.length%2)+1)
+// return (s.length%2 == 1) ? s.slice(Math.floor(s.length%2-1),Math.floor(s.length%2)) : (s.length%2 == 0) ? s.slice((s.length/2-1),s.length/2+1):s.slice(0)
+
+// }
+
+// function getMiddle(s)
+// {
+//   return s.slice((s.length-1)/2, s.length/2+1);
+// }
+
+// --- 50 --- remove vowels ---
+// var removeVowels = function(str){
+//   //code here
+//    let vowels = 'aeiou'
+//    return str.replace(/[aeiou]/gi, '')
+  
+//   }
