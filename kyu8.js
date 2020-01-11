@@ -749,6 +749,12 @@
 //   }
 // }
 
+// --- 68 --- 
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//   // TODO
+//   return (distanceToPump <= mpg*fuelLeft) ? 1 : 0
+// };
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
