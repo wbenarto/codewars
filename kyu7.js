@@ -938,3 +938,16 @@ function wordsToMarks(string){
 
 // Using collection 
 // const lottery = str => [...new Set(str.match(/\d/g)).values()].join('') || 'One more run!';
+
+// --- 52 --- get divisor count ---
+// function getDivisorsCnt(n){
+//   // todo
+//   // return all digits modulus 0 until hit its own number
+//   let array = []
+//   for (var i = 1; i <= n; i++){
+//     if (n%i == 0) {
+//     array.push(i);
+//     }
+//   } 
+//   return array.length
+// }
