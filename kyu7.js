@@ -951,3 +951,18 @@ function wordsToMarks(string){
 //   } 
 //   return array.length
 // }
+
+// --- 53 --- Vertical and Horizontal Mirroring of array made of strings ---
+// function vertMirror(strng) {
+//   // Your code
+//   // [lVHt, nJVhv, nCSbg\nyeCt]
+//   return strng.split("\n").map(e=>e.split('').reverse().join('')).join("\n")
+// }
+// function horMirror(strng) {
+//   // Your code
+//   return strng.split("\n").reverse().join("\n")
+// }
+// function oper(fct, s) {
+//   // Your code
+//   return fct(s)
+// }
