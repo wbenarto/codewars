@@ -987,3 +987,32 @@ function wordsToMarks(string){
   
 //   return `£${sum.toFixed(2)}`;
 // }
+
+// --- 56 --- parity and bin. odd and even switch case testing ---
+// function checkParity(parity, bin){
+//   //Have fun!
+//   // calculate the 1s 
+//   // see if it's even or odd
+//   // 0 or 1
+//   let array = []
+   
+//   let ones = bin.split('') 
+  
+//   for (var i = 0; i< ones.length; i++) {
+//     if (ones[i] =='1') array.push(ones[i])
+    
+//   }
+//   console.log(ones)
+//   console.log(array)
+//   console.log(parity)
+  
+//   switch (parity) {
+//   case "even":
+//   return (array.length%2===0)? 0 : 1;
+//   break;
+//   case "odd" :
+//   return (array.length%2===0) ? 1 : 0
+//   break;
+  
+//   }
+// }
