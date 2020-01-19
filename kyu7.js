@@ -1016,3 +1016,16 @@ function wordsToMarks(string){
   
 //   }
 // }
+
+// --- 57 --- no odds ---
+// function noOdds( values ){
+//   // Return all non-odd values
+//   let arr = []
+  
+//   for(var i=0;i<values.length;i++){
+//     if (values[i]%2==0) {
+//       arr.push(values[i])
+//     }
+//   }
+//   return arr
+// }
