@@ -1040,3 +1040,8 @@ function disariumNumber(n){
   
   return n === sum ? "Disarium !!" : "Not !!";
 }
+
+// --- 58 --- 
+// String.prototype.vowel = function() {
+//   return /^[aeiou]$/i.test(this)
+// }
