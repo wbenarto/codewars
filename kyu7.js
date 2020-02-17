@@ -1030,18 +1030,71 @@ function wordsToMarks(string){
 //   return arr
 // // }
 // return values.filter(e=> e%2==0)
-function disariumNumber(n){
-  let number = n.toString();
-  let sum = 0;
+// function disariumNumber(n){
+//   let number = n.toString();
+//   let sum = 0;
   
-  for (let i=0; i<number.length; i++){
-    sum += Math.pow(number[i], i+1);
-  }
+//   for (let i=0; i<number.length; i++){
+//     sum += Math.pow(number[i], i+1);
+//   }
   
-  return n === sum ? "Disarium !!" : "Not !!";
-}
+//   return n === sum ? "Disarium !!" : "Not !!";
+// }
 
 // --- 58 --- 
 // String.prototype.vowel = function() {
 //   return /^[aeiou]$/i.test(this)
 // }
+
+// --- 59 --- Free urinals problem ---
+// function getFreeUrinals(urinals) {
+//   if ( urinals.includes("11") )
+//     return -1;
+//   else
+//     return ( urinals.match( /(^|0)0(?!1)/g ) || [] ).length;
+// }
+
+--- 60 --- 
+function infected(s) {
+  
+  let land = s.split('X')
+  let infected = 0
+  for (var i = 0; i < land.length; i++) {
+    if (land[i].match(1)) {  
+      for(let j=0; j<land[i].length;j++) {
+        land[i][j].replace(0,1)
+      }
+    }
+    console.log(land)
+    console.log(land[i])
+   infected += land[i].reduce((a,b)=>a+b)  
+  }  
+  let total = s.match(/01/g).reduce((a,b)=>a+b)
+  
+return 100*infected/total;
+}
+
+function infected(s) {
+  let arr = s.split("X"), // separates the continents
+      infected = 0,
+      totalPopulation;
+  arr = arr.map(c => {
+    if (c.indexOf("1") > -1) { // there is at least an infected person in this continent
+      infected += c.length; // adds to the total infected count
+      return "1".repeat(c.length); // spreads the infection
+    } else return c; // all were non infected in this continent
+  }); 
+  totalPopulation = arr.join("").length; // gets the total population of the world
+  return totalPopulation ? 100 * infected / totalPopulation : 0; // returns the percentage of population infected
+}
+function infected(s) {
+
+  if(!(s.includes('0') && s.includes('1'))) return 0;
+  
+  let str = s.split('X').map(el => el.includes('1') ? el.replace(/0/g, '1') : el).join('');
+  
+  let total = str.length;
+  let infect = str.match(/1/g).length;
+  
+  return 100 * infect / total;
+}
