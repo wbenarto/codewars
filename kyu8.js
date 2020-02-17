@@ -768,6 +768,10 @@
 // str.replace(what, waht)
 // arr.includes(valueToFind[fromindex]) = returns true or false
 // array.filter(function(currentValue, index, arr), thisValue)
+// ---const names = ['John', 'Paul', 'George', 'Ringo', 'John'];
+
+// ---let x = (names) => names.filter((v,i) => names.indexOf(v) === i)
+// ---x(names); // 'John', 'Paul', 'George', 'Ringo'
 // array.match(/[a-z]/)
 // arr.indexOf(searchElement[, fromIndex]) --- 
 // ---The indexOf() method returns the first index at which a given element 
@@ -794,3 +798,4 @@
 var sentence = 'The quick brown fox jumps over the lazy dog.';
 var index = 4;
 sentence.charCodeAt(index)
+
