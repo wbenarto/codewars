@@ -1125,3 +1125,9 @@ function infected(s){
 //   console.log(arr)
 //   return arr ? arr.length : 0
 // }
+
+// --- 63 --- Polygon angle --- 
+// function angle(n) {
+//   //code here
+//   return 180*(n-2)
+// }
