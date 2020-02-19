@@ -1131,3 +1131,15 @@ function infected(s){
 //   //code here
 //   return 180*(n-2)
 // }
+
+// --- 64 --- new average --- 
+// function newAvg(arr, newavg) {
+//   // your code 
+//   let sum = (arr.length == 0) ? 0 : arr.reduce((a,b)=>a+b)
+//   console.log(sum)
+  
+//   let lastDonation = Math.ceil((newavg*(arr.length+1))-sum)
+  
+//   console.log(lastDonation)
+//   return lastDonation > 0 ? lastDonation : ERROR
+// }
