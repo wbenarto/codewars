@@ -1118,3 +1118,10 @@ function infected(s){
   
 //   return (array.length == 0) ? 0 : (array.reduce((a,b)=>a+b)%2===0) ? 'even' : 'odd'
 // }
+
+// --- 62 --- count letters and numbers ---
+// function countLettersAndDigits(input) {
+//   let arr = input.match(/[a-zA-Z0-9]/g)
+//   console.log(arr)
+//   return arr ? arr.length : 0
+// }
