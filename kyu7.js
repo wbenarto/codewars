@@ -1055,25 +1055,27 @@ function wordsToMarks(string){
 // }
 
 // --- 60 --- 
-// function infected(s) {
+function infected(s){
+  let arr = s.split('X'), 
+    infected = 0,
+    totalPopulation;
+  // Check if arr is infected '1'
+  console.log('arr1 :'+arr)
+  arr = arr.map(c=>{
   
-//   let land = s.split('X')
-//   let infected = 0
-//   for (var i = 0; i < land.length; i++) {
-//     if (land[i].match(1)) {  
-//       for(let j=0; j<land[i].length;j++) {
-//         land[i][j].replace(0,1)
-//       }
-//     }
-//     console.log(land)
-//     console.log(land[i])
-//    infected += land[i].reduce((a,b)=>a+b)  
-//   }  
-//   let total = s.match(/01/g).reduce((a,b)=>a+b)
+   if (c.indexOf('1')>-1) {
+   console.log(c.indexOf(1))
+     infected+=c.length;
+     return '1'.repeat(c.length)
+   } else return c; 
+  })
+  console.log('arr2 :'+arr)
   
-// return 100*infected/total;
-// }
-
+  totalPopulation = arr.join('').length
+  console.log('total :'+totalPopulation)
+  
+  return (totalPopulation)? 100*infected/totalPopulation : 0;
+}
 // function infected(s) {
 //   let arr = s.split("X"), // separates the continents
 //       infected = 0,
@@ -1107,4 +1109,12 @@ function wordsToMarks(string){
 //   console.log(result)
   
 //   return result.join(' ')
+// }
+
+// --- 61 --- sum of array 
+// function oddOrEven(array) {
+//   //enter code here
+//   if (array.length == 0) return 'even'
+  
+//   return (array.length == 0) ? 0 : (array.reduce((a,b)=>a+b)%2===0) ? 'even' : 'odd'
 // }
