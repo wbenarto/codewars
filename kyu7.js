@@ -1158,3 +1158,18 @@ function infected(s){
   
 //   return [firstTotal, secondTotal]
 // }
+
+// --- 66 --- re sort array from odd and even descending ascending ---
+// function menFromBoys(arr){
+//   //your code here
+//   let result = []
+//  let even = arr.filter((e)=>e%2==0).sort((a,b)=>a-b)
+//  let odd = arr.filter((e)=>e%2==1).sort((a,b)=>b-a)
+//  let negOdd = arr.filter((e)=>e%2==-1).sort((a,b)=>b-a)
+//  negOdd = [...new Set(odd)].concat([...new Set(negOdd)])
+//  result = [...new Set(even)].concat([...new Set(negOdd)])
+//  console.log(even)
+//  console.log(odd)
+//  console.log(result)
+//  return result
+// }
