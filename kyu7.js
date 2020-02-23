@@ -1143,3 +1143,18 @@ function infected(s){
 //   console.log(lastDonation)
 //   return lastDonation > 0 ? lastDonation : ERROR
 // }
+
+// --- 65 --- Add up 2 rows --- 
+// function rowWeights(array){
+//   //your code here
+//   let first = []
+//   let total = array.reduce((a,b)=>a+b)
+//   for (var i=0; i<array.length; i+=2) {
+//     first.push(array[i])
+//   }
+  
+//   let firstTotal = first.reduce((a,b) => a+b)
+//   let secondTotal = total - firstTotal
+  
+//   return [firstTotal, secondTotal]
+// }
