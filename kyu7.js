@@ -1173,3 +1173,21 @@ function infected(s){
 //  console.log(result)
 //  return result
 // }
+// function menFromBoys(arr){
+//   arr = Array.from(new Set(arr));
+//   let odd = arr.filter(a => a % 2).sort((a, b) => b - a);
+//   let even = arr.filter(a => a % 2 === 0).sort((a, b) => a - b);
+//   return even.concat(odd);
+// }
+
+// --- 67 --- 
+// var number=function(array){
+//   //your awesome code here
+//   let result = []
+//   for (var i=0;i<array.length;i++) {
+//     if (array.length == 0) {return 'Empty array should return empty array'}
+//     else  result.push(`${i+1}: ${array[i]}`)
+//   }
+  
+//   return result
+// }
