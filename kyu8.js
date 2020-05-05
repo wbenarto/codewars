@@ -865,6 +865,11 @@ function correctPolishLetters (string) {
 return string.split('').map((c) => polishLetters[c] || c).join("");
 }
 
+--- 74 --- modulus ---
+function testEven(n) {
+  //Your awesome code here!
+  return n%2==0
+}
 
 
 
