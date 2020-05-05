@@ -793,7 +793,16 @@ function getPlanetName(id){
 // function check(a, x) {
 //   // your code here
 //   return a.indexOf(x) > -1
+// // }
+// const check = (a,x) => a.includes(x);
+
+// --- 71 --- this refers to the string being tested ---
+// String.prototype.isUpperCase = function() {
+//   // your code here
+//   console.log(this)
+//   return this==this.toUpperCase()
 // }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
