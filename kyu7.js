@@ -1191,3 +1191,22 @@ function infected(s){
   
 //   return result
 // }
+
+--- 68 --- very even number ---
+function isVeryEvenNumber(n) {
+  let first = n.map((e,total)=> total+=e)
+  console.log('first: '+first)
+  
+  
+  for(var i=0; i<n.length;i++){
+    
+  }
+  
+//   let first = n.split('').reduce((a,b)=>a+b)
+//   console.log('first: '+first)
+  
+  let result = first.split('').reduce((a,b)=>a+b)
+  console.log('result: '+result)
+  
+  return result%2;
+}

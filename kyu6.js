@@ -61,3 +61,25 @@ function hasSubpattern(string){
     }
     return false
   }
+
+
+--- 3 --- mirrors with 4 coordinates check if ray hits (0,0) or (maxX,maxY) ---
+// function reflections(maxX, maxY) {
+//   let curX = 0;
+//   let curY = 0;
+//   let dX = 1;
+//   let dY = 1;
+//   do {
+//     curX += dX;
+//     curY += dY;
+//     if (curX === maxX || curX === 0) {
+//       dX *= -1;
+//     }
+//     if (curY === maxY || curY === 0) {
+//       dY *= -1;
+//     }
+//   } while(!((curX === 0 || curX === maxX) && (curY === 0 || curY === maxY)));
+//   return (curX === 0 && curY === 0) || (curX === maxX && curY === maxY);
+// }
+
+
