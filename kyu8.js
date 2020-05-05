@@ -814,6 +814,59 @@ function getPlanetName(id){
 //   return   squareA > cubesB
 // }
 
+--- 73 --- find and replace polish chars ---
+set object key value pair for each polish chars
+replace that matching with the key
+function correctPolishLetters (string) {
+  // your code
+  // specify polish translation to alphabeth
+  // loop thru string, if match with polish, replace with alphabeth
+  
+  let polish = [
+  'ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'
+  ]
+  let arr = [];
+  for (var i=0; i<string.length;i++){
+//     if (string[i].match(string[i])) console.log(string[i])
+    
+    if(string[i].indexOf(polish) > -1) {arr.push(string[i])} 
+      
+    
+  }
+  
+console.log(arr)
+//   return string
+  
+//   return string.map(e=> {
+//     if (e.match(polish)) {e.replace(polish, 'ą, ć, ę, ł, ń, ó, ś, ź, ż')}
+//   })
+  
+//   console.log(string.replace(polish))
+}
+
+--- solution --- 
+function correctPolishLetter (str) {
+  let dict = { 'ą': 'a' , 'ć': 'c', 'ę':'e', 'ł':'l', 'ń':'n', 'ó':'o', 'ś':'s', 'ź':'z', 'ż':'z'}
+  return str.replace(/[ąćęłńóśźż]/g, match = dict(match))
+}
+var polishLetters = {
+  "ą": "a",
+  "ć": "c",
+  "ę": "e",
+  "ł": "l",
+  "ń": "n",
+  "ó": "o",
+  "ś": "s",
+  "ź": "z",
+  "ż": "z",
+};
+
+function correctPolishLetters (string) {
+return string.split('').map((c) => polishLetters[c] || c).join("");
+}
+
+
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
