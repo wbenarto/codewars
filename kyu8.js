@@ -892,7 +892,32 @@ function firstNonConsecutive (arr) {
   --- 77 --- to String ---
   var a = String(123);
 
+--- 78 --- Switch Case --- 
+function getDrinkByProfession(param){
 
+  let editedParam = param.toLowerCase()
+  switch (editedParam) {
+  case 'jabroni':
+    return 'Patron Tequila';
+    break;
+  case 'school counselor' :
+    return 'Anything with Alcohol';
+    break;
+  case 'programmer':
+    return'Hipster Craft Beer';
+    break;
+  case 'bike gang member':
+    return 'Moonshine';
+    break;
+  case 'politician':
+    return 'Your tax dollars';
+    break;
+  case 'rapper':
+    return 'Cristal';
+    break;
+  default: return 'Beer'
+  }
+  }
 
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
