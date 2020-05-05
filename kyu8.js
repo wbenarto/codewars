@@ -789,7 +789,11 @@ function getPlanetName(id){
   }
 }
 
-
+// --- 70 --- indexOf
+// function check(a, x) {
+//   // your code here
+//   return a.indexOf(x) > -1
+// }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
