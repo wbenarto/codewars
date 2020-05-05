@@ -803,6 +803,18 @@ function getPlanetName(id){
 //   return this==this.toUpperCase()
 // }
 
+// --- 72 --- reduce have initial value should be specified after function , 0 ---
+// function arrayMadness(a, b) {
+//   // Ready, get set, GO!!!
+//   let squareA = a.reduce((tot,b)=> tot + b**2,0)
+//   let cubesB = b.reduce((tot,b)=>tot + b**3,0)
+//   console.log(a, squareA)
+//   console.log(b, cubesB)
+  
+//   return   squareA > cubesB
+// }
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
