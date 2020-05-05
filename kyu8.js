@@ -879,6 +879,16 @@ function differenceInAges(ages){
   return [Math.min(...sort), Math.max(...sort), diff]
 }
 
+--- 76 --- 
+function firstNonConsecutive (arr) {
+  // loop thru arr, check if arr[i] == 
+    for (var i=0; i<arr.length -1 ;i++){
+      if ((arr[i]+1) !== arr[i+1]) 
+      return arr[i+1]
+    }
+    return null 
+  }
+
 
 
 
