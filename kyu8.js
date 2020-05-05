@@ -879,7 +879,7 @@ function differenceInAges(ages){
   return [Math.min(...sort), Math.max(...sort), diff]
 }
 
---- 76 --- 
+--- 76 --- first non consecutive ---
 function firstNonConsecutive (arr) {
   // loop thru arr, check if arr[i] == 
     for (var i=0; i<arr.length -1 ;i++){
@@ -888,6 +888,9 @@ function firstNonConsecutive (arr) {
     }
     return null 
   }
+
+  --- 77 --- to String ---
+  var a = String(123);
 
 
 
