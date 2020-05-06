@@ -929,6 +929,24 @@ function past(h, m, s){
   
 }
 
+--- 80 --- my way is way harder ---
+function strCount(str, letter){  
+  //code here
+  let result = []
+  console.log(str.split('').map(e=> e.match(letter)))
+  for (var i=0; i<str.length; i++) {
+    if (str[i] == letter) {
+      result.push(str[i]) 
+    } 
+  }
+  return str.match(letter) ? result.length : 0
+}
+
+--- solution --- 
+function strCount(str, letter){  
+  return str.split(letter).length-1
+}
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
