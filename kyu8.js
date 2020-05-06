@@ -919,6 +919,16 @@ function getDrinkByProfession(param){
   }
   }
 
+--- 79 --- 
+function past(h, m, s){
+  //#Happy Coding! ^_^
+  // 1 hour is 60 mins
+  // 1 min is 60 secs
+  // 1 sec is 1000 milliseconds
+  return h*60*60*1000 + m*60*1000 + s*1000
+  
+}
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
