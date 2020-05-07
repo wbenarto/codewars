@@ -954,6 +954,18 @@ function guessBlue(blueStart, redStart, bluePulled, redPulled) {
   return (blueStart-bluePulled)/((blueStart-bluePulled)+(redStart-redPulled))
 }
 
+--- 82 --- power to the nth ---
+function index(array, n){
+  //your code here
+//find value of the index in array
+//power it to 2
+//if value of index n isn't in array return -1
+console.log(array, n)
+console.log(array.indexOf(n))
+console.log(array[n])
+console.log(Math.pow(array[n], 2))
+return n > array.length-1 ? - 1 : Math.pow(array[n], n)
+}
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
