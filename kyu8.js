@@ -1,4 +1,5 @@
 import { lookup } from "dns";
+import { exists } from "fs";
 
 // --- #1 --- Grade Book ---
 // --- If Statement ---
@@ -1011,6 +1012,35 @@ true xor true == false // Both are true.  "xor" only returns true if EXACTLY one
 function xor(a, b) {
   // TODO: Program Me
   return (a == b) ? false : true
+}
+
+
+--- 85 --- Return an array consisting nums from 0 to N-1 ---
+** function that returns an array []
+** Mistake was, I was pushing an object from array that did not exists. 
+** should just push the index into newArray
+
+const arr = N => {
+  let result = []
+  let numEnds = `${N-1}`
+//   console.log(numEnds)
+console.log(numEnds)
+  for (var i=0;i<numEnds;i++){
+     result.push(numEnds[i])
+     
+  }
+  return N ? result : []
+
+}
+
+** Solution ** 
+const arr = N => {
+  let result = []
+
+  for (var i=0;i<N;i++){
+     result.push(i)    
+  }
+  return result 
 }
 
 
