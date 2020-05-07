@@ -1043,6 +1043,23 @@ const arr = N => {
   return result 
 }
 
+--- 86 --- return the longest word ---
+function findLongest(str) {
+
+  console.log(str.split(' ').map(e=>(e.length)).sort((a,b)=>b-a))
+  return str.split(' ').map(e=>(e.length)).sort((a,b)=>b-a)[0]
+  
+  //   console.log(str)
+  //   var spl = str.split(" ");
+  //   var longest = 0
+  //   console.log(spl)
+  //   for (var i = 0; i > spl.length; i++) {
+  //     console.log(spl[i])
+  //     if (spl(i).length > longest) {
+  //       longest = spl[i].length
+  //     }}
+  //     return longest
+  }
 
 
 
