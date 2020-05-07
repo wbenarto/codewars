@@ -1,3 +1,4 @@
+import { lookup } from "dns";
 
 // --- #1 --- Grade Book ---
 // --- If Statement ---
@@ -967,6 +968,37 @@ console.log(Math.pow(array[n], 2))
 return n > array.length-1 ? - 1 : Math.pow(array[n], n)
 }
 
+
+--- 83 --- Remove 0s from end of a num --- STUCK 
+** Mistake was made in first condition in for lookup, needing to -1 from num.length. 
+** I was seeing this from perspective of arrays, 
+** but this couldve easily been done by operation / math calculation
+** I need to use curly braces from else {break}
+** replace
+function noBoringZeros(n) {
+  // your code
+  // loop thru array n from the back, 
+  // for as long as n[i] is 0, delete, then return
+  console.log(typeof n)
+  let num = String(n).split('');
+  for (var i=num.length;i>=0;i--) {
+    console.log(num[i])
+    if (num[i] === '0') {num.pop()};
+//     return num
+  console.log(num)
+  }
+  return Number(num.join(''))
+}
+
+*** Solution *** Using replace 
+function noBoringZeros(n) {
+  // your code
+  console.log(n)
+  let strN = String(n)
+  console.log(typeof strN)
+  return Number(strN.replace(/0*$/g,''))
+  
+}
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
