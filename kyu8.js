@@ -999,6 +999,29 @@ function noBoringZeros(n) {
   return Number(strN.replace(/0*$/g,''))
   
 }
+
+--- 84 --- exclusive or , xor ---
+*** conditions are : 
+false xor false == false // since both are false
+true xor false == true // exactly one of the two expressions are true
+false xor true == true // exactly one of the two expressions are true
+true xor true == false // Both are true.  "xor" only returns true if EXACTLY one of the two expressions evaluate to true.
+
+*** solution ***
+function xor(a, b) {
+  // TODO: Program Me
+  return (a == b) ? false : true
+}
+
+
+
+
+
+
+
+
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
