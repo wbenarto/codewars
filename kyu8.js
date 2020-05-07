@@ -1061,6 +1061,28 @@ function findLongest(str) {
   //     return longest
   }
 
+  --- 87 --- conditional and formulas ---
+  function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+    // speed = distance / time
+    // time = distance / speed
+    let myTime = pontoonDistance/youSpeed ;
+    let sharkTime =sharkDistance/ sharkSpeed ;
+    let alive = myTime < sharkTime
+    console.log(myTime, sharkTime)
+    
+    if (dolphin) {
+      sharkTime = sharkTime * 2;
+      console.log(sharkTime)
+      if(myTime < sharkTime) {
+      return "Alive!"} else {
+      return "Shark Bait!"
+      }
+    } else if (myTime < sharkTime) {
+      return "Alive!"} else {
+      return "Shark Bait!"
+      }
+    }
+
 
 
 
