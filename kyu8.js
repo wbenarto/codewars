@@ -947,6 +947,13 @@ function strCount(str, letter){
   return str.split(letter).length-1
 }
 
+--- 81 ---
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+  // Your code here.
+  // probability of blue is blueLeft/totalLeft
+  return (blueStart-bluePulled)/((blueStart-bluePulled)+(redStart-redPulled))
+}
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
