@@ -1100,6 +1100,40 @@ function derive(coefficient,exponent) {
   
 }
 
+--- 89 --- STUCK ---
+** given 3 strings, combine it into one concat string **
+** tried using for loop into arr **
+** first split the string to get access into each **
+function tripleTrouble(one, two, three){
+  
+  let ones=one.split('')
+  let twos=two.split('')
+  let threes=three.split('')
+  let arr = [ones, twos, threes]
+  let res = []
+  
+  console.log(arr, res)
+}
+
+** Solution ** 
+** loop through args one and concat each string **
+** use arr.charAt(i) to get value in array **
+** we knew we should concat patterned by their index number **
+function tripleTrouble(one, two, three) {
+  var result = "";
+  for (let i = 0; i < one.length; i++) {
+    result += one.charAt(i) + two.charAt(i) + three.charAt(i);
+  }
+  return result;
+}
+
+
+
+
+
+
+
+
 
 
 
