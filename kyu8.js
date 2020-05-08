@@ -1,5 +1,6 @@
 import { lookup } from "dns";
 import { exists } from "fs";
+import { setupMaster } from "cluster";
 
 // --- #1 --- Grade Book ---
 // --- If Statement ---
@@ -1128,7 +1129,17 @@ function tripleTrouble(one, two, three) {
 }
 
 
+--- 90 --- exclusive Or --- 
+** one liner solution **
+function xor(a, b) {
+  return (a==true && b==true) || (a==false && b==false) ? false : true;
+  }
 
+** even shorter solution **
+** return me true if either a or b is not the same **
+function xor(a, b) {
+  return a != b;
+}
 
 
 
