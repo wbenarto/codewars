@@ -1205,6 +1205,16 @@ function superSize(num){
   return Number(`${num}`.split('').sort((a,b)=>b-a).join(''))
   }
 
+--- 95 --- Reverse sequence ---
+const reverseSeq = n => {
+  console.log(n)
+    let res = [];
+    for (let i=n; i>0; i--) {
+      res.push(i)
+    }
+    return res;
+  };
+
 
 
 
