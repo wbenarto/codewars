@@ -1141,7 +1141,21 @@ function xor(a, b) {
   return a != b;
 }
 
-
+--- 91 --- missing 1st and 13th. return floor number ---
+** ternary operator ** 
+function getRealFloor(n) {
+  // missing numbers are 1. 1st floor is 0
+  // 13th floor is missing
+  return (n<0) ? n : 
+  (n==0 || n==1) ? 0 :
+  (n>1 && n<13) ? n-1 :
+  (n>=13) ? n-2 : 0
+  }
+  
+** better solution **
+  function getRealFloor(n) {
+    return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+  }
 
 
 
