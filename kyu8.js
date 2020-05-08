@@ -1259,6 +1259,14 @@ function calculateTip(amount, rating) {
     return Math.ceil(tip)
   }
 
+--- 99 --- return unusual 5 ---
+** should not use any banned characters ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/") **
+
+  function unusualFive() {
+    let arr = ['a', 'b' , 'c', 'd' ,'e', 'f', 'g']
+    
+    return arr.indexOf('f')
+  }
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
