@@ -1196,11 +1196,14 @@ isValid = a => !(a.includes(1) && a.includes(2)) &&
 a.includes(5) === a.includes(6) &&
 (a.includes(7) || a.includes(8));
   // 1 & 2 cant be together
-  // 3 & 4 cant be together
-  // 5 & 6 must be together
+  // 3 & 4 cant be together using ! ( && )
+  // 5 & 6 must be together using ===
   // 7 & 8 must be selected at least one or both
 
-
+--- 94 --- sort num largest in front ---
+function superSize(num){
+  return Number(`${num}`.split('').sort((a,b)=>b-a).join(''))
+  }
 
 
 
