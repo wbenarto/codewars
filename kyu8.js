@@ -1168,6 +1168,38 @@ function cockroachSpeed(s) {
   return Math.floor(s*diff)
 }
 
+--- 93 --- STUCK ---
+** There are 4 conditions that needs to be satisfied ** 
+** confused on how to set these conditions along with each other from an array **
+
+function isValid(formula){
+  //coding and coding..
+  // nums are 1 to 8
+  // index are 0 to 7
+  // loop through formula check each element NOT
+  // arr[i] NOT 
+  // THERE IS NO NEED TO LOOP, USE INCLUDES
+  
+  console.log(formula.includes(7 || 8)) 
+  console.log()
+  
+  for (var i=0;i<formula.length;i++){
+    if (formula.includes(7 || 8) && formula[i])
+  }
+  
+  console.log(formula)
+}
+
+** Solution **
+isValid = a => !(a.includes(1) && a.includes(2)) &&
+!(a.includes(3) && a.includes(4)) &&
+a.includes(5) === a.includes(6) &&
+(a.includes(7) || a.includes(8));
+  // 1 & 2 cant be together
+  // 3 & 4 cant be together
+  // 5 & 6 must be together
+  // 7 & 8 must be selected at least one or both
+
 
 
 
