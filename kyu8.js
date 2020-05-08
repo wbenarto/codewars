@@ -1229,6 +1229,35 @@ function between(a, b) {
   } return res
 }
 
+--- 98 --- Switch case based on rating to adjust tip --- 
+** Using Math.ceil(tip) to round up dollar amount **
+function calculateTip(amount, rating) {
+  console.log(amount, rating)
+  let test = rating.toLowerCase()
+  let tip = 0;
+  
+  switch (test) {
+  case 'terrible':
+    tip = amount * 0;
+    break;
+  case 'poor':
+    tip = amount *0.05;
+    break;
+  case 'good':
+    tip =amount*0.1;
+    break;
+  case 'great':
+    tip=amount*0.15;
+    break;
+  case 'excellent':
+    tip=amount*0.20;
+    break;
+  default:
+    return 'Rating not recognised'
+    }
+    
+    return Math.ceil(tip)
+  }
 
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
