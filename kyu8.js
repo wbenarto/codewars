@@ -1151,11 +1151,22 @@ function getRealFloor(n) {
   (n>1 && n<13) ? n-1 :
   (n>=13) ? n-2 : 0
   }
-  
+
 ** better solution **
   function getRealFloor(n) {
     return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
   }
+
+
+--- 92 --- km/h to cm/sec ---
+function cockroachSpeed(s) {
+  //Good Luck!
+  // km/h to cm/sec
+  //1000/3600
+  let diff = 100000/3600
+  console.log(s)
+  return Math.floor(s*diff)
+}
 
 
 
