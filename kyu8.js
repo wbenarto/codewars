@@ -1083,10 +1083,22 @@ function findLongest(str) {
       }
     }
 
+** Cleaner solution **
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  if(dolphin){
+    sharkSpeed /= 2;
+  }
+  return pontoonDistance/youSpeed < sharkDistance/sharkSpeed ? "Alive!" : "Shark Bait!";
+}
 
-
-
-
+--- 88 --- forward ticks ---
+function derive(coefficient,exponent) {
+  let prod = coefficient * exponent
+  let sec = exponent - 1
+  
+  return `${prod}x^${sec}`
+  
+}
 
 
 
