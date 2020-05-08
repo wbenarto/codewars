@@ -1220,6 +1220,14 @@ function isDivisible(n, x, y) {
   return (n%x==0 && n%y==0)
   }
 
+--- 97 --- iterate in between ---
+function between(a, b) {
+  // your code here
+  let res = []
+  for (let i=a; i<=b; i++) {
+    res.push(i)
+  } return res
+}
 
 
 
