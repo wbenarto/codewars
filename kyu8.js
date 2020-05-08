@@ -1268,6 +1268,13 @@ function calculateTip(amount, rating) {
     return arr.indexOf('f')
   }
 
+--- 100 --- returns only num multiple of index ---
+function multipleOfIndex(array) {
+  // good luck
+  console.log(array)
+  return array.filter((e,i)=> e%i===0)
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
