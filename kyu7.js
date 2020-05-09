@@ -1210,3 +1210,110 @@ function isVeryEvenNumber(n) {
   
   return result%2;
 }
+
+--- 69 --- ATM Machine --- STUCK
+** understood the way to process the calculation **
+** but having hard time using conditional for this situation  **
+function solve(n) {
+  // Your code here
+  // bills are 500 200 100 50 20 10
+  // 500 = 5 notes
+  // 550 = 6 notes
+  // 580 = 8 notes
+  // 1 - 9 index 0
+  // 10 - 99 index 1 
+  // 100 - 999 index 2
+  // 1000 - 1500 index 3
+  // 770 test case
+  // index max is 2, num.length=3
+ 
+  let change = 0
+  let notes = 0
+  let num = `${n}`.split('')
+//    n = (100 * notes) + (50*notes) + (20*notes) + (10*notes)
+//    n index 0  index 1 index 2 index 3
+   
+ switch (n){
+   case (n > 0 && n<10):
+     notes+=Math.floor(n/10);
+     return -1;
+     break;
+    case (n>9 && n<100):
+     notes+= Math.floor(n/100);
+     break;
+    case (n>99)
+ }
+ console.log(notes)
+   return (notes) ? notes : -1
+}
+
+** Solution **
+** Using multiple while loop **
+** While n is bigger than x, reduce n by x, and add the notes count by 1 **
+
+function solve(n) {
+  if(n % 10 !== 0) return -1;
+  let count = 0;
+  while(n >= 500) { n -= 500; count += 1}
+  while(n >= 200) { n -= 200; count += 1}
+  while(n >= 100) { n -= 100; count += 1}
+  while(n >= 50) { n -= 50; count += 1}
+  while(n >= 20) { n -= 20; count += 1}
+  while(n >= 10) { n -= 10; count += 1}
+  return count;
+}
+
+--- 70 --- 
+function gracefulTipping(bill) {
+  // your code here
+  // divisible .. result = total + x % 5 === 0 
+  // elegantNum
+  // 10-99.99 divis 5
+  // 199 - 999.99 divis 50
+  // 1000 - 9999.99 divis 50
+
+  let total = bill * 1.15
+  console.log(total)
+  if(total<10) {
+    return (Math.ceil(total))
+  } else if (total>=10 && total<100) {
+    return (Math.ceil(total/5)*5)
+  } else if (total>=100 && total<1000) {
+    return Math.ceil(total/50)*50
+  } else if (total>=1000 && total<10000) {
+    return Math.ceil(total/500)*500
+  } else if (total>=10000 && total<100000) {
+    return Math.ceil(total/5000)*5000
+  } else if (total>=100000 && total<1000000){
+    return Math.ceil(total/50000)*50000
+  } else if (total>=1000000 && total<10000000){
+    return Math.ceil(total/500000)*500000
+  } else return Math.ceil(total)
+
+  
+  ***failed attempts***
+
+  // test total = 92
+  // result = 95
+  // gap = 3
+  // gap = result - total
+//   console.log((Math.ceil(total/5)*5))
+//   console.log(total)
+//   switch (total) {
+//     case (total < 10):
+//       return Math.ceil(total);
+//       break;
+//     case (total>=10 && total<100):
+//       return (Math.ceil(total/5)*5)
+//       console.log(Math.ceil(total/5)*5)
+//       break;
+//     case (total>=100 && total<1000):
+//       return (Math.ceil(total/50)*50);
+//       break;
+//     case (total>=1000 && total<10000):
+//       return (Math.ceil(total/500)*500);
+//       break;
+//     default:
+//        return (Math.ceil(total/500)*500)   
+//   }
+}
