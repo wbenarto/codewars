@@ -1317,3 +1317,19 @@ function gracefulTipping(bill) {
 //        return (Math.ceil(total/500)*500)   
 //   }
 }
+
+*** Smart solution ***
+function gracefulTipping(bill) {
+  const withRawTip = bill * 1.15;
+  const multiple = Math.ceil(5 * Math.pow(10, Math.floor(Math.log10(withRawTip)) - 1));
+  return Math.ceil(withRawTip / multiple) * multiple;
+}
+
+--- 71 ---
+function generateIntegers(m, n) {
+  let arr=[]
+  for (let i=m; i<=n; i++) {
+    arr.push(i)
+  }
+  return arr
+}
