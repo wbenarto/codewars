@@ -1325,11 +1325,68 @@ function gracefulTipping(bill) {
   return Math.ceil(withRawTip / multiple) * multiple;
 }
 
---- 71 ---
+--- 71 --- push interger between 2 nums ---
 function generateIntegers(m, n) {
   let arr=[]
   for (let i=m; i<=n; i++) {
     arr.push(i)
   }
   return arr
+}
+
+--- 72 --- STUCK --- Find end location of [x,y] ---
+--- with angle multiplier and distance multiplier ---
+--- one mistake was not converting DEGREES to RADIANS ---
+
+function crusoe(n, d, ang, distmult, angmult) {
+  // your code
+  // return lastx and lasty
+console.log(n, d, ang, distmult, angmult)
+console.log("y = "+Math.sin(ang)*d)
+//   console.log(`${Math.sqrt((Math.pow(d, 2)-(Math.pow((Math.sin(ang)*d)))))}`)
+
+
+//   console.log(ang*angmult)
+//   console.log(d*distmult)
+// start with [0,0]
+// with the angle, find out amount of last y
+
+let x =0
+let y =0
+
+// take look at n how many steps
+// x = cos(ang) * distance
+
+//   for(let i=1;i<=n;i++) {
+//      y += Math.sin(ang)*d;
+//      x += Math.sqrt(d**2-y**2);
+//     ang *= angmult;
+//     d *= distmult;
+//   }
+while (n>0){
+  y = y + Math.sin(ang)*d;
+  x = x + Math.sqrt(d**2-y**2);
+  ang *= angmult;
+  d *= distmult;
+  n--
+}
+
+console.log(x,y, ang, d)
+}
+
+*** Solution *** 
+function crusoe(n, d, ang, distmult, angmult) {
+  let x =0
+  let y =0
+  let r = ang/180* Math.PI
+
+  while (n>0){
+    y += Math.sin(r)*d;
+    x += Math.cos(r)*d;
+    r *= angmult;
+    d *= distmult;
+    n--
+  }
+
+ return [x,y]
 }
