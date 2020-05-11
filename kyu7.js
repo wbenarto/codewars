@@ -1390,3 +1390,17 @@ function crusoe(n, d, ang, distmult, angmult) {
 
  return [x,y]
 }
+
+--- 72 --- divisible by 3 ---
+** Mistake was not individually parsing string to number **
+
+function divisibleByThree(str){
+  console.log(str.split('').reduce((a,b)=>a+b))
+    return (Number(str.split('').reduce((a,b)=>a+b))%3===0) ? true : false
+  }
+
+** Solution **
+function divisibleByThree(str){
+  console.log(str.split('').reduce((a,b)=>a+b))
+    return ([...str].reduce((a,b)=>parseInt(a)+ parseInt(b),0)%3===0) ? true : false
+  }
