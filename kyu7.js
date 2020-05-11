@@ -1404,3 +1404,13 @@ function divisibleByThree(str){
   console.log(str.split('').reduce((a,b)=>a+b))
     return ([...str].reduce((a,b)=>parseInt(a)+ parseInt(b),0)%3===0) ? true : false
   }
+
+--- 73 --- return multiple of m ---
+function multiples(m, n){
+  // code here
+  let arr = []
+  for (let i=1;i<=m;i++) {
+    arr.push(n*i);
+  }
+  return arr
+}
