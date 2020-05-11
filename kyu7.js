@@ -1427,3 +1427,9 @@ function solution(digits){
   for (let i=0; i<digits.length; i++) {
     result.push(Number(digits.slice(i, i+5)))
   }
+
+  --- 75 --- Sum of integer ---
+  function getSumOfDigits(integer) {
+    //  console.log(`${integer}`.split('').reduce(()))
+     return `${integer}`.split('').reduce((a,b)=>Number(a)+Number(b),0)
+    }
