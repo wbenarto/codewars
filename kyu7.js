@@ -1414,3 +1414,16 @@ function multiples(m, n){
   }
   return arr
 }
+
+--- 74 --- Using slice to push 5 consecutive numbers and return the largest sequence ---
+function solution(digits){
+  console.log(digits)
+  // 5 largest digit number in series
+  // filter 5 digits sequence 
+  // largest number on the first index
+  // create result array that contains 5 digits consecutive 
+  // sort that result
+  let result = []
+  for (let i=0; i<digits.length; i++) {
+    result.push(Number(digits.slice(i, i+5)))
+  }
