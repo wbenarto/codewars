@@ -1433,3 +1433,32 @@ function solution(digits){
     //  console.log(`${integer}`.split('').reduce(()))
      return `${integer}`.split('').reduce((a,b)=>Number(a)+Number(b),0)
     }
+
+--- 76 --- check if naughty or nice from an object ---
+function getNiceNames(people){
+  //TODO
+  console.log(people)
+  let arr = []
+  for (let i=0;i<people.length;i++) {
+  console.log(people[i].name)
+    if(people[i].wasNice === true ) {
+     arr.push(people[i].name)
+    }
+  }
+  console.log(arr)
+  return (arr) ? arr : []
+}
+
+function getNaughtyNames(people){
+  //TODO
+  console.log(people)
+  let arr = []
+  for (let i=0; i< people.length; i++) {
+    if (people[i].wasNice === false) {
+      arr.push(people[i].name)
+    }
+  }
+  return (arr)?arr:[]
+  console.log(arr)
+  
+}
