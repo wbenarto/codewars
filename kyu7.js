@@ -1513,3 +1513,46 @@ const myLanguages = results => Object.entries(results)
     }
     return res.filter(e=> !isNaN(e) )
   }
+
+
+  ** Solution **
+  const multiplyAndFilter = (array, multiplier) => array.filter(a => typeof(a) == "number").map(a => a * multiplier);
+
+
+  --- 80 --- STUCK ---
+  ** Replace FUD with values **
+  ** look into the graph see how many valleys **
+  function countingValleys(s) {
+    //here we go again
+    let level = 0
+    console.log(s)
+    // U is UP
+    // F is Forward
+    // D is Down
+    let val= { U : 1,
+              F : 0,
+              D : -1}
+    let nu = s.replace(/[FUD]+/g, Object.values(val))
+    console.log(nu)
+  //   string = 'FUFFDDFDUDFUFUF'
+  //   translate = '0100-1-10-11-101010' 
+    
+  //   entrance at -1 exit at 1 so 1 valley
+  //   s.toLowerCase()  
+  }
+** Solution ** 
+** Everytime value goes over level 0, it's a valley **
+
+  function countingValleys(s) {
+    let valleys = 0;
+    for (let i = 0, seaLevel = 0; i < s.length; i++) {
+      if (s[i] == 'U')
+        seaLevel++;
+      else if (s[i] == 'D')
+        seaLevel--;
+      if (seaLevel == 0 && s[i] == 'U')
+        valleys++;
+    }
+    return valleys;
+  }
+
