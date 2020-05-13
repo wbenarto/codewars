@@ -1462,3 +1462,19 @@ function getNaughtyNames(people){
   console.log(arr)
   
 }
+
+
+--- 77 --- return divisor or number if prime ---
+function divisors(integer) {
+  console.log(integer)
+  let arr = []
+//   `${integer}`.map((e, i)=> (Number(e)%Number(i)===0) ? arr.push(e) : 0)
+// console.log(arr)
+  let prime = integer
+  for (var i=2;i<integer;i++) {
+    if(integer%i===0) {
+      arr.push(i)
+    } 
+  }
+  return (arr.length) ? arr : `${integer} is prime`
+};
