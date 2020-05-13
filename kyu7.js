@@ -1487,5 +1487,29 @@ function myLanguages(results) {
   console.log(Object.values(results))
   
   return Object.keys(results).filter(r=> results[r]>59).sort((a,b)=> results[b]-results[a])
-  
 }
+
+** Diff solution ** 
+const myLanguages = results => Object.entries(results)
+  .filter(([name, points]) => points >= 60)
+  .sort(([name1, points1], [name2, points2]) => points2 - points1)
+  .map(([name, points]) => name);
+
+  --- 79 --- multiply array with multiplier, filter out isNaN ---
+  ** Number.isFinite() checks if an element is a finite number, including decimals **
+  ** Number.isInteger() checks if an element is an integer which doesnt include decimals **
+  function multiplyAndFilter(array, multiplier){
+    // your code
+    console.log(array, multiplier)
+  //   return array.filter(e=> e typeof Number).map((e,multiplier)=> e*multiplier)
+  //  console.log(array.filter(e=>isNaN(e)? array.pop(e) : e) )
+    let res = []
+    for (let i=0; i<array.length; i++) {
+      if (Number.isFinite(array[i]) ) {
+        res.push(array[i] * multiplier)
+      } 
+      
+      console.log(typeof array[i])
+    }
+    return res.filter(e=> !isNaN(e) )
+  }
