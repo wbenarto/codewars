@@ -1478,3 +1478,14 @@ function divisors(integer) {
   }
   return (arr.length) ? arr : `${integer} is prime`
 };
+
+--- 78 --- Dealing with Objects -- 
+** using Object.keys() to get into results and access keys **
+** filter out results[r] that are greater than 59 **
+** sort the result[r] in ascending order **
+function myLanguages(results) {
+  console.log(Object.values(results))
+  
+  return Object.keys(results).filter(r=> results[r]>59).sort((a,b)=> results[b]-results[a])
+  
+}
