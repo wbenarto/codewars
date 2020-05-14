@@ -1556,3 +1556,32 @@ const myLanguages = results => Object.entries(results)
     return valleys;
   }
 
+--- 81 --- Take strings that are not in each other and concat ---
+function solve(a,b){
+  //..
+ // first string take a[i] that is not on b
+ // 2nd string take b[i] that is not on a
+ // concat the two strings together
+ 
+ let aSplt = a.split('')
+ let bSplt = b.split('')
+ let str1 = []
+ let str2 = []
+ 
+ console.log(aSplt,bSplt)
+ for (let i=0; i<aSplt.length; i++) {
+ 
+     if(bSplt.includes(aSplt[i]) === false) {
+       str1.push(aSplt[i])
+     }
+   
+ }
+ 
+ for (let j=0; j<bSplt.length; j++) {
+    if(aSplt.includes(bSplt[j]) === false) {
+       str2.push(bSplt[j])
+     }
+ }
+ console.log()
+ return str1.join('').concat(str2.join(''))
+ };
