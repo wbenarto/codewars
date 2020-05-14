@@ -1585,3 +1585,32 @@ function solve(a,b){
  console.log()
  return str1.join('').concat(str2.join(''))
  };
+
+
+ ** Better solution **
+ ** using new Set() to take out copies of elements **
+ ** use spread operators and combine both a and b **
+ ** filter out, each element in the set check if it's there using has()**
+ ** use XOR or exclusive or operator ^ **
+ ** this will satisify the arguments to take only missing elements from each other ** 
+** Using ^ bitwise operator XOR (exclusive OR)** 
+
+ function solve(a,b) {
+  let setA = new Set(a);
+  let setB = new Set(b);
+  return [...(a+b)].filter(c => setA.has(c) ^ setB.has(c)).join("");
+};
+
+--- 82 --- Add up half the sum of n ---
+function halvingSum(n) {
+  // n + n/2 + n/4 + n/8 + n/16 + n/32 + n/64
+  // divide until remainder is less than n
+    let arr = []
+    
+    for (let i=1; i<n; i*=2) {
+      arr.push(Math.floor(n/i))
+    
+    }
+    return (arr.reduce((a,b)=>a+b))    
+  }
+  
