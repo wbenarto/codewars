@@ -1697,3 +1697,19 @@ function segments(m, a) {
       console.log(res)
       return res
     }
+
+    --- 86 --- 
+    function binaryCleaner(arr) {
+      console.log(arr)
+      let first = []
+      let sec = []
+      arr.map((e,i) => {
+        if (e<=1) {first.push(e)}
+        else sec.push(i)
+      })
+      
+      let second = new Set(sec)
+      console.log(first, [...second])
+      return [first, [...second]]
+        // 
+      }
