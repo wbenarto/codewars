@@ -1645,3 +1645,55 @@ function sumEvenNumbers(input) {
 //   console.log(input.filter(e=> e%2===0))
   return input.filter(e=>e%2===0).reduce((a,b)=> a+b)
 }
+
+--- 85 --- STUCK --- 
+** given x axis, check if num is not on any of the segments ** 
+
+function segments(m, a) {
+  //   console.log(m)
+  //   console.log(a)
+    let res = []
+    let final = []
+    
+  //   for (let j=0; j<a.length; j++) {
+   
+  //     while(m>=0 ){
+  //       res.push(a[j].includes(m));
+  //       console.log(m)
+  //       console.log(a[j])
+  //       m--
+        
+  //     } 
+  //   }
+    
+    while (m>=0) {
+      for (let j=0; j<a.length;j++) {
+        res.push(a[j].includes(m))
+        console.log(a[j])
+        if(!res.includes(true)) final.push(m)
+      }
+      console.log(m)
+      console.log(a)
+      m--
+      
+    }
+    
+    console.log(final)
+    console.log(res)
+  }
+
+  ** Solution **
+  ** using every, to loop through the array ** 
+  function segments(m, a) {
+    //   console.log(m)
+    //   console.log(a)
+      let res = []
+      for (let i=0; i<=m ;i++){
+        if (a.every(array=> i < array[0] || i > array[1])) {
+        res.push(i)}
+        
+      }
+      
+      console.log(res)
+      return res
+    }
