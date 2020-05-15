@@ -1611,6 +1611,37 @@ function halvingSum(n) {
       arr.push(Math.floor(n/i))
     
     }
-    return (arr.reduce((a,b)=>a+b))    
+    return arr.length ? (arr.reduce((a,b)=>a+b)) : 1
   }
   
+  --- 83 --- STUCK ---
+  ** Find 2 consecutive even number and add * in between **
+  ** using replace and regex **
+  ** ?= is forward look ahead ** 
+  Array.prototype.toString = function() { return this.join(''); };
+
+function asteriscIt(n = '') {
+  return n.toString().replace(/([02468])(?=[02468])/g, '$1*');
+};
+
+--- 84 --- Get min and Max from array ---
+** use spread operator to access arr **
+function getMinMax(arr){
+  //..
+  
+  console.log(arr)
+  console.log(...arr)
+  let min = Math.min(...arr)
+  let max = Math.max(...arr)
+  console.log(min, max)
+  console.log(...arr)
+  return [min,max]
+};
+
+--- 84 --- sum up only even numbers --
+function sumEvenNumbers(input) {
+  // [...]
+//   console.log(input)
+//   console.log(input.filter(e=> e%2===0))
+  return input.filter(e=>e%2===0).reduce((a,b)=> a+b)
+}
