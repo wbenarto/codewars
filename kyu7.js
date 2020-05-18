@@ -1713,3 +1713,37 @@ function segments(m, a) {
       return [first, [...second]]
         // 
       }
+
+
+      --- 87 --- 
+      function calculate(num1, operation, num2) {
+        //TODO: make a basic calculator. 
+        console.log(num2)
+        switch (operation) {
+           case "+" :
+             return num1 + num2;
+             break;
+           case "-" :
+             return num1-num2;
+             break;
+           case "*" :
+             return num1 * num2;
+             break;
+           case "/":
+             if (num2 === 0) { 
+             return null;} else return num1/num2
+             break;
+           default : return null
+        }
+       }
+
+       ** Solution **
+       function calculate(num1, operation, num2) {
+        var ops = {
+          '+': function(x, y) { return x + y; },
+          '-': function(x, y) { return x - y; },
+          '*': function(x, y) { return x * y; },
+          '/': function(x, y) { return y === 0 ? null : x / y; }
+        };
+        return (ops[operation] || function() { return null; })(num1, num2);
+      }
