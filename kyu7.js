@@ -1638,7 +1638,7 @@ function getMinMax(arr){
   return [min,max]
 };
 
---- 84 --- sum up only even numbers --
+--- 85 --- sum up only even numbers --
 function sumEvenNumbers(input) {
   // [...]
 //   console.log(input)
@@ -1646,7 +1646,7 @@ function sumEvenNumbers(input) {
   return input.filter(e=>e%2===0).reduce((a,b)=> a+b)
 }
 
---- 85 --- STUCK --- 
+--- 86 --- STUCK --- 
 ** given x axis, check if num is not on any of the segments ** 
 
 function segments(m, a) {
@@ -1698,7 +1698,7 @@ function segments(m, a) {
       return res
     }
 
-    --- 86 --- 
+    --- 87 --- 
     function binaryCleaner(arr) {
       console.log(arr)
       let first = []
@@ -1715,7 +1715,7 @@ function segments(m, a) {
       }
 
 
-      --- 87 --- 
+      --- 88 --- 
       function calculate(num1, operation, num2) {
         //TODO: make a basic calculator. 
         console.log(num2)
@@ -1748,7 +1748,7 @@ function segments(m, a) {
         return (ops[operation] || function() { return null; })(num1, num2);
       }
 
-      --- 88 --- given array of objects, return key value pair --- 
+      --- 89 --- given array of objects, return key value pair --- 
       function capital(capitals){
         //...
       //   console.log(capitals[0], capitals[0].state, capitals[0].capital)
@@ -1760,4 +1760,24 @@ function segments(m, a) {
       return capitals.map(e => {
         return `The capital of ${e.state || e.country} is ${e.capital}`
       })
+      }
+
+--- 89 --- 
+      function completeSeries(arr) {
+        // write your code here
+       
+        let sorted = arr.sort((a,b)=> a-b)
+        let max = Math.max(...sorted)
+        let set = new Set(sorted) 
+        console.log(set)
+        
+        let result = []
+        for (var i=0; i<=max; i++){
+          result.push(i)
+        }
+        
+        return set.size == sorted.length ?
+        result
+         : [0]
+       
       }
