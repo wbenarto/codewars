@@ -1747,3 +1747,17 @@ function segments(m, a) {
         };
         return (ops[operation] || function() { return null; })(num1, num2);
       }
+
+      --- 88 --- given array of objects, return key value pair --- 
+      function capital(capitals){
+        //...
+      //   console.log(capitals[0], capitals[0].state, capitals[0].capital)
+        
+      //   for (var i = 0; i < capitals.length; i++) {
+      //     console.log(capitals[i].state)
+      //     return `The capital of ${capitals[i].state} is ${capitals[i].capital}`
+      //   }
+      return capitals.map(e => {
+        return `The capital of ${e.state || e.country} is ${e.capital}`
+      })
+      }
