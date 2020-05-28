@@ -1747,8 +1747,7 @@ function segments(m, a) {
         };
         return (ops[operation] || function() { return null; })(num1, num2);
       }
-
-      --- 89 --- given array of objects, return key value pair --- 
+ --- 89 --- given array of objects, return key value pair --- 
       function capital(capitals){
         //...
       //   console.log(capitals[0], capitals[0].state, capitals[0].capital)
@@ -1762,7 +1761,7 @@ function segments(m, a) {
       })
       }
 
---- 89 --- 
+--- 89 --- Return non duplicated array ---
       function completeSeries(arr) {
         // write your code here
        
@@ -1781,3 +1780,30 @@ function segments(m, a) {
          : [0]
        
       }
+
+--- 90 --- STUCK ---
+
+function change(string){
+  // ..
+//   console.log(("10100000000000000000000001").length)
+//   console.log(string)
+  let input = "a **& bZ"
+  let result = '000000000000000000000000'
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  
+//   console.log(alphabet.indexOf("a"))
+//   console.log(typeof string)
+  string.toLowerCase().split('').map((e,i)=> {
+  
+    console.log(alphabet, e,  alphabet.indexOf(e))
+    let index = alphabet.indexOf(e)
+    console.log(result.charAt(index))
+    if (alphabet.indexOf(e)) {
+    result.charAt(index).replace("0", "1")
+  }
+  })
+  
+  return result
+  
+  
+}
