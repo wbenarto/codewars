@@ -1761,52 +1761,52 @@ function segments(m, a) {
       })
       }
 
---- 89 --- Return non duplicated array ---
-      function completeSeries(arr) {
-        // write your code here
+// --- 89 --- Return non duplicated array ---
+//       function completeSeries(arr) {
+//         // write your code here
        
-        let sorted = arr.sort((a,b)=> a-b)
-        let max = Math.max(...sorted)
-        let set = new Set(sorted) 
-        console.log(set)
+//         let sorted = arr.sort((a,b)=> a-b)
+//         let max = Math.max(...sorted)
+//         let set = new Set(sorted) 
+//         console.log(set)
         
-        let result = []
-        for (var i=0; i<=max; i++){
-          result.push(i)
-        }
+//         let result = []
+//         for (var i=0; i<=max; i++){
+//           result.push(i)
+//         }
         
-        return set.size == sorted.length ?
-        result
-         : [0]
+//         return set.size == sorted.length ?
+//         result
+//          : [0]
        
-      }
+//       }
 
---- 90 --- STUCK ---
+// --- 90 --- STUCK ---
 
-function change(string){
-  // ..
-//   console.log(("10100000000000000000000001").length)
-//   console.log(string)
-  let input = "a **& bZ"
-  let result = '000000000000000000000000'
-  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+// function change(string){
+//   // ..
+// //   console.log(("10100000000000000000000001").length)
+// //   console.log(string)
+//   let input = "a **& bZ"
+//   let result = '000000000000000000000000'
+//   let alphabet = 'abcdefghijklmnopqrstuvwxyz'
   
-//   console.log(alphabet.indexOf("a"))
-//   console.log(typeof string)
-  string.toLowerCase().split('').map((e,i)=> {
+// //   console.log(alphabet.indexOf("a"))
+// //   console.log(typeof string)
+//   string.toLowerCase().split('').map((e,i)=> {
   
-    console.log(alphabet, e,  alphabet.indexOf(e))
-    let index = alphabet.indexOf(e)
-    console.log(result.charAt(index))
-    if (alphabet.indexOf(e)) {
-    result.charAt(index).replace("0", "1")
-  }
-  })
+//     console.log(alphabet, e,  alphabet.indexOf(e))
+//     let index = alphabet.indexOf(e)
+//     console.log(result.charAt(index))
+//     if (alphabet.indexOf(e)) {
+//     result.charAt(index).replace("0", "1")
+//   }
+//   })
   
-  return result
+//   return result
   
   
-}
+// }
 
 --- 91 ---
 function capital(capitals) {
