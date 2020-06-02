@@ -1832,3 +1832,34 @@ function one(arr, fun){
   console.log(result)
   return (result.length == 1) ? true : false
 }
+
+--- better solution ---
+*** using filter to run the function on array. let the length only to 1 ***
+function one(arr, fun){
+  return arr.filter(fun).length===1
+}//z.
+
+
+--- 93 --- make capital ---
+var greet = function(name) {
+  name = name.toLowerCase()
+  
+  console.log(name.split('').slice(0,1))
+  let capital = name.charAt(0).toUpperCase()
+  let rest = name.slice(1)
+  
+  // loop thru all then capital index 0
+  console.log(capital, name[0])
+  
+  console.log(capital+rest)
+  return `Hello ${capital}${rest}!`
+  };
+
+  --- better solution --- 
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+}
+
+var greet = function(name) {
+return "Hello " + name.capitalize() + "!";
+};
