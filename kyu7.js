@@ -1814,3 +1814,21 @@ function capital(capitals) {
     return 'The capital of ' + (e.state || e.country) + ' is ' + e.capital
   })
 }
+
+--- 92 --- given an array of nums, and a function, return true if only 1 from array ---
+*** to print out a function, console.log(function.toString()) ***
+
+function one(arr, fun){
+  // ...
+  console.log(arr)
+  console.log(fun.toString())
+  let result = []
+  
+  
+  for(let i=0; i<arr.length;i++){
+    if (fun(arr[i])) {result.push(arr[i])}
+  }
+  
+  console.log(result)
+  return (result.length == 1) ? true : false
+}
