@@ -1863,3 +1863,20 @@ var greet = function(name) {
 var greet = function(name) {
 return "Hello " + name.capitalize() + "!";
 };
+
+--- 94 --- Orthogonal vecctor ---
+function isOrthogonal(u,v) {
+  // TODO: Program Me
+  // if dot product equals zero is orthogonal
+  // 2 arrays u and v
+  // dot product is map between the two arrays
+  console.log(u[0], v[0])
+  console.log(u[1], v[1])
+  let result = 0
+  for (var i=0; i<u.length; i++) {
+    result += (u[i]*v[i])
+  }
+  return result === 0 ? true : false
+  
+//   console.log(u,v)
+}
