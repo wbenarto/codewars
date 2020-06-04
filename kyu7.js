@@ -1921,3 +1921,19 @@ console.log(total)
 
 return total <= 1 ? `${total} glass of water` : `${total} glasses of water`
 }
+
+--- 98 --- Check how many files can be saved ---
+function save(sizes, hd) {
+  // your code here
+  console.log(sizes, hd)
+  let arr = []
+  
+  for (var i=0, result=sizes[0]; i< sizes.length; i++) {
+    if(result <= hd) {
+    arr.push(sizes[i]);
+    result += sizes[i+1]
+    }
+  }
+  console.log(arr)
+  return arr.length
+}
