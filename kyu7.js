@@ -1937,3 +1937,23 @@ function save(sizes, hd) {
   console.log(arr)
   return arr.length
 }
+
+--- better solution ---
+function save(sizes, hd) {
+  let i = -1;
+  while (hd >=0) {
+    hd -= sizes.shift();
+    i++;
+  }
+  return i;
+}
+
+--- 99 --- find ratio
+function findScreenHeight(width, ratio) {
+  // Happy coding :)
+  console.log(width, ratio)
+
+  let side = width * (ratio.split(':')[1]/ratio.split(':')[0])
+  console.log(width, side)
+  return`${width}x${side}`
+}
