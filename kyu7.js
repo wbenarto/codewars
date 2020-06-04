@@ -1880,3 +1880,15 @@ function isOrthogonal(u,v) {
   
 //   console.log(u,v)
 }
+
+--- 95 --- find capital ---
+function capital(capitals){
+  //...
+console.log(capitals)
+console.log(capitals.map(e => e.capital))
+
+return capitals.map( c=> 
+ `The capital of ${c.state || c.country} is ${c.capital}`
+)
+
+}
