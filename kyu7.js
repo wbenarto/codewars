@@ -1890,5 +1890,19 @@ console.log(capitals.map(e => e.capital))
 return capitals.map( c=> 
  `The capital of ${c.state || c.country} is ${c.capital}`
 )
+}
 
+--- 96 --- reverse array ---
+reverse = function(array) {
+  // TODO: program me!
+  console.log(array)
+  let result = []
+  
+  for (var i=array.length-1; i>=0; i--) {
+    console.log(array[i])
+    result.push(array[i])
+  }
+  console.log(result)
+  
+  return result
 }
