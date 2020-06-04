@@ -1906,3 +1906,18 @@ reverse = function(array) {
   
   return result
 }
+
+--- 97 --- Need to drink num of water ---
+function hydrate(s) {
+  // your code here
+console.log(s)
+let split = s.split(' ')
+
+let arr = []
+let num = split.filter(Number)
+console.log(num)
+let total = num.reduce((a,b)=>Number(a)+ Number(b))
+console.log(total)
+
+return total <= 1 ? `${total} glass of water` : `${total} glasses of water`
+}
