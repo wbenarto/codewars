@@ -82,4 +82,12 @@ function hasSubpattern(string){
 //   return (curX === 0 && curY === 0) || (curX === maxX && curY === maxY);
 // }
 
-
+--- 4 --- Diagonal grid ---
+function getDiagonalCode(grid) {
+  // write your code here
+  console.log(grid)
+  // pattern : 1(1) 2(2) 3(3) 4(4) last(last) 
+  // pattern : 4(6) 3(7) 2(8)
+  
+  
+}
