@@ -8,6 +8,8 @@
 //   return true
 // }
 
+import { DH_UNABLE_TO_CHECK_GENERATOR } from "constants"
+
 // function numPrimorial(n){
 //   //your code here
 // //   let result = 0
@@ -82,12 +84,28 @@ function hasSubpattern(string){
 //   return (curX === 0 && curY === 0) || (curX === maxX && curY === maxY);
 // }
 
---- 4 --- Diagonal grid ---
-function getDiagonalCode(grid) {
-  // write your code here
-  console.log(grid)
-  // pattern : 1(1) 2(2) 3(3) 4(4) last(last) 
-  // pattern : 4(6) 3(7) 2(8)
-  
-  
+--- 4 --- Find a slice of prime number ---
+// prime num is not declared in arguments, so we need to create a function to check
+// function is prime takes a num check if prime
+function isPrime(num) {
+  for(let i = 2; i <= Math.floor(num/2);i++){
+    if (num % i === 0) { return false }
+  }
+  return true
+}
+
+// set result to empty string, num start at two
+// a is index when it starts, b is how many. declaring the max of result
+// while result.length < a + b
+// if num which starts at two, is prime, if it is, push it into result as a string, 
+// if not, do nothing, keep checking the number by ++ until met with while condition
+// return the result slicing(from index a, to index a+b)
+function solve(a,b){
+  let result = '';
+  let num = 2;
+  while (result.length < a+b){
+    if(isPrime(num)) {result += num.toString();}
+    num++;
+  }
+  return result.slice(a,a+b);
 }
