@@ -109,3 +109,53 @@ function solve(a,b){
   }
   return result.slice(a,a+b);
 }
+
+
+--- 5 --- STUCK ---
+// approached the problem with recursive function in mind. 
+// issue is to move operand to calculate the second operand argument
+
+function calculate(expression) {
+
+  // recursive function
+  // find the operand, calculate two nums
+  // if next is an operand, calculate two nums
+  console.log(expression)
+  let result = 0
+  console.log(expression.split(' '))
+  let arr = expression.split(' ')
+  for (var i=0; i<arr.length; i++) {
+    
+     if (arr[i] && arr[i+1] !== Number) {
+     let currentIndex = arr[i+1]
+     }
+    
+    let recursive = (operand) => {
+       switch (operand) {
+         case "+":
+          return Number(arr[currentIndex]) + Number(arr[currentIndex+1]);
+          break;
+        case "-":
+          return Number(arr[currentIndex]) - Number(arr[currentIndex+1]);
+          break;
+        case "/":
+          return Number(arr[currentIndex]) / Number(arr[currentIndex+1]);
+          break;
+        case "*":
+          return Number(arr[currentIndex]) * Number(arr[currentIndex+1]);
+          break;
+        default: return Number(arr[currentIndex])
+       }
+    }
+  
+    console.log(recursive(arr[i]))
+  
+    if (arr[i] && arr[i+1] !== Number) {
+      
+      let first = recursive(arr[i+1])
+      console.log('first: ' + first)
+      return recursive(arr[i])
+    } else return arr[i]
+  }
+//   return Number(expression);
+}
