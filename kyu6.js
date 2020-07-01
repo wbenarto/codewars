@@ -193,3 +193,30 @@ var countBits = function(n) {
 console.log(n.toString(2).split(''))
 console.log(n.toString(2).split('').reduce((a,b) => parseInt(a) + parseInt(b), 0))
 };
+
+--- 7 --- STUCK
+function maxBall(v0) {
+  // your code
+  // h = velocity * t - 0.5 * 9.81 * t * t
+  // h = t(v-0.5*9.81*t)
+  // t = h/(v - 0.5 * 9.81 * t)
+  
+  
+  // looking for time of maximum height recorded
+  console.log(v0)
+  let g = 9.81*0.5
+  let vMeter = v0 * (1000/3600)
+  let h = vMeter * t - g * t * t 
+  
+  // find max height 
+  for (var t = 0, h = []; t < 100; t++ ) {
+    
+  }
+  
+}
+--- solution ---
+// adjust time to seconds to tenths, v to mpks and divide by g
+function maxBall(v0) {
+  const g = 9.81, mpsToKph = 3.6, secondsToTenths = 10;
+  return Math.round(secondsToTenths * v0 / mpsToKph / g);
+}
