@@ -159,3 +159,37 @@ function calculate(expression) {
   }
 //   return Number(expression);
 }
+
+// solution 
+function calculate ( expression ) {
+  const stack = [];
+  const operations = {
+      '+': () => (stack.push(stack.pop() + stack.pop())),
+      '-': () => (stack.push(stack.pop() - stack.pop())),
+      '*': () => (stack.push(stack.pop() * stack.pop())),
+      '/': () => (stack.push(stack.pop() / stack.pop()))
+  };
+  
+  for ( let token of expression.split(' ').reverse() )
+      operations[token] ? operations[token]() : stack.push(+token);
+  
+  return stack[0];
+}
+
+('+', '2', '1')
+// expression split and reversed
+// ('1', '2', '+')
+// if token is operations, run operations[token]()
+// operations[token]()
+// 
+
+--- 6 --- 
+-- convert num to bits then find out how many bits for each n ---
+var countBits = function(n) {
+  // Program Me
+  console.log(n)
+//   return n.toString(2).split('').reduce((a,b)=> parseInt(a) + parseInt(b), 0)
+// toString will get n to bits
+console.log(n.toString(2).split(''))
+console.log(n.toString(2).split('').reduce((a,b) => parseInt(a) + parseInt(b), 0))
+};
