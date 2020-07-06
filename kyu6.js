@@ -220,3 +220,17 @@ function maxBall(v0) {
   const g = 9.81, mpsToKph = 3.6, secondsToTenths = 10;
   return Math.round(secondsToTenths * v0 / mpsToKph / g);
 }
+
+
+--- 8 --- XOR ^ operation ---
+// given hash array of integers
+// decode integer into ASCII char code
+// get character using the decoded ascii 
+// return
+function savePepe(hash) {
+  // accumulating all integer to be decoded
+  return hash.reduce((acc, curr, idx) => {
+    const decoded = ((129 *  hash[idx]) ^ (idx === 0 ? 0 : 129 * acc.charCodeAt(idx - 1))) % 256;
+    return acc += String.fromCharCode(decoded);
+  }, "" )
+}
