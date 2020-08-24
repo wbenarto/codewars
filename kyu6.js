@@ -234,3 +234,39 @@ function savePepe(hash) {
     return acc += String.fromCharCode(decoded);
   }, "" )
 }
+
+--- 9 --- stuck ---
+
+function getOrder(input) {
+  
+  let lookup = ["Burger", "Fries", "Chicken", "Pizza", "Sandwich", 
+                "Onionrings", "Milkshake", "Coke"]
+  const capitalize = word => word.slice(0,1) + word.slice(1);
+  const comparator = (a, b) => menu.indexOf(a) - menu.indexOf(b);
+
+  return input.match(new RegExp(menu.join('|'), "ig")).map(capitalize).sort(comparator).join(' ');
+  console.log(input)
+  
+  // look up input, split to each food item
+  // sort the food item based on lookup order
+  // return each string with Uppercase first letter, and add space in between
+  
+  // loop thru input, store each letter in temp array until find a match
+  // once complete an item, push it into menu 
+  
+  for (let el of input) {
+    console.log(el)
+    let word = []
+    let temp = []
+    let menu = []
+    if (word.match(lookup)) {
+      word.push(temp)
+    } else {
+      el.push(word)
+    }
+    
+    console.log(word)
+  } 
+  
+  return "";
+}
