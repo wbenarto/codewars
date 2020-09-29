@@ -1970,3 +1970,63 @@ function pairs(ar){
    }
    return result
  };
+
+
+---- 101 --- 
+ function wordValue(a) {
+  console.log('a   :'+ a);
+  
+  // each letter has equal values as in alphabet
+  // loop thru array
+  //    
+  // arr[0] multiply by 1
+  // return sum of all letters
+
+//   .charFromIndex()
+//   's'.charCodeAt(0) - 97
+  let result = [];
+  
+//   for (let i=0; i<a.length; i++) {
+//    let val = a[i].forEach(e=> e.charCodeAt(0)-96).reduce((a,b) => a+b)
+//    console.log(val)
+//   }
+
+  for (let i=0; i<a.length; i++) {
+//     let split = a[i].split(' ')
+//     let translated = a[i].charCodeAt(0)-97
+    
+    let count = 0;
+    for (let j = 0; j<a[i].length; j++) {
+      let val = a[i][j].charCodeAt(0)-96;
+      console.log(a[i].match(/[ ]/))
+      if(a[i][j] === " ") {
+         val = 0
+      }
+      console.log(a[i][j])
+     
+      console.log('val : ' + val)
+      count += val;
+      console.log('count : ' + count)
+      
+//       result.push(count)
+    }
+     console.log('count : ' + count)
+    result.push(count*(i+1))
+    console.log("result   : " +result)
+//     //     result = split.forEach(e => e.charCodeAt(0) - 97).reduce((a,b) => a + b)
+  }
+  return result
+  
+}
+
+
+console.log('a'.charCodeAt(0)-97)
+
+
+*** Solution ***
+function wordValue(a) {
+  return a.map((s,i) => s.replace(/\s/g, '')
+                         .split('')
+                         .map(b => (b.charCodeAt()-96))
+                         .reduce((acc, cur) => (acc+=cur),0)*(i+1));
+}
