@@ -1957,3 +1957,16 @@ function findScreenHeight(width, ratio) {
   console.log(width, side)
   return`${width}x${side}`
 }
+
+--- 100 --- 
+function pairs(ar){
+  //.. loop every pair
+   let result = 0
+   for (let i=0; i<ar.length; i+=2) {
+     console.log(ar[i]);
+     if( Math.abs(ar[i] - ar[i+1]) === 1) {
+       result++
+     }
+   }
+   return result
+ };
