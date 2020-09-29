@@ -270,3 +270,34 @@ function getOrder(input) {
   
   return "";
 }
+
+--- 10 --- So Gewd ---
+decodeMorse = function(morseCode){
+  //your code here
+  let result = ''
+  console.log(morseCode)
+  let words = morseCode.split('   ')
+//   let letters = words.split(' ')
+  console.log("words: " + words)
+ let letters = words.map( e=> e.split(' '))
+//   let translate = letters.map(e => e.replace(e, MORSE_CODE[e])
+  for(let i = 0; i<letters.length; i++) {
+ 
+    let ascii = letters[i].map(e=> MORSE_CODE[e]).join('')
+       console.log("looping the letters :" + ascii)
+//     result.push(ascii)
+  }
+  console.log(result)
+  return result
+//   console.log(translate)
+}
+
+decodeMorse = function(morseCode){
+  
+  let clean = morseCode.replace(/^[ ]$/, '')
+  console.log(clean)
+  return(clean.split('   ')
+              .map( e=> e.split(' ').map( e=> 
+                                        MORSE_CODE[e]).join('')).join(' ')
+             )
+}
