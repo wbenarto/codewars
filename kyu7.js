@@ -2057,3 +2057,11 @@ function reverseLetter(str) {
   
   
 }
+
+--- 104 --- 
+// return the two oldest/oldest ages within the array of ages passed in.
+function twoOldestAges(ages){
+  let sort = ages.sort((a,b) => a - b)
+  console.log(sort[sort.length-1])
+  return [sort[sort.length-2], sort[sort.length-1]]
+}
