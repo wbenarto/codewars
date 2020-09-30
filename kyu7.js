@@ -2065,3 +2065,42 @@ function twoOldestAges(ages){
   console.log(sort[sort.length-1])
   return [sort[sort.length-2], sort[sort.length-1]]
 }
+
+--- 105 --- Stuck 
+function DNAStrand(dna){
+  //your code here
+  let dict = {
+    "A" : "T",
+    "T" : "A",
+    "G" : "C",
+    "C" : "G"
+  }
+console.log(typeof dna)
+  let split = dna.split('').map(e=>e.replace(e, dict.e).join(''))
+  console.log(split)
+  console.log(dict.A)
+}
+
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
+
+--- 106 --- 
+function solve(s,g){
+  //..
+console.log(s, g)
+
+let first = g
+let second = s - g
+
+return (s % g === 0) ? [first, second] : -1 
+}
