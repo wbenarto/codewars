@@ -2029,4 +2029,16 @@ function wordValue(a) {
                          .split('')
                          .map(b => (b.charCodeAt()-96))
                          .reduce((acc, cur) => (acc+=cur),0)*(i+1));
+
+}
+
+---102 ---
+function highAndLow(numbers){
+  // ...
+  console.log(numbers)
+  let sorted = numbers.split(' ').sort((a,b) => a - b)
+  let min = sorted[0]
+  let max = sorted[sorted.length-1]
+  
+  return `${max} ${min}`
 }
