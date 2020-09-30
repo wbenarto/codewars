@@ -2042,3 +2042,18 @@ function highAndLow(numbers){
   
   return `${max} ${min}`
 }
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+--- 103 --- 
+function reverseLetter(str) {
+  //coding and coding..
+  let clean = str.replace(/[_\s\d\W]/g , '')
+  console.log(clean.split('').reverse().join(''))
+  return clean.split('').reverse().join('')
+  
+  
+}
