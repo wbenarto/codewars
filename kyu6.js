@@ -301,3 +301,41 @@ decodeMorse = function(morseCode){
                                         MORSE_CODE[e]).join('')).join(' ')
              )
 }
+
+function leaderboardSort(leaderboard, changes) {
+  console.log('leaderboard  :   ' + leaderboard)
+  console.log('changes      :   ' + changes)
+  
+  let findIndex = leaderboard.map((e, i) => i)
+  console.log(findIndex)
+  
+  // find index by name
+  console.log(leaderboard.findIndex(e=> e === "Dave"))
+  
+  for (let i = 0; i < changes.length; i++) {
+    let change = changes[i].split(' ');
+    let name = change[0]
+    let point = change[1]
+    
+    let start = leaderboard.findIndex((e)=> e === name)
+    let end = start-point
+    console.log(leaderboard[3])
+    
+    console.log(name, point, start, end)
+//     leaderboard[index] = leaderboard[index-point]
+//     leaderboard[index-point] = name;
+    
+    // if going down 
+//     if (point < 0) {
+//       leaderboard[i] = leaderboard[i+1]
+//       leaderboard[i+1] = name
+//     } else {
+//       leaderboard[i] = leaderboard[i-1]
+//       leaderboard[i-1] = name
+//     }
+    
+    // if start index > end index, rest of items index + 1  (moved up)
+    // if start index < end index, start index +, end index - 1 (moved down)
+  }
+  console.log(leaderboard)
+}
