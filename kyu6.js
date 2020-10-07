@@ -339,3 +339,34 @@ function leaderboardSort(leaderboard, changes) {
   }
   console.log(leaderboard)
 }
+
+--- 12 ---
+
+function solve(arr){
+  var r={}
+  for(var n of arr) r[n]=r[n]+1||1
+  return arr.slice().sort((a,b)=>r[b]-r[a]||a-b)
+}
+
+
+--- 13 --- 
+function addArrays(array1, array2) {
+  //   let arrayToNumber1 = parseInt(array1.join(''));
+  //   let arrayToNumber2 = parseInt(array2.join(''));
+    
+  //   console.log(array1, array2)
+  //   let result = arrayToNumber1 + arrayToNumber2;
+  //   console.log(typeof result)
+  //  
+  //   return array1.length > 0 && array2.length > 0 ? String(result).split('').map(e=> Number(e)) : 
+    
+       console.log(array1, array2)
+      let arr1 = array1.length > 0 ? parseInt(array1.join('')) : 0;
+      let arr2 = array2.length > 0 ? parseInt(array2.join('')) : 0;
+     console.log(arr1, arr2) 
+      let result = arr1 + arr2;
+    
+      console.log(result)
+     console.log(String(result).split(/[\D]*/g).map(e=>Number(e)))
+      return (array1.length === 0 && array2.length === 0 ) ? [] : String(result).split('').map(e=> Number(e))
+  }

@@ -1275,6 +1275,13 @@ function multipleOfIndex(array) {
   return array.filter((e,i)=> e%i===0)
 }
 
+--- 101 --- 
+function greet(name){
+  //your code here
+  console.log(name)
+  return `Hello, ${name} how are you doing today?`;
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
