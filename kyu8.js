@@ -1330,6 +1330,22 @@ function checkAlive(health) {
   return health > 0;
 }
 
+--- 105 --- 
+function nextId(ids){
+  //this will be awesome!
+  console.log(ids)
+  let sorted = ids.sort((a,b) => a-b)
+  console.log(sorted)
+  if (sorted[0] !== 0) {
+    return 0
+  }
+  for (let i = 0; i < ids.length ; i++){
+    if (ids[i+1] !== ids[i]+1 && ids[i+1] !== ids[i]) {
+      return ids[i]+1
+    }
+  }
+  return 0;
+}
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
