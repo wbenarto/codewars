@@ -1282,6 +1282,20 @@ function greet(name){
   return `Hello, ${name} how are you doing today?`;
 }
 
+
+--- 102 --- 
+function sakuraFall(v) {
+  // your code here
+  // speed 5 cm/s => s = d/t
+  // time 80 s
+  // find distance 
+  let d = 5 * 80
+  // t = d / v
+  
+  console.log(typeof v, v, d)
+  return v <= 0 ? 0 :  d / v
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
