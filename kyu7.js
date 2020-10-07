@@ -2104,3 +2104,25 @@ let second = s - g
 
 return (s % g === 0) ? [first, second] : -1 
 }
+
+--- 106 --- 
+function mirror(data) {
+  /* go ahead */
+  console.log(data)
+  let copy = [...data]
+  let sorted = copy.sort((a,b)=> a-b)
+  let reversed = [...sorted].sort((a,b)=>b - a).slice(1)
+//   let second = reversed.slice(1)
+  
+  
+
+//   for (let i =sorted.length -2 ;i>=0; i--) {
+//   console.log('forloop' + sorted[i], 'i =   ' + i)
+//     sorted.push(sorted[i]);
+    
+//   }
+  
+//   console.log('sorted :' + sorted)
+//   console.log('second: ' + second)
+  return sorted.concat(reversed)
+}
