@@ -1296,6 +1296,35 @@ function sakuraFall(v) {
   return v <= 0 ? 0 :  d / v
 }
 
+
+--- 103 ---
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  console.log('pontoonDistance : '  + pontoonDistance )
+  console.log('sharkDistance   : ' + sharkDistance)
+  console.log('youSpeed        : ' + youSpeed)
+  console.log('sharkSpeed      : ' + sharkSpeed)
+  console.log('dolphin         : ' + dolphin)
+  let distance = 1;
+  let sharkTime = sharkDistance / sharkSpeed;
+  let myTime = pontoonDistance / youSpeed;
+  
+  let alive = myTime < sharkTime
+  console.log(alive)
+  
+  if (dolphin) {
+    sharkSpeed = sharkSpeed/2;
+    console.log('dolphin is True, so sharkSpeed / 2 : ' + sharkSpeed)
+    sharkTime = sharkDistance/ sharkSpeed
+    console.log(myTime, sharkTime)
+    return myTime < sharkTime ? "Alive!" : "Shark Bait!"
+  }
+
+  console.log(alive)
+  
+  
+  return myTime < sharkTime ? "Alive!" : "Shark Bait!"
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
