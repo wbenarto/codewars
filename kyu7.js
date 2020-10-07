@@ -2126,3 +2126,18 @@ function mirror(data) {
 //   console.log('second: ' + second)
   return sorted.concat(reversed)
 }
+
+--- 107 ---
+function solve(stones) {
+  let count = 0;
+  let split = stones.split('')
+  
+  for (let i = 0; i< split.length; i++) {
+    console.log(split[i])
+    if (split[i] === split[i+1]) {
+        count ++
+    }
+    
+  }
+  return count;
+}
