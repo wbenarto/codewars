@@ -2141,3 +2141,21 @@ function solve(stones) {
   }
   return count;
 }
+
+--- 108 ---
+function leastLarger(a,i) {
+  console.log(a, i)
+  let copy = [...a]
+  let sorted = copy.sort((a,b) => b - a)
+  console.log(sorted)
+  console.log("target element : " + a[i])
+  console.log("index of target element in sorted array:  " + sorted.indexOf(a[i]))
+  console.log("Element in the new sorted array : " + sorted[sorted.indexOf(a[i])])
+  console.log("Result Index : " + (sorted.indexOf(a[i]) - 1) )
+  console.log("Result Element in sorted array: " + sorted[(sorted.indexOf(a[i]) - 1)])
+//   console.log("result :" + sorted.indexOf(a[i+1]))
+//   console.log("result :" + sorted[sorted.indexOf(a[i]) + 1])
+  console.log("index of result element in original array : " + a.indexOf(sorted[(sorted.indexOf(a[i]) - 1)]))
+  
+
+  return a.indexOf(sorted[(sorted.indexOf(a[i]) - 1)])
