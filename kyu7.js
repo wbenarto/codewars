@@ -2184,3 +2184,29 @@ function leastLarger(a,i) {
     
     return product < sum ? "sum" : product > sum ? "product" : "same";
   }
+
+  --- 108 ---
+
+  function removeBMW(str){
+    //TO DO
+    console.log(str + "," + typeof str )
+   
+    let split = str.split('').map(e=> e.replace(/[bmwBMW]*/, '')).join('')
+  
+    if (typeof str !== "string") {
+      
+        throw new Error("This program only works for text.")
+        
+      }
+    
+  
+    console.log("Split : " + split)
+    return split 
+  }
+
+  function removeBMW(str) {
+    if (typeof str !== "string") {
+      throw new Error("This program only works for text.")
+    }
+    return str.replace(/[bmw]+/gi, "")
+  }
