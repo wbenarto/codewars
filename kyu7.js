@@ -2159,3 +2159,28 @@ function leastLarger(a,i) {
   
 
   return a.indexOf(sorted[(sorted.indexOf(a[i]) - 1)])
+
+
+  --- 107 --- 
+  function sumOrProduct(array, n) {
+    // your code here
+    console.log(array, n)
+    // sum of n largest nums of the array
+    // product of the n smallest nums of array
+    let sorted = array.sort((a, b) => a-b)
+    console.log("sorted arr : " + sorted)
+    
+    let smallest = sorted.slice(0, n);
+    let largest = sorted.slice(sorted.length-n);
+    
+    console.log("smallest : " + smallest);
+    console.log("largest : " + largest);
+    
+    let product = smallest.reduce((a,b) => a * b)
+    let sum = largest.reduce((a,b) => a + b)
+    
+    console.log("product : " + product);
+    console.log("sum : " + sum);
+    
+    return product < sum ? "sum" : product > sum ? "product" : "same";
+  }
