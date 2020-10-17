@@ -2210,3 +2210,24 @@ function leastLarger(a,i) {
     }
     return str.replace(/[bmw]+/gi, "")
   }
+
+  --- 109 --- 
+  function fix(paragraph){
+    console.log(paragraph)
+    if (paragraph.length === 0) {
+      return ''
+    }
+    
+    let split = paragraph.split('. ')
+    console.log(split)
+  //   for (let i=0; i<split.length; i++) {
+  //     console.log(split[i][0])
+  //     let temp = split[i][0]
+  //     console.log('temp : ')
+  //     split[i][0] = temp.toUpperCase()
+  //     console.log(split[i][0])
+  //   }
+    console.log(split.map((e,i) => e[0].toUpperCase().concat(e.slice(1))).join('. '))
+    return split.map((e,i) => e[0].toUpperCase().concat(e.slice(1))).join('. ')
+    
+  }
