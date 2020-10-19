@@ -2237,3 +2237,8 @@ function leastLarger(a,i) {
     let duplicated = [...arr].find( e => arr.indexOf(e) !== arr.lastIndexOf(e) )
     return arr.slice(arr.indexOf(duplicated), arr.lastIndexOf(duplicated))
   }
+
+  --- 111 ---
+  const solve = (a,b) => {
+    return new RegExp(`^${a.replace('*', '.*')}$`).test(b)
+  }
