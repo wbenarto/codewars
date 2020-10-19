@@ -2242,3 +2242,40 @@ function leastLarger(a,i) {
   const solve = (a,b) => {
     return new RegExp(`^${a.replace('*', '.*')}$`).test(b)
   }
+
+  --- 112 --- failed. 
+  
+  function validate(username, password){
+    //your code here
+    // matched length has to be < shortest of username or password
+    //
+    console.log(username, password)
+    let user = username.split('')
+    let pass = password.split('')
+    
+    let common = []
+    
+    for(let i=0; i<user.length; i++) {
+      console.log(user[i])
+      for(let j=0; j<pass.length; j++) {
+        console.log(pass[j])
+        if (user[i] === pass[j]) {
+          common.push(user[i])
+        }
+      }
+    }
+    console.log("common : " + common)
+    
+  }
+
+  const validate = (username, password) => {
+    // half is finding the shortest string and dividing it into 2. 
+    const half = Math.ceil(Math.min(username.length, password.length) / 2);
+
+    // loop thru half of password
+    for (let i = 0; i <= password.length - half; i++) {
+      // if username includes substring in password, return false
+      if (username.includes(password.substr(i, half))) return false;
+    }
+    return true;
+  };
