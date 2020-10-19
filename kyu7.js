@@ -2231,3 +2231,9 @@ function leastLarger(a,i) {
     return split.map((e,i) => e[0].toUpperCase().concat(e.slice(1))).join('. ')
     
   }
+
+  --- 110 --- 
+  function duplicateSandwich(arr) {
+    let duplicated = [...arr].find( e => arr.indexOf(e) !== arr.lastIndexOf(e) )
+    return arr.slice(arr.indexOf(duplicated), arr.lastIndexOf(duplicated))
+  }
