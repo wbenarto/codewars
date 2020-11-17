@@ -1357,6 +1357,14 @@ const flip=(d, a)=>{
                    : null
 }
 
+
+--- 107 ---
+function hello(name) {
+  let final = name ? name[0].toUpperCase().concat(name.toLowerCase().split('').splice(1).join('')) : "World"
+  console.log(final)
+  return `Hello, ${final}!`;
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
