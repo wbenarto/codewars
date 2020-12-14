@@ -2279,3 +2279,96 @@ function leastLarger(a,i) {
     }
     return true;
   };
+
+
+--- 113 --- 
+
+  
+
+var palindromeChainLength = function(n) {
+  console.log("n " + n)
+  
+  let steps = 0
+  
+  // 1. reverser N and add to N 
+  const reverseNum = Number(String(n).split('').reverse('').join(''))
+  let result = n + reverseNum
+  
+  console.log('rev  :    ' + reverseNum)
+  console.log('first result (n + reverese) : ' + result )
+//   console.log("Check if Palindrome: " + ifPal(result))
+  
+  // 2. checkpoint for all n < 10
+  if (result < 10) return 0
+  
+  const ifPal = (num) => {
+  // return true or false
+    let numArr = String(num).split('')
+    let tempRes = []
+    console.log("numArr :  " + numArr )
+   
+    if (numArr < 10) {
+      return true
+    }
+    
+    for (let i=0; i< numArr.length; i++) {
+      tempRes.push(numArr[i])
+      console.log("for loop : " + numArr[i])
+      
+     
+    }
+    
+     
+     console.log("tempRes :  " + tempRes)
+     let half = tempRes.slice(0, numArr.length/2)
+     let secHalf = tempRes.slice(numArr.length/2 + 1, numArr.length)
+     console.log('half : ' + half)
+     console.log('second half : ' + secHalf )
+    
+    if (half !== secHalf) {
+      return false
+    } 
+    
+    return true
+    
+  }
+  // 3. checkpoint for all other n
+  // if not palindrome, add steps, update result 
+  
+   
+  
+ 
+  if (ifPal(result)) {
+    console.log("ifPal() = " + ifPal(result))
+    console.log('steps = ' + steps)
+    return steps
+    }
+  
+  while (!ifPal(result)) {
+    steps++;
+    result += Number(String(result).split('').reverse('').join(''))
+  }
+  
+//   } else {
+//     console.log("Else statement ifPal() = " + ifPal(result))
+//     steps++;
+//     result += Number(String(result).split('').reverse('').join(''))
+//     console.log('else statement result = ' + result)
+    
+//   }
+  console.log("final result =" + result)
+  console.log('steps = ' + steps)
+  
+  
+  
+  
+   return steps
+
+
+};
+
+
+  
+  // function to check palindrome
+  
+
