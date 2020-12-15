@@ -2458,3 +2458,25 @@ function readZalgo(zalgotext) {
   return clean
 //   return mortaltext;
 }
+
+--- 116 ---
+function tripleX(str){
+  console.log(str)
+  
+  let arr = str.split('')
+  
+  let first = arr.find(e => e === 'x')
+  let firstIndex = arr.indexOf(first)
+  
+  console.log("first = " + str.split('').find(e => e === 'x'))
+  console.log("first index = " + firstIndex)
+  
+  for (let i=firstIndex; i<arr.length; i++) {
+    if (first && ((arr[firstIndex+1] === 'x') && (arr[firstIndex+2] === 'x'))){
+      return true
+    }
+  }
+  
+  return false
+}
+
