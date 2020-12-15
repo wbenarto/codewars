@@ -2371,4 +2371,90 @@ var palindromeChainLength = function(n) {
   
   // function to check palindrome
   
+  var palindromeChainLength = function(n) {
+    let steps = 0;
+    console.log(n)
+    
+    while (!checkPal(n)) {
+      steps++;
+      n += reverseNum(n)
+    }
+    
+    return steps;
+  };
+  
+  let checkPal = (n) => {
+    if (n < 0) throw 'isPalindromic only works for positive numbers.';
+    if (n % 10 === 0) return false;
+    if (Math.floor(n/10) === 0 ) return true;
+      
+    return reverseNum(n) === n
+  }
+      
+  //     // 52
+  // function reverseNum(n) {
+  //   var r = 0;
+  //   while (n) {
+      
+  //     r *= 10;
+  //     // 0 += 52 % 10
+  //     r += n % 10;
+  //     // r = 5
+  //     n = Math.floor(n / 10);
+  //   }
+  //   return r;
+  // }
+  
+  
+  let reverseNum = (num) => {
+      let rev = Number(String(num).split('').reverse().join(''))
+      console.log(rev)
+      return rev;
+  }}
 
+--- 114 ---
+function validSpacing(s) {
+  // write your code here
+  // can't have spaces in front and back
+  
+  let space = ' '
+  let word = s.split('')
+  let regex = /\s^$/
+  
+  let front = s.match(/^\s/)
+  let back = s.match(/\s$/)
+  
+  let middle = 0
+  
+  for (let i=1; i<word.length-1; i++ ) {
+    if(word[i] === space && word[i+1] === space) {
+     middle += 1
+    }
+  }
+  console.log("middle = " + middle)
+
+  if (front || back) { return false }
+  
+  if (middle >= 1) return false
+  
+  return true
+  
+  console.log(s.split('').filter( e=> e === space))
+  console.log(s.match(/^\s/))
+  console.log(front, back)
+}
+
+function validSpacing(s) {
+  return s.trim() == s && !s.includes("  ");
+}
+
+
+--- 115 ---
+function readZalgo(zalgotext) {
+  var mortaltext = zalgotext;
+  let clean = zalgotext.replace(/[^a-zA-Z0-9\s.,!?]+/g, '')
+  console.log(zalgotext.split(''))
+  console.log("clean : " + clean)
+  return clean
+//   return mortaltext;
+}
