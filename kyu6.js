@@ -370,3 +370,85 @@ function addArrays(array1, array2) {
      console.log(String(result).split(/[\D]*/g).map(e=>Number(e)))
       return (array1.length === 0 && array2.length === 0 ) ? [] : String(result).split('').map(e=> Number(e))
   }
+
+
+
+--- 14 ---
+function theJanitor(word) {
+  //   //coding and coding..
+  //   console.log(word)
+    
+  //   // returns an array with 26 elements, consisting the width of each letter . 
+  //   // [(word.indexOf(2nda)- word.indexOf(1sta)), ()]
+    
+  //   let a = word.split('').filter(e => e==='a')
+    
+  //   let arr = [];
+   
+  //   // first letter, match with the LAST occurance of the letter
+  //   // calculate width 
+  //   // input in array  
+    
+  //   console.log(word.indexOf(word[0]))
+  //   console.log(word.lastIndexOf(word[0])+ 1)
+    
+  //   for (let i=0; i<word.length; i++) {
+  //     console.log(word[i])
+      
+  //     let first = word.indexOf(word[i])
+  //     let last = word.lastIndexOf(word[i]) + 1
+      
+  //     let result = last - first
+  //     console.log("first = " + first + "last = " + last)
+  //     console.log("result : " + (last - first))
+      
+  //     arr.push(result)
+  //   }
+    
+    
+  //   console.log(arr)
+    
+    let arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    
+    for (let i=0; i<word.length; i++) {
+  //     console.log(word[i])
+      
+      let letterIndex = word.charCodeAt(i) - 96;
+      
+      // gives me index in the alphabet
+      console.log("letter = " + letterIndex)
+      
+    // first letter, match with the LAST occurance of the letter
+    // calculate width 
+    // input in array  
+      let first = word.indexOf(word[i])
+      let last = word.lastIndexOf(word[i]) + 1
+      
+      let result = last - first
+      console.log("first = " + first + "last = " + last)
+      console.log("result : " + (last - first))
+      
+      
+      arr[letterIndex] = result
+      
+      if (!arr[letterIndex]) {
+        arr.push(0)
+      }
+      
+      for (let i=0; i<arr.length; i++){
+        if (!arr[letterIndex]) {
+        arr[i] = 0
+      }
+      }
+      // push 0 to empty letters
+      
+    }
+    
+      
+    
+    console.log(arr)
+    
+    return arr.splice(1)
+    
+    
+  }
