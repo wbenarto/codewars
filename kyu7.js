@@ -2569,3 +2569,19 @@ function redKnight(N, P) {
   console.log("outside while loop N = " + N +", P =" + P , "Pawn white or black = " + N)
   return (N === 0) ? ["White", knight] : ["Black", knight];
 }
+
+--- solution ---
+function redKnight(N, P) {
+  return [(N+P)%2 ? 'Black' : 'White', P*2]
+}
+
+--- 119 ---
+var gimme = function (inputArray) {
+  // Implement this 
+  console.log(inputArray)
+  
+  let middle = [...inputArray].sort((a,b) => a-b)[1]
+  console.log(middle)
+  
+  return inputArray.indexOf(middle)
+};
