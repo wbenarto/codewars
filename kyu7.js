@@ -2533,3 +2533,39 @@ function daysRepresented(trips){
     
     return result.length
   }
+
+
+--- 118 ---
+function redKnight(N, P) {
+  console.log("starting = " + N, P)
+  
+  // N start Knight ( 0 || 1)
+  // P black && white distance to Knight ( 8 )
+  let knight = 0; // 0
+  let black; // 1 
+  let white; // 0
+
+  const togglePawn = () => {
+    if (N === 1) {
+     N = 0
+    } 
+    else N = 1
+//     console.log("togglePawn triggered")
+    
+     
+  }
+  
+  // while knight[i] !== pawn[i] => { knight moves 2 steps, opposite color; pawn moves 1 step } else see knight 0 or 1
+ 
+  while (knight !== P || knight < P) {
+    P+=1;
+    knight+=2;
+   
+//     console.log("before toggle = "+ N + "Knight = " + knight , "P = " + P)
+    togglePawn(N);
+//     console.log("after toggle = " + N + "Knight = " + knight , "P = " + P)
+    
+  }
+  console.log("outside while loop N = " + N +", P =" + P , "Pawn white or black = " + N)
+  return (N === 0) ? ["White", knight] : ["Black", knight];
+}
