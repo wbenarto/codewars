@@ -2480,3 +2480,56 @@ function tripleX(str){
   return false
 }
 
+--- 117 ---
+function daysRepresented(trips){
+  // your code here
+  // [[],[],[],[]]
+  // [1] - [0]
+  //   return (trips[0][1] - trips[0][0] + 1) + (trips[1][1] - trips[1][0] + 1)
+    console.log("trips = " + trips)
+    let days = 0;
+    
+  //   for (let i=0; i<trips.length; i++) {
+  //     console.log(trips[i])
+  //     days += trips[i].reduce((a,b) => b - a + 1)
+  //   }
+    
+    // [2, 8] [6, 16] [17, 26]
+    // 7 + 11 + 10
+    // 28
+    
+    // 7 + 8 + 10 
+    // 25
+    
+    let result = [];
+    
+    
+    trips.map((e)=>{
+      
+      console.log("trips.map (e) = " + e)
+      
+      e.reduce((a,b) => {console.log(a, b)
+                        
+                        for (let i=a; i<=b ; i++) {
+                          if (result.indexOf(i) === -1) {
+                            result.push(i)
+                          }
+                        }
+                        
+                        })
+  //     e.map((date, i) => {
+  //       console.log(date, i)
+  //       console.log("e.map (date) = " + date)
+  //        if (result.indexOf(date) === -1) {
+  //      result.push(date);
+  //      }
+  //     })
+     
+    })
+    
+    
+    console.log(result)
+    console.log(result.length)
+    
+    return result.length
+  }

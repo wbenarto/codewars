@@ -452,3 +452,46 @@ function theJanitor(word) {
     
     
   }
+
+
+  function theJanitor(word) {
+    return [...'abcdefghijklmnopqrstuvwxyz'].map(l=>{
+      let a = word.indexOf(l), b = word.lastIndexOf(l);
+      return a === -1 ? 0 : b - a + 1;
+    });
+  }
+
+--- 15 ---
+function code(strng) {
+  // your code
+ 
+
+  let result = ''
+  strng.split('').map((e , i)=> {
+    console.log('element =' + e);
+    let zeros = ((e>>>0).toString(2)).length - 1;
+    let zero = '0'
+    
+    let first = zero.repeat(zeros).concat('1')
+    console.log(first );
+    console.log("ungsigned right shift =" + first.concat((e >>> 0).toString(2)))
+     result += first.concat((e >>> 0).toString(2))
+})
+
+console.log("result" + result)
+return result
+}
+
+const decode = (str) => {
+// a string with (000x bits.length) + 1 + bit(str)
+// return decimal
+// calculate how many zero + 1 = e.length
+// take out 1 
+
+console.log(str.split('0'))
+console.log(parseInt(101, 2))
+
+}
+
+
+
