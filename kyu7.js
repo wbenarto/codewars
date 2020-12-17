@@ -2601,3 +2601,22 @@ function getVillainName(birthday){
   
   return `The ${m[month]} ${d[actualDate]}`
 }
+
+--- 121 --- 
+const sumSquareEvenRootOdd = ns => {
+  // your code goes here
+  console.log(ns)
+  let result = [];
+  ns.map((e,i)=>{
+    if(e%2===0) {
+      e = Math.pow(e, 2)
+    } else {
+      e = Math.sqrt(e)
+    }
+    result.push(e)
+    console.log(e , typeof(e))
+  })
+  
+  console.log(result.reduce((a, b)=>a+b))
+  return Number(result.reduce((a, b)=>a+b).toFixed(2))
+};
