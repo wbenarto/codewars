@@ -1459,6 +1459,12 @@ function switchItUp(number){
     return numberOb[number]
   }
 
+
+  --- 111 ---
+  const areaOrPerimeter = function(l , w) {
+    // Return your answer
+    return (l===w) ? l * w : l * 2 + w *2
+  };
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
