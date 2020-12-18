@@ -1424,6 +1424,41 @@ function multiTable(number) {
   return arr.join('\n')
 }
 
+function multiTable(number) {
+  console.log(number)
+  
+  let arr = []
+  let n = 1
+  
+  while (n<=10) {
+    arr.push(`${n} * ${number} = ${n*number}`);
+    n++;
+  }
+  
+  return arr.join('\n')
+}
+
+--- 110 ---
+function switchItUp(number){
+  //Write your own Code!
+    console.log(number)
+    let numberOb = {
+      1 : 'One',
+      2 : 'Two',
+      3 : 'Three',
+      4 : 'Four',
+      5 : 'Five',
+      6 : 'Six',
+      7 : 'Seven',
+      8 : 'Eight',
+      9 : 'Nine',
+      0 : 'Zero'
+    }
+    
+    console.log(numberOb[number])
+    return numberOb[number]
+  }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
