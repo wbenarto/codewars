@@ -1473,6 +1473,13 @@ function weatherInfo (temp) {
   console.log(celcius)
   return (celcius < 0) ? `${celcius} is freezing temperature` : `${celcius} is above freezing temperature`
 }
+
+--- 113 --- 
+// Write the "square"-function here
+const square = (e) => {
+  console.log(e)
+  return Math.pow(e, 2)
+};
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
