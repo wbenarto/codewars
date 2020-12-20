@@ -1465,6 +1465,14 @@ function switchItUp(number){
     // Return your answer
     return (l===w) ? l * w : l * 2 + w *2
   };
+
+--- 112 ---
+function weatherInfo (temp) {
+  console.log(temp)
+  let celcius = (temp - 32 ) * (5/9);
+  console.log(celcius)
+  return (celcius < 0) ? `${celcius} is freezing temperature` : `${celcius} is above freezing temperature`
+}
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
