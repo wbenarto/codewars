@@ -1480,6 +1480,19 @@ const square = (e) => {
   console.log(e)
   return Math.pow(e, 2)
 };
+
+--- 114 --- 
+function solution(a, b){
+  // your code here
+  console.log(a, b)
+  console.log(a.split('').length, b.split('').length)
+  let result = ''
+  if (a.split('').length > b.split('').length) {
+    return `${b}${a}${b}`
+  } else return `${a}${b}${a}`
+  
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
