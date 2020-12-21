@@ -2620,3 +2620,13 @@ const sumSquareEvenRootOdd = ns => {
   console.log(result.reduce((a, b)=>a+b))
   return Number(result.reduce((a, b)=>a+b).toFixed(2))
 };
+
+
+--- 122 ---
+function cookingTime(eggs) {
+  // TODO
+  console.log(eggs)
+  // pot is 8, result ++ 
+  
+  return (eggs < 1) ? 0 : (eggs <= 8) ? 5 : Math.ceil(eggs/8) * 5
+}
