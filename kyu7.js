@@ -2665,3 +2665,16 @@ function wordToBin(str){
   
   return alphabet
 }
+
+--- 125 ---
+function calc_ms(n) {
+  // Happy coding!
+  // rule *20
+  let result = 1;
+  while (n>0) {
+    result *= 20;
+    n--
+  }
+  
+  return result
+}
