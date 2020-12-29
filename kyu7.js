@@ -2630,3 +2630,20 @@ function cookingTime(eggs) {
   
   return (eggs < 1) ? 0 : (eggs <= 8) ? 5 : Math.ceil(eggs/8) * 5
 }
+
+--- 123 --- 
+function divisibleByLast(n) {
+  // TODO
+  console.log(String(n).split(''))
+  let nums = String(n).split('');
+  let result = [];
+  for (let i=0; i<nums.length; i++) {
+    nums[i]
+    if(Number(nums[i])%Number(nums[i-1])=== 0) {
+      result.push(true)
+    } else result.push(false)
+  }
+  
+  console.log(result)
+  return result
+}
