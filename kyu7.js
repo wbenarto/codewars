@@ -2647,3 +2647,21 @@ function divisibleByLast(n) {
   console.log(result)
   return result
 }
+
+
+--- 124 ---
+
+function wordToBin(str){
+  //code away!!!
+  console.log(str)
+  let letters = str.split('');
+  let alphabet = []
+  
+  for (let i=0; i<letters.length; i++) {
+    console.log('letter : ' + letters[i])
+    console.log('letter transform : ' + letters[i].charCodeAt(0).toString(2))
+    alphabet.push(`0${letters[i].charCodeAt(0).toString(2)}`)
+  }
+  
+  return alphabet
+}
