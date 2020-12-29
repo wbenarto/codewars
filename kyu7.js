@@ -2678,3 +2678,16 @@ function calc_ms(n) {
   
   return result
 }
+
+--- 126 ---
+// write your function and return the next perfect square
+
+const nextPerfectSquare = (n) => {
+  // next perfect square
+  // find current square
+  
+  let curSquare = 1;
+  
+  console.log()
+  return n<0 ? 0 : Math.pow(Math.floor(Math.sqrt(n)+1),2)
+}
