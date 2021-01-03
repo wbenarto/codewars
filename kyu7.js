@@ -2708,3 +2708,8 @@ function uniqueNumbers(numbersArray) {
 
 return [...new Set(numbersArray)]
 }
+
+--- 129 --- 
+const rotateToMax = n => {
+  return Number(String(n).split('').sort((a,b) => Number(b) - Number(a)).join(''))
+  }
