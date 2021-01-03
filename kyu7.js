@@ -2713,3 +2713,14 @@ return [...new Set(numbersArray)]
 const rotateToMax = n => {
   return Number(String(n).split('').sort((a,b) => Number(b) - Number(a)).join(''))
   }
+
+--- 130 --- 
+function timeConvert(num) { 
+
+  let hour = Math.floor(num /60)
+  let minutes = num % 60
+
+console.log(hour , minutes)
+
+    return num <= 0 ? `00:00` :`${hour < 10 ? '0'+hour : hour}:${minutes < 10 ? `0`+minutes : minutes}`
+}
