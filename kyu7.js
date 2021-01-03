@@ -2691,3 +2691,13 @@ const nextPerfectSquare = (n) => {
   console.log()
   return n<0 ? 0 : Math.pow(Math.floor(Math.sqrt(n)+1),2)
 }
+
+--- 127 ---
+function whoTookTheCarKey(message) {
+  //Find that Freakin' Key!
+  let result = []
+  for (let i=0; i<message.length; i++) {
+    result.push(String.fromCharCode(parseInt(message[i], 2)))
+  }
+  return result.join('')
+}
