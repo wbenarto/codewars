@@ -2701,3 +2701,10 @@ function whoTookTheCarKey(message) {
   }
   return result.join('')
 }
+
+--- 128 ---
+function uniqueNumbers(numbersArray) {
+  //you must return unique numbers array
+
+return [...new Set(numbersArray)]
+}
