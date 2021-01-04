@@ -2724,3 +2724,8 @@ console.log(hour , minutes)
 
     return num <= 0 ? `00:00` :`${hour < 10 ? '0'+hour : hour}:${minutes < 10 ? `0`+minutes : minutes}`
 }
+
+--- 131 ---
+function nonsense(str) {
+  return str.toLowerCase().replace(/[0-4]/g, e=>"aeiou"[e]).replace(/^.| i /g, e=>e.toUpperCase()).replace(/trex|raptor|\./g, "") +'.';
+}
