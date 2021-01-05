@@ -2751,3 +2751,16 @@ function convert(number){
   // ...Convert integers given as string into ASCII uppercase letters...
  return String.fromCharCode(...number.match(/../g))
 }
+
+--- 134 ---
+function nextLetter(str) {
+  // go for it  
+  
+  return str.replace(/[a-zA-Z]/g, e=>{
+    switch (e) {
+        case'z' :return 'a';
+        case'Z' : return"A";
+      default: return String.fromCharCode(e.charCodeAt(0)  + 1)
+    }
+  })
+}
