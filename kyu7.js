@@ -2810,3 +2810,17 @@ function pattern(n){
   
   return `It is ${w} today, ${worker[day.indexOf(w)]}, you have to work, you must spray ${n} trees and you need ${n*c} dollars to buy liquid`
 }
+
+--- 139 ---
+function range(startNum, endNum)   
+{  
+ //code goes in here
+  let res = []
+  
+  for (let i=startNum+1; i<endNum; i++) {
+    res.push(i)
+  }
+  
+  return startNum === endNum ? [] : res
+};  
+  
