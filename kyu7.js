@@ -2764,3 +2764,16 @@ function nextLetter(str) {
     }
   })
 }
+
+--- 135 ---
+function nextLetter(str) {
+  // go for it  
+  
+  return str.replace(/[a-zA-Z]/g, e=>{
+    switch (e) {
+        case'z' :return 'a';
+        case'Z' : return"A";
+      default: return String.fromCharCode(e.charCodeAt(0)  + 1)
+    }
+  })
+}
