@@ -2777,3 +2777,15 @@ function nextLetter(str) {
     }
   })
 }
+
+--- 136 ---
+function digitSum (str) {
+  //Your code goes here.
+  let sum = String([...str].reduce((a,b)=>Number(a) + Number(b)))
+  console.log(str.length)
+  console.log([...str])
+  console.log(sum)
+  
+
+  return sum.length > 1 ? digitSum(sum) : String(sum)
+}
