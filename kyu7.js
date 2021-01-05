@@ -2824,3 +2824,10 @@ function range(startNum, endNum)
   return startNum === endNum ? [] : res
 };  
   
+--- 140 ---
+function solution(string,limit){
+
+  return string.length > limit ? 
+  string.substring(0,limit) + '...'
+  : string
+}
