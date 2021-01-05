@@ -2729,3 +2729,25 @@ console.log(hour , minutes)
 function nonsense(str) {
   return str.toLowerCase().replace(/[0-4]/g, e=>"aeiou"[e]).replace(/^.| i /g, e=>e.toUpperCase()).replace(/trex|raptor|\./g, "") +'.';
 }
+
+
+--- 132 ---
+function createArrayOfTiers(num) {
+  let res = ''
+  let arr = []
+  let split = String(num).split('')
+  for(let i=0; i<split.length;i++) {
+    console.log(split[i])
+    res += split[i]
+    arr.push(res)
+  
+  }
+console.log(arr)
+return arr
+}
+
+--- 133- --
+function convert(number){
+  // ...Convert integers given as string into ASCII uppercase letters...
+ return String.fromCharCode(...number.match(/../g))
+}
