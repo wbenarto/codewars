@@ -2789,3 +2789,24 @@ function digitSum (str) {
 
   return sum.length > 1 ? digitSum(sum) : String(sum)
 }
+
+--- 137 ---
+function pattern(n){
+  var output=['1'];
+   //being coder
+   for (let i=2; i<=n;i++) {
+     output.push('1'+'*'.repeat(i-1)+i)
+     console.log(output)
+   }
+  return output.join('\n');
+ }
+
+ --- 138 --
+ function task(w, n, c) {
+  // your code
+  console.log(w, n, c)
+  let worker = ["James", "John", "Robert", "Michael", "William"]
+  let day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+  
+  return `It is ${w} today, ${worker[day.indexOf(w)]}, you have to work, you must spray ${n} trees and you need ${n*c} dollars to buy liquid`
+}
