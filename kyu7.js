@@ -2840,3 +2840,10 @@ function heggeleggleggo(word){
   console.log([...word].map(e=> e.replace(consonant.match(e),e+'egg')))
   return [...word].map(e=> e.replace(consonant.match(e),e+'egg')).join('')
 }
+
+--- 142 ---
+function getProductId(url){
+  //your code here
+  console.log(url.split('-')[url.split('-').length-2])
+  return url.split('-')[url.split('-').length-2]
+}
