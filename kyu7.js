@@ -2847,3 +2847,21 @@ function getProductId(url){
   console.log(url.split('-')[url.split('-').length-2])
   return url.split('-')[url.split('-').length-2]
 }
+
+
+--- 143 ---
+function manipulate(num) { 
+
+  //Good luck!
+  let split = String(num).split('')
+  let middle = (split % 2 === 0) ? Math.floor(split.length/2-1) : Math.floor(split.length/2)
+  console.log(split, middle)
+  for (let i=middle; i<split.length; i++) {
+    split[i] = 0
+  
+  }
+  
+  console.log(split)
+    return Number(split.join(''))
+  
+  } 
