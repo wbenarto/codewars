@@ -2865,3 +2865,19 @@ function manipulate(num) {
     return Number(split.join(''))
   
   } 
+
+--- 144 ---
+var scoreToTally = function(score){
+  let res = []
+  while (score > 0) {
+    if (score >= 5) {
+      res.push('5' + " <br>")
+    }
+    
+    else res.push(score)
+    score -= 5
+  }
+  
+  console.log(score, res.join('').replace(/[1-5]/g, e=>'abcde'[e-1]))
+  return res.join('').replace(/[1-5]/g, e=>'abcde'[e-1])
+}
