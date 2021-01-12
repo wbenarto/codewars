@@ -2881,3 +2881,64 @@ var scoreToTally = function(score){
   console.log(score, res.join('').replace(/[1-5]/g, e=>'abcde'[e-1]))
   return res.join('').replace(/[1-5]/g, e=>'abcde'[e-1])
 }
+
+--- 145 ---
+function calcType(a, b, res) {
+  // your code here
+  console.log(a, b , res)
+  if(a+b===res) {
+    return 'addition'
+  } else if (a-b===res) {
+    return 'subtraction'
+  } else if (a/b===res) {
+    return 'division'
+  } else if (a*b===res) {
+    return 'multiplication'
+  }
+  
+  
+//   switch (a, b) {
+//       case a + b === res: 
+//         return 'addition';
+//         break;
+//       case a - b === res:
+//         return 'subtraction';
+//         break;
+//       case a * b === res:
+//         return 'multiplication';
+//         break;
+//       case a / b === res:
+//         return 'division';
+//         break;
+//       default: return null;
+//       }
+}
+
+--- 146 ---
+function fourSeven(n){
+  // Your Code Here
+  let result = {
+    7: 4, 
+    4: 7
+  }
+  
+  return result[n] || 0
+  console.log(n, result[n])
+}
+
+--- 147 ---
+function getEvenNumbers(numbersArray){
+  // filter out the odd numbers
+  return numbersArray.filter(e=> e%2===0)
+}
+
+--- 148 ---
+function smaller(nums) {
+  //code me
+    console.log()
+    return nums.map((e,i) => 
+            
+            nums.slice(i).filter(y=>e>y).length)
+          
+            
+  }
