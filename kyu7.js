@@ -2970,3 +2970,19 @@ function solve(a,b){
   console.log(result)
   return result;
 }
+
+--- 151 ---
+function calc(x){
+  let first = [...x].map(e=>e.replace(e, e.charCodeAt(0))).join('')
+  console.log(first)
+   let second = ''
+ if (first.match("7")) { second = first.replace(/[7]/g, "1") }
+   
+  
+   let sumFirst =first.split('').reduce((a,b) => Number(a)+Number(b))
+   let sumSec = second.split('').reduce((a,b) => Number(a)+ Number(b))
+   
+   console.log( sumFirst, sumSec)
+   console.log(sumFirst-sumSec)
+   return sumFirst - sumSec
+ }
