@@ -2960,3 +2960,13 @@ function xMasTree(n){
  console.log()
  return result
 }
+
+--- 150 ---
+function solve(a,b){
+  let result = []
+  for(let i=0;i<b.length;i++) {
+    result.push(a.filter( e => b[i] == e).length)
+  }
+  console.log(result)
+  return result;
+}
