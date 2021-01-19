@@ -2942,3 +2942,21 @@ function smaller(nums) {
           
             
   }
+
+--- 149 ---
+function xMasTree(n){
+  //complete this code
+ // tree branch odd nums
+ let result = []
+ let leaf=1;
+ let trunk = [`${'_'.repeat(n-1)}${'#'.repeat(1)}${'_'.repeat(n-1)}`,`${'_'.repeat(n-1)}${'#'.repeat(1)}${'_'.repeat(n-1)}`]
+ for (let i=1; i<=n;i++) {
+   
+   let print = `${'_'.repeat(n-i)}${'#'.repeat(leaf)}${'_'.repeat(n-i)}`
+   result.push(print);
+   leaf+=2
+ }
+ result.push(...trunk)
+ console.log()
+ return result
+}
