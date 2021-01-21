@@ -494,4 +494,51 @@ console.log(parseInt(101, 2))
 }
 
 
+--- 16 --- Failed
+function convergence(n){
+  let base = 1
+  
+  let res = []
+  
+ 
+  
+//   console.log(calcNum(n))
+  console.log(calcNum(base))
+}
 
+const calcNum = (base) => {
+  
+  let temp = base
+  let res = [temp]
+  console.log()
+  while (res.length<10) {
+       if (temp< 10) {
+    temp += temp
+    res.push(temp)
+    console.log(temp)
+  } else if ( temp.length >= 10) {
+    temp = temp + temp.split('').reduce((a,b) => a * b)
+    res.push(temp)
+    console.log(temp)
+  } 
+  }
+
+  return res
+}
+
+--- 17 ---
+function order(words){
+  // ...
+
+//   console.log(split.sort((a,b)=>{
+//   a.match(/[1-9]/g) - b.match(/1-9/g)
+
+//   }))
+  return words.split(' ').sort((a,b) => a.match(/[0-9]/) - b.match(/[0-9]/) ).join(' ')
+//   split.map(e=>{
+//   console.log(e)
+//   console.log(e.match(/[0-9]/g))
+    
+  
+//   })
+}
