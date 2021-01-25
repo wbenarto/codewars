@@ -542,3 +542,38 @@ function order(words){
   
 //   })
 }
+
+--- 18 ---
+function gcdi(x,y) {
+  // your code
+return  y ? gcdi(y, x%y) : Math.abs(x) 
+}
+function lcmu(a, b) {
+  // your code
+return Math.abs(a*b)/ gcdi(a,b)
+                    
+
+}
+function som(a, b) {
+  // your code
+return a + b
+}
+function maxi(a, b) {
+  // your code
+return Math.max(a, b)
+}
+function mini(a, b) {
+  // your code
+return Math.min(a, b)
+}
+
+
+
+function operArray(fct, arr, init) {
+  // your code
+return arr.map(e=> {
+init = fct(init, e)
+  return init
+})
+
+}
