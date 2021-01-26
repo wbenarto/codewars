@@ -577,3 +577,55 @@ init = fct(init, e)
 })
 
 }
+
+ --- 19 ---
+ function isSumOfCubes(s){
+  // ...
+  console.log(s)
+  let split = s.split(' ') 
+  
+  let sumNum = 0;
+  let resArr = [];
+  let res = []
+    
+  for (let i = 0; i<split.length; i++ ) {
+    console.log('split[i] = ' + split[i])
+    let num = split[i].match(/\d{1,3}/g)
+    console.log('num in for loop = ' + num)
+    if (num) resArr.push(...num)
+  }
+  console.log("res array, consisting 3 nums = " + resArr)
+  
+  resArr.map(e=>{
+  if (checkNum(e)) {
+    
+    if (e == 000) {e = 0}
+      res.push(e);
+      sumNum += Number(e)
+  }
+  })
+
+
+  let resString = res.join(' ')
+  
+  let template = `${resString} ${sumNum} Lucky`
+  console.log('resString   = ' + resString)
+  console.log('sumNum   = ' + sumNum)
+  console.log('template = ' + template)
+  return (resString.length > 0) ? template : "Unlucky"
+  
+  
+}
+  
+
+
+
+
+const checkNum = (threeNum) => {
+  let sum = 0;
+  for (let i=0;i <threeNum.length; i++) {
+    sum += Math.pow(Number(threeNum[i]), 3)
+  }
+  
+  return threeNum == sum
+}
