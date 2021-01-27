@@ -629,3 +629,22 @@ const checkNum = (threeNum) => {
   
   return threeNum == sum
 }
+
+--- 20 ---
+function zipWith(fn,a0,a1) {
+  console.log( a0[0], a1[0], fn)
+    
+    // find out shorter arr
+    // loop thru each with the other one
+    let res = []
+    let short = a0.length < a1.length ? a0 : a1
+    let long = short==a0 ? a1 : a0
+    
+    console.log(short, long)
+    if (short.length < 1) res = []
+    for (let i=0; i< short.length; i++) {
+      res.push(fn(a0[i], a1[i]))
+    }
+    console.log('res = '  + res)
+    return res
+  }
