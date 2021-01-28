@@ -648,3 +648,38 @@ function zipWith(fn,a0,a1) {
     console.log('res = '  + res)
     return res
   }
+
+  --- 21 ---
+  function partsSums(ls) {
+    // your code
+  let res = []
+  console.log('ls = ' + ls)
+  // loop thru ls, each el 
+  
+ let temp = ls
+ let sum = countSum(ls)
+ 
+ for (let i=0; i<ls.length;i++) {
+   res.push(sum)
+   sum -= ls[i]
+   
+ }
+  console.log('result = ' + res)
+  return res? [...res,0] : [0]
+}
+
+
+
+const countSum = (arr) => {
+ 
+//   console.log('countSum ' + arr.reduce((a,b)=>a+b))
+  return arr.length < 1 ? arr.reduce((a,b)=>a+b, 0) : arr.reduce((a,b)=>a+b) 
+}
+
+
+--- solution ---
+function partsSums(ls) {
+  ls.unshift(0);
+  let sum = ls.reduce((p, c) => p + c, 0);
+  return ls.map(v => sum = sum - v);
+}
