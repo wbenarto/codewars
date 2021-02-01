@@ -683,3 +683,19 @@ function partsSums(ls) {
   let sum = ls.reduce((p, c) => p + c, 0);
   return ls.map(v => sum = sum - v);
 }
+
+
+--- 22 ---
+function solution(string) {
+  string = string.split('').map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = ' ' + el
+    }
+    return el
+  })
+  return string.join('')
+}
+
+function solution(string) {
+  return string.replace(/([a-z])([A-Z])/g, "$1 $2");
+}
