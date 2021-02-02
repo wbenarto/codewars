@@ -699,3 +699,26 @@ function solution(string) {
 function solution(string) {
   return string.replace(/([a-z])([A-Z])/g, "$1 $2");
 }
+
+--- 23 ---
+
+
+function solve(arr){
+  //..
+  let res = 0
+  
+  for (let i=0; i<arr.length; i++) {
+    for (let j=i+1; j<arr.length; j++) {
+      
+      console.log('arr[i]' + arr[i] + "    arr[j]   " +arr[j])
+      console.log(res)
+      
+      console.log('calculation index = ' +(2*arr[j]-arr[i]) )
+      if (arr.indexOf(2*arr[j]-arr[i])>0) res++
+    }
+    
+  }
+  return res
+  
+  
+}
