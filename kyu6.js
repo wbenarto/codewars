@@ -719,6 +719,61 @@ function solve(arr){
     
   }
   return res
+}
+
+*** Find 3 nums that has same differences *** 
+- find the difference, look for the next num
+- check next num if exist in arr 
+
+--- 24 ---
+const revNum = (num) => {
+  const fake = String(num).split('')
+  console.log(fake.reverse())
+  
+  let first = []
+  let secondRev = []
+  
+  if fake.length < 2 return 
+  
+  if (fake.length %2==0) {
+    first = Number(fake.slice(0, fake.length/2).join(''))
+    console.log('first = ' + first)
+    
+    secondRev = Number(fake.slice(fake.length/2).reverse().join(''))
+    console.log('second = ' + secondRev)
+    
+    if (first == secondRev) {return true} 
+    else return false
+//   for (let i=0; i < fake.length/2 ; i++) {
+//   console.log(fake[i])
+//     first.push(fake[i]) 
+//   }  
+  } else {
+    first = Number(fake.slice(0, fake.length/2))
+    secondRev = Number(fake.slice(fake.length/2+1).reverse().join(''))
+    
+    console.log("Odd case first = " + first)
+    
+    console.log('Odd case second = ' + secondRev)
+    if (first == secondRev) return true
+    else return false
+    
+  }
+}
+
+--- 25 ---
+function comp(array1, array2){
+  //your code here
+  console.log(array1.sort(), array2)
+  
+  if (array1.length == [] || array2.length == []) return true
+  if (!array1 && array2 === null) return false
   
   
+  let a = array1.map(e=>Math.pow(e, 2))
+  console.log('a = ' + Number(a.sort().join('')))
+  console.log('b = ' + Number(array2.sort().join('')))
+  
+  
+  return (Number(a.sort().join('')) == Number(array2.sort().join('')))
 }
