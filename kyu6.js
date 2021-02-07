@@ -777,3 +777,49 @@ function comp(array1, array2){
   
   return (Number(a.sort().join('')) == Number(array2.sort().join('')))
 }
+
+solutionfunction comp(array1, array2){
+  //your code here
+
+  
+  if (array1 == null || array2 == null) return false
+
+  
+  let a = array1.map(e=>Math.pow(e, 2))
+  console.log('a = ' + Number(a.sort().join('')))
+  console.log('b = ' + Number(array2.sort().join('')))
+  a.sort((a,b) =>a-b)
+  
+  let b =array2.sort((a,b)=>a-b)
+  
+  return a.every((e,i)=>e==b[i])
+}
+
+--- 26 ---
+function isAValidMessage(message){
+  // your code
+  console.log(message)
+  let regex = /\d/g
+  let regexNum = /[a-zA-Z]/g
+ 
+  
+  let words =message.split(regex).map(e=>e.length).filter(e=>e>0)
+  let nums = [...message.replace(regexNum, ' ').split(' ')].filter(e=>e>0)
+  console.log(typeof nums, typeof words)
+  
+  console.log('words    =' + words)
+  console.log('nums     =' + nums)
+  console.log(nums.map((e,i) => console.log("nums[i] = " + e  + '  && words[i] = ' + words[i])))
+  
+  if (message == '') return true
+  return nums.every((e,i)=>Number(e) == Number(words[i])) ? true : false
+}
+
+--- 27 ---
+const diag1Sym = s => s.map((v, i) => [...v].map((_, j) => s[j][i]).join(''))
+const rot90Clock = s => diag1Sym(s).map(v => [...v].reverse().join(''))
+const selfieAndDiag1 = s => {
+  const r = diag1Sym(s)
+  return s.map((v, i) => v + '|' + r[i])
+}
+const oper = (fct, s) => fct(s.split('\n')).join('\n')
