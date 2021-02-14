@@ -2986,3 +2986,18 @@ function calc(x){
    console.log(sumFirst-sumSec)
    return sumFirst - sumSec
  }
+
+ 152 
+ function elevatorDistance(array) {
+  // your code here
+  console.log(array)
+  
+  let result = 0
+//   array.reduce((a,b)=> result += a-b)
+  for (let i =0 ; i< array.length; i++) {
+    if (array[i+1] == null) {return result }
+    console.log('result = ' +result)
+    result+= Math.abs(array[i]-array[i+1])
+  }
+  console.log(result)
+}
