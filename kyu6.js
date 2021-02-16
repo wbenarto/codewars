@@ -823,3 +823,27 @@ const selfieAndDiag1 = s => {
   return s.map((v, i) => v + '|' + r[i])
 }
 const oper = (fct, s) => fct(s.split('\n')).join('\n')
+
+
+--- 28 ---
+function spinWords(arg){
+  //TODO Have fun 
+  // rules: 5 or more letters:)
+  // loop thru each word, check if 5, reverse letters, if no return
+  console.log(arg)
+  let split = arg.split(' ')
+  let rev = []
+  console.log('split = ' + split)
+  split.map(e=>{
+      if (e.length>=5) {console.log('more than 5')
+                        rev.push(e.split('').reverse().join('')) 
+                     
+                      } else {console.log('less than 5')
+                               rev.push(e)
+                             
+                             }
+    
+  })
+   console.log(rev)
+  return rev.join(' ')
+}
