@@ -3001,3 +3001,8 @@ function calc(x){
   }
   console.log(result)
 }
+
+153
+function switcheroo(x){
+  return x.split('').map(e=> (e=="a") ? e.replace('a','b') : (e=='b') ? e.replace('b','a') : e ).join('')
+  }
