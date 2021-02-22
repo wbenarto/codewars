@@ -847,3 +847,33 @@ function spinWords(arg){
    console.log(rev)
   return rev.join(' ')
 }
+
+--- 29 ---
+function calculateWinners(snapshot, penguins) {
+  // TODO: solve kata
+  let split = snapshot.split('\n')
+  let result = []
+  console.log(split)
+  console.log(split.map(e=>{
+    let res = 0
+    let speed = e.split(/[pP]/g)[1].replace('|', '')
+    
+    speed.split('').map(e=> res += replaceSpeed(e))
+    result.push(res)
+  }))
+//   let time = penguins.map((e,i)=>{  })
+  console.log(result, penguins)
+  
+  let sorted = [...result].sort((a,b) => a-b)
+  console.log(sorted[1])
+  console.log(result.indexOf(sorted[1]))
+  let first = penguins[result.indexOf(sorted[0])]
+  let sec = penguins[result.indexOf(sorted[1])]
+  let third = penguins[result.indexOf(sorted[2])]
+
+  return `GOLD: ${first}, SILVER: ${sec}, BRONZE: ${third}`
+  };
+
+const replaceSpeed = (input) => {
+  return (input == '-') ? 1 : (input == '~') ? 2  : 0
+ }
