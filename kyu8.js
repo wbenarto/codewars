@@ -1513,6 +1513,18 @@ function dBScale(intensity) {
     (d < 7) ? (d * 40) - 20 : 
      (d * 40) - 50 
    }
+
+   --- 116 ---
+   function stringy(size) {
+    // your code here   
+    let res = []
+    
+    for (let i=1; i<=size; i++) {
+      (i%2==0) ? res.push('0'):res.push('1')
+    }
+    console.log(res)
+    return res.join('')
+  }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
