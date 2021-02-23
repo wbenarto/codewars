@@ -1525,6 +1525,16 @@ function dBScale(intensity) {
     console.log(res)
     return res.join('')
   }
+
+
+  --- 117 ---
+  function preFizz(n) {
+    let res = []
+    for (let i=1; i<=n ; i++) {
+      res.push(i)
+    }
+    return res
+  }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
