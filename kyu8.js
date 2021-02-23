@@ -1539,6 +1539,9 @@ function dBScale(intensity) {
   --- 118 ---
   // Write here your multiply-function
 const multiply = (a,b) => a*b
+
+--- 119 ---
+const solve = (x, y) => x / y// y
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
