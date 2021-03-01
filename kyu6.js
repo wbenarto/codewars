@@ -891,3 +891,20 @@ function getDay(day, isLeap){
   let date = new Date(2005 - isLeap, 0, day);    
   return `${monthFormat.format(date)}, ${dayFormat.format(date)}`;
 }
+
+ 31 
+ function expandedForm(num) {
+  // Your code here
+  //find dif el to end
+  let res = []
+  num = String(num)
+  num.split('').map((e,i) => {
+    let zeros = num.length-1-i
+    
+    if (e == 0) {return }
+    res.push(e.concat('0'.repeat(zeros)))
+    console.log(e, num.length-1-i)
+  })
+  console.log(res.join(' + '))
+  return res.join(' + ')
+  }
