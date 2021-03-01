@@ -1555,6 +1555,15 @@ function booleanToString(b){
   //your code here
   return String(b)
 }
+
+122 
+function uefaEuro2016(teams, scores){
+  // your code...
+  if (scores[0] == scores[1]) return `At match ${teams[0]} - ${teams[1]}, teams played draw.`
+  if (scores[0] < scores[1]) { return `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!`}
+  else {return `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!`}
+
+}
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
