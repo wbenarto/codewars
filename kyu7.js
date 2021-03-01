@@ -3058,7 +3058,18 @@ const multiplyAll = (arr) => {
     console.log(res)
    return res
  }
-
- 
-
 }
+
+157
+function fistBeard(arr) {
+  //Try and shave him... I dare you!
+   console.log(arr)
+   let res = []
+   arr.map(e=> {
+     e.map(e=> {
+       res.push(String.fromCharCode(e))
+     })
+   })
+   return res.join('')
+ 
+ }
