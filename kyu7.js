@@ -3045,3 +3045,20 @@ function separateTypes(input) {
     console.log(valueType, types, value, types[valueType])
   }, {})
 } 
+
+156 
+/* left blank for unlimited creativity :) */
+const multiplyAll = (arr) => {
+  console.log(arr)
+ let res = []
+ 
+ return multiplySec = (a) => {
+   console.log('a' + a)
+   arr.forEach(e=> res.push(e*a))
+    console.log(res)
+   return res
+ }
+
+ 
+
+}
