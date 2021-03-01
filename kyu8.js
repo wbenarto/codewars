@@ -1587,6 +1587,12 @@ var replaceDots = function(str) {
   return str.replace(/[.]/g, '-');
 }
 
+126 position in alphabet
+function position(letter){
+  //Write your own Code!
+    return `Position of alphabet: ${letter.charCodeAt(0)-96}`
+  }
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
