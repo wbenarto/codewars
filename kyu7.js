@@ -3006,3 +3006,42 @@ function calc(x){
 function switcheroo(x){
   return x.split('').map(e=> (e=="a") ? e.replace('a','b') : (e=='b') ? e.replace('b','a') : e ).join('')
   }
+
+
+154 
+function chuckPushUps(string) {
+  //Massive, massive pecs!
+  console.log(string, typeof string)
+  
+    if (typeof string !== 'string' || !string) return "FAIL!!"
+  
+    let regex = /[\D*]/g
+ 
+  let split = string.split(' ').sort((a,b) => b-a)
+  console.log(split[0])
+  
+
+  let binary = string.replace(regex, ".")
+  
+  console.log(binary)
+  
+//  binary.split(' ').map(e=>console.log("map " + e))
+//   console.log(parseInt(binary, 2))
+  
+
+  return parseInt(split[0], 2)
+  
+}
+
+155 
+function separateTypes(input) {
+  console.log(input)
+  return input.reduce((types, value) => {
+    let valueType = typeof value
+    let type = types[valueType]
+    
+    types[valueType] = type? [...type, value] : [value]
+    return types
+    console.log(valueType, types, value, types[valueType])
+  }, {})
+} 
