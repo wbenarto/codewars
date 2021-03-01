@@ -1582,6 +1582,10 @@ function pipeFix(numbers){
   
   return res
 }
+125
+var replaceDots = function(str) {
+  return str.replace(/[.]/g, '-');
+}
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
