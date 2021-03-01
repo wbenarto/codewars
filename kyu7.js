@@ -3073,3 +3073,12 @@ function fistBeard(arr) {
    return res.join('')
  
  }
+
+ 158
+ function headSmash(array) {
+  // This is gonna hurt!
+  if(array.length == 0 || !array) return 'Gym is empty'
+  if (typeof array == 'number') return "This isn't the gym!!"
+  console.log(array)
+  return array.map(e=> e.replace(/[O]/g, ' '))
+}
