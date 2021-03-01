@@ -1570,6 +1570,19 @@ var a = "dev"
 var b = "Lab"
 
 var name = `${a}${b}`
+
+124
+function pipeFix(numbers){
+  let first = numbers[0]
+  let last = numbers[numbers.length-1]
+  let res =[]
+  for(let i=first; i<=last; i++) {
+    res.push(i)
+  }
+  
+  return res
+}
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
