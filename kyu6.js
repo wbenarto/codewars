@@ -908,3 +908,29 @@ function getDay(day, isLeap){
   console.log(res.join(' + '))
   return res.join(' + ')
   }
+
+  32 
+  function bingo(ticket, win){
+    console.log(ticket, win)
+    checkWin(ticket[0])
+    let res = 0
+    
+    ticket.map(e=>{
+      if (checkWin(e)) { res+=1}
+    })
+    
+    console.log(res)
+    
+    return res < win ? "Loser!" : "Winner!"
+  
+  }
+  
+  const checkWin= (arr) => {
+   
+    console.log(arr[0])
+    let codeNum = arr[0].split('').map((e,i)=>e.charCodeAt(0))
+    console.log(codeNum.indexOf(arr[1]))
+    console.log(codeNum)
+  
+    return (codeNum.indexOf(arr[1]) < 0) ? 0 : 1
+  }
