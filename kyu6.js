@@ -934,3 +934,113 @@ function getDay(day, isLeap){
   
     return (codeNum.indexOf(arr[1]) < 0) ? 0 : 1
   }
+
+
+  function streetFighterSelection(fighters, position, moves){
+    console.log(fighters, position, moves)
+    
+    let cur = position
+    let res = []
+    let hovered = []
+    
+    moves.map(e=> {
+      console.log(e)
+      switch (e) {
+          
+        case "up":
+        cur = [cur[0] ,0]
+          console.log('cur before = ' + cur)
+        res.push(cur)
+          console.log(res)
+          hovered.push(fighters[cur[0], [cur[1]]]);
+          
+        break;
+          
+        case 'down':
+          console.log(cur)
+        cur[1] = 1
+          console.log('cur before = ' + cur)
+        res.push(cur)
+          console.log(res)
+        break;
+          
+        case 'left':
+          console.log(cur)
+  //         (cur[0] == 0) ? cur[0] = 5: cur[0] -= 1
+          if (cur[0] == 0) {cur[0] = 5} else cur[0] -= 1
+          cur = [cur[0], cur[1]]
+          console.log('cur before = ' + cur)
+        res.push(cur)
+          console.log(res)
+        break;
+          
+        case 'right':
+          console.log(cur)
+  //       (cur[0] == 5 ) ? cur[0] = 0 : cur[0] += 1;
+          if (cur[0] == 5) {cur[0] = 0} else cur[0] += 1
+          cur = [cur[0], cur[1]]
+          console.log('cur before = ' + cur)
+        res.push(cur)
+          console.log(res)
+          break;
+          default: return;
+    }
+    })
+    console.log("final == " +cur , res)
+    
+    console.log(hovered)
+    return "";
+  }
+
+  33 
+
+  function streetFighterSelection(fighters, position, moves){
+    console.log(fighters, position, moves)
+    
+    let cur = position
+    let res = []
+    let hovered = []
+  
+  
+    
+    console.log('Ryu = ' + fighters[cur[0]][cur[1]])
+    
+    moves.map(e=> {
+      console.log(e)
+      
+      if (e == 'up') {
+        console.log('This is up mofo', cur)
+        cur = [0, cur[1]]
+        console.log(fighters[0][cur[1]])
+        hovered.push(fighters[0][cur[1]])
+        
+        console.log(hovered)
+      } else if ( e == 'down') {
+        console.log("I'm down bitches", cur)
+        cur = [1,cur[1]]
+        console.log('cur ' + cur)
+        hovered.push(fighters[1][cur[1]])
+        console.log(hovered)
+        
+      } else if (e == 'right') {
+        console.log("i'm always right", cur)
+        if (cur[1] == 5) {cur[1] = 0} else cur[1]++
+        cur = [cur[0],cur[1]]
+        console.log('cur' + cur)
+        hovered.push(fighters[cur[0]][cur[1]])
+        console.log(hovered)
+      } else if (e == 'left') {
+        console.log('to the left ', cur)
+        if (cur[1] == 0 ) {cur[1] = 5} else cur[1]--
+        cur = [cur[0],cur[1]]
+        console.log('cur ' + cur)
+        hovered.push(fighters[cur[0]][cur[1]])
+        console.log(hovered)
+      }
+      
+    })
+    console.log("final == " +cur , res)
+    
+    console.log(hovered)
+    return hovered;
+  }
