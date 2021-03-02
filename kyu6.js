@@ -1044,3 +1044,21 @@ function getDay(day, isLeap){
     console.log(hovered)
     return hovered;
   }
+
+  34
+  function fibonacci(n) {
+    //return fibonacci array of n elements
+    let res = [0 ,1]
+    console.log(n)
+    
+  
+    let findNext = (a,b) => a+b
+    
+    while (res.length < n) {
+      
+      let num = findNext(res[res.length-1], res[res.length-2])
+      res.push(num)
+    }
+  
+    return (n<=0) ? [] : res
+  }
