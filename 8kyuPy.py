@@ -18,3 +18,11 @@ def merge_arrays(arr1, arr2):
 
     return sorted(set(arr1+arr2))
     pass
+
+# 3 initiating a class
+
+
+class Ball(object):
+    # your code goes here
+    def __init__(self, type='regular'):
+        self.ball_type = type
