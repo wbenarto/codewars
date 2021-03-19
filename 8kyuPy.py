@@ -26,3 +26,13 @@ class Ball(object):
     # your code goes here
     def __init__(self, type='regular'):
         self.ball_type = type
+
+# 4
+
+
+def lovefunc(flower1, flower2):
+    # ...
+    if (flower1+flower2) % 2 == 1:
+        return True
+
+    return False
