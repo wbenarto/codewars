@@ -1,3 +1,4 @@
+import math
 *** first python codee yawww ** *
 
 # 1
@@ -36,3 +37,30 @@ def lovefunc(flower1, flower2):
         return True
 
     return False
+
+
+# 5 else if
+def people_with_age_drink(age):
+
+    if age < 14:
+        return "drink toddy"
+    elif age < 18:
+        return "drink coke"
+    elif age < 21:
+        return "drink beer"
+    elif age > 21:
+        return "drink whisky"
+    else:
+        return "drink whisky"
+
+
+# 6 Point object, consisting x and y. accessing with dot notaion a.x a.y
+
+
+def distance_between_points(a, b):
+    # your code here
+
+    dist_a = abs(a.x - b.x)
+    dist_b = abs(a.y - b.y)
+
+    return math.sqrt(dist_a**2 + dist_b**2)
