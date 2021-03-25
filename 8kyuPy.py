@@ -87,3 +87,10 @@ def ensure_question(s):
     if last == "?":
         return s
     return s + '?'
+
+# 9
+
+
+def add_five(num):
+    total = num + 5
+    return total
