@@ -72,3 +72,18 @@ def converter(mpg):
     #     m/g to km/l // 1.609344/4.5609
     conv = 1.609344/4.54609188
     return round(mpg*conv, 2)
+
+# 8 if statement
+
+
+def ensure_question(s):
+    # Code here
+    # check last index if it contains ?
+    # if statement
+    if len(s) == 0:
+        return '?'
+
+    last = s[len(s)-1]
+    if last == "?":
+        return s
+    return s + '?'
