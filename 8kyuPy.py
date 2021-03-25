@@ -64,3 +64,11 @@ def distance_between_points(a, b):
     dist_b = abs(a.y - b.y)
 
     return math.sqrt(dist_a**2 + dist_b**2)
+
+
+# 7 round to 2 decimals
+def converter(mpg):
+    # your code here
+    #     m/g to km/l // 1.609344/4.5609
+    conv = 1.609344/4.54609188
+    return round(mpg*conv, 2)
