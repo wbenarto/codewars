@@ -94,3 +94,29 @@ def ensure_question(s):
 def add_five(num):
     total = num + 5
     return total
+
+
+def mango(quantity, price):
+    free = 0
+    paid = 0
+    res = 0
+    print("quantity and price : " + str(quantity) + "   " + str(price))
+    modulo = quantity % 3
+    while quantity > 0:
+        paid = paid + 2
+        free = free + 1
+        res = res + price
+#         print("quantity : " + str(quantity))
+#         print("free : "  + str(free))
+#         print('res : ' + str(res))
+        quantity = quantity - 3
+    print(modulo)
+    if (quantity % 3 == 0):
+        return paid*price
+    elif (quantity % 3 == 1):
+        return (paid*price)-price
+    elif(quantity % 3 == 2):
+        return paid*price
+
+#     print("paid : " + str(paid*price))
+#     return paid*price
