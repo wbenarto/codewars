@@ -120,3 +120,22 @@ def mango(quantity, price):
 
 #     print("paid : " + str(paid*price))
 #     return paid*price
+
+ # 10
+ def narcissistic( value ):
+    # Code away
+    # sum of split nums power to nums.length == value return true
+    print(type(value))
+    
+    num = str(value)
+    total = 0
+    
+    for e in num:
+        print(e)
+        total += int(e) ** int(len(num))
+    
+    print(total, value)
+    if (total == value):
+        return True
+    
+    return False
