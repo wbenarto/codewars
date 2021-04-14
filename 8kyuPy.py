@@ -148,3 +148,51 @@ def powers_of_two(n):
         res.append(2**e)
     
     return res
+
+# 12
+
+def each_cons(lst, n):
+    # your solution here
+
+    # 
+    return [lst[i:n+i] for i in range(len(lst)-n + 1)]
+#     print(lst, n)
+#     temp = []
+#     res = 0
+#     num=0
+#     print("hehheheh" , lst[0:n])
+#     for e in lst:
+#         print(e)
+        
+#         temp.append(lst[:n])
+#         print(temp)
+#         if (len(temp)<2):
+#             temp.append(e)
+     
+#     while num<len(lst):
+#         temp.append(lst[num:num+n])
+#         print(temp)
+#         num = num + 1   
+#         print(temp[len(temp)-1], lst[len(lst)-1])
+#         print(temp[len(temp)-1])
+#         if(temp[len(temp)-1] == lst[len(lst)-1]):
+#             return
+#     return temp
+
+
+# 13
+def human_years_cat_years_dog_years(human_years):
+    # Your code here
+    cat_years = [15, 24, 28, 32]
+    dog_years = [15, 24, 29, 34]
+    if (human_years == 1):
+        cat_year = 15
+        dog_year = 15
+    elif (human_years == 2):
+        cat_year = 24
+        dog_year = 24
+    elif (human_years>2):
+        cat_year = ((human_years-2)*4) + 24
+        dog_year = ((human_years-2)*5) + 24
+    
+    return [human_years, cat_year, dog_year]
