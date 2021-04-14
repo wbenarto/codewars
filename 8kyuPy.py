@@ -139,3 +139,12 @@ def mango(quantity, price):
         return True
     
     return False
+
+# 11
+def powers_of_two(n):
+    res = []
+    for e in range(n+1):
+        print(e)
+        res.append(2**e)
+    
+    return res
