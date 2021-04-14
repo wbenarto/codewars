@@ -196,3 +196,12 @@ def human_years_cat_years_dog_years(human_years):
         dog_year = ((human_years-2)*5) + 24
     
     return [human_years, cat_year, dog_year]
+    return [x, 24+(x-2)*4 if (x != 1) else 15, 24+(x-2)*5 if (x != 1) else 15]
+
+# 14
+def temple_strings(obj, feature): 
+    # your code here
+    print(obj, feature)
+    
+    return obj + ' are ' + feature
+    return f"{obj} are {feature}"
