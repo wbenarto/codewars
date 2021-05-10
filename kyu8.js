@@ -1593,6 +1593,115 @@ function position(letter){
     return `Position of alphabet: ${letter.charCodeAt(0)-96}`
   }
 
+
+127 
+const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+
+128
+// Smash Words
+function smash (words) {
+  "use strict";
+  console.log(words.join(' '))
+  return words.join(' ')
+};
+
+129
+var cubeChecker = function(volume, side){
+  console.log(volume, side)
+  let res = Math.sqrt(volume/side)
+  if( res == side) {
+    return true
+  }
+  
+  return false
+};
+
+130
+function whoIsPaying(name){
+  //your code here
+  console.log(name)
+  
+  if(name.length <= 2) return [name]
+  
+  return [name, [name[0], name[1]].join('')]
+}
+
+131
+function isToday(date) {
+  //Code goes here.
+  console.log(date.toString())
+//   let newDate = date.split('T')
+  let today = new Date().toString().split(' ')
+console.log(today)
+  today = `${today[1]} ${today[2]} ${today[3]}`
+  date = date.toString().split(' ')
+  date =  `${date[1]} ${date[2]} ${date[3]}`
+  console.log(date)
+  console.log(today)
+  if (date == today) return true
+  return false
+  
+  
+}
+
+132 
+function howManydays(month){
+  
+  
+  var days 
+  console.log(month)
+  switch (month) {
+      case 1: 
+        days = 31;
+        break;
+      case 2:
+        days = 28;
+        break;
+      case 3:
+        days = 31;
+        break;
+      case 4: 
+        days = 30;
+        break;
+      case 5: 
+        days = 31;
+        break;
+      case 6: 
+        days = 30;
+        break;
+      case 7:
+        days = 31;
+        break;
+      case 8:
+        days = 31;
+        break;
+      case 9: 
+        days = 30;
+        break;
+      case 10:
+        days = 31;
+        break;
+      case 11: 
+        days = 30;
+        break;
+      case 12: 
+        days = 31;
+      break  
+      
+  }
+  console.log(days)
+  return days;
+}
+function howManydays(month){
+  switch (month){
+     case 2: return 28
+     case 4:
+     case 6:
+     case 9:
+     case 11: return 30
+  }
+  return 31
+}
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 

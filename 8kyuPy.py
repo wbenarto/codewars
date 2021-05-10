@@ -205,3 +205,8 @@ def temple_strings(obj, feature):
     
     return obj + ' are ' + feature
     return f"{obj} are {feature}"
+
+# 15
+a = "code"
+b = "wa.rs"
+name = a+b
