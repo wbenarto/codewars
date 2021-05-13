@@ -1702,6 +1702,30 @@ function howManydays(month){
   }
   return 31
 }
+
+function none(arr, fun){
+  // ...
+  let res = []
+arr.map(e=>{
+  console.log(fun(e))
+  if (fun(e) == 1 || fun(e) == true) res.push(e)
+
+})
+  if (res.length > 0) return false
+  return true
+}
+
+function any(arr, fun){
+  // ...
+  if (arr.length == 0) return false
+ let res = [...arr.map(e=> fun(e) ? true : false)]
+ 
+ console.log(res)
+ 
+if (res.indexOf(true) > -1) return true
+  return false
+  
+}
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 

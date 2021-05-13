@@ -3082,3 +3082,17 @@ function fistBeard(arr) {
   console.log(array)
   return array.map(e=> e.replace(/[O]/g, ' '))
 }
+
+159
+function addBinary(a,b){
+  return (a+b).toString(2)
+}
+
+160
+function shorter_reverse_longer(a,b){
+  console.log( a, b, a.length, b.length)
+  if (a.length < b.length) {
+    return `${a}${b.split('').reverse().join('')}${a}`
+  }
+  else return `${b}${a.split('').reverse().join('')}${b}`
+}
