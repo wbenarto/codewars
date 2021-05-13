@@ -1715,6 +1715,7 @@ arr.map(e=>{
   return true
 }
 
+135
 function any(arr, fun){
   // ...
   if (arr.length == 0) return false
@@ -1725,6 +1726,12 @@ function any(arr, fun){
 if (res.indexOf(true) > -1) return true
   return false
   
+}
+
+136
+function include(arr, item){
+  // ...
+  return arr.includes(item)
 }
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
