@@ -1733,6 +1733,26 @@ function include(arr, item){
   // ...
   return arr.includes(item)
 }
+
+137
+function pillars(num_pill, dist, width) {
+  // your code here
+  console.log(num_pill, dist, width)
+  
+  if (num_pill == 1) return 0
+  let diff = num_pill - 2 
+  let total = 0
+  dist = dist * 100
+  if (diff > 1 ) {
+    total = ((num_pill-1)*dist) + (diff*width)
+    return total
+  }  
+
+  return dist
+  
+}
+
+
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
 // Math.max() returns the highest number in the group. 
