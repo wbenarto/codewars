@@ -1752,6 +1752,12 @@ function pillars(num_pill, dist, width) {
   
 }
 
+138
+function isDivisible(wallLength, pixelSize){
+  //your code here
+  return (wallLength % pixelSize == 0)
+}
+
 
 // parseInt() function parse---s a string argument and returns an integer of the specified 
 // Math.floor() function returns the largest integer less than or equal to a given number.
