@@ -210,3 +210,153 @@ def temple_strings(obj, feature):
 a = "code"
 b = "wa.rs"
 name = a+b
+
+
+# 16
+def partition(arr, classifier_method):
+    # Write your solution
+    res = []
+    print(arr, classifier_method(arr[0]))
+    for x in arr:
+        if classifier_method(x):
+            res.append(x)
+    return res
+
+# 17
+import math
+def logs(x, a, b):
+    # Your code here
+    print(x ,a, b)
+    res = math.log(a, x) + math.log(b, x)
+    
+    return res
+
+# 18
+def isDigit(string):
+    # 11ELF
+    try:
+        float(string)
+        return True
+    except:
+        return False
+
+# 19
+def chromosome_check(sperm):
+    # Your code here
+    if sperm == "XX":
+        return "Congratulations! You're going to have a daughter."
+    elif sperm == "XY":
+        return "Congratulations! You're going to have a son."
+    
+# 20
+import math
+def circle_circumference(circle):
+    # your solution here
+    # 2pieR
+    print(circle.radius)
+    return 2 * math.pi* circle.radius
+
+# 21
+def God():
+    # code
+    return[Man(), Woman()]
+    
+   
+# code
+class Human():
+    pass
+class Man(Human):
+    pass
+class Woman(Human):
+    pass
+
+# 22 
+class Sleigh(object):
+    def authenticate(self, name, password):
+        self.name = name
+        self.password = password
+        
+        if self.name == 'Santa Claus' and self.password == 'Ho Ho Ho!':
+            return True
+        else:
+            return False
+        
+# 23
+def sum_mul(n, m):
+    print(n,m)
+    if n<=0 or m<=0:
+        return 'INVALID'
+    if n == 0 or m<=n:
+        return 0
+    list = []
+    total = 0
+    for i in range(n, m, n):
+        total+= n
+        list.append(total)
+        print(total, list)
+        print(sum(list))
+        
+    
+        
+        
+#     for i in range(m):
+#         total+= n
+#         print(total)
+    return sum(list)
+
+# 24
+# Write your code here
+word = input()
+z = [z for z in word if z == 'z']
+o = [o for o in word if o == 'o']
+
+if (len(z)*2) == (len(o)):
+    print('Yes')
+else:
+    print('No')
+
+# 25
+
+N = int(input())
+data = int(''.join([x[len(x)-1] for x in input().split()]))
+
+
+# Write your code here
+# ans = 
+if (data%10==0):
+    print("Yes")
+else:
+    print('No')
+
+# 26
+websites = ['codewars'] * 1000
+
+# 27
+def check_the_bucket(bucket):
+    # code here
+    if 'gold' in bucket:
+        return True
+    else:
+        return (False)
+    
+# 28 
+def define_suit(card):
+    # Good luck
+    suit = list(card)[len(card)-1]
+    print(suit)
+    suits = { 'C' : 'clubs', 'S' : 'spades', 'D': 'diamonds', 'H': 'hearts'}
+    
+    return suits[suit]
+
+# 29
+def cookie(x):
+    # Good Luck
+    res = ''
+    if type(x) == str:
+        res = 'Zach!'
+    elif type(x) == float or type(x) == int:
+        res = 'Monica!'
+    else:
+        res = 'the dog!'
+        
+    return f'Who ate the last cookie? It was {res}'

@@ -36,3 +36,6 @@ def draft_translator(word):
 
 
 print(draft_translator('bakayarooo'))
+
+
+# List
