@@ -128,3 +128,28 @@ class Solution:
             res.append(a)
 
         return res
+
+# 8
+
+
+class Solution:
+
+    def find_product(self, n):
+        split = [i for i in str(n)]
+        a = 1
+        for i in split:
+            a *= int(i)
+        return a
+
+    def find_sum(self, n):
+        split = [i for i in str(n)]
+        a = 0
+        for i in split:
+            a += int(i)
+        return a
+
+    def subtractProductAndSum(self, n: int) -> int:
+        a = self.find_product(n)
+        b = self.find_sum(n)
+
+        return a - b
