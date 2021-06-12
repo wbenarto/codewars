@@ -69,3 +69,62 @@ class Solution:
         for index, val in enumerate(nums):
             result.append(result[index] + val)
         return result[1:]
+
+# 4
+
+
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        maxNum = max(candies)
+        result = [i+extraCandies >= maxNum for i in candies]
+        return result
+
+# 5
+
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        result = 0
+        for i, v in enumerate(nums):
+            for j, v in enumerate(nums):
+                if nums[i] == nums[j] and i < j:
+                    result += 1
+        return result
+
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        result = 0
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] == nums[j] and i < j:
+                    result += 1
+        return result
+
+# 6
+
+
+class ParkingSystem:
+
+    def __init__(self, big: int, medium: int, small: int):
+        self.empty = {1: big, 2: medium, 3: small}
+
+    def addCar(self, carType: int) -> bool:
+
+        if self.empty[carType] > 0:
+            self.empty[carType] -= 1
+            return True
+        else:
+            return False
+
+
+# 7
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        sorted_arr = sorted(nums)
+        res = []
+        for i, v in enumerate(nums):
+            a = sorted_arr.index(nums[i])
+            res.append(a)
+
+        return res
