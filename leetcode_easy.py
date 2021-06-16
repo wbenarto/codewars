@@ -153,3 +153,35 @@ class Solution:
         b = self.find_sum(n)
 
         return a - b
+
+# 9 771
+
+
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        res = 0
+
+        for i in stones:
+            if i in jewels:
+                res += 1
+
+        return res
+
+# 10 1528
+
+
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+
+        my_dict = {}
+
+        for i in range(len(s)):
+            my_dict[indices[i]] = s[i]
+
+        sorted_dict = sorted(my_dict)
+        res = []
+        for i in sorted_dict:
+            print(i)
+            res.append(my_dict[i])
+
+        return ''.join(res)
