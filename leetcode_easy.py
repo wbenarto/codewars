@@ -185,3 +185,24 @@ class Solution:
             res.append(my_dict[i])
 
         return ''.join(res)
+
+# 11 1342
+
+
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        temp = num
+        steps = 0
+        while temp > 0:
+            print(temp)
+            if temp % 2 == 0:
+                temp = temp/2
+                steps += 1
+            if temp % 2 == 1:
+                temp = temp - 1
+                steps += 1
+
+        return steps
+
+        # even / 2
+        # odd - 1
