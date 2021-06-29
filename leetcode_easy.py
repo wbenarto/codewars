@@ -206,3 +206,39 @@ class Solution:
 
         # even / 2
         # odd - 1
+
+# 12
+
+# Depth First Search - Inorder Traversal
+# Definition for a binary tree node.
+# Recursive solution
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        print(root)
+        if root is None:
+            return[]
+
+        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+
+# Iterative
+
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        stack = []
+        result = []
+        while root is not None or stack != []:
+            while root is not None:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            result.append(root.val)
+            root = root.right
+        return result
