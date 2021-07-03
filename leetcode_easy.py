@@ -242,3 +242,20 @@ class Solution:
             result.append(root.val)
             root = root.right
         return result
+
+
+# 13
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        res = []
+
+        for i in nums:
+            diff = abs(target - i)
+            print(i, diff)
+
+            if nums.index(diff) > 0:
+                res.append(nums.index(i))
+                res.append(nums.index(diff))
+                return res
+
+        print(res)
