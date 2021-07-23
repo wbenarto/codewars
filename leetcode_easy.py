@@ -259,3 +259,24 @@ class Solution:
                 return res
 
         print(res)
+
+
+# /**
+#  * @param {number} x
+#  * @return {number}
+#  */
+# var reverse = function(x) {
+#     let x_string = String(x)
+#     console.log(x_string.split('').reverse().join(''))
+#     let num = Number(x_string.split('').reverse().join(''))
+#     let negNum = -Math.abs(x_string.replace('-', '').split('').reverse().join(''))
+
+#     if (num > (Math.pow(2, 31)- 1) || negNum < (Math.pow(2, 31) * -1)) {
+#         return 0
+#     }
+#     if (x < 0) {
+#         return negNum
+#     }
+#     else return num
+
+# };
