@@ -280,3 +280,16 @@ class Solution:
 #     else return num
 
 # };
+
+# 14
+class Solution(object):
+    def isPalindrome(self, x):
+        chars = [e for e in str(x)]
+        first = chars[0:int(len(chars)/2)]
+        if len(chars) % 2 == 0:
+            last = chars[len(chars)/2:]
+        else:
+            last = chars[int(len(chars)/2)+1:]
+        if first == last[::-1]:
+            return True
+        return False
