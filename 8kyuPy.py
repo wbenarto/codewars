@@ -360,3 +360,64 @@ def cookie(x):
         res = 'the dog!'
         
     return f'Who ate the last cookie? It was {res}'
+
+
+# 30
+def name_shuffler(str_):
+    # your code here
+    print(str_)
+    name =  str_.split(' ')
+    return name[1] + ' ' + name[0]
+
+
+# 31 
+def close_compare(a, b, margin=0):
+    diff = abs(a - b)
+    if diff <= margin: 
+        return 0
+    if a < b:
+        return -1
+    elif a > b: 
+        return 1
+    
+# 32 
+def fillable(stock, merch, n):
+    # Your code goes here.
+    if merch in stock and stock[merch] >= n:
+        return True
+    else: 
+        return False
+
+# 33
+import math
+def circle_area(circle):
+    # your solution here
+    return round(math.pi * circle.radius * circle.radius,  6 )
+
+# 34
+def add(a,b):
+    # Your Code Here
+    return a+b
+# Make more functions. Refer to the description for function names.
+# The code will NOT WORK IF YOU USE names other than the ones
+# from the description
+
+def multiply(a,b):
+    return a*b
+    
+def divide(a,b):
+    return a/b
+
+def mod(a,b) :
+    return a%b
+def exponent(a,b) :
+    return a**b
+def subt(a,b):
+    return a-b
+
+# 35
+def greet(name):
+
+    if name == "Johnny":
+        return "Hello, my love!"
+    return "Hello, {name}!".format(name=name)
