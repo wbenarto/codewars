@@ -1026,16 +1026,3 @@
 #             return True
 #         else:
 #             return False
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-
-        res = {}
-
-        for i, e in enumerate(nums):
-            diff = target - e
-            if diff in res:
-                return [i, res[diff]]
-            else:
-                res[e] = i
