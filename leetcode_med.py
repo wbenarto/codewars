@@ -1,0 +1,269 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        if len(preorder) < 1 and len(inorder) < 1:
+            return None
+
+        root = TreeNode(preorder[0])
+
+        midIdx = inorder.index(preorder[0])
+
+        leftInorder = inorder[:midIdx]
+        rightInorder = inorder[midIdx+1:]
+
+        root.left = self.buildTree(
+            [x for x in preorder if x in leftInorder], leftInorder)
+        root.right = self.buildTree(
+            [x for x in preorder if x in rightInorder], rightInorder)
+
+        return root
+
+
+# 110 balance a binary tree
+# # Definition for a binary tree node.
+# # class TreeNode:
+# #     def __init__(self, val=0, left=None, right=None):
+# #         self.val = val
+# #         self.left = left
+# #         self.right = right
+# class Solution:
+#     def getHeight(self, root):
+#         if root is None:
+#             return -1
+#         return 1 + max(self.getHeight(root.left), self.getHeight(root.right))
+#     def isBalanced(self, root: Optional[TreeNode]) -> bool:
+#         if root is None:
+#             return True
+#         diff = abs(self.getHeight(root.left) - self.getHeight(root.right))
+#         if diff <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right):
+#             return True
+#         else:
+#             return False
+
+
+#  125
+#  class Solution:
+#     def findKthLargest(self, nums: List[int], k: int) -> int:
+#         idx = 1
+#         leftIdx = idx * 2
+#         rightIdx = idx * 2 + 1
+#         sorted = nums.sort(reverse=True)
+#         print(nums)
+
+#         return nums[k-1]
+
+
+# 2
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+        res = ListNode()
+        cur = res
+        print(res)
+        carry = 0
+
+        while l1 or l2 or carry:
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
+
+            val = v1 + v2 + carry
+            carry = val // 10
+            val = val % 10
+            cur.next = ListNode(val)
+
+            cur = cur.next
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+
+        return res.next
+
+
+# 3
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        charSet = set()
+        result = 0
+        l = 0
+
+        for r in range(len(s)):
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
+            result = max(result, r - l + 1)
+            charSet.add(s[r])
+        return result
+
+# 33
+
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        print(nums, target)
+        if (target in nums):
+            return nums.index(target)
+        else:
+            return -1
+
+# 17
+
+
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+
+        res = []
+
+        hashMap = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+                   '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+
+        def backtrack(i, curStr):
+            if len(curStr) == len(digits):
+                res.append(curStr)
+                return
+            for e in hashMap[digits[i]]:
+                backtrack(i+1, curStr + e)
+
+        if digits:
+            backtrack(0, '')
+
+        return res
+
+
+# 19
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(0, head)
+
+        left = dummy
+        right = head
+
+        while n > 0 and right:
+            n -= 1
+            right = right.next
+
+        while right:
+            left = left.next
+            right = right.next
+
+        left.next = left.next.next
+
+        return dummy.next
+
+
+# 34
+hashMap = {}
+  res = []
+
+   if target not in nums:
+        return [-1, -1]
+
+    # if target in nums:
+    #     res.append(nums.index(target))
+    #     temp = nums[nums.index(target):]
+    #     for e in temp:
+
+    for i, e in enumerate(nums):
+        if e == target:
+            res.append(i)
+    minVal = min(res)
+    maxVal = max(res)
+    print([minVal, maxVal])
+
+    return [minVal, maxVal]
+
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        left = self.binSearch(nums, target, True)
+        right = self.binSearch(nums, target, False)
+        
+        return [left, right]
+    
+    
+    def binSearch(self, nums, target, leftBias):
+        l , r = 0 , len(nums) - 1
+        i = -1
+        
+        while l <= r:
+            m = (l + r ) // 2
+            
+            if target > nums[m]:
+                l = m + 1
+            elif target < nums[m]:
+                r = m - 1
+            else:
+                i = m
+                if leftBias:
+                    r = m - 1
+                else:
+                    l = m + 1
+        return i
+        
+# 11 
+class Solution:
+    
+    def maxArea(self, height: List[int]) -> int:
+        resArea = []
+        
+        l, r = 0, len(height)-1
+
+            # self.calcArea(width, min(l,r), resArea = [])
+        while l < r:
+            width = r - l
+            resArea.append(self.calcArea(width, min(height[l],height[r])))
+            if height[l] < height[r]:
+                l+=1
+               
+                # self.calcArea(width, min(height[l],height[r]), resArea = [])
+            
+            else:
+                r-= 1
+                # self.calcArea(width,min(height[l],height[r]), resArea = [])
+        # print(max(resArea))
+        return max(resArea)
+        
+    def calcArea(self, indexWidth, height):
+        return indexWidth * height
+   
+        
+    
+        
+# 22
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        stack = []
+        res = []
+        
+        def backtrack(openN, closeN):
+            
+            if openN == closeN == n:
+                res.append(''.join(stack))
+                return
+        
+            if openN < n:
+                stack.append('(')
+                backtrack(openN + 1 , closeN)
+                stack.pop()
+            
+            if closeN < openN:
+                stack.append(')')
+                backtrack(openN, closeN + 1)
+                stack.pop()
+                
+        backtrack(0, 0)
+        
+        return res

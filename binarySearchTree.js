@@ -122,3 +122,4 @@ remove(data){
     }
      this.root = removeNode(this.root, data)
 }
+

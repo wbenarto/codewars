@@ -421,3 +421,88 @@ def greet(name):
     if name == "Johnny":
         return "Hello, my love!"
     return "Hello, {name}!".format(name=name)
+
+# 36
+def sum_of_digits(digits): 
+    # your code here
+    if digits is None:
+        return ''
+    split_num = [val for val in str(digits)]
+    print(split_num)
+    sum = 0
+    res = ' + '.join(split_num)
+    
+    for val in split_num:
+        sum += int(val)
+        
+    print(sum)
+    print(res)
+    
+    return res + ' = ' + str(sum)
+
+# 37
+import numpy
+
+def smallest_product(a):
+    return min(numpy.prod(x) for x in a)
+
+
+# 38 
+# strip, lstrip, rstrip
+def remove(s):
+    return s.rstrip('!')
+
+
+# 39 
+
+def kata_13_december(lst): 
+    
+    res = []
+
+    
+    
+    
+    def check_odd(num):
+    
+        print(num)
+        if (num%2 ==1):
+            print('lego')
+            res.append(num)
+        else:
+            print('nope')
+    # Fix this code
+    a = map(check_odd, lst)
+    print(list(a))
+    print(res)
+    
+    
+    
+    return res
+# 40
+def all(seq, fun): 
+    # your code here
+    
+    a = map(fun, seq)
+#     print(list(a))
+
+    false = 0
+    
+    for e in list(a):
+        print(e)
+        if e is False or  e is 0:
+            
+            return False
+    return True
+
+# 41
+def vaporcode(s):
+    # your code here
+    print()
+#     return [ f" {x.upper()} " for x in s]
+    return ''.join([ f" {x.upper()} " for x in s if x is not ' ']).strip()
+
+
+# 42
+def words_to_sentence(words):
+    return ' '.join(words)
+    

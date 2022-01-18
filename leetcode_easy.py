@@ -1,4 +1,7 @@
 # 1
+import functools
+
+
 class Solution:
     def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
 
@@ -310,3 +313,716 @@ class Solution(object):
                 res += dict[s[i]]
                 i += 1
         return res
+
+
+# 110 Balance Tree?
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def getHeight(self, root):
+        if (root == None):
+            return -1
+        return 1 + max(self.getHeight(root.left), self.getHeight(root.right))
+
+    def isBalanced(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if (root == None):
+            return True
+
+        leftHeight = self.getHeight(root.left)
+        rightHeight = self.getHeight(root.right)
+        heightDiff = abs(leftHeight - rightHeight) <= 1
+        return heightDiff and self.isBalanced(root.left) and self.isBalanced(root.right)
+
+
+108
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        if len(nums) == 0:
+            return None
+        midIdx = floor(len(nums)/2)
+        print(midIdx, nums)
+        node = TreeNode(nums[midIdx])
+
+        left = self.sortedArrayToBST(nums[:midIdx])
+        right = self.sortedArrayToBST(nums[midIdx+1:])
+
+        node.left = left
+        node.right = right
+
+        print(node)
+        return node
+
+# 1
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        track = 0
+        for index, each in enumerate(nums):
+
+            diff = target - each
+
+            temp = nums[index+1:]
+            track += 1
+            if diff in temp:
+                if diff == each:
+                    return [nums.index(each), temp.index(diff)+track]
+                else:
+                    return [nums.index(each), nums.index(diff)]
+
+
+# 20
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        hashmap = {')': '(', ']': '[', '}': '{'}
+
+        for e in s:
+            if e in hashmap:
+                if stack and stack[-1] == hashmap[e]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(e)
+        return True if not stack else False
+
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        one, two = 1, 1
+
+        for i in range(n-1):
+            temp = one
+            one = one + two
+            two = temp
+
+        return one
+
+
+# 101
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+
+        # recursive
+        if not root:
+            return True
+
+        def dfs(node1, node2):
+            if (not node1) and (not node2):
+                return True
+            if (not node1) or (not node2):
+                return False
+            if node1.val != node2.val:
+                return False
+            exterior = dfs(node1.left, node2.right)
+            interior = dfs(node1.right, node2.left)
+            return exterior and interior
+
+        return dfs(root.left, root.right)
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+
+        # BFS solution
+        # deque
+
+        if not root:
+            return True
+        q = collections.deque([root, root])
+
+        while q:
+            r1 = q.popleft()
+            r2 = q.pop()
+
+            if (not r1) and (not r2):
+                continue
+            if (not r1) or (not r2):
+                return False
+            if r1.val != r2.val:
+                return False
+
+            q.appendleft(r1.left)
+            q.append(r2.right)
+            q.appendleft(r1.right)
+            q.append(r2.left)
+        return True
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+
+        # DFS solution
+        # stack
+
+        if not root:
+            return True
+
+        stack = [root, root]
+        while stack:
+            r1 = stack.pop()
+            r2 = stack.pop()
+
+            if (not r1) and (not r2):
+                continue
+            if (not r1) or (not r2):
+                return False
+            if r1.val != r2.val:
+                return False
+
+            stack.append(r1.left)
+            stack.append(r2.right)
+            stack.append(r1.right)
+            stack.append(r2.left)
+        return True
+
+
+104
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+
+
+136
+
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+
+        storage = {}
+        for i, e in enumerate(nums):
+
+            if e in storage:
+                storage[e] += 1
+            else:
+                storage[e] = 1
+
+        print(list(storage.keys())[list(storage.values()).index(1)])
+
+        return list(storage.keys())[list(storage.values()).index(1)]
+
+
+141
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+
+        while head:
+            if head.val is None:
+                return True
+            head.val = None
+
+            head = head.next
+
+        return False
+
+
+206
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        tail = None
+        while head:
+            next = head.next
+            head.next = tail
+            tail = head
+            head = next
+
+        return tail
+
+
+160
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
+
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        if headA == None and headB == None:
+            return None
+        A = headA
+        B = headB
+
+        while A != B:
+            A = A.next
+            B = B.next
+
+            if A == B:
+                return A
+            if A == None:
+                A = headB
+            if B == None:
+                B = headA
+
+        return A
+
+
+# 35
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+
+        # already in
+        if target in nums:
+            return nums.index(target)
+        if target < nums[0]:
+            return 0
+        if target > nums[len(nums)-1]:
+            return len(nums)
+        for i in range(len(nums)):
+            if nums[i] > target and nums[i - 1] < target:
+                return i
+
+# 53
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxSub = nums[0]
+        curSum = 0
+
+        for n in nums:
+            if curSum < 0:
+                curSum = 0
+            curSum += n
+            maxSub = max(maxSub, curSum)
+
+        return maxSub
+
+# 121
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+
+        buyPrice = prices[0]
+        sellPrice = 0
+        profit = 0
+        maxiProfit = 0
+        for n in prices:
+            if n < buyPrice:
+                buyPrice = min(buyPrice, n)
+                sellPrice = max(0, n)
+            if n > sellPrice:
+                sellPrice = max(sellPrice, n)
+            profit = sellPrice - buyPrice
+            maxiProfit = max(maxiProfit, profit)
+
+        return maxiProfit
+
+# 155
+
+
+class MinStack:
+
+    def __init__(self):
+        self.stack = []
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+
+    def pop(self) -> None:
+        self.stack.pop()
+
+    def top(self) -> int:
+        return (self.stack[len(self.stack)-1])
+
+    def getMin(self) -> int:
+        return (min(self.stack))
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+
+# 169
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+
+        res = {}
+
+        for n in nums:
+            if n in res:
+                res[n] += 1
+            else:
+                res[n] = 1
+        print(max(res))
+
+        return max(res, key=res.get)
+
+        # if res[max(res)] > len(nums)/2:
+        #     return max(res)
+
+# 170
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+
+        if root is None:
+            return None
+
+        tmp = root.left
+        root.left = root.right
+        root.right = tmp
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+
+# 234
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+
+        resList = []
+
+        cur = head
+
+        while cur is not None:
+            resList.append(cur.val)
+            cur = cur.next
+        if len(resList) % 2 == 0:
+            midIdx = floor(len(resList)/2)
+            firstArr = resList[:midIdx]
+            secArr = list(reversed(resList[midIdx:]))
+            if firstArr == secArr:
+                return True
+            else:
+                return False
+        if len(resList) % 2 == 1:
+            midIdx = floor(len(resList)/2)
+            firstArr = resList[:midIdx]
+            secArr = list(reversed(resList[midIdx+1:]))
+            if firstArr == secArr:
+                return True
+            else:
+                return False
+        # print(firstArr)
+        # print(list(reversed(resList[midIdx:])))
+        # print(resList)
+
+# 283
+
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+
+        for n in nums:
+
+            if n == 0:
+                nums.pop(nums.index(n))
+                nums.append(0)
+
+        return nums
+
+
+543
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        res = [0]
+
+        def dfs(node):
+            if node is None:
+                return -1
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            res[0] = max(res[0], 2+left+right)
+            return 1 + max(left, right)
+
+        dfs(root)
+        return res[0]
+
+
+# 26
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        for i, e in enumerate(nums):
+            temp = nums[i+1:]
+
+            while e in nums[i+1:]:
+                nums.pop(nums[i+1:].index(e) + i + 1)
+
+            print(nums)
+
+# 58
+
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        a = s.split()
+        word = a[len(a)-1]
+        return len(word)
+
+# 27
+
+
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        last = 0
+
+        while val in nums:
+            nums.remove(val)
+        print(nums)
+
+# 111
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        height = 0
+
+        if root is None:
+            return 0
+        if not root.left and not root.right:
+            return 1
+        if not root.left and root.right:
+            return 1 + self.minDepth(root.right)
+        if not root.right and root.left:
+            return 1 + self.minDepth(root.left)
+
+        return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
+
+        print(height)
+
+# 28
+
+
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if haystack is '' and needle is '':
+            return 0
+        elif needle in haystack:
+            return haystack.index(needle)
+        else:
+            return -1
+
+
+# 66
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        last = len(digits)-1
+
+        digits[last] += 1
+        print(digits)
+
+        while last >= 0:
+            if digits[last] == 10:
+                if last == 0:
+                    digits[last] = 1
+                    digits.append(0)
+                else:
+                    digits[last] = 0
+                    digits[last-1] += 1
+            last -= 1
+        print(digits)
+        return digits
+
+# 69
+
+
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        start = 0
+        end = x
+
+        while start + 1 < end:
+            mid = start + floor((end-start)/2)
+            sqrd = mid * mid
+
+            if sqrd == x:
+                return mid
+            elif sqrd < x:
+                start = mid
+            else:
+                end = mid
+
+        if end*end == x:
+            return end
+        return start
+
+# 217
+
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+
+        newSet = list(set(nums))
+
+        if len(newSet) != len(nums):
+            return True
+        else:
+            return False
+
+
+# 202
+
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+
+        visit = set()
+
+        while n not in visit:
+            print(n)
+
+            visit.add(n)
+            print(visit)
+            n = self.sqrUp(n)
+            if n == 1:
+                return True
+
+        return False
+
+    def sqrUp(self, num):
+        temp = [int(e)**2 for e in str(num)]
+        res = functools.reduce(lambda a, b: a+b, temp)
+
+        return res
+
+# 237
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+
+        print(node)
+        node.val = node.next.val
+        node.next = node.next.next
+        print(node)
+
+
+# 242
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        hashS = {}
+        hashT = {}
+
+        for e in s:
+            if e in hashS:
+                hashS[e] += 1
+            else:
+                hashS[e] = 1
+
+        for e in t:
+            if e in hashT:
+                hashT[e] += 1
+            else:
+                hashT[e] = 1
+
+        print(hashS)
+        print(hashT)
+
+        if hashS == hashT:
+            return True
+        else:
+            return False
