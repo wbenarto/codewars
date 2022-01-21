@@ -50,6 +50,24 @@ class Solution:
 
         return(res.next)
 
+# 3 O(n) Longest Substring with no repeating char
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        charSet = set()
+        l = 0
+        res = 0
+
+        for r in range(len(s)):
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
+            charSet.add(s[r])
+
+            res = max(res, r - l + 1)
+        return res
+
 
 # 4 <Hard> Median of two sorted arrays
 
