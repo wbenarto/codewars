@@ -174,7 +174,7 @@ class Solution:
         else:
             return False
 
-# 11 Container w/ most water
+# 11 <med> Container w/ most water
 
 
 class Solution:
@@ -195,3 +195,8 @@ class Solution:
                 l += 1
 
         return max(res)
+
+# 191 <ez> Count 1s in bin number of an int
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        return(bin(n).count('1'))
