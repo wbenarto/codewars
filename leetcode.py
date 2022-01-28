@@ -138,3 +138,60 @@ class Solution:
             res[i] = ''.join(res[i])
 
         return(''.join(res))
+
+
+# 9 <Easy> Palindrome Number
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+
+        x = [i for i in str(x)]
+        if len(x) < 2:
+            return True
+        midIdx = len(x)//2
+
+        r = len(x)-1
+
+        for l in range(midIdx):
+
+            if x[l] != x[r]:
+                return False
+            r -= 1
+
+        return True
+
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+
+        if x < 0:
+            return False
+        x = [i for i in str(x)]
+        midIdx = len(x) // 2
+        first = x[:midIdx]
+        second = x[midIdx+1:] if len(x) % 2 == 1 else x[midIdx:]
+        if first == second[::-1]:
+            return True
+        else:
+            return False
+
+# 11 Container w/ most water
+
+
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        l = 0
+        r = len(height) - 1
+        res = []
+
+        while l < r:
+            dist = r - l
+            res.append(min(height[l], height[r]) * dist)
+
+            if height[l] < height[r]:
+                l += 1
+            elif height[r] < height[l]:
+                r -= 1
+            else:
+                l += 1
+
+        return max(res)
