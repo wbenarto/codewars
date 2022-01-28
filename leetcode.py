@@ -196,6 +196,20 @@ class Solution:
 
         return max(res)
 
+# 121 <ez> Sell for max profit
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        profit = 0
+        minPrice = prices[0]
+        for i in range(len(prices)):
+            
+            if prices[i] < minPrice:
+                minPrice = prices[i]
+            if prices[i] - minPrice > profit:
+                profit = prices[i] - minPrice
+        
+        return profit 
+
 # 191 <ez> Count 1s in bin number of an int
 class Solution:
     def hammingWeight(self, n: int) -> int:
