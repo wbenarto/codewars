@@ -213,4 +213,15 @@ class Solution:
 # 191 <ez> Count 1s in bin number of an int
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        return(bin(n).count('1'))
+        return(bin(n).count('1')) 
+
+
+# 217 <ez> Contains Duplicate
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        numsSet = set(nums)
+        
+        if len(nums) == len(numsSet):
+            return False
+        else:
+            return True
