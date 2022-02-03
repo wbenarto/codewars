@@ -196,31 +196,60 @@ class Solution:
 
         return max(res)
 
+# 21 <Ez> Merge Two Sorted Linked List
+
+
+class Solution:
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        res = dummy
+
+        while l1 and l2:
+            if l1.val <= l2.val:
+                res.next = l1
+                l1 = l1.next
+            else:
+                res.next = l2
+                l2 = l2.next
+
+            res = res.next
+
+            if l1:
+                res.next = l1
+            elif l2:
+                res.next = l2
+
+        return dummy.next
+
 # 121 <ez> Sell for max profit
+
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         profit = 0
         minPrice = prices[0]
         for i in range(len(prices)):
-            
+
             if prices[i] < minPrice:
                 minPrice = prices[i]
             if prices[i] - minPrice > profit:
                 profit = prices[i] - minPrice
-        
-        return profit 
+
+        return profit
 
 # 191 <ez> Count 1s in bin number of an int
+
+
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        return(bin(n).count('1')) 
+        return(bin(n).count('1'))
 
 
 # 217 <ez> Contains Duplicate
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         numsSet = set(nums)
-        
+
         if len(nums) == len(numsSet):
             return False
         else:
