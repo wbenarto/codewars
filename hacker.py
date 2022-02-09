@@ -49,3 +49,21 @@ def plusMinus(arr):
     print(format(pos, ".6f"))
     print(format(neg, '.6f'))
     print(format(zero, ".6f"))
+
+
+def birthdayCakeCandles(candles):
+    # Write your code here
+    maxVal = candles.count(max(candles))
+    return(maxVal)
+
+
+def timeConversion(s):
+    # Write your code here
+    time = s[:-2]
+    nightDay = s[-2:]
+    print(time)
+    print(nightDay)
+
+    hour = int(time[:2]) % 12 + 12 if nightDay == 'PM' else int(time[:2]) % 12
+    minSec = time[2:]
+    return f'{hour:02}{minSec}'
