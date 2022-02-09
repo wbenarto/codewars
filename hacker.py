@@ -38,3 +38,14 @@ def diagonalDifference(arr):
         end -= 1
 
     return abs(left - right)
+
+
+def plusMinus(arr):
+    # Write your code here
+    pos = len([i for i in arr if i > 0]) / len(arr)
+    zero = len([i for i in arr if i == 0]) / len(arr)
+    neg = len([i for i in arr if i < 0]) / len(arr)
+
+    print(format(pos, ".6f"))
+    print(format(neg, '.6f'))
+    print(format(zero, ".6f"))
