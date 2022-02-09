@@ -67,3 +67,20 @@ def timeConversion(s):
     hour = int(time[:2]) % 12 + 12 if nightDay == 'PM' else int(time[:2]) % 12
     minSec = time[2:]
     return f'{hour:02}{minSec}'
+
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    # Write your code here
+
+    # convert apples and oranges into location
+    # add each dist to location
+    # if apples and oranges betweeen 7 and 10 print amount
+
+    locApples = [i + a for i in apples]
+    locOranges = [i + b for i in oranges]
+
+    numApples = len([i for i in locApples if i >= s and i <= t])
+    numOranges = len([i for i in locOranges if i >= s and i <= t])
+
+    print(numApples)
+    print(numOranges)
