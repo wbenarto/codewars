@@ -101,3 +101,23 @@ def sockMerchant(n, ar):
         pairs += int(ar.count(e) / 2)
 
     return pairs
+
+
+def countingValleys(steps, path):
+    # Write your code here
+    # sea level
+    # at sea and D, valley += 1
+
+    seaLevel = 0
+    valley = 0
+
+    for e in path:
+        if e == 'D' and seaLevel == 0:
+            valley += 1
+            seaLevel -= 1
+        elif e == 'U':
+            seaLevel += 1
+        elif e == 'D' and seaLevel != 0:
+            seaLevel -= 1
+
+    return (valley)
