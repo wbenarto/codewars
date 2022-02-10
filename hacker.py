@@ -121,3 +121,93 @@ def countingValleys(steps, path):
             seaLevel -= 1
 
     return (valley)
+
+
+def timeInWords(h, m):
+    # Write your code here
+    # check with m divisible by 15 'qrts, half', less than 30 "past", over 30 "to" and h +=1 , == 00 'oclock'
+    dict = {
+        1: 'one',
+        2: 'two',
+        3: 'three',
+        4: 'four',
+        5: 'five',
+        6: 'six',
+        7: 'seven',
+        8: 'eight',
+        9: 'nine',
+        10: 'ten',
+        11: 'eleven',
+        12: 'twelve',
+        13: 'thirteen',
+        14: 'fourteen',
+        15: 'fifteen',
+        16: 'sixteen',
+        17: 'seventeen',
+        18: 'eighteen',
+        19: 'nineteen',
+        20: 'twenty'
+    }
+
+    if m == 0:
+        return (f"{dict[h]} o' clock")
+    elif m == 30:
+        return (f"half past {dict[h]}")
+    elif m == 15:
+        return (f"quarter past {dict[h]}")
+    elif m == 45:
+        if h == 12:
+            return f"quarter to one"
+        else:
+            return (f"quarter to {dict[h+1]}")
+    elif m < 30 and m > 9:
+        new = minParse(m)
+        return (f"{new} minutes past {dict[h]}")
+    elif m < 10:
+        return (f"{minParse(m)} minute past {dict[h]}")
+    elif m > 30:
+        new = minParse(60-m)
+        if h == 12:
+            return f"{new} minutes to one"
+        else:
+            return (f"{new} minutes to {dict[h+1]}")
+
+
+def minParse(num):
+    print(str(num)[0])
+    numDict = {
+        '2': 'twenty',
+        '3': 'thirty',
+        '4': 'forty',
+        '5': 'fifty',
+    }
+
+    secNumDict = {
+        '1': 'one',
+        '2': 'two',
+        '3': 'three',
+        '4': 'four',
+        '5': 'five',
+        '6': 'six',
+        '7': 'seven',
+        '8': 'eight',
+        '9': 'nine',
+        '10': 'ten',
+        '11': 'eleven',
+        '12': 'twelve',
+        '13': 'thirteen',
+        '14': 'fourteen',
+        '15': 'fifteen',
+        '16': 'sixteen',
+        '17': 'seventeen',
+        '18': 'eighteen',
+        '19': 'nineteen',
+        '20': 'twenty'
+    }
+
+    if num > 20:
+        newNum = f"{numDict[str(num)[0]]} {secNumDict[str(num)[1]]}"
+    else:
+        newNum = f"{secNumDict[str(num)]}"
+
+    return newNum
