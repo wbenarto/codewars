@@ -211,3 +211,23 @@ def minParse(num):
         newNum = f"{secNumDict[str(num)]}"
 
     return newNum
+
+
+def marsExploration(s):
+    # Write your code here
+    count = 0
+    for i in range(0, len(s), 3):
+        if s[i] != 'S':
+            count += 1
+        print(i)
+
+    for i in range(1, len(s), 3):
+        if s[i] != 'O':
+            count += 1
+        print(i)
+
+    for i in range(2, len(s), 3):
+        if s[i] != 'S':
+            count += 1
+        print(i)
+    return count
