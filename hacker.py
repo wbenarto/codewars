@@ -231,3 +231,68 @@ def marsExploration(s):
             count += 1
         print(i)
     return count
+
+
+def weightedUniformStrings(s, queries):
+    # Write your code here
+    # z -- 26
+    # a -- 1
+    charList = []
+    idx = 0
+    temp = 0
+    for idx in range(len(s)):
+        # first e append in charList
+        # next letter after e is the uniform
+        # new letter append
+        if idx == len(s)-1:
+            temp += ord(s[idx])-96
+            charList.append(temp)
+            idx += 1
+        elif s[idx] != s[idx + 1]:
+            temp += ord(s[idx])-96
+            charList.append(temp)
+            temp = 0
+            idx += 1
+        elif s[idx] == s[idx + 1]:
+            temp += ord(s[idx])-96
+            charList.append(temp)
+            idx += 1
+    resArr = ['Yes' if i in charList else 'No' for i in queries]
+
+    return resArr
+
+# sorted array input one unknown pivot
+# lowest element
+
+# [5, 7, 1, 3, 4] -> 1
+# [1, 3] -> 1
+# [3, 4, 5, 6, 7, 8 , 1, 2] mid= 4
+# [1, 2, 3, 4, 5] mid = 2
+
+# mid, check with first left subarr, check with last right subarr
+# if first left is smaller, go to left, if not go to right
+# return mid
+
+
+def minEl(arr):
+
+    midIdx = len(arr)//2
+    midEl = arr[midIdx]
+    leftArr = arr[:midIdx]
+    rightArr = arr[midIdx+1:]
+
+    if midEl < leftArr[0]:
+        if midEl < rightArr[len(rightArr) - 1]:
+            print(midEl)
+
+    minVal = arr[0]
+    for e in arr:
+        if e < minVal:
+            minVal = e
+
+    print(minVal)
+
+
+minEl([5, 7, 1, 3, 4])
+minEl([3, 4, 5, 6, 7, 8, 1, 2])
+minEl([1, 3])
