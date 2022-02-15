@@ -1026,3 +1026,16 @@
 #             return True
 #         else:
 #             return False
+# class Solution:
+#     def isPalindrome(self, x: int) -> bool:
+
+#         if x < 0:
+#             return False
+#         x = [i for i in str(x)]
+#         midIdx = len(x) // 2
+#         first = x[:midIdx]
+#         second = x[midIdx+1:] if len(x) % 2 == 1 else x[midIdx:]
+#         if first == second[::-1]:
+#             return True
+#         else:
+#             return False
