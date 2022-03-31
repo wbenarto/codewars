@@ -1143,6 +1143,7 @@ function sameBsts(arrayOne, arrayTwo) {
 
   console.log('right Tree one ', rightTreeOne)
   console.log('right Tree two ', rightTreeTwo)
+  
   return sameBsts(leftTreeOne, leftTreeTwo) && sameBsts(rightTreeOne, rightTreeTwo)
 }
 
@@ -1175,3 +1176,34 @@ function branchSums(root, sum=0, arr=[]) {
 // Do not edit the lines below.
 exports.BinaryTree = BinaryTree;
 exports.branchSums = branchSums;
+
+function nodeDepths(root, count=0,  total=[],visited={}) {
+  // Write your code here.
+  // dfs, add sum for each node, when at the end, sum 
+  // if node visited
+
+  if (root.value in visited) {
+    visited[root.value] += 1
+  } else {
+    visited[root.value] = 1
+    total.push(count)
+  }
+
+  if (root.left) nodeDepths(root.left, count+1, total, visited)
+  if (root.right) nodeDepths(root.right, count+1, total, visited)
+
+  console.log(visited, total)
+  return total.reduce((a,b) => a + b)
+}
+
+// This is the class of the input binary tree.
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Do not edit the line below.
+exports.nodeDepths = nodeDepths;
