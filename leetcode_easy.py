@@ -1,3 +1,17 @@
+# 1 Two Sum
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict = {}
+
+        for i in range(len(nums)):
+            leftover = target - nums[i]
+
+            if leftover in dict:
+                return [dict[leftover], i]
+
+            dict[nums[i]] = i
+
+
 # # 1
 # import functools
 
