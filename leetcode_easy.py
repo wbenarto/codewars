@@ -75,6 +75,23 @@ class Solution:
             else:
                 dict[i] = 1
         return False
+
+# 53 Max Subarray
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxSub = nums[0]
+        maxSum = 0
+        for i in nums:
+
+            if maxSum < 0:
+                maxSum = 0
+            maxSum += i
+
+            maxSub = max(maxSum, maxSub)
+        return maxSub
+
 # # 1
 # import functools
 
