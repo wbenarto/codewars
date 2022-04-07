@@ -267,3 +267,25 @@ class Solution:
         backtrack(0, 0)
         
         return res
+
+# 238 product of list except itself
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        
+        # loop thru arr
+        # multiply all nums except i
+        
+        # if 0 in list return 0
+        
+        res = [1] * len(nums)
+        
+        prefix = 1
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
+        postfix = 1
+        for i in range(len(nums)-1, -1, -1):
+            res[i] *= postfix
+            postfix *= nums[i]
+         
+        return res
