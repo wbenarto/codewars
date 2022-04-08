@@ -11,6 +11,19 @@ class Solution:
 
             dict[nums[i]] = i
 
+# 26 remove duplicates in arr
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        l = 1
+
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[l] = nums[i]
+                l += 1
+        return l
+
 # 121 Buy Sell Stocks
 
 
