@@ -285,7 +285,25 @@ class Solution:
             
             res= max(maxSub, res)
         return res
-
+# 153 Min num in sub-sorted arr
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        res = nums[0]
+        l, r = 0, len(nums) - 1
+        
+        while l <= r:
+            if nums[l] <= nums[r]:
+                res = min(res, nums[l])
+                break
+            m = (l + r) // 2
+            res = min(res, nums[m])
+            
+            if nums[m] >= nums[l]:
+                l = m + 1
+            else: 
+                r = m - 1
+            
+        return res
 # 238 product of list except itself
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
