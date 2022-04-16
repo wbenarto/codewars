@@ -268,6 +268,24 @@ class Solution:
         
         return res
 
+# 152 Max product subarray
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        res = max(nums)
+        maxSub, minSub = 1, 1
+        
+        for n in nums:
+            if n == 0:
+                maxSub, minSub = 1, 1
+                continue
+            
+            temp = n * maxSub
+            maxSub = max(n *maxSub , n*minSub, n)
+            minSub = min(temp, n*minSub, n)
+            
+            res= max(maxSub, res)
+        return res
+
 # 238 product of list except itself
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:

@@ -24,6 +24,32 @@ class Solution:
                 l += 1
         return l
 
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        hashS = {}
+        hashT = {}
+
+        for e in s:
+            if e in hashS:
+                hashS[e] += 1
+            else:
+                hashS[e] = 1
+
+        for e in t:
+            if e in hashT:
+                hashT[e] += 1
+            else:
+                hashT[e] = 1
+
+        print(hashS)
+        print(hashT)
+
+        if hashS == hashT:
+            return True
+        else:
+            return False
+
 # 121 Buy Sell Stocks
 
 
