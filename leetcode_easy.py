@@ -132,7 +132,19 @@ class Solution:
         return maxSub
 
 
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        res = {}
+
+        for i in nums:
+            if i in res:
+                return True
+            else:
+                res[i] = 1
+
+        return False
 # 242 valid anagram
+
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
