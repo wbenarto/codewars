@@ -161,6 +161,21 @@ class Solution:
 
 
 class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxSub = nums[0]
+        maxSum = 0
+
+        for i in nums:
+            if maxSum < 0:
+                maxSum = 0
+            maxSum += i
+
+            maxSub = max(maxSub, maxSum)
+
+        return maxSub
+
+
+class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dict = {}
 
