@@ -132,6 +132,18 @@ class Solution:
         return maxSub
 
 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict = {}
+
+        for i, e in enumerate(nums):
+            diff = target-e
+            if diff in dict:
+                return [i, dict[diff]]
+            else:
+                dict[e] = i
+
+
 # 242 valid anagram
 
 class Solution:
