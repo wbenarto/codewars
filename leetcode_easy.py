@@ -133,6 +133,7 @@ class Solution:
 
 
 class Solution:
+<<<<<<< HEAD
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dict = {}
 
@@ -144,7 +145,20 @@ class Solution:
                 dict[e] = i
 
 
+=======
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        res = {}
+
+        for i in nums:
+            if i in res:
+                return True
+            else:
+                res[i] = 1
+
+        return False
+>>>>>>> b386d446e35c7abb8d6b60bee086e94f7547aec1
 # 242 valid anagram
+
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
