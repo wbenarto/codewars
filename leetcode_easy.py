@@ -133,7 +133,21 @@ class Solution:
 
 
 class Solution:
-<<<<<<< HEAD
+    def maxProfit(self, prices: List[int]) -> int:
+        minPrice = prices[0]
+        profit = 0
+
+        for i in prices:
+            if i < minPrice:
+                minPrice = i
+
+            if i - minPrice > profit:
+                profit = i - minPrice
+
+        return profit
+
+
+class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dict = {}
 
@@ -144,8 +158,6 @@ class Solution:
             else:
                 dict[e] = i
 
-
-=======
     def containsDuplicate(self, nums: List[int]) -> bool:
         res = {}
 
@@ -156,7 +168,6 @@ class Solution:
                 res[i] = 1
 
         return False
->>>>>>> b386d446e35c7abb8d6b60bee086e94f7547aec1
 # 242 valid anagram
 
 
