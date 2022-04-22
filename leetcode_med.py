@@ -231,6 +231,24 @@ class Solution:
         return res
 
 class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        minNum = nums[0]
+        l , r = 0, len(nums) - 1
+        
+        while l<=r:
+            if nums[r] >= nums[l]:
+                return min(nums[l], minNum)
+            
+            m = (l+r)//2
+            minNum = min(nums[m], minNum)
+            if nums[m] >= nums[l]:
+                l = m + 1
+            else: 
+                r = m - 1
+                
+        return minNum
+ 
+class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         res = nums[0]
         maxProd, minProd = 1, 1
