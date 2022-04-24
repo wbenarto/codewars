@@ -247,6 +247,24 @@ class Solution:
                 r = m - 1
                 
         return minNum
+
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        res = nums[0]
+        maxProd, minProd = 1, 1
+        
+        for i in nums:
+            if i == 0:
+                maxProd, minProd = 1, 1
+            
+            temp = maxProd * i
+            maxProd = max(maxProd * i, minProd * i, i)
+            minProd = min(temp, minProd * i, i)
+            
+            res = max(maxProd, res)
+            print(res, maxProd, minProd)
+        
+        return res
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
