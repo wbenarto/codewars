@@ -248,47 +248,47 @@ class Solution:
                 
         return minNum
 
-class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
-        res = nums[0]
-        maxProd, minProd = 1, 1
+# class Solution:
+#     def maxProduct(self, nums: List[int]) -> int:
+#         res = nums[0]
+#         maxProd, minProd = 1, 1
         
-        for i in nums:
-            if i == 0:
-                maxProd, minProd = 1, 1
+#         for i in nums:
+#             if i == 0:
+#                 maxProd, minProd = 1, 1
             
-            temp = maxProd * i
-            maxProd = max(maxProd * i, minProd * i, i)
-            minProd = min(temp, minProd * i, i)
+#             temp = maxProd * i
+#             maxProd = max(maxProd * i, minProd * i, i)
+#             minProd = min(temp, minProd * i, i)
             
-            res = max(maxProd, res)
-            print(res, maxProd, minProd)
+#             res = max(maxProd, res)
+#             print(res, maxProd, minProd)
         
-        return res
-class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        nums.sort()
+#         return res
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         res = []
+#         nums.sort()
         
-        for i, e in enumerate(nums):
-            if i > 0 and nums[i] == nums[i - 1]:
-                continue
+#         for i, e in enumerate(nums):
+#             if i > 0 and nums[i] == nums[i - 1]:
+#                 continue
             
-            l , r = i + 1, len(nums)  - 1
+#             l , r = i + 1, len(nums)  - 1
             
-            while l < r:
-                sum = e + nums[l] + nums[r]
+#             while l < r:
+#                 sum = e + nums[l] + nums[r]
                 
-                if sum < 0:
-                    l += 1
-                elif sum > 0:
-                    r -= 1
-                else: 
-                    res.append([e, nums[l], nums[r]])
-                    l += 1
-                    while nums[l] == nums[l-1] and l < r:
-                        l += 1
-        return res
+#                 if sum < 0:
+#                     l += 1
+#                 elif sum > 0:
+#                     r -= 1
+#                 else: 
+#                     res.append([e, nums[l], nums[r]])
+#                     l += 1
+#                     while nums[l] == nums[l-1] and l < r:
+#                         l += 1
+#         return res
                 
         
 class Solution:
