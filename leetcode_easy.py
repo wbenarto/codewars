@@ -15,6 +15,23 @@ class Solution:
 
 
 class Solution:
+    def isValid(self, s: str) -> bool:
+        charSet = {')': '(', "]": "[", "}": "{"}
+        stack = []
+
+        for i in s:
+            if i in charSet:
+                if stack and stack[-1] == charSet[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(i)
+
+        return True if not stack else False
+
+
+class Solution:
     def isPalindrome(self, s: str) -> bool:
         # take out white space
         # check 2 pointer left and end
