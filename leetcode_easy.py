@@ -56,6 +56,30 @@ class Solution:
                 )
 
 
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        # take out white space
+        # check 2 pointer left and end
+
+        l, r = 0, len(s)-1
+        while l < r:
+            print(self.isAlNum(s[l]), self.isAlNum(s[r]))
+            while l < r and not self.isAlNum(s[l]):
+                l += 1
+            while l < r and not self.isAlNum(s[r]):
+                r -= 1
+            if s[l].lower() != s[r].lower():
+                return False
+            l += 1
+            r -= 1
+
+        return True
+
+    def isAlNum(self, n):
+        return ('a' <= n.lower() <= 'z' or
+                '0' <= n <= '9'
+                )
+
 # 26 remove duplicates in arr
 
 
