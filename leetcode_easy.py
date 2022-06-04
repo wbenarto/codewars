@@ -32,6 +32,23 @@ class Solution:
 
 
 class Solution:
+    def isValid(self, s: str) -> bool:
+        charSet = {')': '(', "]": "[", "}": "{"}
+        stack = []
+
+        for i in s:
+            if i in charSet:
+                if stack and stack[-1] == charSet[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(i)
+
+        return True if not stack else False
+
+
+class Solution:
     def isPalindrome(self, s: str) -> bool:
         # take out white space
         # check 2 pointer left and end
@@ -92,6 +109,32 @@ class Solution:
                 nums[l] = nums[i]
                 l += 1
         return l
+
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        hashS = {}
+        hashT = {}
+
+        for e in s:
+            if e in hashS:
+                hashS[e] += 1
+            else:
+                hashS[e] = 1
+
+        for e in t:
+            if e in hashT:
+                hashT[e] += 1
+            else:
+                hashT[e] = 1
+
+        print(hashS)
+        print(hashT)
+
+        if hashS == hashT:
+            return True
+        else:
+            return False
 
 
 class Solution:
