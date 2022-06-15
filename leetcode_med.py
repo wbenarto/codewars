@@ -583,3 +583,33 @@ class Solution:
             res = max(res, r-l+1)
         return res
         
+
+
+# Sudoku Valid
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        print(board)
+        
+        # check row
+        for row in board:
+            row = [val for val in row if val != '.']
+            if len(row) != len(list(set(row))):
+                return False
+        # check column
+        for i in range(9):
+            col = [row[i] for row in board]
+            col = [val for val in col if val != '.']
+            if len(col) != len(list(set(col))):
+                return False
+        
+        # check block
+        for i in range(0, 9, 3):
+            block = board[i: i+3]
+            k = 0
+            for j in range(0,9, 3):
+                final_block = block[k][j:j+3] + block[k+1][j:j+3] + block[k+2][j:j+3]
+                final_block = [val for val in final_block if val != '.']
+                if len(final_block) != len(list(set(final_block))):
+                    return False
+        return True
+                

@@ -224,6 +224,62 @@ class Solution:
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        # set left pointer, then iterate thru rest of element, keep max profit
+        # move left pointer until end
+
+        # set left pointer, find highest num bigger than left pointer num
+        # set profit
+        resProfit = 0
+
+        for i in range(len(prices) - 1):
+            maxNum = max(prices[i:]) if max(
+                prices[i:]) > prices[i] else prices[i]
+
+            profit = maxNum - prices[i]
+
+            if profit > resProfit:
+                resProfit = profit
+        return resProfit
+
+        class Solution:
+
+    def maxProfit(self, prices: List[int]) -> int:
+        # set left pointer, then iterate thru rest of element, keep max profit
+        # move left pointer until end
+
+        # set left pointer, find highest num bigger than left pointer num
+        # set profit
+        resProfit = 0
+
+        for i in range(len(prices) - 1):
+            maxNum = max(prices[i:]) if max(
+                prices[i:]) > prices[i] else prices[i]
+
+            profit = maxNum - prices[i]
+
+            if profit > resProfit:
+                resProfit = profit
+        return resProfit
+
+#         for i in range(len(prices)-1):
+#             r = i + 1
+#             maxProfit = 0
+#             while r < len(prices):
+#                 profit = prices[r] - prices[i]
+#                 if profit > maxProfit:
+#                     maxProfit = profit
+#                 r += 1
+
+#             if maxProfit > resProfit:
+#                 resProfit = maxProfit
+
+#         return resProfit
+
+# Loop once, set min and calcula
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
         profit = 0
         minPrice = prices[0]
         for i in range(len(prices)):
