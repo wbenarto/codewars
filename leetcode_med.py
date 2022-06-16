@@ -631,3 +631,41 @@ class Solution:
                 rows[r].add(board[r][c])
                 squares[(r//3, c//3)].add(board[r][c])
         return True
+# longest consecutive sequence
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        longest = 0
+        numset = set(nums)
+        
+        for n in nums:
+            if (n-1) not in numset:
+                length = 0
+                while (n + length) in numset:
+                    length += 1
+                longest = max(longest, length)
+        return longest
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        x = {}
+        res = 0
+        for n in nums:
+            if n in x:
+                continue
+            
+            
+            left = n
+            if n-1 in x:
+                left = n - x[n-1]
+            right = n
+            if n+1 in x:
+                right = n + x[n+1]
+            
+            curr = right - left + 1
+            
+            x[left] = curr
+            x[right] = curr
+            x[n] = curr
+            
+            res = max(curr, res)
+            
+        return res
