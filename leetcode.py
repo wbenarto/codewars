@@ -29,7 +29,7 @@ class Solution:
         res = ListNode()
         dummy = res
 
-        #O(n + m)
+        # O(n + m)
         while l1 or l2 or carryover:
             v1 = l1.val if l1 else 0
             v2 = l2.val if l2 else 0
@@ -221,7 +221,32 @@ class Solution:
 
         return dummy.next
 
-# 53 <ez> Max Sub Array
+#
+#
+
+
+class Solution:
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        res = dummy
+
+        while l1 and l2:
+            if l1.val <= l2.val:
+                res.next = l1
+                l1 = l1.next
+            else:
+                res.next = l2
+                l2 = l2.next
+
+            res = res.next
+
+            if l1:
+                res.next = l1
+            elif l2:
+                res.next = l2
+
+        return dummy.next
+ 53 <ez> Max Sub Array
 
 
 class Solution:
