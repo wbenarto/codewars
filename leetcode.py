@@ -140,7 +140,30 @@ class Solution:
         return(''.join(res))
 
 
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+
+        if numRows == 1 or numRows > len(s):
+            return s
+
+        res = [[] for i in range(numRows)]
+        idx = 0
+        delta = -1
+        for i in s:
+            res[idx].append(i)
+
+            if idx == 0 or idx == numRows - 1:
+                delta *= -1
+            idx += delta
+
+        for i in range(len(res)):
+            res[i] = ''.join(res[i])
+
+        return(''.join(res))
+
 # 9 <Easy> Palindrome Number
+
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
 
