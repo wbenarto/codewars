@@ -151,6 +151,26 @@ class Solution:
 
         return storedCopy[head]
 
+
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        storedCopy = {None: None}
+
+        cur = head
+        while cur:
+            copy = Node(cur.val)
+            storedCopy[cur] = copy
+            cur = cur.next
+
+        cur = head
+        while cur:
+            copy = storedCopy[cur]
+            copy.next = storedCopy[cur.next]
+            copy.random = storedCopy[cur.random]
+            cur = cur.next
+
+        return storedCopy[head]
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
