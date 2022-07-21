@@ -717,3 +717,25 @@ class MinStack:
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+
+# find duplicate but constant space complexity
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        slow, fast = 0 , 0
+        
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break
+            
+        slow2 = 0
+        while True:
+            slow= nums[slow]
+            slow2 = nums[slow2]
+            if slow == slow2:
+                return slow
+            
+        
+       
