@@ -70,31 +70,32 @@ function get_robot(all_parts, required_parts) {
   // if all parts there, add in array 
   // return result array
   let result = {}
+
   let reqParts = required_parts.split(',')
   let resArr = []
   
-  for (let i=0; i<allParts.length-1;i++) {
 
-    let robotName = allParts[i].split('_')[0]
-    let robotPart = allParts[i].split('_')[1]
-
-    if (result[robotName]) {
-      result[robotName].push(robotPart)
-    } else {
-      result[robotName] = []
+  for (let i=0; i<all_parts.length;i++) {
+    const rocketName = all_parts[i].split('_')[0]
+    const rocketPart = all_parts[i].split('_')[1]
+    console.log(rocketName)
+    if (!result[rocketName]) {
+      result[rocketName]['number'] = 0
     }
-    
-  }
-  const keys1 = Object.keys(result)
-
-  
-  for (let j=0; j<keys1.length - 1;j++) {
-    console.log(result[keys1[j]])
-      if (JSON.stringify(result[keys1[j]]) == JSON.stringify(reqParts)) {
-        resArr.push(keys1[j])
+    if (reqParts.includes(rocketPart)) {
+      result[rocketName]['number'] += 1
+    }
+    if (result[rocketName]['number'] == reqParts.length) {
+      resArr.push(rocketName)
     }
   }
+
+
+  // console.log('what',Object.entries(result))
+  // console.log(Object.entries(result).filter( e=>e[1] == reqParts.length))
+  // console.log(all_parts, reqParts)
   console.log(resArr)
+  console.log(result)
   return resArr
 }
 
