@@ -248,3 +248,35 @@ console.log(newTree.dfsPreOrder());
 console.log(newTree.dfsPostOrder());
 
 console.log(newTree.bfs());
+
+// Max Depth on BST using DFS
+var maxDepth = function (root) {
+  if (!root) return 0;
+
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+};
+
+// Max Depth using BFS
+var maxDepth = function (root) {
+  if (!root) return 0;
+  let level = 0;
+  let q = [];
+
+  q.push(root);
+
+  while (q.length) {
+    for (let i of q) {
+      let cur = q.shift();
+
+      if (cur.left != null) {
+        q.push(cur.left);
+      }
+      if (cur.right != null) {
+        q.push(cur.right);
+      }
+    }
+    level += 1;
+  }
+
+  return level;
+};
