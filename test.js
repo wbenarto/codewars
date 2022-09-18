@@ -133,11 +133,33 @@
 // const newTree = new Trees(10, 2, 3);
 // console.log(newTree);
 
-function TreeNode(val) {
-  this.val= val;
-  this.left = this.right = null
+// function TreeNode(val) {
+//   this.val= val;
+//   this.left = this.right = null
+// }
+
+// let lowestCommonAncestor = (root, p, q) => {
+
+// }
+
+class Node {
+  constructor(data, left = null, right = null) {
+    this.data = data;
+    this.left = left;
+    this.right = right;
+  }
 }
 
-let lowestCommonAncestor = (root, p, q) => {
-  
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  add(data) {
+    const node = this.root;
+    if (node === null) {
+      this.root = new Node(data);
+      return;
+    }
+  }
 }
