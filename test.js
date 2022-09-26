@@ -143,23 +143,22 @@
 // }
 
 class Node {
-  constructor(data, left = null, right = null) {
-    this.data = data;
-    this.left = left;
-    this.right = right;
+  constructor (value, left, right) {
+    this.value = value
+    this.left = left
+    this.right = right
   }
 }
 
 class BST {
-  constructor() {
-    this.root = null;
+  constructor (value) {
+    this.root = new Node(value)
   }
 
-  add(data) {
-    const node = this.root;
-    if (node === null) {
-      this.root = new Node(data);
-      return;
+  insert(value) {
+    let newNode = new Node(value)
+    if (!root) {
+      
     }
   }
 }
