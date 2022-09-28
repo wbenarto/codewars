@@ -79,6 +79,7 @@ class BST {
     return cur;
   }
 
+  // in order =>  left, root, right
   dfsInOrder() {
     let res = [];
 
@@ -95,6 +96,7 @@ class BST {
     return res;
   }
 
+  // pre order =>  root, left , right
   dfsPreOrder() {
     let res = [];
 
@@ -110,6 +112,7 @@ class BST {
     return res;
   }
 
+  // post order => left, right, root
   dfsPostOrder() {
     let res = [];
 
