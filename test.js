@@ -149,13 +149,13 @@ class BST {
     } else {
       const searchTree = (node) => {
         if (value < node.value) {
-          if (!node.left) {
+          if (node.left == null) {
             node.left = newNode;
           } else {
             searchTree(node.left);
           }
-        } else if (value > node.value) {
-          if (!node.right) {
+        } else {
+          if (node.right == null) {
             node.right = newNode;
           } else {
             searchTree(node.right);
@@ -183,26 +183,24 @@ class BST {
   }
 
   search(value) {
+    // root is value, if less go left, if more go right
     let cur = this.root;
-    if (!cur) {
-      return null;
-    }
-    while (value !== cur.value) {
+
+    while (cur.value !== value) {
       if (value < cur.value) {
         cur = cur.left;
-      } else if (value > cur.value) {
+      } else {
         cur = cur.right;
       }
-      if (cur == null) {
-        return "not found";
-      }
+
+      if (cur == null) return null;
     }
 
     return cur.value;
   }
 
+  // left root right
   dfsInOrder() {
-    // left, root ,right
     let res = [];
 
     const traverse = (node) => {
@@ -215,27 +213,29 @@ class BST {
     return res;
   }
 
+  // root left right
   dfsPreOrder() {
-    // root, left, right
     let res = [];
+
     const traverse = (node) => {
       res.push(node.value);
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
     };
-
     traverse(this.root);
     return res;
   }
 
+  // left right root
   dfsPostOrder() {
-    // left, right ,root
     let res = [];
+
     const traverse = (node) => {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
       res.push(node.value);
     };
+
     traverse(this.root);
     return res;
   }
@@ -247,50 +247,14 @@ class BST {
     queue.push(this.root);
 
     while (queue.length) {
-      let curNode = queue.shift();
-      res.push(curNode.value);
+      let cur = queue.shift();
+      res.push(cur.value);
 
-      if (curNode.left) queue.push(curNode.left);
-      if (curNode.right) queue.push(curNode.right);
+      if (cur.left) queue.push(cur.left);
+      if (cur.right) queue.push(cur.right);
     }
 
     return res;
-  }
-
-  remove(value) {
-    const removeNode = (node, val) => {
-      if (node === null) {
-        return null;
-      }
-
-      if (node.value == val) {
-        if (node.left == null && node.right == null) {
-          return null;
-        }
-        if (node.left == null) {
-          return node.right;
-        }
-        if (node.right == null) {
-          return node.left;
-        }
-
-        let tempNode = node.right;
-        while (tempNode.left !== null) {
-          tempNode = tempNode.left;
-        }
-        node.value = tempNode.value;
-        node.right = removeNode(tempNode.right, tempNode.value);
-      } else if (val < node.val) {
-        node.left = removeNode(node.left, val);
-        return node;
-      } else {
-        node.right = removeNode(node.right, val);
-        return node;
-      }
-    };
-
-    this.root = removeNode(this.root, value);
-    return this.root;
   }
 }
 
@@ -314,11 +278,11 @@ console.log(newTree.dfsPreOrder());
 console.log(newTree.dfsPostOrder());
 console.log(newTree.bfs());
 
-console.log(newTree.remove(60));
-console.log(newTree.bfs());
+// console.log(newTree.remove(60));
+// console.log(newTree.bfs());
 
-console.log(newTree.remove(17));
-console.log(newTree.bfs());
+// console.log(newTree.remove(17));
+// console.log(newTree.bfs());
 
 // newTree.insert(3);
 // newTree.insert(2);
