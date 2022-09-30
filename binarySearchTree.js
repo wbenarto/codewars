@@ -249,3 +249,32 @@ var maxDepth = function (root) {
 
   return level;
 };
+
+// find depth of tree / diameter of tree
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var diameterOfBinaryTree = function (root) {
+  let res = 0;
+
+  const traverse = (node) => {
+    if (node == null) return -1;
+
+    let left = traverse(node.left);
+    let right = traverse(node.right);
+    res = Math.max(res, 2 + left + right);
+    return 1 + Math.max(left, right);
+  };
+  traverse(root);
+  console.log(res);
+  return res;
+};
