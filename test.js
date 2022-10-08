@@ -98,11 +98,11 @@
 // console.log(object1.hasOwnProperty("toString"));
 // expected output: false
 
-// console.log(object1.hasOwnProperty("hasOwnProperty"));
-// expected output: false
-// console.log(object1);
-// console.log(object1.property1);
-// console.log(object1.a);
+console.log(object1.hasOwnProperty("hasOwnProperty"));
+expected output: false
+console.log(object1);
+console.log(object1.property1);
+console.log(object1.a);
 
 // console.log(object1);
 // console.log(-121 / 6);
