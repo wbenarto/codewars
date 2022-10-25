@@ -66,3 +66,29 @@
     
     return -1
 };
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isIsomorphic = function(s, t) {
+    if (s.length !== t.length) {
+        return false;
+    }
+    if (s === t) {
+        return true;
+    }
+    let sH = {}
+    let tH = {}
+    
+    for (let i=0; i<s.length;i++) {
+        if (!sH[s[i]]) sH[s[i]] = t[i]
+        if (!tH[t[i]]) tH[t[i]] = s[i]
+         
+        if (sH[s[i]] !== t[i] || tH[t[i]] !== s[i]) return false
+    }
+
+    return true
+    
+};
