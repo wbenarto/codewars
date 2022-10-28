@@ -92,3 +92,28 @@
     return true
     
 };
+
+// 392 
+// is subsequence
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function(s, t) {
+    let sPointer = 0
+    let tPointer = 0
+    if (s.length == 0 && t.length == 0) return true
+    while (tPointer < t.length) {
+        if (t[tPointer] == s[sPointer]) {
+            sPointer++
+        }
+        
+        if (sPointer == s.length) {
+            return true
+        }
+        tPointer++
+    }
+    
+    return false
+};
