@@ -290,3 +290,22 @@ console.log(newTree.bfs());
 // newTree.insert(36);
 // newTree.insert(28);
 // newTree.insert(39);
+
+const express = require( 'express' )
+	…
+	
+	const app  = express()
+	app.post( '/data', function( req, res, next ) => {
+	  console.log( 'body', req.body )
+        try {
+          callAsyncMethod( req.body, ( err, result ) => {
+            console.log( 'error', err.status, err.message )
+            if ( err ) {
+              next( new Error( 'failed' ) )
+            }
+            res.json( { status : 200 } )
+          } )
+       } catch ( ex ) {
+         next( new Error( 'failed' ) )
+       }
+} )
