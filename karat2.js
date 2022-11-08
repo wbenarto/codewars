@@ -100,3 +100,32 @@ function get_robot(all_parts, required_parts) {
 }
 
 console.log(get_robot(allParts, requiredParts1))
+
+function findEnding(endings, choices, num) { 
+  let visited = new Set()
+  const lastPage = endings[endings.length-1]
+
+  for (let i=1; i<=lastPage; i++) {
+
+
+    if (visited.has(i)) return -1
+    visited.add(i)
+
+    for (let j=0; j<choices.length;j++) {
+
+      if (endings.indexOf(i) >= 0) {
+        return endings[endings.indexOf(i)]
+      }
+
+      if (i == choices[j][0]) {
+        i = choices[j][num]
+        continue
+      }
+    }
+
+    if (endings.indexOf(i) >= 0) {
+      return endings[endings.indexOf(i)]
+    }
+  }
+  return -1
+}
