@@ -168,3 +168,19 @@ var reverseList = function(head) {
     }
     return arr[arr.length-1];
 };
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+ var isPalindrome = function(x) {
+    let strX = String(x)
+    let l = 0
+    let r = (strX).length -1
+    while (l < r) {
+        if (strX[l] !== strX[r]) return false
+        l += 1
+        r -= 1 
+    }
+    return true
+};
