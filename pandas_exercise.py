@@ -15,14 +15,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import pandas as pd
-# from datetime import datetime
-# import os
-# import sys
+from datetime import datetime
+import os
+import sys
 
-# application_path = os.path.dirname(sys.executeable) 
+application_path = os.path.dirname(sys.executable)
 
-# now = datetime.now()
-# now.strftime()
+now = datetime.now()
+now.strftime("$m#d%Y")
 
 website = "https://www.thesun.co.uk/sport/football/"
 path = "/Users/wbenarto/Desktop/Projects/codewars"
