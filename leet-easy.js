@@ -252,3 +252,45 @@ var reverseList = function(head) {
     
     return res
 };
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+ var containsDuplicate = function(nums) {
+    let dic =  {}
+    
+    for (let i of nums) {
+        if (dic[i]) return true
+        else dic[i] = 1
+    }
+    return false
+};
+
+/**
+ * @param {number} celsius
+ * @return {number[]}
+ */
+ var convertTemperature = function(celsius) {
+    return [celsius+273.15, celsius*1.80 + 32]
+};
+
+/**
+ * @param {number[][]} image
+ * @return {number[][]}
+ */
+ var flipAndInvertImage = function(image) {
+    let res = []
+    for (let i=0;i<image.length;i++) {
+        
+        image[i]
+        let temp = []
+        for (let j=image[i].length-1; j>=0; j--) {
+            temp.push(image[i][j] == 0 ? 1 : 0)
+        }
+        res.push(temp)
+        
+    }
+    
+    return res
+};
