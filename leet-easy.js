@@ -232,3 +232,83 @@ var reverseList = function(head) {
     return total
     
 };
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+ var longestCommonPrefix = function(strs) {
+    let res = ''
+    
+    for (let i=0;i<strs[0].length;i++) {
+        let cur = strs[0][i]
+        for (let j=0; j<strs.length; j++) {
+            if (i == strs[j].length || strs[j][i] !== strs[0][i]) {
+                return res
+            }
+        }
+        res += strs[0][i]
+    }
+    
+    return res
+};
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+ var containsDuplicate = function(nums) {
+    let dic =  {}
+    
+    for (let i of nums) {
+        if (dic[i]) return true
+        else dic[i] = 1
+    }
+    return false
+};
+
+/**
+ * @param {number} celsius
+ * @return {number[]}
+ */
+ var convertTemperature = function(celsius) {
+    return [celsius+273.15, celsius*1.80 + 32]
+};
+
+/**
+ * @param {number[][]} image
+ * @return {number[][]}
+ */
+ var flipAndInvertImage = function(image) {
+    let res = []
+    for (let i=0;i<image.length;i++) {
+        
+        image[i]
+        let temp = []
+        for (let j=image[i].length-1; j>=0; j--) {
+            temp.push(image[i][j] == 0 ? 1 : 0)
+        }
+        res.push(temp)
+        
+    }
+    
+    return res
+};
+/**
+ * @param {number[]} rec1
+ * @param {number[]} rec2
+ * @return {boolean}
+ */
+ var isRectangleOverlap = function(rec1, rec2) {
+
+    if (((rec1[0] > rec2[0] && rec1[0] < rec2[2]) 
+        || (rec1[2] > rec2[0] && rec1[2] < rec2[2]) 
+        || (rec2[0] > rec1[0] && rec2[0] < rec1[2]) 
+        || (rec2[2] > rec1[0] && rec2[2] < rec1[2]))  
+        && ((rec1[1] > rec2[1] && rec1[1] < rec2[3]) 
+        || (rec1[3] > rec2[1] && rec1[3] < rec2[3]) 
+        || (rec2[1] > rec1[1] && rec2[3] < rec1[3]) 
+        || (rec2[3] > rec1[1] && rec2[3] < rec1[3]))) return true
+    
+    return false
+};
