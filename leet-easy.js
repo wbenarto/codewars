@@ -312,3 +312,73 @@ var reverseList = function(head) {
     
     return false
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+ var mergeTwoLists = function(list1, list2) {
+    let cur = new ListNode()
+    let tail = cur
+    
+    while (list1 && list2) {
+        if (list1.val < list2.val) {
+            tail.next = list1
+            list1 = list1.next
+        } else {
+            tail.next = list2
+            list2 = list2.next
+        } 
+        
+        tail = tail.next
+    }
+    
+    if (list1) tail.next=list1
+    else if (list2) tail.next = list2
+    
+    return cur.next
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    let j=0
+    for (let i=1; i<nums.length;i++) {
+        if (nums[i] == nums[j]) {
+            nums.splice(i , 1) 
+            i--
+        }
+        else {j++}
+    }
+
+};
+
+var removeDuplicates = function(nums) {
+    if(nums.length === 0) {
+        return 0
+    }
+    let result = 1, i = 0, j = 1;
+    
+    while(i < nums.length && j < nums.length) {
+        if(nums[j] === nums[i]) {
+            j++;
+        } else {
+            result += 1;
+            i++;
+            nums[i] = nums[j];
+            j++;
+        }
+    }
+    
+    return result;
+};
