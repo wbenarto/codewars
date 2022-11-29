@@ -382,3 +382,54 @@ var removeDuplicates = function(nums) {
     
     return result;
 };
+
+var removeElement = function(nums, val) {
+    let j = 0
+    for (let i=0; i<nums.length ;i++) {
+        if (nums[i] == val) {
+            console.log('splice')
+            nums.splice(i, 1)
+            i--
+        }
+    }
+};
+var removeElement = function(nums, val) {
+    let i = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[j] !== val) {
+        nums[i] = nums[j];
+        i++;
+      }
+    }
+    return i;
+  }
+  /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+
+    let arr = s.trim().split(' ')
+    
+    return arr[arr.length - 1].length
+};
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var sumOddLengthSubarrays = function(arr) {
+
+    
+    let sub = 1
+    let sum = 0
+    
+    while (sub <= arr.length) {
+        for (let i=0; i<=arr.length-sub;i++) {
+            sum += arr.slice(i, i+sub).reduce((a,b)=>a+b, 0)
+        }
+        sub += 2
+    } 
+    
+    return sum
+};
