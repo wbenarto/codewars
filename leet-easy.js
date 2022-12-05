@@ -457,3 +457,21 @@ var getConcatenation = function(nums) {
  
     return [...nums, ...nums]
 };
+
+/**
+ * @param {string} jewels
+ * @param {string} stones
+ * @return {number}
+ */
+ var numJewelsInStones = function(jewels, stones) {
+    let res = 0
+    
+    for (let i of jewels) {
+        
+        let count  = [...stones].filter((e) => e == i).length
+
+        res += count
+    }
+    
+    return res
+};
