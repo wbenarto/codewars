@@ -475,3 +475,19 @@ var getConcatenation = function(nums) {
     
     return res
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function(nums) {
+    let res = []
+    let cur = 0
+
+    for (let i of nums) {
+        cur += i
+        res.push(cur)
+    }
+
+    return res
+};
