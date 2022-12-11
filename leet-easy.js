@@ -491,3 +491,177 @@ var runningSum = function(nums) {
 
     return res
 };
+
+/**
+ * @param {string} s
+ * @param {number[]} indices
+ * @return {string}
+ */
+ var restoreString = function(s, indices) {
+    let res = []
+
+    for (let i=0; i<s.length; i++) {
+        res[indices[i]] = s[i]
+    }
+
+    return res.join('')
+};
+/**
+ * @param {string} s
+ * @return {string[]}
+ */
+ var cellsInRange = function(s) {
+  
+    let arr = s.split(':')
+    let colBegin = arr[0][0]
+    let colEnd = arr[1][0]
+    let rowBegin = arr[0][1]
+    let rowEnd = arr[1][1]
+    let res = []
+    for (let i=colBegin.charCodeAt(0); i<=colEnd.charCodeAt(0); i++) {
+     
+        let row = String.fromCharCode(i)
+        for (let j=rowBegin; j<=rowEnd; j++) {
+            let col = j
+            res.push(row+col)
+        }
+    }
+
+    /**
+ * @param {string[]} sentences
+ * @return {number}
+ */
+var mostWordsFound = function(sentences) {
+    let sum = 0
+    for (let i=0;i<sentences.length;i++) {
+        sum = Math.max(sentences[i].split(' ').length, sum)
+    }
+    return sum
+};
+
+/**
+ * @param {string[]} word1
+ * @param {string[]} word2
+ * @return {boolean}
+ */
+ var arrayStringsAreEqual = function(word1, word2) {
+    return word1.join('') == word2.join('')
+};
+
+/**
+ * @param {string[]} word1
+ * @param {string[]} word2
+ * @return {boolean}
+ */
+ var arrayStringsAreEqual = function(word1, word2) {
+    return word1.reduce((a,b)=> a+b, '') == word2.reduce((a,b) => a+b, '')
+};
+
+/**
+ * @param {string[]} word1
+ * @param {string[]} word2
+ * @return {boolean}
+ */
+ var arrayStringsAreEqual = function(word1, word2) {
+    let res1 = ''
+    let res2 = ''
+
+    for (let i of word1) {
+        res1 += i
+    }
+
+    for (let i of word2) {
+        res2 += i
+    }
+
+    return res1 == res2
+};
+
+/**
+ * @param {string} address
+ * @return {string}
+ */
+ var defangIPaddr = function(address) {
+    return address.replaceAll('.', '[.]')
+};
+
+/**
+ * @param {string} address
+ * @return {string}
+ */
+ var defangIPaddr = function(address) {
+    let res = ''
+    for (let i of address) {
+        console.log(i)
+        if (i == '.') {
+            res += '[.]'
+        } else res += i
+
+    }
+    return res
+};
+
+/**
+ * @param {string} address
+ * @return {string}
+ */
+ var defangIPaddr = function(address) {
+    return address.split('.').join('[.]')
+};
+
+/**
+ * @param {string[]} words
+ * @return {number}
+ */
+ var uniqueMorseRepresentations = function(words) {
+    let alp = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+      let res = []
+    for (let i=0; i<words.length; i++) {
+  
+        let temp = ''
+      for (let j=0;j<words[i].length; j++) {
+          
+          temp += alp[words[i][j].charCodeAt(0)-97]
+      } 
+      res.push(temp)
+    } 
+  
+    return new Set(res).size
+  };
+
+
+  /**
+ * @param {string} s
+ * @return {number}
+ */
+var maxDepth = function(s) {
+    let cur = 0
+    let max = 0
+
+    for (let i of s) {
+        if (i == '(') {
+            let temp = cur + 1
+            cur = temp
+            max = Math.max(max , cur)
+
+        } else if (i ==')') {
+            let temp = cur - 1
+            cur = temp
+            max = Math.max(max, cur-1)
+        }
+    }
+
+    return max
+};
+
+/**
+ * @param {string} word
+ * @param {character} ch
+ * @return {string}
+ */
+ var reversePrefix = function(word, ch) {
+
+    let index = word.indexOf(ch)
+    return ([...word.slice(0,index+1)].reverse().join('') + word.slice(index+1))
+  
+};
