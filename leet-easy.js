@@ -661,7 +661,13 @@ var maxDepth = function(s) {
  */
  var reversePrefix = function(word, ch) {
 
-    let index = word.indexOf(ch)
-    return ([...word.slice(0,index+1)].reverse().join('') + word.slice(index+1))
-  
-};
+    let index = word
+    
+
+     if (!cloned) return
+    if (cloned.val == target.val) {
+        return cloned
+    }else{
+        return getTargetCopy(original, cloned.left, target) || getTargetCopy(original, cloned.right, target)
+    }
+ }
