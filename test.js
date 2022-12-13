@@ -310,10 +310,21 @@
 //        }
 // } )
 
-let cur = {val: 1, val2: 2}
-let tail = cur
+// let cur = {val: 1, val2: 2}
+// let tail = cur
 
-tail.val2 = 4
+// tail.val2 = 4
 
-console.log(cur)
-console.log(tail)
+// console.log(cur)
+// console.log(tail)
+
+function myMod(array, s) {
+    var na = [];
+    for (var i = 0; i < array.length; i++) {
+      na.push(s + array[i]);
+    }
+    return na;
+  }
+
+myMod([1,2,3,4], 'w')
+console.log(myMod([1,2,3,4], 3))
