@@ -705,3 +705,47 @@ var rangeSumBST = function(root, low, high) {
     return res
     
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} original
+ * @param {TreeNode} cloned
+ * @param {TreeNode} target
+ * @return {TreeNode}
+ */
+
+ var getTargetCopy = function(original, cloned, target) {
+    if (!cloned) return
+    if (target.val == cloned.val) return cloned
+    return getTargetCopy(original, cloned.left, target) || getTargetCopy(original, cloned.right, target)
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+ var searchBST = function(root, val) {
+    if (!root) return null
+    
+    else if (root.val == val) return root
+
+    else if (val > root.val ) return searchBST(root.right, val)
+    else if (val < root.val) return searchBST(root.left, val)
+
+    
+};
