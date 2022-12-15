@@ -671,3 +671,250 @@ var maxDepth = function(s) {
         return getTargetCopy(original, cloned.left, target) || getTargetCopy(original, cloned.right, target)
     }
  }
+
+ /**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} low
+ * @param {number} high
+ * @return {number}
+ */
+var rangeSumBST = function(root, low, high) {
+    let res = 0
+
+    if (!root) return 0
+
+    if (root.val > low) {
+        res += rangeSumBST(root.left, low, high)
+    }
+    if (root.val < high) {
+        res += rangeSumBST(root.right, low, high)
+    }
+
+    if (root.val <= high && root.val >= low) {
+        res += root.val
+    }
+
+    return res
+    
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} original
+ * @param {TreeNode} cloned
+ * @param {TreeNode} target
+ * @return {TreeNode}
+ */
+
+ var getTargetCopy = function(original, cloned, target) {
+    if (!cloned) return
+    if (target.val == cloned.val) return cloned
+    return getTargetCopy(original, cloned.left, target) || getTargetCopy(original, cloned.right, target)
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+ var searchBST = function(root, val) {
+    if (!root) return null
+    
+    else if (root.val == val) return root
+
+    else if (val > root.val ) return searchBST(root.right, val)
+    else if (val < root.val) return searchBST(root.left, val)
+
+    
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+ var inorderTraversal = function(root) {
+    let res = []
+    dfs(root)
+
+    function dfs(root) {
+        if (root !== null) {
+            dfs(root.left)
+            res.push(root.val)
+            dfs(root.right)
+        }
+    }
+
+    return res
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+ var inorderTraversal = function(root) {
+    let res = []
+    dfs(root)
+
+    function dfs(root) {
+        if (root !== null) {
+            dfs(root.left)
+            res.push(root.val)
+            dfs(root.right)
+        }
+    }
+
+    return res
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+ var preorderTraversal = function(root) {
+
+    let res = []
+    dfs(root)
+    
+    function dfs(root) {
+        if (root !== null) {
+            res.push(root.val)
+            dfs(root.left)
+            dfs(root.right)
+        }
+    }
+
+    return res
+    
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+ var postorderTraversal = function(root) {
+    let res = []
+    dfs(root)
+
+    function dfs(root) {
+        if (root !== null) {
+            dfs(root.left)
+            dfs(root.right)
+            res.push(root.val)
+        }
+    }
+
+    return res
+};
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var sumRootToLeaf = function(root) {
+    let sum = 0
+
+    function dfs(root, binary='') {
+    
+        if (root == null) return 0
+        if (root.left == null && root.right == null) {
+            sum += parseInt(binary+root.val, 2)
+        }
+        dfs(root.left, binary+root.val)
+        dfs(root.right, binary+root.val)
+    }
+
+    dfs(root, '')
+    return sum
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var diameterOfBinaryTree = function(root) {
+    let path = 0
+
+    function dfs(root) {
+        if (root == null ) return 0
+       
+        let l = dfs(root.left)
+        let r = dfs(root.right)
+        path = Math.max( path, l+r+1)
+        return Math.max(l, r)  + 1
+    }
+    dfs(root)
+
+    return path - 1 
+ 
+};
