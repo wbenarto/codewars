@@ -1023,3 +1023,43 @@ var rangeSumBST = function(root, low, high) {
     if (isSametree(root, subRoot)) return true
     return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+ var levelOrder = function(root) {
+    if (!root) return []
+    let q = [ ]
+    q.push(root)
+    let res = []
+    console.log(q)
+
+    while (q.length> 0) {
+        let size = q.length
+        let level = []
+        for (let i=0;i<size; i++) {
+            let cur = q.shift()
+      
+            if (cur) {
+                level.push(cur.val)
+                if (cur.left)q.push(cur.left)
+                if (cur.right)q.push(cur.right)
+            }
+        }
+        console.log(level)
+        if (level) {
+                res.push(level)
+        }
+    } 
+    console.log('result ', res)
+    return res
+};
