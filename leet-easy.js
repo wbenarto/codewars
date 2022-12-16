@@ -918,3 +918,185 @@ var rangeSumBST = function(root, low, high) {
     return path - 1 
  
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isBalanced = function(root) {
+    if (root == null) return true
+    let dfs = (root) => {
+        if (!root) return 0
+      
+        let l = dfs(root.left)
+        let r = dfs(root.right)
+
+        if (l == -1 || r == -1) return -1
+        if (Math.abs(l-r) > 1 ) return -1
+        return Math.max(l,r) + 1
+    }
+
+    if (dfs(root) == -1) return false
+    return true 
+    
+
+
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+ var isSameTree = function(p, q) {
+    if (!p && !q) return true
+
+    if (!p || !q || p.val !== q.val) return false
+
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right) 
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} subRoot
+ * @return {boolean}
+ */
+ var isSubtree = function(root, subRoot) {
+    if (!root) return false
+
+    function isSametree(a, b) {
+        if (!a && !b) return true
+        if (!a || !b || a.val !== b.val) return false
+        return isSametree(a.left, b.left) && isSametree(a.right, b.right)
+    }
+
+    if (isSametree(root, subRoot)) return true
+    return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} subRoot
+ * @return {boolean}
+ */
+ var isSubtree = function(root, subRoot) {
+    if (!root) return false
+
+    function isSametree(a, b) {
+        if (!a && !b) return true
+        if (!a || !b || a.val !== b.val) return false
+        return isSametree(a.left, b.left) && isSametree(a.right, b.right)
+    }
+
+    if (isSametree(root, subRoot)) return true
+    return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+ var levelOrder = function(root) {
+    if (!root) return []
+    let q = [ ]
+    q.push(root)
+    let res = []
+    console.log(q)
+
+    while (q.length> 0) {
+        let size = q.length
+        let level = []
+        for (let i=0;i<size; i++) {
+            let cur = q.shift()
+      
+            if (cur) {
+                level.push(cur.val)
+                if (cur.left)q.push(cur.left)
+                if (cur.right)q.push(cur.right)
+            }
+        }
+        console.log(level)
+        if (level) {
+                res.push(level)
+        }
+    } 
+    console.log('result ', res)
+    return res
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+ var rightSideView = function(root) {
+
+    if (!root) return []
+    let res = []
+    let q = [root]
+
+    while (q.length >0) {
+ 
+        let size = q.length
+
+        for (let i =0; i<size;i++) {
+            let cur = q.shift()
+            if (cur.left) q.push(cur.left)
+            if (cur.right) q.push(cur.right)
+            
+            if (i==size-1) {res.push(cur.val)}
+        }
+
+    }
+    return res
+
+    
+    
+};
