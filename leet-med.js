@@ -176,3 +176,19 @@ var buildTree = function(preorder, inorder) {
 
   
 };
+var buildTree = function(preorder, inorder) {
+  let splitTree = function(p, i, pIndex, iLeft, iRight) {
+    let rootVal = p[pIndex];
+    let root = new TreeNode(rootVal);
+    let imid = i.indexOf(rootVal);
+        
+    if (imid > iLeft) {
+      root.left = splitTree(p, i, pIndex + 1, iLeft, imid - 1);
+     }
+    if (imid < iRight) {
+       root.right = splitTree(p, i, pIndex + 1 + (imid - iLeft), imid + 1, iRight);
+     }
+     return root;
+    }
+  return splitTree(preorder, inorder, 0, 0, preorder.length-1);
+};
