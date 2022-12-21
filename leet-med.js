@@ -192,3 +192,31 @@ var buildTree = function(preorder, inorder) {
     }
   return splitTree(preorder, inorder, 0, 0, preorder.length-1);
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} k
+ * @return {number}
+ */
+ var kthSmallest = function(root, k) {
+  // inorder traversal return kth arr res
+  let res = []
+  function dfs(root) {
+      if (!root) return null
+      else {
+          dfs(root.left)
+          res.push(root.val)
+          dfs(root.right)
+      }
+  }
+  dfs(root)
+  return res[k-1]
+};
