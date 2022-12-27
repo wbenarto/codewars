@@ -1126,3 +1126,34 @@ var evaluateTree = function(root) {
         return evaluateTree(root.left) && evaluateTree(root.right)
     }
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var increasingBST = function(root) {
+    let newTree = new TreeNode()
+    let dummy = newTree
+   
+    function dfs(root) {
+        if (!root) return
+
+        dfs(root.left)
+        dummy.right = root
+        dummy = dummy.right
+        dummy.left = null
+        dfs(root.right)
+       
+    }
+    dfs(root)
+    return(newTree.right)
+
+};
