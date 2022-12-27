@@ -1201,3 +1201,31 @@ var increasingBST = function(root) {
     return root1
   
 };
+
+/**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number[]}
+ */
+ var postorder = function(root) {
+    if (!root) return []
+
+    let res = []
+    let stack = [root]
+
+    while (stack.length > 0) {
+        if (!root) return
+        let cur = stack.pop()
+        res.push(cur.val)
+        stack.push(...cur.children)
+    }
+
+    return res.reverse()
+};
