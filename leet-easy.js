@@ -1126,3 +1126,160 @@ var evaluateTree = function(root) {
         return evaluateTree(root.left) && evaluateTree(root.right)
     }
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var increasingBST = function(root) {
+    let newTree = new TreeNode()
+    let dummy = newTree
+   
+    function dfs(root) {
+        if (!root) return
+
+        dfs(root.left)
+        dummy.right = root
+        dummy = dummy.right
+        dummy.left = null
+        dfs(root.right)
+       
+    }
+    dfs(root)
+    return(newTree.right)
+
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var checkTree = function(root) {
+    return root.val == root.left.val + root.right.val
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ */
+ var mergeTrees = function(root1, root2) {
+
+    if (!root1) {
+        return root2
+    }
+    if (!root2) {
+        return root1
+    } 
+    root1.val += root2.val
+    root1.left = mergeTrees(root1.left , root2.left)
+    root1.right = mergeTrees(root1.right, root2.right)
+    return root1
+  
+};
+
+/**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number[]}
+ */
+ var postorder = function(root) {
+    if (!root) return []
+
+    let res = []
+    let stack = [root]
+
+    while (stack.length > 0) {
+        if (!root) return
+        let cur = stack.pop()
+        res.push(cur.val)
+        stack.push(...cur.children)
+    }
+
+    return res.reverse()
+};
+
+/**
+ * // Definition for a Node.
+ * function Node(val, children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number[]}
+ */
+ var preorder = function(root) {
+    if (!root) return []
+    let res = []
+    dfs(root)
+
+    function dfs(root) {
+        if (!root) return
+        res.push(root.val)
+        for (let i =0;i<root.children.length;i++) {
+            dfs(root.children[i])
+        }
+    }
+
+    return res
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+ var invertTree = function(root) {
+    if (!root) return null
+
+
+    let temp = root.left
+    root.left = root.right
+    root.right = temp
+
+    invertTree(root.left)
+    invertTree(root.right)
+    return root
+    
+};
