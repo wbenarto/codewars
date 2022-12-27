@@ -1229,3 +1229,31 @@ var increasingBST = function(root) {
 
     return res.reverse()
 };
+
+/**
+ * // Definition for a Node.
+ * function Node(val, children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number[]}
+ */
+ var preorder = function(root) {
+    if (!root) return []
+    let res = []
+    dfs(root)
+
+    function dfs(root) {
+        if (!root) return
+        res.push(root.val)
+        for (let i =0;i<root.children.length;i++) {
+            dfs(root.children[i])
+        }
+    }
+
+    return res
+};
