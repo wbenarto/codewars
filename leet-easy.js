@@ -1385,3 +1385,41 @@ var increasingBST = function(root) {
     }
     return depth
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isUnivalTree = function(root) {
+    if (!root) return false
+    let val = root.val
+    let res = true
+
+    dfs(root) 
+
+    function dfs(root) {
+        console.log(val, root.val)
+        if (!root) return
+      
+        if (root.val != val) {
+            console.log('return false')
+            res = false
+        } 
+        if (root.left) dfs(root.left)
+        if (root.right) dfs(root.right)
+           
+ 
+    }
+
+    return res
+
+    
+};
