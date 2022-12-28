@@ -1283,3 +1283,34 @@ var increasingBST = function(root) {
     return root
     
 };
+
+/**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number}
+ */
+ var maxDepth = function(root) {
+    if (!root) return 0
+    let q = [root]
+    let depth = 0
+
+    while (q.length > 0) {
+        let size = q.length
+        
+
+        for (let i=0;i<size;i++) {
+            let cur = q.shift()
+            q.push(...cur.children)
+        }
+        depth += 1
+
+    }
+    return depth
+};
