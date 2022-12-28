@@ -1283,3 +1283,276 @@ var increasingBST = function(root) {
     return root
     
 };
+
+/**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number}
+ */
+ var maxDepth = function(root) {
+    if (!root) return 0
+    let q = [root]
+    let depth = 0
+
+    while (q.length > 0) {
+        let size = q.length
+        
+
+        for (let i=0;i<size;i++) {
+            let cur = q.shift()
+            q.push(...cur.children)
+        }
+        depth += 1
+
+    }
+    return depth
+};
+
+/**
+ * // Definition for a Node.
+ * function Node(val,children) {
+ *    this.val = val;
+ *    this.children = children;
+ * };
+ */
+
+/**
+ * @param {Node|null} root
+ * @return {number}
+ */
+ var maxDepth = function(root) {
+    if (!root) return 0
+    let depth = 0
+
+    for (let each of root.children) {
+        depth = Math.max(depth, maxDepth(each))
+    }
+    return depth + 1
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var maxDepth = function(root) {
+    if (!root) return 0
+    let depth = 0
+
+    depth = Math.max(depth, maxDepth(root.left), maxDepth(root.right))
+
+    return depth + 1
+};
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var maxDepth = function(root) {
+    if (!root) return 0
+    let depth = 0
+    let q = [root]
+
+    while (q.length > 0) {
+        let size = q.length
+        for (let i=0;i<size;i++) {
+            let cur = q.shift()
+            if (cur.left) q.push(cur.left)
+            if (cur.right) q.push(cur.right)
+        }
+        depth+=1
+    }
+    return depth
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isUnivalTree = function(root) {
+    if (!root) return false
+    let val = root.val
+    let res = true
+
+    dfs(root) 
+
+    function dfs(root) {
+        console.log(val, root.val)
+        if (!root) return
+      
+        if (root.val != val) {
+            console.log('return false')
+            res = false
+        } 
+        if (root.left) dfs(root.left)
+        if (root.right) dfs(root.right)
+           
+ 
+    }
+
+    return res
+
+    
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isUnivalTree = function(root, value=root.val) {
+    if (!root) return true
+
+    return root.val == value && isUnivalTree(root.left, value) && isUnivalTree(root.right, value)
+};
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {number}
+ */
+ var getDecimalValue = function(head) {
+    let num = ''
+    
+    while (head) {
+        num += String(head.val)
+        head = head.next
+    }
+    return(parseInt(num, 2))
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ var middleNode = function(head) {
+    let slow = fast = head
+
+    while (fast && fast.next) {
+        fast = fast.next.next
+        slow = slow.next
+    }
+
+    return slow
+    
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ var middleNode = function(head) {
+    let slow = fast = head
+
+    while (fast && fast.next) {
+        fast = fast.next.next
+        slow = slow.next
+    }
+
+    return slow
+    
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ var deleteDuplicates = function(head) {
+    let cur = head
+
+    while (cur) {
+        if (cur.next != null && cur.val == cur.next.val) {
+            cur.next = cur.next.next
+        } else {
+            cur = cur.next
+        }
+    }
+
+    return head
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+ var isPalindrome = function(head) {
+    let cur = ''
+    let reverse = ''
+
+    while (head) {
+        cur += head.val
+        reverse = head.val + reverse
+        head = head.next
+    }
+
+    return cur == reverse
+};
