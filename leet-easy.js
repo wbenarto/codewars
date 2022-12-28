@@ -1532,3 +1532,27 @@ var increasingBST = function(root) {
 
     return head
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+ var isPalindrome = function(head) {
+    let cur = ''
+    let reverse = ''
+
+    while (head) {
+        cur += head.val
+        reverse = head.val + reverse
+        head = head.next
+    }
+
+    return cur == reverse
+};
