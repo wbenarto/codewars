@@ -1441,3 +1441,23 @@ var increasingBST = function(root) {
 
     return root.val == value && isUnivalTree(root.left, value) && isUnivalTree(root.right, value)
 };
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {number}
+ */
+ var getDecimalValue = function(head) {
+    let num = ''
+    
+    while (head) {
+        num += String(head.val)
+        head = head.next
+    }
+    return(parseInt(num, 2))
+};
