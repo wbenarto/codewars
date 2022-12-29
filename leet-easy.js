@@ -1588,3 +1588,131 @@ var hasCycle = function(head) {
     return false
     
 };
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+var finalValueAfterOperations = function(operations) {
+    let total = 0
+    for (let i of operations) {
+        let ops = i[1]
+
+        if (ops == '-') {
+            total--
+        } else {
+            total ++
+        }
+    }
+    return total
+};
+/**
+ * @param {number[]} nums
+ * @param {number} n
+ * @return {number[]}
+ */
+var shuffle = function(nums, n) {
+    let mid = nums.length/2
+    let arr1 = nums.slice(0,mid)
+    let arr2 = nums.slice(mid)
+    console.log(arr1,arr2)
+    let res = []
+
+    for (let i=0;i<arr1.length;i++) {
+        res.push(arr1[i])
+        res.push(arr2[i])
+    }
+
+    return (res)
+};
+/**
+ * @param {number[]} nums
+ * @param {number} n
+ * @return {number[]}
+ */
+ var shuffle = function(nums, n) {
+    let mid = nums.length/2
+    let res = []
+
+    for (let i=0;i<mid;i++) {
+        res.push(nums[i])
+        res.push(nums[i+n])
+    }
+
+    return (res)
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var numIdenticalPairs = function(nums) {
+    let pairs=0
+    for (let i=0;i<nums.length;i++) {
+        let cur = nums[i]
+  
+        for (let j=i+1;j<nums.length;j++) {
+            let cur2 = nums[j]
+            if (cur == cur2) pairs++
+        }
+    }  
+    return pairs
+  };
+
+  /**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let res = 0
+    accounts.forEach(e=> {
+        let cur = e.reduce((a,b)=>a+b, 0)
+        res = Math.max(res, cur)
+
+        })
+    return (res)
+
+};
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+ var kidsWithCandies = function(candies, extraCandies) {
+    let max = Math.max(...candies)
+    let res = []
+
+    for (let i of candies) {
+        if (i+extraCandies >= max) {
+            res.push(true)
+        } else res.push(false)
+    }
+    return res
+};
+
+/**
+ * @param {number[][]} points
+ * @param {number[][]} queries
+ * @return {number[]}
+ */
+ var countPoints = function(points, queries) {
+    let res = []
+    for (let i = 0;i<queries.length;i++) {
+
+
+       
+        let temp = 0
+        for (let j=0;j<points.length;j++) {
+            let x = points[j][0]
+            let y = points[j][1]
+            let distX = Math.pow(x - queries[i][0],2)
+            let distY = Math.pow(y -queries[i][1],2)
+            let rad = Math.pow(queries[i][2], 2)
+            if ( distX + distY <= rad ) temp++
+            
+        }
+        res.push(temp)
+    }
+
+    return res
+};
