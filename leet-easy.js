@@ -1929,3 +1929,51 @@ OrderedStream.prototype.insert = function(idKey, value) {
 
     return res
 };
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, res=[0,1] ) {
+    if (n== 0) return 0
+    if (n==1) return 1
+    return fib(n-1) + fib(n-2)
+
+
+};
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, res=[0,1] ) {
+    if (n== 0) return 0
+    if (n==1) return 1
+
+    let a = 0
+    let b = 1
+    let sum = a + b
+
+    while (n>1) {
+        sum = a + b
+        a = b
+        b= sum
+        n--
+    }
+    return sum
+
+
+};
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, memo ) {
+    memo = memo || {}
+ 
+     if (n<2) return n
+     if (memo[n]) return memo[n]
+ 
+    return memo[n] = fib(n-1, memo) + fib(n-2,memo)
+ 
+ };
