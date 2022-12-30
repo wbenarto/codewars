@@ -1716,3 +1716,178 @@ var maximumWealth = function(accounts) {
 
     return res
 };
+
+/**
+ * @param {number[][]} edges
+ * @return {number}
+ */
+ var findCenter = function(edges) {
+    let dict = {}
+
+    for (let i of edges) {
+        if (i[0] in dict) {
+            dict[i[0]]++
+        } else {
+            dict[i[0]] = 1
+        }
+
+        if (i[1] in dict) {
+            dict[i[1]]++
+        } else {
+            dict[i[1]] = 1
+        }
+    }
+
+    console.log(dict)
+    console.log(Object.keys(dict).reduce((a,b)=>dict[a]>dict[b] ? a : b))
+    return Object.keys(dict).reduce((a,b)=>dict[a]>dict[b] ? a : b)
+};
+const findCenter = (edges) => {
+    const [[a, b], [c, d]] = edges;
+    return a === c || b === c ? c : d;
+  };
+  /**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+    let res = []
+    for (let i of nums) {
+        let count = nums.filter(e=> i >e)
+        res.push(count.length)
+    }
+    return res
+};
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var smallerNumbersThanCurrent = function(nums) {
+    let sorted = nums.slice().sort((a,b) => a - b)
+    let hash = new Map()
+    sorted.forEach((e,i) => hash.has(e) ? null : hash.set(e, i))
+    return nums.map(e=> hash.get(e))
+
+};
+
+/**
+ * @param {number} n
+ */
+ var OrderedStream = function(n) {
+    this.list = []
+    this.pointer = 0
+};
+
+/** 
+ * @param {number} idKey 
+ * @param {string} value
+ * @return {string[]}
+ */
+OrderedStream.prototype.insert = function(idKey, value) {
+    let chunk = []
+
+    this.list[idKey-1] = value
+    while (this.list[this.pointer]) {
+        chunk.push(this.list[this.pointer])
+        this.pointer++
+    }
+    return chunk
+};
+
+/** 
+ * Your OrderedStream object will be instantiated and called as such:
+ * var obj = new OrderedStream(n)
+ * var param_1 = obj.insert(idKey,value)
+ */
+
+/**
+ * @param {string} sentence
+ * @return {boolean}
+ */
+ var checkIfPangram = function(sentence) {
+    let res = new Set(sentence)
+
+    return res.size == 26
+};
+/**
+ * @param {string[]} names
+ * @param {number[]} heights
+ * @return {string[]}
+ */
+ var sortPeople = function(names, heights) {
+    let hash = new Map()
+    for (let i=0; i<names.length;i++) {
+        hash.set(heights[i], names[i])
+    }
+
+    return(heights.sort((a,b)=>b-a).map((e)=>hash.get(e)))
+};
+
+/**
+ * @param {number[]} nums
+ * @param {number} diff
+ * @return {number}
+ */
+ var arithmeticTriplets = function(nums, diff) {
+    let res = 0
+    for (let i=0;i<nums.length-1;i++) {
+        let temp = [nums[i]]
+        for (let j=0;j<nums.length;j++) {
+            if (Math.abs(nums[i]-nums[j]) == diff) temp.push(nums[j])
+        }
+        if (temp.length == 3) res++
+    }
+
+    return res
+};
+
+/**
+ * @param {number[]} nums
+ * @param {number} diff
+ * @return {number}
+ */
+ var arithmeticTriplets = function(nums, diff) {
+    let res = 0
+    for (let i=0;i<nums.length-1;i++) {
+        let temp = 1
+        for (let j=0;j<nums.length;j++) {
+            if (Math.abs(nums[i]-nums[j]) == diff) temp++
+        }
+        if (temp == 3) res++
+    }
+
+    return res
+};
+
+/**
+ * @param {string[][]} paths
+ * @return {string}
+ */
+ var destCity = function(paths) {
+
+    let dep = []
+    let arv = []
+    for (let i of paths) {
+        dep.push(i[0])
+        arv.push(i[1])
+    }
+ 
+    for (let i of arv) {
+        if (dep.indexOf(i) < 0) return i
+    }
+
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var repeatedNTimes = function(nums) {
+    let n = nums.length /2
+    let hash = new Map()
+    for (let i of nums) {
+        hash.has(i) ? hash.set(i, hash.get(i) + 1)  : hash.set(i, 1)
+    }
+    console.log([...hash].find(([key, val])=>val==n)[0])
+    return [...hash].find(([key, val])=>val==n)[0]
+};
