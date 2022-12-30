@@ -1977,3 +1977,26 @@ OrderedStream.prototype.insert = function(idKey, value) {
     return memo[n] = fib(n-1, memo) + fib(n-2,memo)
  
  };
+ /**
+ * @param {number} n
+ * @return {number}
+ */
+var tribonacci = function(n) {
+    if (n<2) return n
+    if (n==2) return 1
+    
+    let a = 0
+    let b = 1
+    let c = 1
+    let sum = a + b + c
+
+    while (n>=3) {
+        sum = a + b + c
+        a=b
+        b=c
+        c=sum
+        n--
+    }
+
+    return sum
+};
