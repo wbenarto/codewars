@@ -1891,3 +1891,89 @@ OrderedStream.prototype.insert = function(idKey, value) {
     console.log([...hash].find(([key, val])=>val==n)[0])
     return [...hash].find(([key, val])=>val==n)[0]
 };
+
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+ var countBits = function(n) {
+    let dp = Array(n+1).fill(0)
+    let offset = 1
+    console.log(dp)
+
+    for (let i=1;i<=n;i++) {
+        if (offset * 2 == i) offset *= 2
+        dp[i] = 1 + dp[i-offset]
+    }
+    console.log(dp)
+    return dp
+    
+};
+
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+ var generate = function(numRows) {
+    let res = [[1]]
+
+    for (let i=1;i<numRows;i++) {
+        let temp = [0, ...res[res.length-1], 0]
+        let row = []
+
+        for (let j=0;j<res.at(-1).length+1; j++) {
+            row.push(temp[j] + temp[j+1])
+        }
+        res.push(row)
+    }
+
+    return res
+};
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, res=[0,1] ) {
+    if (n== 0) return 0
+    if (n==1) return 1
+    return fib(n-1) + fib(n-2)
+
+
+};
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, res=[0,1] ) {
+    if (n== 0) return 0
+    if (n==1) return 1
+
+    let a = 0
+    let b = 1
+    let sum = a + b
+
+    while (n>1) {
+        sum = a + b
+        a = b
+        b= sum
+        n--
+    }
+    return sum
+
+
+};
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var fib = function(n, memo ) {
+    memo = memo || {}
+ 
+     if (n<2) return n
+     if (memo[n]) return memo[n]
+ 
+    return memo[n] = fib(n-1, memo) + fib(n-2,memo)
+ 
+ };
