@@ -2013,3 +2013,46 @@ var tribonacci = function(n) {
     
     return memo[n] = tribonacci(n-1, memo) + tribonacci(n-2,memo) + tribonacci(n-3, memo)
 };
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var climbStairs = function(n) {
+  
+    if (n<2) return 1
+    let a = 1
+    let b =1
+    let sum = a+ b
+    while (n>1) {
+        sum = a + b
+        a =b
+        b= sum
+        n--
+    }
+
+    return sum
+
+};
+
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+ var getRow = function(rowIndex) {
+
+    let res = [[1]]
+
+    for (let i=0;i<rowIndex;i++){
+        let temp = [0, ...res[res.length-1], 0]
+        let row = []
+        for (let j=0;j<temp.length-1;j++) {
+
+            row.push(temp[j] + temp[j+1])
+        }
+        res.push(row)
+    }
+
+    return res[res.length-1]
+
+};
