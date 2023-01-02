@@ -263,3 +263,35 @@ var buildTree = function(preorder, inorder) {
   
 };
 
+/**
+ * @param {number} lo
+ * @param {number} hi
+ * @param {number} k
+ * @return {number}
+ */
+ var getKth = function(lo, hi, k) {
+  let hash = new Map()
+
+  function helper (n, count = 0) {
+      if (n%2==0) {
+          n = n / 2
+          count++
+      } else if (n%2==1) {
+          n = 3*n+1
+          count++
+      }
+      if (n == 1) {
+    
+          return count
+      }
+      return helper(n, count)
+  }
+
+  for (let i=lo; i<=hi;i++) {
+      hash.set(i, helper(i))
+  }
+  let temp = [...hash.entries()].sort((a,b)=>{
+      return a[1]-b[1]
+  })
+  return temp[k-1][0]
+};
