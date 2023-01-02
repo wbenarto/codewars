@@ -295,3 +295,66 @@ var buildTree = function(preorder, inorder) {
   })
   return temp[k-1][0]
 };
+
+/**
+ * @param {string[]} tokens
+ * @return {number}
+ */
+ var evalRPN = function(tokens) {
+  // loop from last 
+  // take the 
+
+  let stack = []
+
+  for (let i=0;i<tokens.length;i++) {
+
+      if (tokens[i] == '+') {
+          let cur2 = Number(stack.pop())
+          let cur1 = Number(stack.pop())
+          let temp = cur2 + cur1
+          stack.push(temp)
+      } else if (tokens[i] == '-') {
+          let cur2 = Number(stack.pop())
+          let cur1 = Number(stack.pop())
+          let temp = cur1 - cur2
+          stack.push(temp)
+      } else if (tokens[i] == '/') {
+          let cur2 = Number(stack.pop())
+          let cur1 = Number(stack.pop())
+          let temp = cur1/cur2>=0 ? Math.floor(cur1/cur2) : Math.ceil(cur1/cur2)
+          stack.push(temp)
+      } else if (tokens[i] == '*') {
+          let cur2 = Number(stack.pop())
+          let cur1 = Number(stack.pop())
+          let temp = cur1 * cur2
+          stack.push(temp)
+      } else { 
+          stack.push(Number(tokens[i]))
+      }
+  }    
+  return stack.pop()
+};
+
+/**
+ * @param {string[]} tokens
+ * @return {number}
+ */
+ var evalRPN = function(tokens) {
+  let stack = []
+  let ops = {
+      '+' : (a,b) => a+b,
+      '-' : (a,b) => a-b,
+      '*' : (a,b) => a*b,
+      '/' : (a,b) => a/b>=0 ? Math.floor(a/b) : Math.ceil(a/b)
+  }
+
+  for (let i of tokens) {
+      if (ops[i]) {
+          let b = stack.pop()
+          let a = stack.pop()
+          stack.push(ops[i](a,b))
+      }
+      else stack.push(Number(i))
+  }
+  return stack.pop()
+};
