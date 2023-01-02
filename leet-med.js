@@ -220,3 +220,46 @@ var buildTree = function(preorder, inorder) {
   dfs(root)
   return res[k-1]
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {number} n
+ * @return {TreeNode[]}
+ */
+ var allPossibleFBT = function(n) {
+  memo = {0:[], 1: [new TreeNode()]}
+
+  function backtrack(n){
+      if (memo[n]) return memo[n]
+
+      let res = []
+      for (let i=0; i<n;i++) {
+
+          let r = n-1-i
+
+          let leftTrees = backtrack(i)
+          let rightTrees = backtrack(r)
+  
+          for (let t1 of leftTrees) {
+
+              for (let t2 of rightTrees)
+                  res.push(new TreeNode(0, t1, t2))
+          }
+
+          
+      }
+      memo[n] = res
+      return res
+  } 
+
+  return backtrack(n)
+  
+};
+
