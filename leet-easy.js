@@ -2210,3 +2210,54 @@ var removeOuterParentheses = function(s) {
 
     return res
 };
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+ var calPoints = function(operations) {
+    let record = []
+    for (let i=0;i<operations.length;i++) {
+        if (operations[i] == '+') {
+            let temp = record[record.length-1] + record[record.length-2]
+            record.push(temp)
+        }
+        else if (operations[i] == 'C') {
+            record.pop()
+        }
+        else if (operations[i] == 'D') {
+            let lastRec = record[record.length-1] * 2
+            record.push(lastRec)
+        } else {
+            record.push(Number(operations[i]))
+        }
+   
+    }
+
+    console.log(record.reduce((a,b)=>a+b, 0))
+    return record.reduce((a,b)=>a+b, 0)
+};
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+ var calPoints = function(operations) {
+
+    let stack = []
+    for (let i=0;i<operations.length;i++) {
+        if (operations[i] == '+') {
+            stack.push((stack[stack.length-1] || 0) + (stack[stack.length-2] || 0))
+        }
+        else if (operations[i] == 'C') {
+            stack.pop()
+        }
+        else if (operations[i] == 'D') {
+            stack.push((stack[stack.length-1] || 0) * 2)
+        } else {
+            stack.push(Number(operations[i]))
+        }
+
+    }
+    return stack.reduce((a,b)=>a+b, 0)
+};
