@@ -389,3 +389,23 @@ var generateParenthesis = function(n) {
     bt(0,0)
     return res
 };
+
+/**
+ * @param {number[]} temperatures
+ * @return {number[]}
+ */
+ var dailyTemperatures = function(temperatures) {
+  let res = Array(temperatures.length).fill(0)
+  console.log(res)
+  stack = []
+  for (let i=0;i<temperatures.length;i++) {
+      while(stack.length>0 && temperatures[stack[stack.length-1]]<temperatures[i]) {
+          let j = stack.pop()
+          res[j] = i-j
+      }
+      stack.push(i)
+  }
+
+  return res
+};
+

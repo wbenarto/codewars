@@ -2141,3 +2141,29 @@ MyQueue.prototype.empty = function() {
  * var param_3 = obj.peek()
  * var param_4 = obj.empty()
  */
+
+ /**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    let open = 0
+  
+    let res = ''
+
+    for (let i=0;i<s.length;i++) {
+        if (s[i] == '(') {
+            if (open > 0) {
+                res += '('
+            }
+            open++
+        } else if (s[i]==')') {
+            if (open > 1) {
+                res += ')'
+            }
+            open--
+        }
+    }
+
+    return res
+};
