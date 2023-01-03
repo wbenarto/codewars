@@ -2167,3 +2167,46 @@ var removeOuterParentheses = function(s) {
 
     return res
 };
+
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+ var finalPrices = function(prices) {
+    let diff = 0
+    let answer = [...prices]
+
+    for (let i = 0;i<prices.length;i++) {
+        let cur = prices[i]
+        for (let j=i+1;j<prices.length;j++){
+            let peek = prices[j]
+            if (cur >= peek) {
+                diff = cur - peek
+                answer[i] = diff
+                break
+            }
+        }
+    }
+
+    return (answer)
+
+
+};
+
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+ var finalPrices = function(prices) {
+    let res = []
+    let stack = []
+
+    for (let i=prices.length-1;i>=0;i--) {
+        while(stack.length > 0 && stack[stack.length-1] > prices[i]) stack.pop()
+
+        res[i] = stack.length == 0 ? prices[i] : prices[i] - stack[stack.length-1]
+        stack.push(prices[i])
+    }
+
+    return res
+};
