@@ -2056,3 +2056,224 @@ var tribonacci = function(n) {
     return res[res.length-1]
 
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ var isValid = function(s) {
+    let stack = []
+    let map = {
+        '{' : '}',
+        '[' : ']',
+        '(' : ')'
+    }
+ 
+     for (let i=0; i<s.length;i++) {
+         if (s[i] == '(' || s[i] == '[' || s[i] == '{' ) {
+             stack.push(s[i])
+         } else if (map[stack.pop()] !== s[i]) {
+             return false
+         }
+     }
+ 
+     return stack.length ? 0 : 1
+  
+    
+ };
+
+ /**
+ * @param {string} s
+ * @return {string}
+ */
+var makeGood = function(s) {
+    let stack = ['']
+
+    for (let i=0;i<s.length;i++) {
+        let top = stack[stack.length-1] 
+
+        if (top.toLowerCase() == s[i].toLowerCase() && top !== s[i]) stack.pop()
+        else stack.push(s[i])
+    }
+
+    return stack.join('')
+};
+
+var MyQueue = function() {
+    this.stack = []
+   
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function(x) {
+    this.stack.push(x)
+};
+
+/**
+ * @return {number}
+ */
+MyQueue.prototype.pop = function() {
+    return this.stack.shift()
+};
+
+/**
+ * @return {number}
+ */
+MyQueue.prototype.peek = function() {
+    return this.stack[0]
+};
+
+/**
+ * @return {boolean}
+ */
+MyQueue.prototype.empty = function() {
+    return this.stack.length == 0 ? 1 : 0
+};
+
+/** 
+ * Your MyQueue object will be instantiated and called as such:
+ * var obj = new MyQueue()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.peek()
+ * var param_4 = obj.empty()
+ */
+
+ /**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    let open = 0
+  
+    let res = ''
+
+    for (let i=0;i<s.length;i++) {
+        if (s[i] == '(') {
+            if (open > 0) {
+                res += '('
+            }
+            open++
+        } else if (s[i]==')') {
+            if (open > 1) {
+                res += ')'
+            }
+            open--
+        }
+    }
+
+    return res
+};
+
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+ var finalPrices = function(prices) {
+    let diff = 0
+    let answer = [...prices]
+
+    for (let i = 0;i<prices.length;i++) {
+        let cur = prices[i]
+        for (let j=i+1;j<prices.length;j++){
+            let peek = prices[j]
+            if (cur >= peek) {
+                diff = cur - peek
+                answer[i] = diff
+                break
+            }
+        }
+    }
+
+    return (answer)
+
+
+};
+
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+ var finalPrices = function(prices) {
+    let res = []
+    let stack = []
+
+    for (let i=prices.length-1;i>=0;i--) {
+        while(stack.length > 0 && stack[stack.length-1] > prices[i]) stack.pop()
+
+        res[i] = stack.length == 0 ? prices[i] : prices[i] - stack[stack.length-1]
+        stack.push(prices[i])
+    }
+
+    return res
+};
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+ var calPoints = function(operations) {
+    let record = []
+    for (let i=0;i<operations.length;i++) {
+        if (operations[i] == '+') {
+            let temp = record[record.length-1] + record[record.length-2]
+            record.push(temp)
+        }
+        else if (operations[i] == 'C') {
+            record.pop()
+        }
+        else if (operations[i] == 'D') {
+            let lastRec = record[record.length-1] * 2
+            record.push(lastRec)
+        } else {
+            record.push(Number(operations[i]))
+        }
+   
+    }
+
+    console.log(record.reduce((a,b)=>a+b, 0))
+    return record.reduce((a,b)=>a+b, 0)
+};
+
+/**
+ * @param {string[]} operations
+ * @return {number}
+ */
+ var calPoints = function(operations) {
+
+    let stack = []
+    for (let i=0;i<operations.length;i++) {
+        if (operations[i] == '+') {
+            stack.push((stack[stack.length-1] || 0) + (stack[stack.length-2] || 0))
+        }
+        else if (operations[i] == 'C') {
+            stack.pop()
+        }
+        else if (operations[i] == 'D') {
+            stack.push((stack[stack.length-1] || 0) * 2)
+        } else {
+            stack.push(Number(operations[i]))
+        }
+
+    }
+    return stack.reduce((a,b)=>a+b, 0)
+};
+
+/**
+ * @param {number[]} students
+ * @param {number[]} sandwiches
+ * @return {number}
+ */
+ var countStudents = function(students, sandwiches) {
+    while (students.length > 0 && students.indexOf(sandwiches[0]) != -1) {
+        if (students[0] == sandwiches[0]) {
+            students.shift()
+            sandwiches.shift()
+        }
+        else students.push(students.shift())
+    }
+    return students.length
+};

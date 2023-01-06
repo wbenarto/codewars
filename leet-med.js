@@ -358,3 +358,73 @@ var buildTree = function(preorder, inorder) {
   }
   return stack.pop()
 };
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var generateParenthesis = function(n) {
+    let stack = []
+    let res = []
+
+    function bt(open, close) {
+        if (open == n && close == n) {
+            res.push(stack.join(''))
+            return
+        }
+
+        if (open < n) {
+            stack.push('(')
+            bt(open+1, close)
+            stack.pop()
+        }
+
+        if (close < open) {
+            stack.push(')')
+            bt(open, close + 1)
+            stack.pop()
+        }
+    }
+
+    bt(0,0)
+    return res
+};
+
+/**
+ * @param {number[]} temperatures
+ * @return {number[]}
+ */
+ var dailyTemperatures = function(temperatures) {
+  let res = Array(temperatures.length).fill(0)
+  console.log(res)
+  stack = []
+  for (let i=0;i<temperatures.length;i++) {
+      while(stack.length>0 && temperatures[stack[stack.length-1]]<temperatures[i]) {
+          let j = stack.pop()
+          res[j] = i-j
+      }
+      stack.push(i)
+  }
+
+  return res
+};
+
+/**
+ * @param {number[]} costs
+ * @param {number} coins
+ * @return {number}
+ */
+ var maxIceCream = function(costs, coins) {
+  let sorted = costs.sort((a,b) => a-b)
+  let res = 0
+  
+  for (let i =0;i<costs.length;i++) {
+      if (coins <= 0) {
+          return res
+      } else if (coins >= 0 && coins >= sorted[i]) {
+          coins -= sorted[i]
+          res++
+      }
+  }
+  return res
+};
