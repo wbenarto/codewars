@@ -2277,3 +2277,47 @@ var removeOuterParentheses = function(s) {
     }
     return students.length
 };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+ var maxProfit = function(prices) {
+    // buy low and sell high
+    let profit = 0
+    let curMin = prices[0]
+    let curMax = prices[0]
+    for (let i=0;i<prices.length;i++) {
+        if (prices[i] < curMin) {
+            curMin = prices[i]
+            curMax = prices[i]
+        } else if (prices[i] > curMax) {
+            curMax = prices[i]
+        }
+
+        profit = Math.max(curMax-curMin, profit)
+
+
+    }
+    return profit
+};
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+ var maxProfit = function(prices) {
+    // buy low and sell high
+    let profit = 0
+    let curMin = prices[0]
+   
+    for (let i=0;i<prices.length;i++) {
+        curMin = Math.min(prices[i], curMin)
+
+        if (prices[i] - curMin > profit) {
+            profit = prices[i] - curMin
+        }
+    }
+
+    return profit
+};
