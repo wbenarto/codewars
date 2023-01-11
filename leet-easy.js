@@ -2321,3 +2321,43 @@ var removeOuterParentheses = function(s) {
 
     return profit
 };
+
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+var reverseString = function(s) {
+  let i = 0, j = s.length - 1;
+  while (i < j) {
+    // ES6 destructuring assignment
+    [s[i], s[j]] = [s[j], s[i]];
+    i++;
+    j--;
+  }
+};
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+ var fizzBuzz = function(n) {
+    let res = []
+
+    for (let i=1; i<=n;i++) {
+        if (i <= 2 ) res.push(String(i))
+        else if (i % 3 == 0 && i % 5 == 0) res.push('FizzBuzz')
+        else if (i % 3 == 0) res.push('Fizz')
+        else if (i % 5 == 0) res.push('Buzz')
+        else res.push(String(i))
+    }
+
+    return res
+};
+
+/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+ var hammingWeight = function(n) {
+    return( n.toString(2).split('').filter(e=>e=='1').length)
+};
