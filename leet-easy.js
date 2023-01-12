@@ -2361,3 +2361,176 @@ var reverseString = function(s) {
  var hammingWeight = function(n) {
     return( n.toString(2).split('').filter(e=>e=='1').length)
 };
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ var isPalindrome = function(s) {
+   
+    let temp = s.replaceAll(/[^a-zA-Z0-9]/g, '').toLowerCase()
+    let l = 0
+    let r = temp.length-1
+
+    while (l<r) {
+
+        if(temp[l] == temp[r]) {
+            
+            l++
+            r--
+        } else return false
+    }
+
+    return true
+};
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isPowerOfThree = function(n) {
+    while (n > 0 ) {
+
+        n = n/3
+        if (n==1) return true
+    }
+    return false
+
+};
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isPowerOfThree = function(n) {
+    if (n==1) return true
+    while (n > 0 ) {
+
+        n = n/3
+        if (n==1) return true
+    }
+    return false
+
+};
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isPowerOfThree = function(n) {
+    
+    while (n > 1 ) {
+
+        n /=  3
+      
+    }
+    return n===1
+
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var majorityElement = function(nums) {
+    let dict = {}
+    for (let i=0;i<nums.length;i++) {
+        if (dict[nums[i]]) {
+            dict[nums[i]]++
+        } else {
+            dict[nums[i]] = 1
+        }
+    }
+
+    let value = Object.values(dict).sort((a,b)=>b-a)
+
+    return Object.keys(dict).find(e=>dict[e] === value)
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var majorityElement = function(nums) {
+    let map = new Map()
+    let max = null
+    for (let i of nums) {
+        let cur = map.get(i)
+
+        if (cur) {
+            cur.count++
+            map.set(i, cur)
+            if (max == null || max.count < cur.count) {
+                max=cur
+            }
+        } else {
+            map.set(i, {value: i, count:1})
+            if (!max) max= {value: i, count:1}
+        }
+    }
+
+    return max ? max.value : -1 
+};
+
+var moveZeroes = function(nums) {
+    let j = 0  // nonzero count
+  
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] !== 0) {
+        // swap elements
+        [nums[j], nums[i]] = [nums[i], nums[j]]
+        j++
+      }
+    }
+  };
+
+  /**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+    if (!headA || !headB) return null
+    let curA = headA
+    let curB = headB
+
+    while (curA != curB) {
+        curA = curA == null ? headB : curA.next
+        curB = curB == null ? headA : curB.next
+    }
+    return curA
+
+
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isSymmetric = function(root) {
+    if (root == null) return true;
+    function checkTree (left, right) {
+        if (left == null && right == null) return true
+        if (left == null || right == null) return false
+        if (left.val !== right.val) return false
+
+        return checkTree(left.left, right.right) && checkTree(left.right, right.left)
+    }    
+    return checkTree(root.left, root.right)
+};
