@@ -2510,3 +2510,27 @@ var getIntersectionNode = function(headA, headB) {
 
 
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isSymmetric = function(root) {
+    if (root == null) return true;
+    function checkTree (left, right) {
+        if (left == null && right == null) return true
+        if (left == null || right == null) return false
+        if (left.val !== right.val) return false
+
+        return checkTree(left.left, right.right) && checkTree(left.right, right.left)
+    }    
+    return checkTree(root.left, root.right)
+};
