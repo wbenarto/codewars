@@ -2534,3 +2534,31 @@ var getIntersectionNode = function(headA, headB) {
     }    
     return checkTree(root.left, root.right)
 };
+
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+ var plusOne = function(digits) {
+    let carry = 0
+    let sum = 1
+    let newDigits = [...digits]
+    for (let i=digits.length-1; i>=0; i--) {
+    console.log(i)
+        sum = sum + digits[i]
+
+        if (sum >= 10) {
+            carry = 1
+            sum = sum - 10
+        }
+        newDigits[i] = sum
+        sum = carry
+        carry = 0
+    }
+
+    if ( sum > 0) {
+        newDigits.unshift(1)
+    }
+    console.log(newDigits)
+    return newDigits
+};
