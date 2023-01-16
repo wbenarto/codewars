@@ -2630,7 +2630,7 @@ var getIntersectionNode = function(headA, headB) {
  * @param {number[]} nums
  * @return {TreeNode}
  */
- var sortedArrayToBST = function(nums, start = 0, end = nums.length) {
+ var sortedArrayToBST = function(nums, start = 0, end = nums.length-1) {
     if (start <= end) {
         let mid = Math.floor((start+end) / 2)
 
@@ -2643,3 +2643,30 @@ var getIntersectionNode = function(headA, headB) {
     return null
 
 };
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isAnagram = function(s, t) {
+    let dict = {}
+ 
+    for (let i=0;i<s.length;i++) {
+        if (dict[s[i]]) dict[s[i]]++
+        else dict[s[i]] = 1
+    }
+ 
+    for (let j=0;j<t.length;j++) {
+        if (dict[t[j]]) dict[t[j]]--
+        else return false
+    }
+ 
+     let values = Object.values(dict)
+ 
+     for (let i=0;i<values.length;i++) {
+         if (values[i] != 0) return false
+     }
+ 
+     return true
+ };
