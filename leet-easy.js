@@ -2578,3 +2578,42 @@ var getIntersectionNode = function(headA, headB) {
         nums1[insertPos--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--]
     }
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var missingNumber = function(nums) {
+    for (let i=0;i<=nums.length;i++) {
+        if (nums.indexOf(i) < 0) return i
+    }
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var buildArray = function(nums) {
+    
+    let res = []
+
+    for (let i=0;i<nums.length;i++) {
+        res.push(nums[nums[i]])
+    }
+
+    return res
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var differenceOfSum = function(nums) {
+    let total = nums.reduce((a,b)=>a+b,0)
+    let total2 = 0
+    for (let i=0; i<nums.length;i++) {
+        total2 += Number(String(nums[i]).split('').reduce((a,b)=>Number(a)+Number(b)))
+        
+    }
+    return Math.abs(total - total2)
+};
