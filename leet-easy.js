@@ -2617,3 +2617,215 @@ var getIntersectionNode = function(headA, headB) {
     }
     return Math.abs(total - total2)
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+ var sortedArrayToBST = function(nums, start = 0, end = nums.length-1) {
+    if (start <= end) {
+        let mid = Math.floor((start+end) / 2)
+
+        let root = new TreeNode(nums[mid])
+        root.left = sortedArrayToBST(nums, start, mid-1)
+        root.right = sortedArrayToBST(nums, mid+1, end)
+        return root
+    }
+
+    return null
+
+};
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isAnagram = function(s, t) {
+    let dict = {}
+ 
+    for (let i=0;i<s.length;i++) {
+        if (dict[s[i]]) dict[s[i]]++
+        else dict[s[i]] = 1
+    }
+ 
+    for (let j=0;j<t.length;j++) {
+        if (dict[t[j]]) dict[t[j]]--
+        else return false
+    }
+ 
+     let values = Object.values(dict)
+ 
+     for (let i=0;i<values.length;i++) {
+         if (values[i] != 0) return false
+     }
+ 
+     return true
+ };
+
+ 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isAnagram = function(s, t) {
+    let dict = {}
+    if (s.length !== t.length) return false
+ 
+    for (let i=0;i<s.length;i++) {
+        if (dict[s[i]]) dict[s[i]]++
+        else dict[s[i]] = 1
+    }
+ 
+    for (let j=0;j<t.length;j++) {
+        if (dict[t[j]]) dict[t[j]]--
+        else return false
+    }
+ 
+     return true
+ };
+
+ /**
+ * @param {number[]} gain
+ * @return {number}
+ */
+var largestAltitude = function(gain) {
+    let maxPoint = 0
+    let cur = 0
+    for (let i = 0; i<gain.length; i++) {
+        cur = cur + gain[i]
+        maxPoint = Math.max(maxPoint, cur)
+    }
+    return maxPoint
+};
+
+/**
+ * @param {number[][]} mat
+ * @return {number}
+ */
+ var diagonalSum = function(mat) {
+    let total = 0
+
+    for (let i = 0;i<mat.length;i++) {
+        if (i == Math.floor(mat.length/2) && mat.length%2 == 1) {
+            total += mat[i][i]
+        } else {
+            console.log(mat[i][0+i], mat[i][mat.length-1-i])
+            total += mat[i][0 + i] + mat[i][mat.length-1-i]
+        }
+
+    }
+
+    return total
+};
+
+/**
+ * @param {string[]} words
+ * @param {string} pref
+ * @return {number}
+ */
+ var prefixCount = function(words, pref) {
+    let total = 0
+
+    for (let i=0;i<words.length;i++) {
+        
+        let word = words[i].slice(0, pref.length)
+        if (word == pref) total+=1
+    }
+
+    return total
+};
+
+/**
+ * @param {string[]} words
+ * @param {string} pref
+ * @return {number}
+ */
+ var prefixCount = function(words, pref) {
+    let total = 0
+
+    for (let i=0;i<words.length;i++) {
+        if (words[i].startsWith(pref)) total+=1
+    }
+
+    return total
+};
+
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+ var sumZero = function(n) {
+    let mid = Math.floor(n/2)
+    let res = []
+    for (let i=1;i<=mid;i++) {
+        res.push(i, -i)
+    }
+
+    if (n%2==1) {
+        res.push(0)
+    }
+
+    return res
+};
+
+/**
+ * @param {string[]} words
+ * @return {string}
+ */
+ var firstPalindrome = function(words) {
+    
+    for (let i=0;i<words.length;i++) {
+        if (checkPal(words[i])) return words[i]
+    }
+    return ''
+
+    function checkPal (word) {
+        let mid = Math.floor(word.length/2)
+
+        if (word.length % 2 == 0) {
+            let first = word.slice(0, mid)
+            let sec = word.slice(mid).split('').reverse().join('')
+    
+            if (first == sec) return true
+            else return false
+        } else {
+            let first = word.slice(0,mid)
+            let sec = word.slice(mid+1).split('').reverse().join('')
+            if (first == sec) return true
+            else return false    
+        }
+    }
+};
+
+var firstPalindrome = function(words) {
+    for (const currentWord of words){
+      if (isPalindrome(currentWord)){
+        return currentWord;
+      }
+    }
+    return '';
+  };
+  
+  function isPalindrome(string){
+      let left = 0;
+      let right = string.length - 1;
+  
+      while(left < right){
+        if (string[left] !== string[right]){
+          return false;
+        }
+        left++;
+        right--;
+      }
+      return true;
+    }
