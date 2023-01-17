@@ -2727,3 +2727,20 @@ var largestAltitude = function(gain) {
 
     return total
 };
+
+/**
+ * @param {string[]} words
+ * @param {string} pref
+ * @return {number}
+ */
+ var prefixCount = function(words, pref) {
+    let total = 0
+
+    for (let i=0;i<words.length;i++) {
+        
+        let word = words[i].slice(0, pref.length)
+        if (word == pref) total+=1
+    }
+
+    return total
+};
