@@ -2670,3 +2670,60 @@ var getIntersectionNode = function(headA, headB) {
  
      return true
  };
+
+ 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isAnagram = function(s, t) {
+    let dict = {}
+    if (s.length !== t.length) return false
+ 
+    for (let i=0;i<s.length;i++) {
+        if (dict[s[i]]) dict[s[i]]++
+        else dict[s[i]] = 1
+    }
+ 
+    for (let j=0;j<t.length;j++) {
+        if (dict[t[j]]) dict[t[j]]--
+        else return false
+    }
+ 
+     return true
+ };
+
+ /**
+ * @param {number[]} gain
+ * @return {number}
+ */
+var largestAltitude = function(gain) {
+    let maxPoint = 0
+    let cur = 0
+    for (let i = 0; i<gain.length; i++) {
+        cur = cur + gain[i]
+        maxPoint = Math.max(maxPoint, cur)
+    }
+    return maxPoint
+};
+
+/**
+ * @param {number[][]} mat
+ * @return {number}
+ */
+ var diagonalSum = function(mat) {
+    let total = 0
+
+    for (let i = 0;i<mat.length;i++) {
+        if (i == Math.floor(mat.length/2) && mat.length%2 == 1) {
+            total += mat[i][i]
+        } else {
+            console.log(mat[i][0+i], mat[i][mat.length-1-i])
+            total += mat[i][0 + i] + mat[i][mat.length-1-i]
+        }
+
+    }
+
+    return total
+};
