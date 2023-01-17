@@ -2744,3 +2744,88 @@ var largestAltitude = function(gain) {
 
     return total
 };
+
+/**
+ * @param {string[]} words
+ * @param {string} pref
+ * @return {number}
+ */
+ var prefixCount = function(words, pref) {
+    let total = 0
+
+    for (let i=0;i<words.length;i++) {
+        if (words[i].startsWith(pref)) total+=1
+    }
+
+    return total
+};
+
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+ var sumZero = function(n) {
+    let mid = Math.floor(n/2)
+    let res = []
+    for (let i=1;i<=mid;i++) {
+        res.push(i, -i)
+    }
+
+    if (n%2==1) {
+        res.push(0)
+    }
+
+    return res
+};
+
+/**
+ * @param {string[]} words
+ * @return {string}
+ */
+ var firstPalindrome = function(words) {
+    
+    for (let i=0;i<words.length;i++) {
+        if (checkPal(words[i])) return words[i]
+    }
+    return ''
+
+    function checkPal (word) {
+        let mid = Math.floor(word.length/2)
+
+        if (word.length % 2 == 0) {
+            let first = word.slice(0, mid)
+            let sec = word.slice(mid).split('').reverse().join('')
+    
+            if (first == sec) return true
+            else return false
+        } else {
+            let first = word.slice(0,mid)
+            let sec = word.slice(mid+1).split('').reverse().join('')
+            if (first == sec) return true
+            else return false    
+        }
+    }
+};
+
+var firstPalindrome = function(words) {
+    for (const currentWord of words){
+      if (isPalindrome(currentWord)){
+        return currentWord;
+      }
+    }
+    return '';
+  };
+  
+  function isPalindrome(string){
+      let left = 0;
+      let right = string.length - 1;
+  
+      while(left < right){
+        if (string[left] !== string[right]){
+          return false;
+        }
+        left++;
+        right--;
+      }
+      return true;
+    }
