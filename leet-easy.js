@@ -2829,3 +2829,64 @@ var firstPalindrome = function(words) {
       }
       return true;
     }
+
+/**
+ * @param {number[]} seats
+ * @param {number[]} students
+ * @return {number}
+ */
+ var minMovesToSeat = function(seats, students) {
+    let res = 0
+    seats.sort((a,b)=> a-b)
+    students.sort((a,b)=> a-b)
+    for (let i=0;i<seats.length;i++) {
+        res += Math.abs(seats[i] - students[i]) 
+    }
+
+    return res
+};
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+ var truncateSentence = function(s, k) {
+    return s.split(' ').slice(0, k).join(' ')
+};
+var truncateSentence = function(s, k) {
+    let newStr = "";
+    for (let i = 0; i < s.length; i++) {
+        if (k === 0) return newStr;
+        else {
+            if (s[i] === " ") {
+                k--;
+                if (k === 0) return newStr;
+                else newStr += s[i];
+            } else {
+                newStr += s[i];
+            }
+        }
+    }
+    return newStr;
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var maxProduct = function(nums) {
+    let one = 0
+    let two = 0
+
+    for (let i = 0; i<nums.length; i++) {
+        if (nums[i] > one) {
+            two = one
+            one = nums[i]
+        } else if (nums[i] > two ) {
+            two = nums[i]
+        }
+    }
+
+    return (one-1) * (two-1)
+};
