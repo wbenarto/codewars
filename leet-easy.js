@@ -2845,3 +2845,28 @@ var firstPalindrome = function(words) {
 
     return res
 };
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+ var truncateSentence = function(s, k) {
+    return s.split(' ').slice(0, k).join(' ')
+};
+var truncateSentence = function(s, k) {
+    let newStr = "";
+    for (let i = 0; i < s.length; i++) {
+        if (k === 0) return newStr;
+        else {
+            if (s[i] === " ") {
+                k--;
+                if (k === 0) return newStr;
+                else newStr += s[i];
+            } else {
+                newStr += s[i];
+            }
+        }
+    }
+    return newStr;
+};
