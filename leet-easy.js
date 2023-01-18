@@ -2870,3 +2870,23 @@ var truncateSentence = function(s, k) {
     }
     return newStr;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var maxProduct = function(nums) {
+    let one = 0
+    let two = 0
+
+    for (let i = 0; i<nums.length; i++) {
+        if (nums[i] > one) {
+            two = one
+            one = nums[i]
+        } else if (nums[i] > two ) {
+            two = nums[i]
+        }
+    }
+
+    return (one-1) * (two-1)
+};
