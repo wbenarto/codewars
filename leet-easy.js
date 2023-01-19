@@ -2918,3 +2918,21 @@ var getMaximumGenerated = function(n) {
 
     return max
 };
+
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isSubsequence = function(s, t) {
+    let sec = 0
+
+    for (let i=0;i<t.length;i++) {
+        if (s[sec] == t[i]) {
+            sec++
+        }
+    }
+
+    return sec == s.length
+};
