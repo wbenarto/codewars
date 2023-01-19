@@ -2890,3 +2890,31 @@ var truncateSentence = function(s, k) {
 
     return (one-1) * (two-1)
 };
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var getMaximumGenerated = function(n) {
+    let nums = []
+    let max = 0
+
+    for (let i =0;i<n+1;i++) {
+        if (i==0) nums[0] = 0
+        if (i==1) {
+            nums[1] = 1
+            max = 1
+            }
+
+        if (2*i<=n && 2*i>=2){
+            nums[2*i] = nums[i]
+            if (nums[i] > max) max = nums[i]
+            }
+        if (2*i+1 <=n && 2*i+1 >= 2) {
+            nums[2*i+1] = nums[i] + nums[i+1] 
+            if (nums[i] + nums[i+1] > max) max = nums[i] + nums[i+1]
+            }        
+    }
+
+    return max
+};
