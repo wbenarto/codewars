@@ -2936,3 +2936,38 @@ var getMaximumGenerated = function(n) {
 
     return sec == s.length
 };
+
+// Do not edit the class below except
+// for the depthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+    constructor(name) {
+      this.name = name;
+      this.children = [];
+    }
+  
+    addChild(name) {
+      this.children.push(new Node(name));
+      console.log(this)
+      return this;
+    }
+  
+    depthFirstSearch(array = [], node=this) {
+  
+  
+  
+      array.push(node.name)
+      for (let i = 0;i<node.children.length;i++) {
+        this.depthFirstSearch(array, node.children[i])
+      }
+      console.log(array)
+      return array
+      // Write your code here. 
+        
+    }
+  }
+  
+  // Do not edit the line below.
+  exports.Node = Node;
+  
