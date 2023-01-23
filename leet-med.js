@@ -552,3 +552,44 @@ class Node {
 
 // Do not edit the line below.
 exports.Node = Node;
+
+function riverSizes(matrix) {
+  // Write your code here.
+  let visited = Array.from({length: matrix.length}, ()=>Array.from({length:matrix.length}, ()=>false))
+  let res = []
+
+  for (let row=0;row<matrix.length; row++) {
+    for (let col=0;col<matrix[row].length; col++) {
+      let cur = matrix[row][col]
+      console.log(visited)
+      if (visited[row][col]) {
+        continue
+      } 
+      let count = (BFS(row, col, matrix, visited))
+      console.log(count)
+      if (count>0) res.push(count)
+    }
+  }
+
+  function BFS(row, col, matrix, visited) {
+    let area = 1
+    const rowInbounds = 0 <= row && row < matrix.length;
+    const colInbounds = 0 <= col && col < matrix[0].length;
+
+    if (!(rowInbounds && colInbounds)) return 0
+    if (matrix[row][col] == 0) return 0
+    if (visited[row][col] == true) return 0
+    visited[row][col] = true
+
+    area += BFS(row+1, col, matrix, visited)
+    area += BFS(row-1, col, matrix, visited)
+    area += BFS(row, col+1, matrix, visited)
+    area += BFS(row, col-1, matrix, visited)
+    return area
+  }
+
+  return res
+}
+
+// Do not edit the line below.
+exports.riverSizes = riverSizes;
