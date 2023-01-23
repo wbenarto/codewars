@@ -476,3 +476,24 @@ var addTwoNumbers = function(l1, l2) {
 
     return List.next;
 };
+
+function hasSingleCycle(array) {
+  // Write your code here.
+  let visited = 0
+  let i = 0
+
+  while (visited < array.length ) {
+    if (visited > 0 && i == 0) return false
+    visited++
+    i = getNextIdx(i, array)
+  }
+  function getNextIdx(curIdx, array) {
+    let jump = array[curIdx]
+    let nextIdx = (curIdx + jump) % array.length
+    return nextIdx >= 0 ? nextIdx : nextIdx + array.length
+  }
+
+  return i == 0
+}
+// Do not edit the line below.
+exports.hasSingleCycle = hasSingleCycle;
