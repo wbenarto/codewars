@@ -497,3 +497,58 @@ function hasSingleCycle(array) {
 }
 // Do not edit the line below.
 exports.hasSingleCycle = hasSingleCycle;
+
+
+function hasSingleCycle(array) {
+  // Write your code here.
+  let visited = 0
+  let i = 0
+
+  while (visited < array.length ) {
+    if (visited > 0 && i == 0 ) return false
+
+    let nextIdx = (array[i] + i) % array.length >= 0 ? (array[i] + i) % array.length : (array[i] + i) % array.length + array.length
+    visited++
+    i = nextIdx
+  }
+  
+  return i == 0
+}
+// Do not edit the line below.
+exports.hasSingleCycle = hasSingleCycle;
+
+
+// Do not edit the class below except
+// for the breadthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.children = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  breadthFirstSearch(array , node= this) {
+    let q = [node]
+
+    while (q.length !== 0) {
+      let cur = q.shift()
+      for (let i = 0; i<cur.children.length;i++) {
+        q.push(cur.children[i])
+      }
+      array.push(cur.name)
+
+    }
+ 
+    return array
+    // Write your code here.
+  }
+}
+
+// Do not edit the line below.
+exports.Node = Node;
