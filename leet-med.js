@@ -497,3 +497,131 @@ function hasSingleCycle(array) {
 }
 // Do not edit the line below.
 exports.hasSingleCycle = hasSingleCycle;
+
+
+function hasSingleCycle(array) {
+  // Write your code here.
+  let visited = 0
+  let i = 0
+
+  while (visited < array.length ) {
+    if (visited > 0 && i == 0 ) return false
+
+    let nextIdx = (array[i] + i) % array.length >= 0 ? (array[i] + i) % array.length : (array[i] + i) % array.length + array.length
+    visited++
+    i = nextIdx
+  }
+  
+  return i == 0
+}
+// Do not edit the line below.
+exports.hasSingleCycle = hasSingleCycle;
+
+
+// Do not edit the class below except
+// for the breadthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.children = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  breadthFirstSearch(array , node= this) {
+    let q = [node]
+
+    while (q.length !== 0) {
+      let cur = q.shift()
+      for (let i = 0; i<cur.children.length;i++) {
+        q.push(cur.children[i])
+      }
+      array.push(cur.name)
+
+    }
+ 
+    return array
+    // Write your code here.
+  }
+}
+
+// Do not edit the line below.
+exports.Node = Node;
+
+function riverSizes(matrix) {
+  // Write your code here.
+  let visited = Array.from({length: matrix.length}, ()=>Array.from({length:matrix.length}, ()=>false))
+  let res = []
+
+  for (let row=0;row<matrix.length; row++) {
+    for (let col=0;col<matrix[row].length; col++) {
+      let cur = matrix[row][col]
+      console.log(visited)
+      if (visited[row][col]) {
+        continue
+      } 
+      let count = (BFS(row, col, matrix, visited))
+      console.log(count)
+      if (count>0) res.push(count)
+    }
+  }
+
+  function BFS(row, col, matrix, visited) {
+    let area = 1
+    const rowInbounds = 0 <= row && row < matrix.length;
+    const colInbounds = 0 <= col && col < matrix[0].length;
+
+    if (!(rowInbounds && colInbounds)) return 0
+    if (matrix[row][col] == 0) return 0
+    if (visited[row][col] == true) return 0
+    visited[row][col] = true
+
+    area += BFS(row+1, col, matrix, visited)
+    area += BFS(row-1, col, matrix, visited)
+    area += BFS(row, col+1, matrix, visited)
+    area += BFS(row, col-1, matrix, visited)
+    return area
+  }
+
+  return res
+}
+
+// Do not edit the line below.
+exports.riverSizes = riverSizes;
+
+// This is an input class. Do not edit.
+class AncestralTree {
+  constructor(name) {
+    this.name = name;
+    this.ancestor = null;
+  }
+}
+
+function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+  // Write your code here.
+
+  let ancestors = {}
+
+  while (descendantOne) {
+    ancestors[descendantOne.name] = 1 
+    descendantOne = descendantOne.ancestor
+  }
+
+  while (descendantTwo) {
+    if (ancestors[descendantTwo.name]) return descendantTwo
+    else ancestors[descendantTwo.name] = 1
+
+    descendantTwo = descendantTwo.ancestor
+  }
+  console.log(ancestors)
+  return false
+}
+
+// Do not edit the lines below.
+exports.AncestralTree = AncestralTree;
+exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
