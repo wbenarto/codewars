@@ -593,3 +593,35 @@ function riverSizes(matrix) {
 
 // Do not edit the line below.
 exports.riverSizes = riverSizes;
+
+// This is an input class. Do not edit.
+class AncestralTree {
+  constructor(name) {
+    this.name = name;
+    this.ancestor = null;
+  }
+}
+
+function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+  // Write your code here.
+
+  let ancestors = {}
+
+  while (descendantOne) {
+    ancestors[descendantOne.name] = 1 
+    descendantOne = descendantOne.ancestor
+  }
+
+  while (descendantTwo) {
+    if (ancestors[descendantTwo.name]) return descendantTwo
+    else ancestors[descendantTwo.name] = 1
+
+    descendantTwo = descendantTwo.ancestor
+  }
+  console.log(ancestors)
+  return false
+}
+
+// Do not edit the lines below.
+exports.AncestralTree = AncestralTree;
+exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
