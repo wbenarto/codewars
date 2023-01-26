@@ -625,3 +625,41 @@ function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
 // Do not edit the lines below.
 exports.AncestralTree = AncestralTree;
 exports.getYoungestCommonAncestor = getYoungestCommonAncestor;
+
+
+function cycleInGraph(edges) {
+  // Write your code here.
+  let visited = Array.from({length: edges.length} , ()=> 0)
+  let instack = Array.from({length: edges.length} , ()=> 0)
+
+  for (let i = 0; i<edges.length; i++) {
+    if (visited[i] == 1) continue
+    console.log(edges[i])
+    let containsCycle = DFS(edges, i, visited, instack)
+    if (containsCycle) return true
+  }
+
+  return false
+
+  function DFS(edges, node, visited, instack) {
+    visited[node] = 1
+    instack[node] = 1
+
+    let neighbors = edges[node]
+    console.log(neighbors)
+    for (let i=0;i<neighbors.length;i++) {
+
+      if (visited[neighbors[i]] == 1) {
+        let containsCycle = DFS(edges,neighbors[i], visited, instack)
+        if (containsCycle) return true
+        else if (instack[neighbors[i]] == 1) return true
+      }
+    }
+    instack[node] = 0
+    return false
+  }
+  return false;
+}
+
+// Do not edit the line below.
+exports.cycleInGraph = cycleInGraph;
