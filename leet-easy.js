@@ -3014,3 +3014,38 @@ var validPath = function(n, edges, source, destination) {
     dfs(source)
     return visited.has(destination)
 };
+
+function findClosestValueInBst(tree, target) {
+    // Write your code here.
+    let closest = Math.abs(tree.value - target)
+    
+    console.log(tree)
+    
+    while (tree) {
+      let cur = tree.value
+      console.log(cur)
+      let diff = Math.abs(tree.value - target)
+      closest = (diff < Math.abs(tree.value - target)) ? cur : closest
+      console.log(diff, closest)
+  
+      if (cur == target) return cur
+      else if (cur < target) tree = tree.right
+      else tree = tree.left
+      
+    }
+    console.log(closest)
+    return closest
+  }
+  
+  // This is the class of the input tree. Do not edit.
+  class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  // Do not edit the line below.
+  exports.findClosestValueInBst = findClosestValueInBst;
+  
