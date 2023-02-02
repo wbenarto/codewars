@@ -3016,24 +3016,22 @@ var validPath = function(n, edges, source, destination) {
 };
 
 function findClosestValueInBst(tree, target) {
+    if (!tree) return 0
     // Write your code here.
-    let closest = Math.abs(tree.value - target)
-    
-    console.log(tree)
+    let closest = tree.value
+    let diff = Math.abs(tree.value - target)
     
     while (tree) {
       let cur = tree.value
-      console.log(cur)
-      let diff = Math.abs(tree.value - target)
-      closest = (diff < Math.abs(tree.value - target)) ? cur : closest
-      console.log(diff, closest)
+      let curDiff = Math.abs(tree.value - target)
+      closest = (curDiff < diff) ? cur : closest
+      diff = (curDiff < diff) ? curDiff : diff
   
       if (cur == target) return cur
       else if (cur < target) tree = tree.right
       else tree = tree.left
       
     }
-    console.log(closest)
     return closest
   }
   
