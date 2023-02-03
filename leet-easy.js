@@ -3046,4 +3046,24 @@ function findClosestValueInBst(tree, target) {
   
   // Do not edit the line below.
   exports.findClosestValueInBst = findClosestValueInBst;
-  
+
+
+function binarySearch(array, target) {
+  // Write your code here.
+  let l=0
+  let r=array.length-1
+
+  while (l<=r) {
+    let cur = Math.floor((r+l)/2)
+
+    if (array[cur] == target) {
+      return cur}
+    else if (target > array[cur]) l = cur + 1
+    else if (target < array[cur]) r = cur - 1
+  }
+
+  return -1
+}
+
+// Do not edit the line below.
+exports.binarySearch = binarySearch;
