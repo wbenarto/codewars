@@ -683,3 +683,119 @@ function maxSubsetSumNoAdjacent(array) {
 
 // Do not edit the line below.
 exports.maxSubsetSumNoAdjacent = maxSubsetSumNoAdjacent;
+
+function sortedSquaredArray(array) {
+  // Write your code here.
+  let smallIdx = 0
+  let bigIdx = array.length-1
+  let res = Array.from({length: array.length-1}, ()=> 0)
+  
+  for (let i=array.length-1;i>=0;i--) {
+    let smallVal = array[smallIdx]
+    let bigVal = array[bigIdx]
+
+    if (Math.abs(smallVal) > Math.abs(bigVal)) {
+      res[i] = smallVal ** 2
+      smallIdx +=1 
+    }
+    else {
+      res[i] = bigVal ** 2
+      bigIdx -= 1
+    }
+    
+  }
+  return res
+}
+
+// Do not edit the line below.
+exports.sortedSquaredArray = sortedSquaredArray;
+
+function tournamentWinner(competitions, results) {
+  // Write your code here.
+  let dict = {}
+  for (let i=0;i<competitions.length;i++) {
+    let idx = results[i] == 0 ? 1 : 0 
+    
+    if (dict[competitions[i][idx]]) {
+      dict[competitions[i][idx]] += 3
+    } else {
+      dict[competitions[i][idx]] = 3
+    }
+  }
+  
+  return Object.keys(dict).reduce((a,b)=> dict[a] > dict[b] ? a : b);
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
+
+function tournamentWinner(competitions, results) {
+  // Write your code here.
+  let res = {}
+  let winner = {score: 0, name:''}
+  for (let i=0;i<competitions.length;i++) {
+    let winIdx = results[i] == 0 ? 1 : 0
+
+    console.log(competitions[i])
+      if (res[competitions[i][winIdx]]) {
+        res[competitions[i][winIdx]] += 3
+      } else {
+        res[competitions[i][winIdx]] = 3
+      }
+
+    if (res[competitions[i][winIdx]] > winner.score) {
+      winner.score = res[competitions[i][winIdx]]
+      winner.name = competitions[i][winIdx]
+    }
+    
+  }
+  return winner.name;
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
+
+function nonConstructibleChange(coins) {
+  // Write your code here.
+  if (!coins.length ) return 1
+  coins.sort((a,b)=> a-b)
+  let change = 0
+  for (let i=0;i<coins.length;i++) {
+    if (coins[i] > change + 1) break
+    change += coins[i]
+  }
+  return change + 1;
+}
+
+// Do not edit the line below.
+exports.nonConstructibleChange = nonConstructibleChange;
+
+function threeNumberSum(array, targetSum) {
+  // Write your code here.
+  if (!array.length) return []
+  let res = []
+  array.sort((a,b)=>a-b)
+
+  for (let i=0;i<array.length;i++) {
+    let l = i+1
+    let r = array.length-1
+    let cur = array[i]
+    
+    while (l<r) {
+      console.log(cur, array[l], array[r], targetSum)
+      if (array[l] + array[r] + cur == targetSum) {
+        res.push([array[i], array[l], array[r]])
+        l++
+      } else if (array[l] + array[r] + cur < targetSum) {
+        l+=1
+      } else if (array[l] + array[r] +cur > targetSum) {
+        r-=1
+      }
+    }
+  }
+
+  return res
+}
+
+// Do not edit the line below.
+exports.threeNumberSum = threeNumberSum;

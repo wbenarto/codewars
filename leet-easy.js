@@ -3067,3 +3067,30 @@ function binarySearch(array, target) {
 
 // Do not edit the line below.
 exports.binarySearch = binarySearch;
+
+
+function isValidSubsequence(array, sequence) {
+    // Write your code here.
+    let cur = 0
+    for (let i =0; i<array.length;i++){
+      if (array[i] == sequence[cur]) {
+        cur++
+      }
+    }
+    return (cur == sequence.length)
+  }
+  
+  // Do not edit the line below.
+  exports.isValidSubsequence = isValidSubsequence;
+  
+  function sortedSquaredArray(array) {
+    // Write your code here.
+    for (let i =0;i<array.length;i++) {
+      array[i] = array[i] ** 2
+    }
+    return array.sort((a,b)=> a-b);
+  }
+  
+  // Do not edit the line below.
+  exports.sortedSquaredArray = sortedSquaredArray;
+  
