@@ -683,3 +683,29 @@ function maxSubsetSumNoAdjacent(array) {
 
 // Do not edit the line below.
 exports.maxSubsetSumNoAdjacent = maxSubsetSumNoAdjacent;
+
+function sortedSquaredArray(array) {
+  // Write your code here.
+  let smallIdx = 0
+  let bigIdx = array.length-1
+  let res = Array.from({length: array.length-1}, ()=> 0)
+  
+  for (let i=array.length-1;i>=0;i--) {
+    let smallVal = array[smallIdx]
+    let bigVal = array[bigIdx]
+
+    if (Math.abs(smallVal) > Math.abs(bigVal)) {
+      res[i] = smallVal ** 2
+      smallIdx +=1 
+    }
+    else {
+      res[i] = bigVal ** 2
+      bigIdx -= 1
+    }
+    
+  }
+  return res
+}
+
+// Do not edit the line below.
+exports.sortedSquaredArray = sortedSquaredArray;

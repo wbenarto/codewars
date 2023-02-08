@@ -3083,3 +3083,14 @@ function isValidSubsequence(array, sequence) {
   // Do not edit the line below.
   exports.isValidSubsequence = isValidSubsequence;
   
+  function sortedSquaredArray(array) {
+    // Write your code here.
+    for (let i =0;i<array.length;i++) {
+      array[i] = array[i] ** 2
+    }
+    return array.sort((a,b)=> a-b);
+  }
+  
+  // Do not edit the line below.
+  exports.sortedSquaredArray = sortedSquaredArray;
+  
