@@ -754,3 +754,18 @@ function tournamentWinner(competitions, results) {
 
 // Do not edit the line below.
 exports.tournamentWinner = tournamentWinner;
+
+function nonConstructibleChange(coins) {
+  // Write your code here.
+  if (!coins.length ) return 1
+  coins.sort((a,b)=> a-b)
+  let change = 0
+  for (let i=0;i<coins.length;i++) {
+    if (coins[i] > change + 1) break
+    change += coins[i]
+  }
+  return change + 1;
+}
+
+// Do not edit the line below.
+exports.nonConstructibleChange = nonConstructibleChange;
