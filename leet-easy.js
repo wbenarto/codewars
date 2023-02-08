@@ -3067,3 +3067,19 @@ function binarySearch(array, target) {
 
 // Do not edit the line below.
 exports.binarySearch = binarySearch;
+
+
+function isValidSubsequence(array, sequence) {
+    // Write your code here.
+    let cur = 0
+    for (let i =0; i<array.length;i++){
+      if (array[i] == sequence[cur]) {
+        cur++
+      }
+    }
+    return (cur == sequence.length)
+  }
+  
+  // Do not edit the line below.
+  exports.isValidSubsequence = isValidSubsequence;
+  
