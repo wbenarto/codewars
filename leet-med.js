@@ -709,3 +709,22 @@ function sortedSquaredArray(array) {
 
 // Do not edit the line below.
 exports.sortedSquaredArray = sortedSquaredArray;
+
+function tournamentWinner(competitions, results) {
+  // Write your code here.
+  let dict = {}
+  for (let i=0;i<competitions.length;i++) {
+    let idx = results[i] == 0 ? 1 : 0 
+    
+    if (dict[competitions[i][idx]]) {
+      dict[competitions[i][idx]] += 3
+    } else {
+      dict[competitions[i][idx]] = 3
+    }
+  }
+  
+  return Object.keys(dict).reduce((a,b)=> dict[a] > dict[b] ? a : b);
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
