@@ -769,3 +769,33 @@ function nonConstructibleChange(coins) {
 
 // Do not edit the line below.
 exports.nonConstructibleChange = nonConstructibleChange;
+
+function threeNumberSum(array, targetSum) {
+  // Write your code here.
+  if (!array.length) return []
+  let res = []
+  array.sort((a,b)=>a-b)
+
+  for (let i=0;i<array.length;i++) {
+    let l = i+1
+    let r = array.length-1
+    let cur = array[i]
+    
+    while (l<r) {
+      console.log(cur, array[l], array[r], targetSum)
+      if (array[l] + array[r] + cur == targetSum) {
+        res.push([array[i], array[l], array[r]])
+        l++
+      } else if (array[l] + array[r] + cur < targetSum) {
+        l+=1
+      } else if (array[l] + array[r] +cur > targetSum) {
+        r-=1
+      }
+    }
+  }
+
+  return res
+}
+
+// Do not edit the line below.
+exports.threeNumberSum = threeNumberSum;
