@@ -728,3 +728,29 @@ function tournamentWinner(competitions, results) {
 
 // Do not edit the line below.
 exports.tournamentWinner = tournamentWinner;
+
+function tournamentWinner(competitions, results) {
+  // Write your code here.
+  let res = {}
+  let winner = {score: 0, name:''}
+  for (let i=0;i<competitions.length;i++) {
+    let winIdx = results[i] == 0 ? 1 : 0
+
+    console.log(competitions[i])
+      if (res[competitions[i][winIdx]]) {
+        res[competitions[i][winIdx]] += 3
+      } else {
+        res[competitions[i][winIdx]] = 3
+      }
+
+    if (res[competitions[i][winIdx]] > winner.score) {
+      winner.score = res[competitions[i][winIdx]]
+      winner.name = competitions[i][winIdx]
+    }
+    
+  }
+  return winner.name;
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
