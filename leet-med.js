@@ -904,3 +904,26 @@ class BST {
 
 // Do not edit the line below.
 exports.BST = BST;
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function validateBst(tree , min= -Infinity, max = Infinity) {
+  // Write your code here.
+  console.log(tree)
+  if (tree === null) return true
+  if (tree.value >= min && tree.value < max) return true && validateBst(tree.left, min, tree.value) && validateBst(tree.right, tree.value, max)
+  else return false
+   
+  return validateBst(tree.left) + validateBst(tree.right)
+}
+
+// Do not edit the line below.
+exports.BST = BST;
+exports.validateBst = validateBst;
