@@ -927,3 +927,49 @@ function validateBst(tree , min= -Infinity, max = Infinity) {
 // Do not edit the line below.
 exports.BST = BST;
 exports.validateBst = validateBst;
+
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class Node {
+  constructor(node, min, max) {
+    this.node = node;
+    this.min = min;
+    this.max = max;
+  }
+}
+
+function validateBst(tree) {
+  // Write your code here.
+  // Depth First Search implementation
+  let node = new Node(tree, -Infinity, Infinity)
+  let queue = [node]
+
+  while (queue.length>0) {
+    const {node, min, max} = queue.shift()
+
+    if (node.value < min || node.value >= max) return false
+    if (node.left) {
+      let leftNode = new Node(node.left, min, node.value)
+      queue.push(leftNode)
+    }
+    if (node.right) {
+      let rightNode = new Node(node.right, node.value, max)
+      queue.push(rightNode)
+    }
+  }
+
+  return true
+  
+}
+
+// Do not edit the line below.
+exports.BST = BST;
+exports.validateBst = validateBst;
