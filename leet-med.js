@@ -1010,3 +1010,43 @@ function postOrderTraverse(tree, array) {
 exports.inOrderTraverse = inOrderTraverse;
 exports.preOrderTraverse = preOrderTraverse;
 exports.postOrderTraverse = postOrderTraverse;
+
+
+function minHeightBst(array, left=0, right=array.length-1) {
+  // Write your code here.
+  if (left>right) return null;
+  let mid = Math.floor((left+right)/2)
+  let root = new BST(array[mid])
+
+  root.left = minHeightBst(array, left, mid-1)
+  root.right = minHeightBst(array, mid+1, right)
+
+  return root
+}
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insert(value) {
+    if (value < this.value) {
+      if (this.left === null) {
+        this.left = new BST(value);
+      } else {
+        this.left.insert(value);
+      }
+    } else {
+      if (this.right === null) {
+        this.right = new BST(value);
+      } else {
+        this.right.insert(value);
+      }
+    }
+  }
+}
+
+// Do not edit the line below.
+exports.minHeightBst = minHeightBst;
