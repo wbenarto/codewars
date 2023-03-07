@@ -3094,3 +3094,22 @@ function isValidSubsequence(array, sequence) {
   // Do not edit the line below.
   exports.sortedSquaredArray = sortedSquaredArray;
   
+
+  function findThreeLargestNumbers(array) {
+    // Write your code here.
+    let largest = [array[0], array[1], array[2]]
+  
+    for (let i=3; i<array.length; i++) {
+      const minVal = Math.min(...largest)
+      if (array[i] > minVal) {
+        const minIdx = largest.indexOf(minVal)
+        largest[minIdx] = array[i];
+      }
+    }
+  
+    return largest.sort((a,b) => a-b)
+  }
+  
+  // Do not edit the line below.
+  exports.findThreeLargestNumbers = findThreeLargestNumbers;
+  
