@@ -3112,4 +3112,35 @@ function isValidSubsequence(array, sequence) {
   
   // Do not edit the line below.
   exports.findThreeLargestNumbers = findThreeLargestNumbers;
+  function smallestDifference(arrayOne, arrayTwo) {
+    // Write your code here.
+    let diff = 10000
+    let res 
+    
+  
+    for (let i=0;i<arrayOne.length;i++) {
+      for (let j=0;j<arrayTwo.length;j++) {
+        let tempDiff 
+        if (arrayOne[i] < 0 && arrayTwo[j] < 0) {
+          tempDiff = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]))
+        } else if (arrayOne[i] < 0 || arrayTwo[j] < 0) {
+          tempDiff = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j])
+        } else {
+          tempDiff = Math.abs(arrayOne[i] - arrayTwo[j])
+        }
+  
+        if (tempDiff < diff) {
+          
+          diff = tempDiff
+          res = [arrayOne[i], arrayTwo[j]]
+  
+        }
+        
+      }
+    }
+    return res
+  }
+  
+  // Do not edit the line below.
+  exports.smallestDifference = smallestDifference;
   
