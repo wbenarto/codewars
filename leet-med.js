@@ -799,3 +799,108 @@ function threeNumberSum(array, targetSum) {
 
 // Do not edit the line below.
 exports.threeNumberSum = threeNumberSum;
+
+// Do not edit the class below except for
+// the insert, contains, and remove methods.
+// Feel free to add new properties and methods
+// to the class.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insert(value) {
+    // Write your code here.
+    let cur = this
+
+    while (true) {
+      if (value < cur.value) {
+        if (cur.left == null) {
+          cur.left = new BST(value)
+          break;
+        } else cur = cur.left
+      } else {
+        if (cur.right == null) {
+          cur.right = new BST(value)
+          break
+        } else cur = cur.right
+      }
+    }    
+    // Do not edit the return statement of this method.
+    return this;
+  }
+
+  contains(value) {
+    // Write your code here.
+    let cur = this
+
+    while (cur != null) {
+      if (value == cur.value) {
+        return true
+      } else if (value < cur.value) {
+        cur = cur.left
+      } else {
+        cur = cur.right
+      }
+    }
+    return false
+    
+  }
+
+  remove(value, parentNode = null) {
+    // Write your code here.
+    let cur = this
+    while (cur !== null) {
+      if (value < cur.value) {
+        parentNode = cur
+        cur = cur.left
+      } else if ( value > cur.value) {
+        parentNode = cur
+        cur = cur.right
+      } else {
+        cur.shuffleNodes(cur, parentNode)
+        break
+      }
+    }
+    // Do not edit the return statement of this method.
+    return this;
+  }
+
+  shuffleNodes(cur, parentNode) {
+    const leftNode = cur.left !== null,
+      rightNode = cur.right !== null
+
+    if (leftNode && rightNode) {
+      cur.value = cur.right.getMinValue()
+      cur.right.remove(cur.value, cur)
+    } else if (parentNode === null) {
+      if (leftNode) {
+        cur.value = cur.left.value;
+        cur.right = cur.left.right;
+        cur.left = cur.left.left;
+      } else if (rightNode) {
+        cur.value = cur.right.value;
+        cur.left = cur.right.left;
+        cur.right = cur.right.right;
+      }
+    } else if (parentNode.left == cur) {
+      parentNode.left = leftNode ? cur.left : cur.right
+    } else if (parentNode.right === cur) {
+      parentNode.right = leftNode ? cur.left : cur.right
+    } 
+  }
+
+  getMinValue() {
+    let cur = this;
+    while (cur.left !== null) {
+      cur = cur.left;
+    }
+    return cur.value
+  }
+  
+}
+
+// Do not edit the line below.
+exports.BST = BST;
