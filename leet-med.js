@@ -1050,3 +1050,32 @@ class BST {
 
 // Do not edit the line below.
 exports.minHeightBst = minHeightBst;
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function findKthLargestValueInBst(tree, k, ) {
+  // Write your code here.
+
+  //inorder traversal, return index 
+  let array = []
+  DFS(tree, array)
+  return array[array.length - k];
+}
+
+function DFS(tree, array) {
+  if (!tree) return array
+  DFS(tree.left, array)
+  array.push(tree.value)
+  DFS(tree.right, array)
+  return array
+}
+// Do not edit the lines below.
+exports.BST = BST;
+exports.findKthLargestValueInBst = findKthLargestValueInBst;
