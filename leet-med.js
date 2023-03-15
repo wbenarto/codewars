@@ -1118,3 +1118,33 @@ function reconstructBst(preOrderTraversalValues) {
 // Do not edit the lines below.
 exports.BST = BST;
 exports.reconstructBst = reconstructBst;
+
+
+function sameBsts(arrayOne, arrayTwo) {
+  // Write your code here.
+  const [rootOne, ...restOne] = arrayOne
+  const [rootTwo, ...restTwo] = arrayTwo
+
+  if (arrayOne.length == 0) return true
+  if (rootOne !== rootTwo) return false
+  if (restOne.length !== restTwo.length) return false
+
+  const leftTreeOne = restOne.filter(n=> n<rootOne)
+  const leftTreeTwo = restTwo.filter(n => n<rootTwo)
+
+  const rightTreeOne = restOne.filter(n=> n >= rootOne) 
+  const rightTreeTwo = restTwo.filter(n=> n >= rootTwo)
+
+  console.log('array one ' , arrayOne)
+  console.log('array two ' , arrayTwo)
+
+  console.log('left Tree one', leftTreeOne)
+  console.log('left Tree two', leftTreeTwo)
+
+  console.log('right Tree one ', rightTreeOne)
+  console.log('right Tree two ', rightTreeTwo)
+  return sameBsts(leftTreeOne, leftTreeTwo) && sameBsts(rightTreeOne, rightTreeTwo)
+}
+
+// Do not edit the line below.
+exports.sameBsts = sameBsts;
