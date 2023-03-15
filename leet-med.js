@@ -1050,3 +1050,71 @@ class BST {
 
 // Do not edit the line below.
 exports.minHeightBst = minHeightBst;
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function findKthLargestValueInBst(tree, k, ) {
+  // Write your code here.
+
+  //inorder traversal, return index 
+  let array = []
+  DFS(tree, array)
+  return array[array.length - k];
+}
+
+function DFS(tree, array) {
+  if (!tree) return array
+  DFS(tree.left, array)
+  array.push(tree.value)
+  DFS(tree.right, array)
+  return array
+}
+// Do not edit the lines below.
+exports.BST = BST;
+exports.findKthLargestValueInBst = findKthLargestValueInBst;
+
+
+// This is an input class. Do not edit.
+class BST {
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
+  }
+
+  insert(value) {
+    if (value < this.value) {
+      if (this.left) this.left.insert(value)
+      else this.left = new BST(value)
+    } else {
+      if (this.right) this.right.insert(value)
+      else this.right = new BST(value)
+    }
+  }
+}
+
+
+function reconstructBst(preOrderTraversalValues) {
+  // Write your code here.
+  console.log(preOrderTraversalValues)
+  let root = new BST(preOrderTraversalValues[0])
+
+  for (let i=1; i<preOrderTraversalValues.length;i++) {
+      root.insert(preOrderTraversalValues[i])
+      
+    
+  }
+  console.log(root)
+  return root;
+}
+
+// Do not edit the lines below.
+exports.BST = BST;
+exports.reconstructBst = reconstructBst;
