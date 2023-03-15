@@ -1148,3 +1148,30 @@ function sameBsts(arrayOne, arrayTwo) {
 
 // Do not edit the line below.
 exports.sameBsts = sameBsts;
+
+// This is the class of the input root.
+// Do not edit it.
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function branchSums(root, sum=0, arr=[]) {
+  // Write your code here.
+  let curSum = sum + root.value
+
+  if (!root.left && !root.right) arr.push(curSum)
+
+  if (root.left) branchSums(root.left, curSum, arr)
+  if (root.right) branchSums(root.right, curSum, arr)
+
+  return arr
+  
+}
+
+// Do not edit the lines below.
+exports.BinaryTree = BinaryTree;
+exports.branchSums = branchSums;
